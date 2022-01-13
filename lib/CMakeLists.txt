@@ -1,0 +1,8 @@
+PROJECT(target_sw_lib)
+
+ADD_SUBDIRECTORY(support)
+ADD_SUBDIRECTORY(ml_interface)
+
+COMMON_ADD_LIBRARY(${PROJECT_NAME} STATIC drivers/fake_input.c)
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC lib/drivers ../../out)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} PUBLIC support ml_interface)
