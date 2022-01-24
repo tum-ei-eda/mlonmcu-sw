@@ -18,15 +18,12 @@ IF("${FRAMEWORK}" STREQUAL "tflite")
     SET(EXTRA_LIBS tflite)
     SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DTFLMC_DEBUG_ALLOCATIONS")
 ELSEIF("${FRAMEWORK}" STREQUAL "tvm")
-    SET(TVM_OUT_DIR ${SRC_DIR}/)
+    SET(TVM_OUT_DIR ${SRC_DIR}/codegen/host/src)
     SET(EXTRA_SRC ml_interface_tvm.c)
 
     FILE(
         GLOB
         TVM_SRCS
-        ${TVM_OUT_DIR}/lib*.c
-        ${TVM_OUT_DIR}/lib*.cc
-        # New model will have prefix "default_"
         ${TVM_OUT_DIR}/*_lib*.c
         ${TVM_OUT_DIR}/*_lib*.cc
     )
@@ -35,16 +32,16 @@ ELSEIF("${FRAMEWORK}" STREQUAL "tvm")
     COMMON_ADD_LIBRARY(tvm_extension STATIC ${TVM_SRCS})
 
     IF("${BACKEND}" STREQUAL "tvmrt")
-        SET(EXTRA_SRC ${EXTRA_SRC} ${TVM_OUT_DIR}/runtime_wrapper.c)
+        SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/runtime_wrapper.c)
         TARGET_LINK_LIBRARIES(tvm_graph_rt PUBLIC tvm_extension)
         SET(TVM_LIB tvm_graph_rt)
         SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DTVMRT_DEBUG_ALLOCATIONS")
     ELSEIF("${BACKEND}" STREQUAL "tvmaot")
-        SET(EXTRA_SRC ${EXTRA_SRC} ${TVM_OUT_DIR}/aot_wrapper.c)
+        SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/aot_wrapper.c)
         SET(TVM_LIB tvm_aot_rt)
         SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DTVMAOT_DEBUG_ALLOCATIONS")
     ELSEIF("${BACKEND}" STREQUAL "tvmcg")
-        SET(EXTRA_SRC ${EXTRA_SRC} ${TVM_OUT_DIR}/staticrt.c)
+        SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/staticrt.c)
         SET(TVM_LIB tvm_static_rt)
         SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DTVMCG_DEBUG_ALLOCATIONS")
     ELSE()
@@ -52,7 +49,7 @@ ELSEIF("${FRAMEWORK}" STREQUAL "tvm")
     ENDIF()
     SET(EXTRA_INC ${TVM_OUT_DIR})
 
-    TARGET_INCLUDE_DIRECTORIES(tvm_extension PUBLIC ${TVM_HEADERS} ${TVM_OUT_DIR})
+    TARGET_INCLUDE_DIRECTORIES(tvm_extension PUBLIC ${TVM_HEADERS} ${TVM_OUT_DIR} ${SRC_DIR})
     # TARGET_LINK_LIBRARIES(tvm_extension PUBLIC ${TVM_LIB})
     SET(EXTRA_LIBS tvm_extension ${TVM_LIB})
 ELSE()
