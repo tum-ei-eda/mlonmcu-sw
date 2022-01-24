@@ -1,6 +1,6 @@
 #include "ml_interface.h"
 
-#include "target_src.cc.h"
+#include "model.cc.h"
 
 void mlif_run() {
   model_init();
