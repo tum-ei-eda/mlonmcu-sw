@@ -12,7 +12,7 @@ ENDMACRO()
 
 IF(TARGET_SYSTEM STREQUAL "etiss_pulpino")
     SET(ETISS_DIR
-        "/usr/local/research/projects/SystemDesign/tools/etiss/current"
+        "/usr/local/research/projects/SystemDesign/tools/etiss/current"  # TODO: remove
         CACHE STRING "Directory of ETISS"
     )
     SET(PULPINO_TC_DIR ${ETISS_DIR}/examples/SW/riscv/cmake)
