@@ -32,7 +32,7 @@ ELSEIF("${FRAMEWORK}" STREQUAL "tvm")
     COMMON_ADD_LIBRARY(tvm_extension STATIC ${TVM_SRCS})
 
     IF("${BACKEND}" STREQUAL "tvmrt")
-        SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/runtime_wrapper.c)
+        SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/rt_wrapper.c)
         TARGET_LINK_LIBRARIES(tvm_graph_rt PUBLIC tvm_extension)
         SET(TVM_LIB tvm_graph_rt)
         SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DTVMRT_DEBUG_ALLOCATIONS")
