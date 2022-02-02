@@ -113,7 +113,7 @@ ELSEIF(TARGET_SYSTEM STREQUAL "corstone300")
         -Wno-return-type)
 ELSEIF(TARGET_SYSTEM STREQUAL "host_x86")
     # Nothing to do...
-ELSEIF(TARGET_SYSTEM STREQUAL "spike")
+ELSEIF(TARGET_SYSTEM STREQUAL "generic_riscv")
     set(CMAKE_SYSTEM_NAME Generic)
     set(RISCV_ELF_GCC_PREFIX "" CACHE PATH "install location for riscv-gcc toolchain")
     set(RISCV_ELF_GCC_BASENAME "riscv64-unknown-elf" CACHE STRING "base name of the toolchain executables")
