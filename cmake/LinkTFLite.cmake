@@ -96,6 +96,15 @@ ENDIF()
 IF(EXISTS ${TFLM_SRC}/kernels/svdf_common.cc)
     LIST(APPEND TFLM_REFERENCE_KERNEL_SRCS ${TFLM_SRC}/kernels/svdf_common.cc)
 ENDIF()
+IF(EXISTS ${TFLM_SRC}/kernels/pooling_common.cc)
+    LIST(APPEND TFLM_REFERENCE_KERNEL_SRCS ${TFLM_SRC}/kernels/pooling_common.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/kernels/add_common.cc)
+    LIST(APPEND TFLM_REFERENCE_KERNEL_SRCS ${TFLM_SRC}/kernels/add_common.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/kernels/dequantize_common.cc)
+    LIST(APPEND TFLM_REFERENCE_KERNEL_SRCS ${TFLM_SRC}/kernels/dequantize_common.cc)
+ENDIF()
 IF(EXISTS ${TFLM_SRC}/kernels/detection_postprocess.cc)
     LIST(APPEND TFLM_REFERENCE_KERNEL_SRCS ${TFLM_SRC}/kernels/detection_postprocess.cc)
 ENDIF()
@@ -145,6 +154,9 @@ ADD_LIBRARY(
     ${TFL_SRC}/core/api/tensor_utils.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
+    ${TFLM_SRC}/micro_context.cc
+    ${TFLM_SRC}/micro_graph.cc
+    ${TFLM_SRC}/flatbuffer_utils.cc
     ${OPT_SRC}
 )
 
