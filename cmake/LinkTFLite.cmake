@@ -2,29 +2,28 @@ SET(TF_SRC
     "/data/work/code/tensorflow"
     CACHE STRING "TensorFlow source directory"
 )
-SET(MURISCVNN_DIR
-    ""
-    CACHE STRING "muriscv_nn install directory"
-)
 
 SET(TFL_SRC ${TF_SRC}/tensorflow/lite)
 SET(TFLM_SRC ${TFL_SRC}/micro)
 SET(TFLD_SRC ${TFLM_SRC}/tools/make/downloads)
 
-IF(RISCV_NN)
-    # RISCV NN Kernels
-    FILE(
-        GLOB
-        TFLM_EXTRA_KERNEL_SRCS
-        ${TFLM_SRC}/kernels/muriscv-nn/add.cc
-        ${TFLM_SRC}/kernels/muriscv-nn/mul.cc
-        ${TFLM_SRC}/kernels/muriscv-nn/pooling.cc
-        ${TFLM_SRC}/kernels/muriscv-nn/fully_connected.cc
-        ${TFLM_SRC}/kernels/muriscv-nn/conv.cc
-        ${TFLM_SRC}/kernels/muriscv-nn/softmax.cc
-        ${TFLM_SRC}/kernels/muriscv-nn/depthwise_conv.cc
-    )
-    SET(TFLM_EXTRA_KERNEL_INCS "${MURISCVNN_DIR}/Include")
+SET(TFLM_EXTRA_KERNEL_INCS "")
+
+MESSAGE(STATUS "TFLM_OPTIMIZED_KERNEL=${TFLM_OPTIMIZED_KERNEL} TFLM_OPTIMIZED_KERNEL_LIB=${TFLM_OPTIMIZED_KERNEL_LIB} TFLM_OPTIMIZED_KERNEL_INCLUDE_DIR=${TFLM_OPTIMIZED_KERNEL_INCLUDE_DIR}")
+
+IF(TFLM_OPTIMIZED_KERNEL)
+    # Suboptimal but we do not want to hardcode every kernel which should be replaced...
+    FILE(GLOB TFLM_EXTRA_KERNEL_SRCS ${TFLM_SRC}/kernels/${TFLM_OPTIMIZED_KERNEL}/*.cc)
+    # LIST(APPEND TFLM_EXTRA_KERNEL_INCS ${TFLM_SRC}/kernels/${TFLM_OPTIMIZED_KERNEL}/)
+    STRING(TOUPPER "${TFLM_OPTIMIZED_KERNEL}" TFLM_OPTIMIZED_KERNEL_UPPER)
+ENDIF()
+
+IF(TFLM_OPTIMIZED_KERNEL_LIB)
+    SET(TFLM_EXTRA_KERNEL_LIB ${TFLM_OPTIMIZED_KERNEL_LIB})
+ENDIF()
+
+IF(TFLM_OPTIMIZED_KERNEL_INCLUDE_DIR)
+    LIST(APPEND TFLM_EXTRA_KERNEL_INCS ${TFLM_OPTIMIZED_KERNEL_INCLUDE_DIR})
 ENDIF()
 
 SET(CUSTOM_QUANT_SRC ${TFL_SRC}/experimental/custom_quantization_util.cc)
@@ -148,8 +147,9 @@ ADD_LIBRARY(
     ${TFL_SRC}/core/api/op_resolver.cc
     ${OPT_SRC}
 )
-IF(RISCV_NN)
-    TARGET_LINK_LIBRARIES(tflite PUBLIC ${MURISCVNN_DIR}/libmuriscv_nn.a)
+
+IF(TFLM_EXTRA_KERNEL_LIB)
+    TARGET_LINK_LIBRARIES(tflite PUBLIC ${TFLM_EXTRA_KERNEL_LIB})
 ENDIF()
 
 # cmake-format: off
@@ -170,5 +170,6 @@ TARGET_COMPILE_DEFINITIONS(tflite PUBLIC
     TF_LITE_STATIC_MEMORY
     TFLITE_EMULATE_FLOAT
     "$<$<CONFIG:RELEASE>:TF_LITE_STRIP_ERROR_STRINGS>"
+    ${TFLM_OPTIMIZED_KERNEL_UPPER}
 )
 # cmake-format: on
