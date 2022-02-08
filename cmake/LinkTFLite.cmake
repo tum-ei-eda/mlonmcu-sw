@@ -121,9 +121,18 @@ FOREACH(src ${TFLM_EXTRA_KERNEL_SRCS})
     ENDIF()
 ENDFOREACH()
 
-# This file only exists in newer versions of TF
+# This files only exists in newer versions of TF
 IF(EXISTS ${TFL_SRC}/schema/schema_utils.cc)
     LIST(APPEND OPT_SRC ${TFL_SRC}/schema/schema_utils.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/micro_context.cc)
+    LIST(APPEND OPT_SRC ${TFLM_SRC}/micro_context.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/micro_graph.cc.cc)
+    LIST(APPEND OPT_SRC ${TFLM_SRC}/micro_graph.cc.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/flatbuffer_utils.cc.cc)
+    LIST(APPEND OPT_SRC ${TFLM_SRC}/flatbuffer_utils.cc.cc)
 ENDIF()
 
 ADD_LIBRARY(
@@ -152,9 +161,7 @@ ADD_LIBRARY(
     ${TFL_SRC}/core/api/tensor_utils.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
-    ${TFLM_SRC}/micro_context.cc
-    ${TFLM_SRC}/micro_graph.cc
-    ${TFLM_SRC}/flatbuffer_utils.cc
+
     ${OPT_SRC}
 )
 
