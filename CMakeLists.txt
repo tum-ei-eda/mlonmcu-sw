@@ -1,9 +1,17 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.13 FATAL_ERROR)
 
-SET(TARGET_SYSTEM
-    "etiss_pulpino"
-    CACHE STRING "The target system defined in ChooseTarget.cmake"
-)
+set(TARGET_SYSTEM "host_x86" CACHE STRING "Specify which toolchain to use.")
+set_property(CACHE TARGET_SYSTEM PROPERTY STRINGS host_x86 etiss_pulpino generic_riscv corstone300)
+
+# Choose which toolchain you want to use, either GCC or LLVM (or x86 for native build)
+set(TOOLCHAIN "GCC" CACHE STRING "Specify which toolchain to use.")
+set_property(CACHE TOOLCHAIN PROPERTY STRINGS gcc llvm)
+
+set(BACKEND "" CACHE STRING "Specify which backend to use.")
+set_property(CACHE BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
+
+set(FRAMEWORK "" CACHE STRING "Specify which backend to use.")
+set_property(CACHE FRAMEWORK PROPERTY STRINGS tflite tvm)
 
 SET(ENABLE_LTO
     OFF
@@ -58,6 +66,9 @@ IF(ENABLE_LTO)
     SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -flto -ffat-lto-objects")
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} -Xlinker -flto")
 ENDIF()
+
+INCLUDE(backends/${BACKEND})
+INCLUDE(frameworks/${FRAMEWORK})
 
 IF(TF_SRC)
     INCLUDE(LinkTFLite)
