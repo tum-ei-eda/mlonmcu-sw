@@ -4,7 +4,7 @@ set(TARGET_SYSTEM "host_x86" CACHE STRING "Specify which toolchain to use.")
 set_property(CACHE TARGET_SYSTEM PROPERTY STRINGS host_x86 etiss_pulpino generic_riscv corstone300)
 
 # Choose which toolchain you want to use, either GCC or LLVM (or x86 for native build)
-set(TOOLCHAIN "GCC" CACHE STRING "Specify which toolchain to use.")
+set(TOOLCHAIN "gcc" CACHE STRING "Specify which toolchain to use.")
 set_property(CACHE TOOLCHAIN PROPERTY STRINGS gcc llvm)
 
 set(BACKEND "" CACHE STRING "Specify which backend to use.")
