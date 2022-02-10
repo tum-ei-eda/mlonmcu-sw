@@ -1,4 +1,4 @@
-IF (NOT ${FRAMEWORK})
+IF ("${FRAMEWORK}" STREQUAL "")
     SET(FRAMEWORK "tflite")
 ENDIF()
 
