@@ -5,46 +5,42 @@
 SET(CMAKE_SYSTEM_NAME Generic)
 # SET(CMAKE_SYSTEM_PROCESSOR cortex-m55)
 
+IF(WIN32)
+    set(EXE_EXT ".exe")
+ENDIF()
 
-MESSAGE("LOL")
+set(ARM_COMPILER_PREFIX "" CACHE PATH "install location for gcc toolchain")
+set(ARM_COMPILER_BASENAME "arm-none-eabi" CACHE STRING "base name of the toolchain executables")
 
+IF("${ARM_COMPILER_PREFIX}" STREQUAL "")
+    set(TC_PREFIX "${ARM_COMPILER_BASENAME}-")
+ELSE()
+    set(TC_PREFIX "${ARM_COMPILER_PREFIX}/bin/${ARM_COMPILER_BASENAME}-")
+ENDIF()
 
+set(CMAKE_C_COMPILER ${TC_PREFIX}gcc${EXE_EXT})
+set(CMAKE_CXX_COMPILER ${TC_PREFIX}g++${EXE_EXT})
+set(CMAKE_OBJCOPY ${TC_PREFIX}objcopy${EXE_EXT})
+set(CMAKE_AR ${TC_PREFIX}ar${EXE_EXT})
+set(CMAKE_C_COMPILER_AR ${TC_PREFIX}ar${EXE_EXT})
+set(CMAKE_CXX_COMPILER_AR ${TC_PREFIX}ar${EXE_EXT})
 
-
-#SET(CMAKE_C_COMPILER "${tools}/bin/arm-none-eabi-gcc")
-#SET(CMAKE_CXX_COMPILER "${tools}/bin/arm-none-eabi-g++")
-#SET(CMAKE_ASM_COMPILER "${tools}/bin/arm-none-eabi-gcc")
-
-find_program(CMAKE_C_COMPILER NAMES arm-none-eabi-gcc arm-none-eabi-gcc.exe)
-find_program(CMAKE_CXX_COMPILER NAMES arm-none-eabi-g++ arm-none-eabi-g++.exe)
-find_program(CMAKE_ASM_COMPILER NAMES arm-none-eabi-gcc arm-none-eabi-gcc.exe)
-
-
-if (NOT ("${tools}" STREQUAL ""))
-message(STATUS "Tools path is set")
-SET(CMAKE_AR "${tools}/bin/ar")
-SET(CMAKE_CXX_COMPILER_AR "${tools}/bin/ar")
-SET(CMAKE_C_COMPILER_AR "${tools}/bin/ar")
-else()
-find_program(CMAKE_AR NAMES arm-none-eabi-gcc-ar arm-none-eabi-gcc-ar.exe )
-find_program(CMAKE_CXX_COMPILER_AR NAMES arm-none-eabi-gcc-ar arm-none-eabi-gcc-ar.exe )
-find_program(CMAKE_C_COMPILER_AR NAMES arm-none-eabi-gcc-ar arm-none-eabi-gcc-ar.exe)
-endif()
+# TODO: Use Find_Program?
 
 #SET(CMAKE_LINKER "${tools}/bin/arm-none-eabi-g++")
-find_program(CMAKE_LINKER NAMES arm-none-eabi-g++ arm-none-eabi-g++.exe)
+#find_program(CMAKE_LINKER NAMES arm-none-eabi-g++ arm-none-eabi-g++.exe)
+#
+#SET(CMAKE_C_LINK_EXECUTABLE "<CMAKE_LINKER> <LINK_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
+#SET(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_LINKER> <LINK_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
+#SET(CMAKE_C_OUTPUT_EXTENSION .o)
+#SET(CMAKE_CXX_OUTPUT_EXTENSION .o)
+#SET(CMAKE_ASM_OUTPUT_EXTENSION .o)
+## When library defined as STATIC, this line is needed to describe how the .a file must be
+## create. Some changes to the line may be needed.
+#SET(CMAKE_C_CREATE_STATIC_LIBRARY "<CMAKE_AR> -crs <TARGET> <LINK_FLAGS> <OBJECTS>" )
+#SET(CMAKE_CXX_CREATE_STATIC_LIBRARY "<CMAKE_AR> -crs <TARGET> <LINK_FLAGS> <OBJECTS>" )
 
-SET(CMAKE_C_LINK_EXECUTABLE "<CMAKE_LINKER> <LINK_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
-SET(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_LINKER> <LINK_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
-SET(CMAKE_C_OUTPUT_EXTENSION .o)
-SET(CMAKE_CXX_OUTPUT_EXTENSION .o)
-SET(CMAKE_ASM_OUTPUT_EXTENSION .o)
-# When library defined as STATIC, this line is needed to describe how the .a file must be
-# create. Some changes to the line may be needed.
-SET(CMAKE_C_CREATE_STATIC_LIBRARY "<CMAKE_AR> -crs <TARGET> <LINK_FLAGS> <OBJECTS>" )
-SET(CMAKE_CXX_CREATE_STATIC_LIBRARY "<CMAKE_AR> -crs <TARGET> <LINK_FLAGS> <OBJECTS>" )
-
-set(GCC ON)
+#set(GCC ON)
 # default core
 
 if(NOT ARM_CPU)
@@ -54,9 +50,7 @@ if(NOT ARM_CPU)
     )
 endif(NOT ARM_CPU)
 
-MESSAGE("ARM_CPU=${ARM_CPU}")
 if (ARM_CPU STREQUAL "cortex-m55")
-MESSAGE("LOOL")
 # For gcc 10q4
 SET(CMAKE_C_FLAGS "-ffunction-sections -fdata-sections -march=armv8.1-m.main+mve.fp+fp.dp" CACHE INTERNAL "C compiler common flags")
 SET(CMAKE_CXX_FLAGS "-ffunction-sections -fdata-sections -march=armv8.1-m.main+mve.fp+fp.dp" CACHE INTERNAL "C compiler common flags")
@@ -82,7 +76,6 @@ SET(CMAKE_EXE_LINKER_FLAGS "-mcpu=${ARM_CPU}"  CACHE INTERNAL "linker flags")
 endif()
 
 get_property(IS_IN_TRY_COMPILE GLOBAL PROPERTY IN_TRY_COMPILE)
-MESSAGE("IS_IN_TRY_COMPILE=${IS_IN_TRY_COMPILE}")
 if(IS_IN_TRY_COMPILE)
     add_link_options("--specs=nosys.specs")
 endif()
