@@ -191,4 +191,24 @@ TARGET_COMPILE_DEFINITIONS(tflite PUBLIC
     "$<$<CONFIG:RELEASE>:TF_LITE_STRIP_ERROR_STRINGS>"
     ${TFLM_OPTIMIZED_KERNEL_UPPER}
 )
+
+# Workaround for the following issue which does not envolve patching the tflite-micro codebase:
+
+# .../micro_error_reporter.cc: In function 'tflite::ErrorReporter* tflite::GetMicroErrorReporter()':
+# .../micro_error_reporter.cc:58:76: error: 'static void tflite::MicroErrorReporter::operator delete(void*)' is private within this context
+#    58 |     error_reporter_ = new (micro_error_reporter_buffer) MicroErrorReporter();
+#       |                                                                            ^
+# In file included from .../micro_error_reporter.h:21,
+#                  from .../micro_error_reporter.cc:16:
+# .../compatibility.h:27:8: note: declared private here
+#    27 |   void operator delete(void* p) {}
+#       |        ^~~~~~~~
+# .../micro_error_reporter.h:51:3: note: in expansion of macro 'TF_LITE_REMOVE_VIRTUAL_DELETE'
+#    51 |   TF_LITE_REMOVE_VIRTUAL_DELETE
+#
+# If disabling the exceptions has major disadvantages needs to be investigated.
+
+TARGET_COMPILE_OPTIONS(tflite PUBLIC
+    -fno-exceptions
+)
 # cmake-format: on
