@@ -1,4 +1,5 @@
 #include "ml_interface.h"
+#include <stdio.h>
 
 void init_target();
 void deinit_target();
