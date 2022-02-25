@@ -1,17 +1,29 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.13 FATAL_ERROR)
 
-set(TARGET_SYSTEM "host_x86" CACHE STRING "Specify which toolchain to use.")
-set_property(CACHE TARGET_SYSTEM PROPERTY STRINGS host_x86 etiss_pulpino generic_riscv corstone300)
+SET(TARGET_SYSTEM
+    "host_x86"
+    CACHE STRING "Specify which toolchain to use."
+)
+SET_PROPERTY(CACHE TARGET_SYSTEM PROPERTY STRINGS host_x86 etiss_pulpino generic_riscv corstone300)
 
 # Choose which toolchain you want to use, either GCC or LLVM (or x86 for native build)
-set(TOOLCHAIN "gcc" CACHE STRING "Specify which toolchain to use.")
-set_property(CACHE TOOLCHAIN PROPERTY STRINGS gcc llvm)
+SET(TOOLCHAIN
+    "gcc"
+    CACHE STRING "Specify which toolchain to use."
+)
+SET_PROPERTY(CACHE TOOLCHAIN PROPERTY STRINGS gcc llvm)
 
-set(BACKEND "" CACHE STRING "Specify which backend to use.")
-set_property(CACHE BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
+SET(BACKEND
+    ""
+    CACHE STRING "Specify which backend to use."
+)
+SET_PROPERTY(CACHE BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
 
-set(FRAMEWORK "" CACHE STRING "Specify which backend to use.")
-set_property(CACHE FRAMEWORK PROPERTY STRINGS tflite tvm)
+SET(FRAMEWORK
+    ""
+    CACHE STRING "Specify which backend to use."
+)
+SET_PROPERTY(CACHE FRAMEWORK PROPERTY STRINGS tflite tvm)
 
 SET(ENABLE_LTO
     OFF
