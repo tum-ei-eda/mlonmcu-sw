@@ -1,6 +1,6 @@
 SET(TF_SRC
     "/data/work/code/tensorflow"
-    CACHE STRING "TensorFlow source directory"
+    CACHE PATH "TensorFlow source directory"
 )
 
 SET(TFL_SRC ${TF_SRC}/tensorflow/lite)

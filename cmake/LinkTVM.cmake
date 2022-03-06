@@ -1,6 +1,6 @@
 SET(TVM_SRC
     "/data/work/code/tvm"
-    CACHE STRING "TVM source directory"
+    CACHE PATH "TVM source directory"
 )
 
 SET(TVM_ALIGNMENT_BYTES 4)
