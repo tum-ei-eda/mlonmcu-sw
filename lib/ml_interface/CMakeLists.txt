@@ -2,7 +2,7 @@ PROJECT(ml_interface)
 
 INCLUDE(extras)
 
-INCLUDE(frameworks/${FRAMEWORK}_mlif)
+INCLUDE(frameworks/${MLONMCU_FRAMEWORK}_mlif)
 
 IF(MODEL_DIR)
     GET_FILENAME_COMPONENT(MODEL_SUPPORT_DIR ${MODEL_DIR}/support REALPATH)
