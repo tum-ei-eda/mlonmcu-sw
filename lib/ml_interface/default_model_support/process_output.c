@@ -2,6 +2,7 @@
 #include <memory.h>
 
 #include "printing.h"
+#include "exit.h"
 
 void mlif_process_output(void *model_output_ptr, size_t model_output_sz, const void *expected_out_data,
                          size_t expected_out_size) {
@@ -21,6 +22,6 @@ void mlif_process_output(void *model_output_ptr, size_t model_output_sz, const v
     DBGPRINTF("MLIF: Output data matches expected data\n");
   } else {
     DBGPRINTF("MLIF: Wrong output data!\n");
-    exit(1);
+    exit(EXIT_MLIF_MISSMATCH);
   }
 }
