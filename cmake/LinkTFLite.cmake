@@ -1,9 +1,9 @@
-SET(TF_SRC
+SET(TF_DIR
     "/data/work/code/tensorflow"
     CACHE PATH "TensorFlow source directory"
 )
 
-SET(TFL_SRC ${TF_SRC}/tensorflow/lite)
+SET(TFL_SRC ${TF_DIR}/tensorflow/lite)
 SET(TFLM_SRC ${TFL_SRC}/micro)
 SET(TFLD_SRC ${TFLM_SRC}/tools/make/downloads)
 
@@ -143,7 +143,7 @@ ADD_LIBRARY(
     ${TFLM_SRC}/debug_log.cc
     ${TFLM_SRC}/micro_string.cc
     # For reporter->Report
-    ${TF_SRC}/tensorflow/lite/core/api/error_reporter.cc
+    ${TF_DIR}/tensorflow/lite/core/api/error_reporter.cc
     # Kernels
     ${TFLM_REFERENCE_KERNEL_SRCS}
     ${TFLM_EXTRA_KERNEL_SRCS}
@@ -173,7 +173,7 @@ TARGET_LINK_LIBRARIES(tflite PUBLIC m)
 
 # cmake-format: off
 TARGET_INCLUDE_DIRECTORIES(tflite PUBLIC
-    ${TF_SRC}
+    ${TF_DIR}
     ${TFLD_SRC}/flatbuffers/include
     ${TFLD_SRC}/gemmlowp
     ${TFLD_SRC}/ruy
