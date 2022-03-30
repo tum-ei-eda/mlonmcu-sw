@@ -23,7 +23,7 @@ SET(MLONMCU_FRAMEWORK
     ""
     CACHE STRING "Specify which backend to use."
 )
-SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflite tvm)
+SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
 
 SET(ENABLE_LTO
     OFF
@@ -97,16 +97,4 @@ ENDIF()
 
 IF(NOT SRC_DIR)
     MESSAGE(FATAL_ERROR "The variable SRC_DIR is not set")
-ENDIF()
-
-IF(EXISTS ${OUTPUT_DIR}/tflm_src)
-    ADD_SUBDIRECTORY(tflite)
-ELSE()
-    MESSAGE(STATUS "Skipping 'tflite' because ${OUTPUT_DIR}/tflm_src does not exist...")
-ENDIF()
-
-IF(EXISTS ${OUTPUT_DIR}/tvm_src)
-    ADD_SUBDIRECTORY(tvm)
-ELSE()
-    MESSAGE(STATUS "Skipping 'tvm' because ${OUTPUT_DIR}/tvm_src does not exist...")
 ENDIF()

@@ -137,7 +137,7 @@ IF(EXISTS ${TFLM_SRC}/flatbuffer_utils.cc)
 ENDIF()
 
 ADD_LIBRARY(
-    tflite STATIC
+    tflm STATIC
     # Not really needed?
     ${TFLM_SRC}/micro_error_reporter.cc
     ${TFLM_SRC}/debug_log.cc
@@ -167,12 +167,12 @@ ADD_LIBRARY(
 )
 
 IF(TFLM_EXTRA_KERNEL_LIBS)
-    TARGET_LINK_LIBRARIES(tflite PUBLIC ${TFLM_EXTRA_KERNEL_LIBS})
+    TARGET_LINK_LIBRARIES(tflm PUBLIC ${TFLM_EXTRA_KERNEL_LIBS})
 ENDIF()
-TARGET_LINK_LIBRARIES(tflite PUBLIC m)
+TARGET_LINK_LIBRARIES(tflm PUBLIC m)
 
 # cmake-format: off
-TARGET_INCLUDE_DIRECTORIES(tflite PUBLIC
+TARGET_INCLUDE_DIRECTORIES(tflm PUBLIC
     ${TF_DIR}
     ${TFLD_SRC}/flatbuffers/include
     ${TFLD_SRC}/gemmlowp
@@ -182,7 +182,7 @@ TARGET_INCLUDE_DIRECTORIES(tflite PUBLIC
 # cmake-format: on
 
 # cmake-format: off
-TARGET_COMPILE_DEFINITIONS(tflite PUBLIC
+TARGET_COMPILE_DEFINITIONS(tflm PUBLIC
     TF_LITE_USE_GLOBAL_CMATH_FUNCTIONS
     TF_LITE_USE_GLOBAL_MAX
     TF_LITE_USE_GLOBAL_MIN
@@ -208,7 +208,7 @@ TARGET_COMPILE_DEFINITIONS(tflite PUBLIC
 #
 # If disabling the exceptions has major disadvantages needs to be investigated.
 
-TARGET_COMPILE_OPTIONS(tflite PUBLIC
+TARGET_COMPILE_OPTIONS(tflm PUBLIC
     -fno-exceptions
 )
 # cmake-format: on
