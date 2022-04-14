@@ -35,7 +35,7 @@ SET(CMSIS_STARTUP_SRCS
     ${CMSIS_PATH}/Device/ARM/${ARM_CPU_SHORT}/Source/startup_${ARM_CPU_SHORT}.c
     ${CMSIS_PATH}/Device/ARM/${ARM_CPU_SHORT}/Source/system_${ARM_CPU_SHORT}.c
 )
-message(STATUS "CMSIS_STARTUP_SRCS=${CMSIS_STARTUP_SRCS}")
+# message(STATUS "CMSIS_STARTUP_SRCS=${CMSIS_STARTUP_SRCS}")
 target_sources(cmsis_startup PRIVATE ${CMSIS_STARTUP_SRCS})
 target_include_directories(cmsis_startup PUBLIC
     ${CMSIS_PATH}/Device/ARM/${ARM_CPU_SHORT}/Include
