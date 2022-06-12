@@ -12,10 +12,12 @@ ENDIF()
 set(ARM_COMPILER_PREFIX "" CACHE PATH "install location for gcc toolchain")
 set(ARM_COMPILER_BASENAME "arm-none-eabi" CACHE STRING "base name of the toolchain executables")
 
-IF("${ARM_COMPILER_PREFIX}" STREQUAL "")
-    set(TC_PREFIX "${ARM_COMPILER_BASENAME}-")
-ELSE()
-    set(TC_PREFIX "${ARM_COMPILER_PREFIX}/bin/${ARM_COMPILER_BASENAME}-")
+IF(NOT TC_PREFIX)
+    IF("${ARM_COMPILER_PREFIX}" STREQUAL "")
+        set(TC_PREFIX "${ARM_COMPILER_BASENAME}-")
+    ELSE()
+        set(TC_PREFIX "${ARM_COMPILER_PREFIX}/bin/${ARM_COMPILER_BASENAME}-")
+    ENDIF()
 ENDIF()
 
 set(CMAKE_C_COMPILER ${TC_PREFIX}gcc${EXE_EXT})
@@ -45,7 +47,8 @@ set(CMAKE_CXX_COMPILER_AR ${TC_PREFIX}ar${EXE_EXT})
 
 if(NOT ARM_CPU)
     set(
-            ARM_CPU "cortex-a5"
+            # ARM_CPU "cortex-a5"
+            ARM_CPU "cortex-m55"
             CACHE STRING "Set ARM CPU. Default : cortex-a5"
     )
 endif(NOT ARM_CPU)
