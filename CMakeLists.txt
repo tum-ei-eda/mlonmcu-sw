@@ -79,6 +79,11 @@ IF(ENABLE_LTO)
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} -Xlinker -flto")
 ENDIF()
 
+# TODO: pass list of features dynamically?
+IF(CMSISNN)
+    INCLUDE(features/cmsisnn)
+ENDIF()
+
 IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
