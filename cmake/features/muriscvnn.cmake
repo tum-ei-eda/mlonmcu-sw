@@ -30,6 +30,8 @@ SET(MURISCVNN_INCLUDE_DIRS
     ${MURISCVNN_DIR}/Include/CMSIS/NN/Include
 )
 
+# TODO: propagarting all toolchain specific vars does not scale well
+
 include(ExternalProject)
 ExternalProject_Add(muriscvnn
         PREFIX muriscvnn
@@ -43,6 +45,7 @@ ExternalProject_Add(muriscvnn
           -DENABLE_TESTS=OFF
           -DTC_PREFIX=${TC_PREFIX}
           -DEXE_EXT=${EXE_EXT}
+          -DETISS_DIR=${ETISS_DIR}
         BUILD_COMMAND "${CMAKE_COMMAND}" --build .
         INSTALL_COMMAND ""
 )

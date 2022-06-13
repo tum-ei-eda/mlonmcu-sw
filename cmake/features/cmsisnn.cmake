@@ -35,6 +35,8 @@ SET(CMSISNN_INCLUDE_DIRS
     ${CMSISNN_DIR}/CMSIS/DSP/Include
 )
 
+# TODO: propagarting all toolchain specific vars does not scale well
+
 include(ExternalProject)
 ExternalProject_Add(cmsisnn
         PREFIX cmsisnn
@@ -46,6 +48,7 @@ ExternalProject_Add(cmsisnn
           -DTC_PREFIX=${TC_PREFIX}
           -DEXE_EXT=${EXE_EXT}
           -DARM_CPU=${ARM_CPU}
+          -DETISS_DIR=${ETISS_DIR}
         BUILD_COMMAND "${CMAKE_COMMAND}" --build .
         INSTALL_COMMAND ""
 )
