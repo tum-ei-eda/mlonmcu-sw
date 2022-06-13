@@ -157,16 +157,17 @@ ADD_LIBRARY(
     ${TFLM_SRC}/micro_utils.cc
     ${TFL_SRC}/kernels/internal/quantization_util.cc
     ${TFL_SRC}/kernels/kernel_util.cc
-    ${TFL_SRC}/c/common.c
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
-    ${TFLM_SRC}/simple_memory_allocator.cc
+    ${TFLM_SRC}/micro_allocation_info.cc
+    ${TFLM_SRC}/micro_resource_variable.cc
+    ${TFLM_SRC}/arena_allocator/simple_memory_allocator.cc
     ${TFLM_SRC}/memory_helpers.cc
     ${TFLM_SRC}/memory_planner/greedy_memory_planner.cc
     ${TFL_SRC}/core/api/tensor_utils.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
-
+    ${TFL_SRC}/c/common.cc
     ${OPT_SRC}
 )
 
