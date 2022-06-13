@@ -6,11 +6,13 @@ set(RISCV_ELF_GCC_BASENAME "riscv64-unknown-elf" CACHE STRING "base name of the 
 set(RISCV_ARCH "rv32gc" CACHE STRING "march argument to the compiler")
 # set(RISCV_ARCH "rv32gcv" CACHE STRING "march argument to the compiler")
 set(RISCV_ABI "ilp32d" CACHE STRING "mabi argument to the compiler")
+set(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
 SET(ETISS_DIR "" CACHE STRING "Directory of ETISS")
 
 SET(PULPINO_TC_DIR ${ETISS_DIR}/examples/SW/riscv/cmake)
 ADD_DEFINITIONS(-DPULPINO_NO_GPIO)
+
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PULPINO_TC_DIR}")
 IF(NOT PULPINO_ROM_START)
     SET(PULPINO_ROM_START 0x0)

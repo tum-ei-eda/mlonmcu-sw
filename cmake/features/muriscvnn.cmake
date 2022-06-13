@@ -39,7 +39,8 @@ ExternalProject_Add(muriscvnn
           -DENABLE_TESTS=OFF
           -DTC_PREFIX=${TC_PREFIX}
           -DEXE_EXT=${EXE_EXT}
-          -DETISS_DIR=${ETISS_DIR}
+          -DRISCV_ARCH=${RISCV_ARCH}
+          -DRISCV_ABI=${RISCV_ABI}
         BUILD_COMMAND "${CMAKE_COMMAND}" --build .
         INSTALL_COMMAND ""
 )

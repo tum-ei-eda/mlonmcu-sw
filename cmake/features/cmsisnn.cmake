@@ -42,7 +42,8 @@ ExternalProject_Add(cmsisnn
           -DTC_PREFIX=${TC_PREFIX}
           -DEXE_EXT=${EXE_EXT}
           -DARM_CPU=${ARM_CPU}
-          -DETISS_DIR=${ETISS_DIR}
+          -DRISCV_ARCH=${RISCV_ARCH}
+          -DRISCV_ABI=${RISCV_ABI}
         BUILD_COMMAND "${CMAKE_COMMAND}" --build .
         INSTALL_COMMAND ""
 )
