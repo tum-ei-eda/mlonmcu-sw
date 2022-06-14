@@ -41,6 +41,7 @@ ExternalProject_Add(muriscvnn
           -DEXE_EXT=${EXE_EXT}
           -DRISCV_ARCH=${RISCV_ARCH}
           -DRISCV_ABI=${RISCV_ABI}
+          -DARM_CPU=${ARM_CPU}
         BUILD_COMMAND "${CMAKE_COMMAND}" --build .
         INSTALL_COMMAND ""
 )
