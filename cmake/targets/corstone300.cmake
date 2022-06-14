@@ -3,6 +3,8 @@
 set(CMAKE_SYSTEM_PROCESSOR "cortex-m55")  # TODO: make this variable
 if(NOT ARM_CPU)
     set(ARM_CPU ${CMAKE_SYSTEM_PROCESSOR})
+else()
+    set(CMAKE_SYSTEM_PROCESSOR ${ARM_CPU})
 endif()
 set(CMSIS_PATH "" CACHE PATH "Path to CMSIS.")
 
