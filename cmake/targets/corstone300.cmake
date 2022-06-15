@@ -20,8 +20,11 @@ set(FVP_CORSTONE_300_PATH "${CMSIS_PATH}/CMSIS/NN/Tests/UnitTest/Corstone-300" C
 # set(CMAKE_EXECUTABLE_SUFFIX ".elf")
 
 add_library(retarget STATIC
-    ${FVP_CORSTONE_300_PATH}/retarget.c
-    ${FVP_CORSTONE_300_PATH}/uart.c)
+    # ${FVP_CORSTONE_300_PATH}/retarget.c
+    ${CMAKE_CURRENT_LIST_DIR}/corstone300/retarget.c
+    #${FVP_CORSTONE_300_PATH}/uart.c)
+    ${CMAKE_CURRENT_LIST_DIR}/corstone300/uart.c
+)
 
 # Build CMSIS startup dependencies based on TARGET_CPU.
 string(REGEX REPLACE "^cortex-m([0-9]+)$" "ARMCM\\1" ARM_CPU_SHORT ${CMAKE_SYSTEM_PROCESSOR})
