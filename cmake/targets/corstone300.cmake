@@ -73,6 +73,20 @@ MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
     target_link_options(${TARGET_NAME} PRIVATE "--specs=nosys.specs")
 ENDMACRO()
 
+MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
+    ADD_LIBRARY(${TARGET_NAME} ${ARGN})
+    if(ARM_DSP)
+        if(NOT CMSIS_PATH)
+            message(FATAL_ERROR "Missing value: CMSIS_PATH")
+        endif()
+        target_include_directories(${TARGET_NAME} PUBLIC
+            ${CMSIS_PATH}/CMSIS/Core/Include
+            ${CMSIS_PATH}/CMSIS/DSP/Include
+            ${CMSIS_PATH}/CMSIS/NN/Include
+        )
+    endif()
+ENDMACRO()
+
 
 # Alternative: target_pre target_post hooks?
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
