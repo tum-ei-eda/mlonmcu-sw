@@ -1,12 +1,7 @@
 SET(TVM_OUT_DIR ${SRC_DIR}/codegen/host/)
 SET(EXTRA_SRC ml_interface_tvm.c)
 
-FILE(
-    GLOB
-    TVM_SRCS
-    ${TVM_OUT_DIR}/src/*_lib*.c
-    ${TVM_OUT_DIR}/src/*_lib*.cc
-)
+FILE(GLOB TVM_SRCS ${TVM_OUT_DIR}/src/*_lib*.c ${TVM_OUT_DIR}/src/*_lib*.cc)
 
 # Need this in extra target to avoid circular dependency .
 COMMON_ADD_LIBRARY(tvm_extension STATIC ${TVM_SRCS})

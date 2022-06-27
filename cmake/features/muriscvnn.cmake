@@ -19,34 +19,31 @@ IF(NOT MURISCVNN_TOOLCHAIN)
     # SET(MURISCVVN_TOOLCHAIN NONE)
 ENDIF()
 
-SET(MURISCVNN_INCLUDE_DIRS
-    ${MURISCVNN_DIR}/Include
-    ${MURISCVNN_DIR}/Include/CMSIS/NN/Include
-)
+SET(MURISCVNN_INCLUDE_DIRS ${MURISCVNN_DIR}/Include ${MURISCVNN_DIR}/Include/CMSIS/NN/Include)
 
 # TODO: propagarting all toolchain specific vars does not scale well
 
-include(ExternalProject)
-ExternalProject_Add(muriscvnn
-        PREFIX muriscvnn
-        SOURCE_DIR ${MURISCVNN_DIR}
-        CMAKE_ARGS
-          -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
-          -DUSE_VEXT=${USE_VEXT}
-          -DUSE_PEXT=${USE_PEXT}
-          -DTOOLCHAIN=${MURISCVNN_TOOLCHAIN}
-          -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-          -DENABLE_TESTS=OFF
-          -DTC_PREFIX=${TC_PREFIX}
-          -DEXE_EXT=${EXE_EXT}
-          -DRISCV_ARCH=${RISCV_ARCH}
-          -DRISCV_ABI=${RISCV_ABI}
-          -DARM_CPU=${ARM_CPU}
-        BUILD_COMMAND "${CMAKE_COMMAND}" --build .
-        INSTALL_COMMAND ""
+INCLUDE(ExternalProject)
+EXTERNALPROJECT_ADD(
+    muriscvnn
+    PREFIX muriscvnn
+    SOURCE_DIR ${MURISCVNN_DIR}
+    CMAKE_ARGS -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
+               -DUSE_VEXT=${USE_VEXT}
+               -DUSE_PEXT=${USE_PEXT}
+               -DTOOLCHAIN=${MURISCVNN_TOOLCHAIN}
+               -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+               -DENABLE_TESTS=OFF
+               -DTC_PREFIX=${TC_PREFIX}
+               -DEXE_EXT=${EXE_EXT}
+               -DRISCV_ARCH=${RISCV_ARCH}
+               -DRISCV_ABI=${RISCV_ABI}
+               -DARM_CPU=${ARM_CPU}
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build .
+    INSTALL_COMMAND ""
 )
 
-ExternalProject_Get_Property(muriscvnn BINARY_DIR)
+EXTERNALPROJECT_GET_PROPERTY(muriscvnn BINARY_DIR)
 SET(MURISCVNN_LIB ${BINARY_DIR}/Source/libmuriscv_nn.a)
 
 # TFLite integration

@@ -1,14 +1,29 @@
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR Pulpino)
+SET(CMAKE_SYSTEM_NAME Generic)
+SET(CMAKE_SYSTEM_PROCESSOR Pulpino)
 
-set(RISCV_ELF_GCC_PREFIX "" CACHE PATH "install location for riscv-gcc toolchain")
-set(RISCV_ELF_GCC_BASENAME "riscv64-unknown-elf" CACHE STRING "base name of the toolchain executables")
-set(RISCV_ARCH "rv32gc" CACHE STRING "march argument to the compiler")
+SET(RISCV_ELF_GCC_PREFIX
+    ""
+    CACHE PATH "install location for riscv-gcc toolchain"
+)
+SET(RISCV_ELF_GCC_BASENAME
+    "riscv64-unknown-elf"
+    CACHE STRING "base name of the toolchain executables"
+)
+SET(RISCV_ARCH
+    "rv32gc"
+    CACHE STRING "march argument to the compiler"
+)
 # set(RISCV_ARCH "rv32gcv" CACHE STRING "march argument to the compiler")
-set(RISCV_ABI "ilp32d" CACHE STRING "mabi argument to the compiler")
-set(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
+SET(RISCV_ABI
+    "ilp32d"
+    CACHE STRING "mabi argument to the compiler"
+)
+SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
-SET(ETISS_DIR "" CACHE STRING "Directory of ETISS")
+SET(ETISS_DIR
+    ""
+    CACHE STRING "Directory of ETISS"
+)
 
 SET(PULPINO_TC_DIR ${ETISS_DIR}/examples/SW/riscv/cmake)
 ADD_DEFINITIONS(-DPULPINO_NO_GPIO)
@@ -42,6 +57,6 @@ ENDMACRO()
 
 ADD_DEFINITIONS(-DBUILDING_FOR_ETISS)
 
-add_definitions(-D__riscv__)
-add_definitions(-march=${RISCV_ARCH})
-add_definitions(-mabi=${RISCV_ABI})
+ADD_DEFINITIONS(-D__riscv__)
+ADD_DEFINITIONS(-march=${RISCV_ARCH})
+ADD_DEFINITIONS(-mabi=${RISCV_ABI})

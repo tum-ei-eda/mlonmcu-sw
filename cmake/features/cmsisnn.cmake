@@ -15,40 +15,33 @@ ELSE()
 ENDIF()
 
 SET(BUILD_FLAGS "")
-# IF(USE_MVEI)
-#     SET(BUILD_FLAGS "${BUILD_FLAGS} -D__ARM_FEATURE_MVE=1 -DARM_MATH_MVEI=1")
-# ENDIF()
-# IF(USE_DSP)
-#     SET(BUILD_FLAGS "${BUILD_FLAGS} -D__ARM_FEATURE_DSP=1 -DARM_MATH_DSP=1")
-# ENDIF()
+# IF(USE_MVEI) SET(BUILD_FLAGS "${BUILD_FLAGS} -D__ARM_FEATURE_MVE=1 -DARM_MATH_MVEI=1") ENDIF() IF(USE_DSP)
+# SET(BUILD_FLAGS "${BUILD_FLAGS} -D__ARM_FEATURE_DSP=1 -DARM_MATH_DSP=1") ENDIF()
 
-SET(CMSISNN_INCLUDE_DIRS
-    ${CMSISNN_DIR}
-    ${CMSISNN_DIR}/CMSIS/Core/Include
-    ${CMSISNN_DIR}/CMSIS/NN/Include
-    ${CMSISNN_DIR}/CMSIS/DSP/Include
+SET(CMSISNN_INCLUDE_DIRS ${CMSISNN_DIR} ${CMSISNN_DIR}/CMSIS/Core/Include ${CMSISNN_DIR}/CMSIS/NN/Include
+                         ${CMSISNN_DIR}/CMSIS/DSP/Include
 )
 
 # TODO: propagarting all toolchain specific vars does not scale well
 
-include(ExternalProject)
-ExternalProject_Add(cmsisnn
-        PREFIX cmsisnn
-        SOURCE_DIR ${CMSISNN_DIR}/CMSIS/NN/
-        CMAKE_ARGS
-          -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
-          -DCMAKE_C_FLAGS:STRING=${BUILD_FLAGS}
-          -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-          -DTC_PREFIX=${TC_PREFIX}
-          -DEXE_EXT=${EXE_EXT}
-          -DARM_CPU=${ARM_CPU}
-          -DRISCV_ARCH=${RISCV_ARCH}
-          -DRISCV_ABI=${RISCV_ABI}
-        BUILD_COMMAND "${CMAKE_COMMAND}" --build .
-        INSTALL_COMMAND ""
+INCLUDE(ExternalProject)
+EXTERNALPROJECT_ADD(
+    cmsisnn
+    PREFIX cmsisnn
+    SOURCE_DIR ${CMSISNN_DIR}/CMSIS/NN/
+    CMAKE_ARGS -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
+               -DCMAKE_C_FLAGS:STRING=${BUILD_FLAGS}
+               -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
+               -DTC_PREFIX=${TC_PREFIX}
+               -DEXE_EXT=${EXE_EXT}
+               -DARM_CPU=${ARM_CPU}
+               -DRISCV_ARCH=${RISCV_ARCH}
+               -DRISCV_ABI=${RISCV_ABI}
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build .
+    INSTALL_COMMAND ""
 )
 
-ExternalProject_Get_Property(cmsisnn BINARY_DIR)
+EXTERNALPROJECT_GET_PROPERTY(cmsisnn BINARY_DIR)
 SET(CMSISNN_LIB ${BINARY_DIR}/Source/libcmsis-nn.a)
 
 # TFLite integration
