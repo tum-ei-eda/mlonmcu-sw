@@ -6,17 +6,15 @@
 
 #ifndef NUM_RUNS
 #define NUM_RUNS 1
-#endif  /* NUM_RUNS */
+#endif /* NUM_RUNS */
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-
 // This runs the ML model using the callbacks above.
 // The default implementation will run with garbage data.
 void mlif_run();
-
 
 // These can be overridden by use code.
 
@@ -30,17 +28,17 @@ void mlif_handle_result(void *model_output_ptr, size_t model_output_sz);
 void mlif_process_input(const void *in_data, size_t in_size, void *model_input_ptr, size_t model_input_sz);
 // Callback for any postprocessing on the output data. The default implementation prints
 // the output and verifies consistency with the expected output.
-void mlif_process_output(void *model_output_ptr, size_t model_output_sz, const void *expected_out_data, size_t expected_out_size);
+void mlif_process_output(void *model_output_ptr, size_t model_output_sz, const void *expected_out_data,
+                         size_t expected_out_size);
 
 extern const int num_data_buffers_in;
 extern const int num_data_buffers_out;
-extern const unsigned char * const data_buffers_in[];
-extern const unsigned char * const data_buffers_out[];
+extern const unsigned char *const data_buffers_in[];
+extern const unsigned char *const data_buffers_out[];
 extern const size_t data_size_in[];
 extern const size_t data_size_out[];
 
 extern const int num;
-
 
 #ifdef __cplusplus
 }

@@ -52,10 +52,11 @@ void init_target() {
 
 void deinit_target() {
   int32_t stop_cycles = GetCurrentTimeTicks();
-  int32_t diff_cycles = stop_cycles-start_cycles;
+  int32_t diff_cycles = stop_cycles - start_cycles;
   // int32_t diff_ms = diff_cycles / (ticks_per_second() / 1000);
   // printf("Total Time: %ld ms\n", diff_ms);
   printf("Total Cycles: %ld\n", diff_cycles);
   printf("EXITTHESIM\n");
-  while (1);
+  while (1)
+    ;
 }

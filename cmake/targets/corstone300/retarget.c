@@ -35,42 +35,39 @@ unsigned char UartPutc(unsigned char ch) { return uart_putc(ch); }
 
 unsigned char UartGetc(void) { return uart_putc(uart_getc()); }
 
-__attribute__((noreturn)) void UartEndSimulation(int code)
-{
-    UartPutc((char)0x4);  // End of simulation
-    UartPutc((char)code); // Exit code
-    while (1)
-    {
-    }
+__attribute__((noreturn)) void UartEndSimulation(int code) {
+  UartPutc((char)0x4);   // End of simulation
+  UartPutc((char)code);  // Exit code
+  while (1) {
+  }
 }
 
-void exit(int code)
-{
-    /* Print out the exit code on the uart so any reader know how we exit. */
-    /* By appending 0x04, ASCII for end-of-transmission the FVP model exits,
-     * if the configuration parameter shutdown_on_eot on the uart is enabled.
-     * For some versions of FVP, the shutdown_on_eot is broken, but the same
-     * behaviour can be created by passing specifying a shutdown_tag= for the
-     * uart when starting the model so that is added last as well.
-     */
-    printf("Application exit code: %d.\n"  // Let the readers know how we exit
-           "\04\n"                         // end-of-transmission
-           "EXITTHESIM\n",                 // shutdown_tag
-           code);
-    while (1) {}
+void exit(int code) {
+  /* Print out the exit code on the uart so any reader know how we exit. */
+  /* By appending 0x04, ASCII for end-of-transmission the FVP model exits,
+   * if the configuration parameter shutdown_on_eot on the uart is enabled.
+   * For some versions of FVP, the shutdown_on_eot is broken, but the same
+   * behaviour can be created by passing specifying a shutdown_tag= for the
+   * uart when starting the model so that is added last as well.
+   */
+  printf(
+      "Application exit code: %d.\n"  // Let the readers know how we exit
+      "\04\n"                         // end-of-transmission
+      "EXITTHESIM\n",                 // shutdown_tag
+      code);
+  while (1) {
+  }
 }
 
 #if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100) && !defined(GCCCOMPILER)
-int fputc(int ch, FILE *f)
-{
-    (void)(f);
-    return UartPutc(ch);
+int fputc(int ch, FILE *f) {
+  (void)(f);
+  return UartPutc(ch);
 }
 
-int fgetc(FILE *f)
-{
-    (void)f;
-    return UartPutc(UartGetc());
+int fgetc(FILE *f) {
+  (void)f;
+  return UartPutc(UartGetc());
 }
 #else
 int SER_PutChar(int c) { return UartPutc(c); }
@@ -95,143 +92,124 @@ const char __stderr_name[] = ":STDERR";
   The following _sys_xxx functions are defined in rt_sys.h.
 */
 
-__attribute__((weak)) FILEHANDLE _sys_open(const char *name, int openmode)
-{
-    (void)openmode;
+__attribute__((weak)) FILEHANDLE _sys_open(const char *name, int openmode) {
+  (void)openmode;
 
-    if (name == NULL)
-    {
-        return (-1);
-    }
-
-    if (name[0] == ':')
-    {
-        if (strcmp(name, ":STDIN") == 0)
-        {
-            return (FH_STDIN);
-        }
-        if (strcmp(name, ":STDOUT") == 0)
-        {
-            return (FH_STDOUT);
-        }
-        if (strcmp(name, ":STDERR") == 0)
-        {
-            return (FH_STDERR);
-        }
-        return (-1);
-    }
-
+  if (name == NULL) {
     return (-1);
-}
+  }
 
-__attribute__((weak)) int _sys_close(FILEHANDLE fh)
-{
-
-    switch (fh)
-    {
-    case FH_STDIN:
-        return (0);
-    case FH_STDOUT:
-        return (0);
-    case FH_STDERR:
-        return (0);
+  if (name[0] == ':') {
+    if (strcmp(name, ":STDIN") == 0) {
+      return (FH_STDIN);
     }
-
+    if (strcmp(name, ":STDOUT") == 0) {
+      return (FH_STDOUT);
+    }
+    if (strcmp(name, ":STDERR") == 0) {
+      return (FH_STDERR);
+    }
     return (-1);
+  }
+
+  return (-1);
 }
 
-__attribute__((weak)) int _sys_write(FILEHANDLE fh, const uint8_t *buf, uint32_t len, int mode)
-{
-    (void)buf;
-    (void)len;
-    (void)mode;
+__attribute__((weak)) int _sys_close(FILEHANDLE fh) {
 
-    switch (fh)
-    {
+  switch (fh) {
     case FH_STDIN:
-        return (-1);
+      return (0);
     case FH_STDOUT:
-        return (0);
+      return (0);
     case FH_STDERR:
-        return (0);
-    }
+      return (0);
+  }
 
-    return (-1);
+  return (-1);
 }
 
-__attribute__((weak)) int _sys_read(FILEHANDLE fh, uint8_t *buf, uint32_t len, int mode)
-{
-    (void)buf;
-    (void)len;
-    (void)mode;
+__attribute__((weak)) int _sys_write(FILEHANDLE fh, const uint8_t *buf, uint32_t len, int mode) {
+  (void)buf;
+  (void)len;
+  (void)mode;
 
-    switch (fh)
-    {
+  switch (fh) {
     case FH_STDIN:
-        return ((int)(len | 0x80000000U));
+      return (-1);
     case FH_STDOUT:
-        return (-1);
+      return (0);
     case FH_STDERR:
-        return (-1);
-    }
+      return (0);
+  }
 
-    return (-1);
+  return (-1);
 }
 
-__attribute__((weak)) int _sys_istty(FILEHANDLE fh)
-{
+__attribute__((weak)) int _sys_read(FILEHANDLE fh, uint8_t *buf, uint32_t len, int mode) {
+  (void)buf;
+  (void)len;
+  (void)mode;
 
-    switch (fh)
-    {
+  switch (fh) {
     case FH_STDIN:
-        return (1);
+      return ((int)(len | 0x80000000U));
     case FH_STDOUT:
-        return (1);
+      return (-1);
     case FH_STDERR:
-        return (1);
-    }
+      return (-1);
+  }
 
-    return (0);
+  return (-1);
 }
 
-__attribute__((weak)) int _sys_seek(FILEHANDLE fh, long pos)
-{
-    (void)pos;
+__attribute__((weak)) int _sys_istty(FILEHANDLE fh) {
 
-    switch (fh)
-    {
+  switch (fh) {
     case FH_STDIN:
-        return (-1);
+      return (1);
     case FH_STDOUT:
-        return (-1);
+      return (1);
     case FH_STDERR:
-        return (-1);
-    }
+      return (1);
+  }
 
-    return (-1);
+  return (0);
 }
 
-__attribute__((weak)) long _sys_flen(FILEHANDLE fh)
-{
+__attribute__((weak)) int _sys_seek(FILEHANDLE fh, long pos) {
+  (void)pos;
 
-    switch (fh)
-    {
+  switch (fh) {
     case FH_STDIN:
-        return (0);
+      return (-1);
     case FH_STDOUT:
-        return (0);
+      return (-1);
     case FH_STDERR:
-        return (0);
-    }
+      return (-1);
+  }
 
-    return (0);
+  return (-1);
 }
 
-__attribute__((weak)) char *(_sys_command_string)(char *cmd, int len)
-{
-    (void)len;
+__attribute__((weak)) long _sys_flen(FILEHANDLE fh) {
 
-    return cmd;
+  switch (fh) {
+    case FH_STDIN:
+      return (0);
+    case FH_STDOUT:
+      return (0);
+    case FH_STDERR:
+      return (0);
+  }
+
+  return (0);
+}
+
+__attribute__((weak)) char *(_sys_command_string)(char *cmd, int len) {
+  (void)len;
+
+  return cmd;
 }
 
 __attribute__((weak)) void(_sys_exit)(int return_code) { exit(return_code); }
@@ -241,65 +219,55 @@ __attribute__((weak)) void(_sys_exit)(int return_code) { exit(return_code); }
    Copied from CMSIS/DSP/DSP_Lib_TestSuite/Common/platform/GCC/Retarget.c
 */
 
-int _open(const char *path, int flags, ...)
-{
-    (void)path;
-    (void)flags;
-    return (-1);
+int _open(const char *path, int flags, ...) {
+  (void)path;
+  (void)flags;
+  return (-1);
 }
 
-int _close(int fd)
-{
-    (void)fd;
-    return (-1);
+int _close(int fd) {
+  (void)fd;
+  return (-1);
 }
 
-int _lseek(int fd, int ptr, int dir)
-{
-    (void)fd;
-    (void)ptr;
-    (void)dir;
-    return (0);
+int _lseek(int fd, int ptr, int dir) {
+  (void)fd;
+  (void)ptr;
+  (void)dir;
+  return (0);
 }
 
-int __attribute__((weak)) _fstat(int fd, struct stat *st)
-{
-    (void)fd;
-    memset(st, 0, sizeof(*st));
-    st->st_mode = S_IFCHR;
-    return (0);
+int __attribute__((weak)) _fstat(int fd, struct stat *st) {
+  (void)fd;
+  memset(st, 0, sizeof(*st));
+  st->st_mode = S_IFCHR;
+  return (0);
 }
 
-int _isatty(int fd)
-{
-    (void)fd;
-    return (1);
+int _isatty(int fd) {
+  (void)fd;
+  return (1);
 }
 
-int _read(int fd, char *ptr, int len)
-{
-    (void)fd;
-    char c;
-    int i;
+int _read(int fd, char *ptr, int len) {
+  (void)fd;
+  char c;
+  int i;
 
-    for (i = 0; i < len; i++)
-    {
-        c = SER_GetChar();
-        if (c == 0x0D)
-            break;
-        *ptr++ = c;
-        SER_PutChar(c);
-    }
-    return (len - i);
+  for (i = 0; i < len; i++) {
+    c = SER_GetChar();
+    if (c == 0x0D) break;
+    *ptr++ = c;
+    SER_PutChar(c);
+  }
+  return (len - i);
 }
 
-int _write(int fd, char *ptr, int len)
-{
-    (void)fd;
-    int i;
+int _write(int fd, char *ptr, int len) {
+  (void)fd;
+  int i;
 
-    for (i = 0; i < len; i++)
-        SER_PutChar(*ptr++);
-    return (i);
+  for (i = 0; i < len; i++) SER_PutChar(*ptr++);
+  return (i);
 }
 #endif
