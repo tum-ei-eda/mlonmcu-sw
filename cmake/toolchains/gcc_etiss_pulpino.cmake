@@ -17,3 +17,28 @@ SET(CMAKE_RANLIB ${TC_PREFIX}ranlib${EXE_EXT})
 SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}")
+
+IF(RISCV_AUTO_VECTORIZE)
+   IF(NOT RISCV_VEXT)
+       MESSAGE(FATAL_ERROR "RISCV_AUTO_VECTORIZE requires RISCV_VEXT")
+   ENDIF()
+   IF(RISCV_RVV_VLEN)
+       SET(VLEN ${RISCV_RVV_VLEN})
+   ELSE()
+       SET(VLEN "?")
+   ENDIF()
+    SET(CMAKE_CXX_FLAGS_RELEASE
+        "${CMAKE_CXX_FLAGS_RELEASE} \
+        -mrvv \
+        -ftree-vectorize \
+        -mriscv-vector-bits=${VLEN} \
+    "
+    )
+    SET(CMAKE_C_FLAGS_RELEASE
+        "${CMAKE_C_FLAGS_RELEASE} \
+        -mrvv \
+        -ftree-vectorize \
+        -mriscv-vector-bits=${VLEN} \
+    "
+    )
+ENDIF()

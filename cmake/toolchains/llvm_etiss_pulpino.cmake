@@ -27,3 +27,26 @@ SET(CMAKE_ASM_FLAGS
 )
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld-13")
+
+IF(RISCV_AUTO_VECTORIZE)
+   IF(NOT RISCV_VEXT)
+       MESSAGE(FATAL_ERROR "RISCV_AUTO_VECTORIZE requires RISCV_VEXT")
+   ENDIF()
+   IF(RISCV_RVV_VLEN)
+       SET(VLEN ${RISCV_RVV_VLEN})
+   ELSE()
+       SET(VLEN "?")
+   ENDIF()
+    SET(CMAKE_CXX_FLAGS_RELEASE
+        "${CMAKE_CXX_FLAGS_RELEASE} \
+        -mllvm \
+        --riscv-v-vector-bits-min=${VLEN} \
+    "
+    )
+    SET(CMAKE_C_FLAGS_RELEASE
+        "${CMAKE_C_FLAGS_RELEASE} \
+        -mllvm \
+        --riscv-v-vector-bits-min=${VLEN} \
+    "
+    )
+ENDIF()
