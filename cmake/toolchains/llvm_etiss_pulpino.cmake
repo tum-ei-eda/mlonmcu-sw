@@ -5,22 +5,31 @@ SET(CMAKE_CXX_COMPILER clang++-13)
 SET(CMAKE_ASM_COMPILER clang-13)
 # set(CMAKE_C_LINKER lld-13) # TODO(fabianpedd): doesnt work, need to use -fuse-ld=lld-13 instead
 
+IF(RISCV_VEXT)
+    IF(NOT RISCV_RVV_MAJOR OR NOT RISCV_RVV_MINOR)
+        MESSAGE(FATAL_ERROR "RISCV_VEXT requires RISCV_RVV_MAJOR and RISCV_RVV_MINOR")
+    ENDIF()
+    SET(RISCV_ARCH_FULL "${RISCV_ARCH}${RISCV_RVV_MAJOR}p${RISCV_RVV_MINOR}")
+ELSE()
+    SET(RISCV_ARCH_FULL ${RISCV_ARCH})
+ENDIF()
+
 SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} --target=riscv32 -march=${RISCV_ARCH} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
+    "${CMAKE_C_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
 )
 SET(CMAKE_C_FLAGS
     "${CMAKE_C_FLAGS} --gcc-toolchain=${RISCV_GCC_PREFIX} --sysroot=${RISCV_GCC_PREFIX}/${RISCV_GCC_BASENAME}"
 )
 
 SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} --target=riscv32 -march=${RISCV_ARCH} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
+    "${CMAKE_CXX_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
 )
 SET(CMAKE_CXX_FLAGS
     "${CMAKE_CXX_FLAGS} --gcc-toolchain=${RISCV_GCC_PREFIX} --sysroot=${RISCV_GCC_PREFIX}/${RISCV_GCC_BASENAME}"
 )
 
 SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} --target=riscv32 -march=${RISCV_ARCH} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
+    "${CMAKE_ASM_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
 )
 SET(CMAKE_ASM_FLAGS
     "${CMAKE_ASM_FLAGS} --gcc-toolchain=${RISCV_GCC_PREFIX} --sysroot=${RISCV_GCC_PREFIX}/${RISCV_GCC_BASENAME}"
