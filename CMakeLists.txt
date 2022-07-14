@@ -25,6 +25,12 @@ SET(MLONMCU_FRAMEWORK
 )
 SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
 
+SET(OPTIMIZE
+    "s"
+    CACHE STRING "Specify compiler optimization level should be used in release mode."
+)
+SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
+
 SET(ENABLE_LTO
     OFF
     CACHE BOOL "Whether to enable link-time optimization"
@@ -51,7 +57,7 @@ SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE
     "${CMAKE_CXX_FLAGS_RELEASE} \
-    -Os \
+    -O${OPTIMIZE} \
     -ffunction-sections \
     -fdata-sections \
     -fno-rtti \
@@ -61,7 +67,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE
 )
 SET(CMAKE_C_FLAGS_RELEASE
     "${CMAKE_C_FLAGS_RELEASE} \
-    -Os \
+    -O${OPTIMIZE} \
     -ffunction-sections \
     -fdata-sections \
 "
