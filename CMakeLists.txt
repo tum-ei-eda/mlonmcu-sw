@@ -105,6 +105,10 @@ IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
 
+IF(RISCV_AUTO_VECTORIZE)
+    INCLUDE(features/auto_vectorize_${TOOLCHAIN})
+ENDIF()
+
 INCLUDE(backends/${MLONMCU_BACKEND})
 INCLUDE(frameworks/${MLONMCU_FRAMEWORK})
 
