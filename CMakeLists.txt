@@ -26,7 +26,7 @@ SET(MLONMCU_FRAMEWORK
 SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
 
 SET(OPTIMIZE
-    "s"
+    "3"
     CACHE STRING "Specify compiler optimization level should be used in release mode."
 )
 SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
