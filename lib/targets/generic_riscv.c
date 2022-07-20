@@ -70,9 +70,39 @@ static inline uint32_t rdinstret(void) {
 #endif
 }
 
+/**
+ * @brief Enables the vector extension (as well as the floating point extension).
+ */
+static inline void enable_fext(void)
+{
+#if defined(__riscv) || defined(__riscv__)
+    __asm__ volatile("li t0, 1<<13 \n"
+                     "csrs mstatus, t0 \n" ::
+                         : "t0");
+#endif
+}
+
+/**
+ * @brief Enables the vector extension (as well as the floating point extension).
+ */
+static inline void enable_vext(void)
+{
+#if defined(__riscv) || defined(__riscv__)
+    __asm__ volatile("li t0, 1<<9+1<<13 \n"
+                     "csrs mstatus, t0 \n" ::
+                         : "t0");
+#endif
+}
+
 static uint64_t start_cycles = 0;
 
-void init_target() { start_cycles = rdcycle64(); }
+void init_target() {
+  enable_fext();
+#ifdef USE_VEXT
+  enable_vext();
+#endif
+  start_cycles = rdcycle64();
+}
 
 void deinit_target() {
   uint64_t stop_cycles = rdcycle64();
