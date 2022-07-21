@@ -97,9 +97,9 @@ static inline void enable_vext(void)
 static uint64_t start_cycles = 0;
 
 void init_target() {
-  enable_fext();
+  // enable_fext();
 #ifdef USE_VEXT
-  enable_vext();
+  // enable_vext();
 #endif
   start_cycles = rdcycle64();
 }

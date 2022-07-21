@@ -8,4 +8,5 @@ int main() {
   init_target();
   mlif_run();
   deinit_target();
+  return 0;
 }
