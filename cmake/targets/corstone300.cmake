@@ -12,7 +12,6 @@ SET(CMSIS_PATH
 )
 
 ADD_COMPILE_OPTIONS(
-    -Ofast
     -fomit-frame-pointer
     # -Werror
     -Wunused-variable
