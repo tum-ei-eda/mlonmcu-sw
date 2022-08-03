@@ -35,6 +35,8 @@ EXTERNALPROJECT_ADD(
                -DTC_PREFIX=${TC_PREFIX}
                -DEXE_EXT=${EXE_EXT}
                -DARM_CPU=${ARM_CPU}
+               -DARM_FLOAT_ABI=${ARM_FLOAT_ABI}
+               -DARM_FPU=${ARM_FPU}
                -DRISCV_ARCH=${RISCV_ARCH}
                -DRISCV_ABI=${RISCV_ABI}
     BUILD_COMMAND "${CMAKE_COMMAND}" --build .
