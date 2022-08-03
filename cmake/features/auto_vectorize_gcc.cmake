@@ -8,14 +8,12 @@ ELSE()
 ENDIF()
 SET(CMAKE_CXX_FLAGS_RELEASE
     "${CMAKE_CXX_FLAGS_RELEASE} \
-    -mrvv \
     -ftree-vectorize \
     -mriscv-vector-bits=${VLEN} \
 "
 )
 SET(CMAKE_C_FLAGS_RELEASE
     "${CMAKE_C_FLAGS_RELEASE} \
-    -mrvv \
     -ftree-vectorize \
     -mriscv-vector-bits=${VLEN} \
 "
