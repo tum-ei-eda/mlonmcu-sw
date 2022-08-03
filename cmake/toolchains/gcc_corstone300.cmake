@@ -52,7 +52,7 @@ IF(NOT ARM_CPU)
         "cortex-m55"
         CACHE STRING "Set ARM CPU. Default : cortex-a5"
     )
-ENDIF(NOT ARM_CPU)
+ENDIF()
 
 SET(ARM_FPU
     "auto"
@@ -73,19 +73,15 @@ SET(CMAKE_CXX_FLAGS
     CACHE INTERNAL "C++ compiler common flags"
 )
 SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} -mfloat-abi=${ARM_FLOAT_ABI} -mcpu=${ARM_CPU} -mfpu="${ARM_FPU}"
+    "${CMAKE_ASM_FLAGS} -mfloat-abi=${ARM_FLOAT_ABI} -mcpu=${ARM_CPU} -mfpu=${ARM_FPU}"
     CACHE INTERNAL "ASM compiler common flags"
 )
 SET(CMAKE_EXE_LINKER_FLAGS
     "${CMAKE_EXE_LINKER_FLAGS} -fno-use-linker-plugin -mcpu=${ARM_CPU} -mfpu=${ARM_FPU}"
     CACHE INTERNAL "linker flags"
+)
 
-GET_PROPERTY(IS_IN_TRY_COMPILE GLOBAL PROPERTY IN_TRY_COMPILE)
-IF(IS_IN_TRY_COMPILE)
-    ADD_LINK_OPTIONS("--specs=nosys.specs")
-ENDIF()
 ADD_LINK_OPTIONS("--specs=nosys.specs")
-
 ADD_LINK_OPTIONS("-Wl,--start-group")
 # add_link_options("-mcpu=${ARM_CPU}")
 
