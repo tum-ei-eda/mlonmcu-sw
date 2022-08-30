@@ -3,8 +3,6 @@ SET(EXTRA_SRC ml_interface_tvm.c)
 
 FILE(GLOB TVM_SRCS ${TVM_OUT_DIR}/src/*_lib*.c ${TVM_OUT_DIR}/src/*_lib*.cc)
 
-MESSAGE(STATUS "LOL")
-
 IF(NOT TVM_SRCS)
     FILE(GLOB TVM_OBJS ${TVM_OUT_DIR}/lib/*_lib*.o)
     COMMON_ADD_LIBRARY(tvm_extension OBJECT IMPORTED)
