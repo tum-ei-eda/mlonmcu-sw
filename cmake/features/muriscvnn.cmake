@@ -22,6 +22,13 @@ ENDIF()
 SET(MURISCVNN_INCLUDE_DIRS ${MURISCVNN_DIR}/Include ${MURISCVNN_DIR}/Include/CMSIS/NN/Include)
 
 # TODO: propagarting all toolchain specific vars does not scale well
+SET(BUILD_FLAGS "")
+IF(RISCV_ARCH)
+    SET(BUILD_FLAGS "${BUILD_FLAGS} -march=${RISCV_ARCH}")
+ENDIF()
+IF(RISCV_ABI)
+    SET(BUILD_FLAGS "${BUILD_FLAGS} -mabi=${RISCV_ABI}")
+ENDIF()
 
 INCLUDE(ExternalProject)
 EXTERNALPROJECT_ADD(
@@ -29,11 +36,13 @@ EXTERNALPROJECT_ADD(
     PREFIX muriscvnn
     SOURCE_DIR ${MURISCVNN_DIR}
     CMAKE_ARGS -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
+               -DCMAKE_C_FLAGS:STRING=${BUILD_FLAGS}
+               -DCMAKE_CXX_FLAGS:STRING=${BUILD_FLAGS}
                -DUSE_VEXT=${USE_VEXT}
                -DUSE_PEXT=${USE_PEXT}
                -DTOOLCHAIN=${MURISCVNN_TOOLCHAIN}
                -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
-               -DENABLE_TESTS=OFF
+               -DENABLE_UNIT_TESTS=OFF
                -DTC_PREFIX=${TC_PREFIX}
                -DEXE_EXT=${EXE_EXT}
                -DRISCV_ARCH=${RISCV_ARCH}
@@ -46,7 +55,7 @@ EXTERNALPROJECT_ADD(
 )
 
 EXTERNALPROJECT_GET_PROPERTY(muriscvnn BINARY_DIR)
-SET(MURISCVNN_LIB ${BINARY_DIR}/Source/libmuriscv_nn.a)
+SET(MURISCVNN_LIB ${BINARY_DIR}/Source/libmuriscvnn.a)
 
 # TFLite integration
 IF(TFLM_OPTIMIZED_KERNEL_LIB)
