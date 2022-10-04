@@ -46,7 +46,7 @@ EXTERNALPROJECT_ADD(
                -DARM_FPU=${ARM_FPU}
                -DRISCV_ARCH=${RISCV_ARCH}
                -DRISCV_ABI=${RISCV_ABI}
-    BUILD_COMMAND "${CMAKE_COMMAND}" --build .
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j 4
     INSTALL_COMMAND ""
 )
 

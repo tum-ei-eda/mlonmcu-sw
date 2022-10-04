@@ -50,7 +50,7 @@ EXTERNALPROJECT_ADD(
                -DARM_CPU=${ARM_CPU}
                -DARM_FLOAT_ABI=${ARM_FLOAT_ABI}
                -DARM_FPU=${ARM_FPU}
-    BUILD_COMMAND "${CMAKE_COMMAND}" --build .
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j4
     INSTALL_COMMAND ""
 )
 
