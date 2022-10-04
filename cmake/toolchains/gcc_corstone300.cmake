@@ -52,51 +52,36 @@ IF(NOT ARM_CPU)
         "cortex-m55"
         CACHE STRING "Set ARM CPU. Default : cortex-a5"
     )
-ENDIF(NOT ARM_CPU)
-
-IF(ARM_CPU STREQUAL "cortex-m55")
-    # For gcc 10q4
-    SET(CMAKE_C_FLAGS
-        "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections -march=armv8.1-m.main+mve.fp+fp.dp -mfloat-abi=hard -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "C compiler common flags"
-    )
-    SET(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections -march=armv8.1-m.main+mve.fp+fp.dp -mfloat-abi=hard -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "C++ compiler common flags"
-    )
-    SET(CMAKE_ASM_FLAGS
-        "${CMAKE_ASM_FLAGS} -march=armv8.1-m.main+mve.fp+fp.dp -mfloat-abi=hard -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "ASM compiler common flags"
-    )
-    SET(CMAKE_EXE_LINKER_FLAGS
-        "${CMAKE_EXE_LINKER_FLAGS} -fno-use-linker-plugin -march=armv8.1-m.main+mve.fp+fp.dp"
-        CACHE INTERNAL "linker flags"
-    )
-ELSE()
-    SET(CMAKE_C_FLAGS
-        "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "C compiler common flags"
-    )
-    SET(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "C+ compiler common flags"
-    )
-    SET(CMAKE_ASM_FLAGS
-        "${CMAKE_ASM_FLAGS} -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "ASM compiler common flags"
-    )
-    SET(CMAKE_EXE_LINKER_FLAGS
-        "${CMAKE_EXE_LINKER_FLAGS} -mcpu=${ARM_CPU}"
-        CACHE INTERNAL "linker flags"
-    )
 ENDIF()
 
-GET_PROPERTY(IS_IN_TRY_COMPILE GLOBAL PROPERTY IN_TRY_COMPILE)
-IF(IS_IN_TRY_COMPILE)
-    ADD_LINK_OPTIONS("--specs=nosys.specs")
-ENDIF()
+SET(ARM_FPU
+    "auto"
+    CACHE STRING "Specify the FPU of the target"
+)
+
+SET(ARM_FLOAT_ABI
+    "soft"
+    CACHE STRING "Specify the float abi of the target"
+)
+
+SET(CMAKE_C_FLAGS
+    "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections -mfloat-abi=${ARM_FLOAT_ABI} -mcpu=${ARM_CPU} -mfpu=${ARM_FPU}"
+    CACHE INTERNAL "C compiler common flags"
+)
+SET(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections -mfloat-abi=${ARM_FLOAT_ABI} -mcpu=${ARM_CPU} -mfpu=${ARM_FPU}"
+    CACHE INTERNAL "C++ compiler common flags"
+)
+SET(CMAKE_ASM_FLAGS
+    "${CMAKE_ASM_FLAGS} -mfloat-abi=${ARM_FLOAT_ABI} -mcpu=${ARM_CPU} -mfpu=${ARM_FPU}"
+    CACHE INTERNAL "ASM compiler common flags"
+)
+SET(CMAKE_EXE_LINKER_FLAGS
+    "${CMAKE_EXE_LINKER_FLAGS} -fno-use-linker-plugin -mcpu=${ARM_CPU} -mfpu=${ARM_FPU}"
+    CACHE INTERNAL "linker flags"
+)
+
 ADD_LINK_OPTIONS("--specs=nosys.specs")
-
 ADD_LINK_OPTIONS("-Wl,--start-group")
 # add_link_options("-mcpu=${ARM_CPU}")
 

@@ -25,9 +25,20 @@ SET(MLONMCU_FRAMEWORK
 )
 SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
 
+SET(OPTIMIZE
+    "3"
+    CACHE STRING "Specify compiler optimization level should be used in release mode."
+)
+SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
+
 SET(ENABLE_LTO
     OFF
     CACHE BOOL "Whether to enable link-time optimization"
+)
+
+SET(PROTECT_STACK
+    OFF
+    CACHE BOOL "Whether to enable stack guards"
 )
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -51,7 +62,7 @@ SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
 SET(CMAKE_CXX_FLAGS_RELEASE
     "${CMAKE_CXX_FLAGS_RELEASE} \
-    -Os \
+    -O${OPTIMIZE} \
     -ffunction-sections \
     -fdata-sections \
     -fno-rtti \
@@ -61,7 +72,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE
 )
 SET(CMAKE_C_FLAGS_RELEASE
     "${CMAKE_C_FLAGS_RELEASE} \
-    -Os \
+    -O${OPTIMIZE} \
     -ffunction-sections \
     -fdata-sections \
 "
@@ -78,6 +89,12 @@ IF(ENABLE_LTO)
     SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -flto -ffat-lto-objects")
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} -Xlinker -flto")
 ENDIF()
+IF(PROTECT_STACK)
+    SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fstack-protector-all")
+    SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -fstack-protector-all")
+    SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fstack-protector-all")
+    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -fstack-protector-all")
+ENDIF()
 
 # TODO: pass list of features dynamically?
 IF(CMSISNN)
@@ -86,6 +103,10 @@ ENDIF()
 
 IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
+ENDIF()
+
+IF(RISCV_AUTO_VECTORIZE)
+    INCLUDE(features/auto_vectorize_${TOOLCHAIN})
 ENDIF()
 
 INCLUDE(backends/${MLONMCU_BACKEND})

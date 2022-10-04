@@ -12,7 +12,6 @@ SET(CMSIS_PATH
 )
 
 ADD_COMPILE_OPTIONS(
-    -Ofast
     -fomit-frame-pointer
     # -Werror
     -Wunused-variable
@@ -35,7 +34,7 @@ ADD_LIBRARY(
 )
 
 # Build CMSIS startup dependencies based on TARGET_CPU.
-STRING(REGEX REPLACE "^cortex-m([0-9]+)$" "ARMCM\\1" ARM_CPU_SHORT ${CMAKE_SYSTEM_PROCESSOR})
+STRING(REGEX REPLACE "^cortex-m([0-9]+).*$" "ARMCM\\1" ARM_CPU_SHORT ${CMAKE_SYSTEM_PROCESSOR})
 IF(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "cortex-m33")
     SET(ARM_FEATURES "_DSP_FP")
 ELSEIF(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "cortex-m4")
@@ -58,11 +57,7 @@ TARGET_COMPILE_OPTIONS(cmsis_startup INTERFACE -include${ARM_CPU_SHORT}${ARM_FEA
 TARGET_COMPILE_DEFINITIONS(cmsis_startup PRIVATE ${ARM_CPU_SHORT}${ARM_FEATURES})
 
 # Linker file settings.
-SET(LINK_FILE
-    "${FVP_CORSTONE_300_PATH}/linker"
-    CACHE PATH "Linker file."
-)
-SET(LINK_FILE "${FVP_CORSTONE_300_PATH}/linker.ld")
+SET(LINK_FILE "${CMAKE_CURRENT_LIST_DIR}/corstone300/linker.ld")
 SET(LINK_FILE_OPTION "-T")
 SET(LINK_ENTRY_OPTION "")
 SET(LINK_ENTRY "")

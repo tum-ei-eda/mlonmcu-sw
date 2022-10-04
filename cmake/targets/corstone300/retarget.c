@@ -16,18 +16,11 @@
  * limitations under the License.
  */
 
-#if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100) && !defined(GCCCOMPILER)
-#include <rt_misc.h>
-#include <rt_sys.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#else
 #include <errno.h>
 #include <string.h>
 #include <sys/stat.h>
-#endif
 
 #include "uart.h"
 
