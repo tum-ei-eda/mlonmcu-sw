@@ -1,0 +1,69 @@
+SET(PULPINO_LIB_DIR ${CMAKE_CURRENT_LIST_DIR})
+
+MACRO(PULPINO_SETTINGS_PRE)
+    SET(PULPINO_LIB ${PULPINO_TOOLCHAIN_DIR}/pulpino/sw)
+    SET(PULPINO_LIB_TUMEDA ${PULPINO_TOOLCHAIN_DIR}/pulpino_tumeda)
+    SET(PULPINO_INCLUDES
+            ${PULPINO_LIB_DIR}/target/pulp/include
+            ${PULPINO_LIB_DIR}/target/arch
+            ${PULPINO_LIB_DIR}/libc/malloc/include
+            ${PULPINO_LIB_DIR}/drivers/include
+    )
+
+    SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ENDMACRO()
+
+MACRO(PULPINO_SETTINGS_POST TARGET_NAME)
+    TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PUBLIC ${PULPINO_INCLUDES})
+ENDMACRO()
+
+MACRO(ADD_LIBRARY_PULPINO TARGET_NAME)
+    PULPINO_SETTINGS_PRE()
+
+    SET(ARGS "${ARGN}")
+    SET(SRC_FILES ${ARGS})
+    ADD_LIBRARY(${TARGET_NAME} ${SRC_FILES})
+
+    PULPINO_SETTINGS_POST(${TARGET_NAME})
+ENDMACRO()
+
+MACRO(ADD_EXECUTABLE_PULPINO_INTERNAL TARGET_NAME ADD_PLATFORM_FILES)
+    PULPINO_SETTINGS_PRE()
+
+    # prevent linker argument duplicates when calling macro for multiple targets
+    IF(NOT PULPINO_MACRO_ALREADY_EXECUTED)
+        SET(CMAKE_EXE_LINKER_FLAGS
+            "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles \
+            -T ${PULPINO_LIB_DIR}/target/pulp/link.ld \
+            "
+        )
+    ENDIF()
+
+    PROJECT(${TARGET_NAME} LANGUAGES C CXX ASM)
+
+    SET(ARGS "${ARGN}")
+    SET(SRC_FILES ${ARGS})
+    IF(${ADD_PLATFORM_FILES})
+        LIST(APPEND SRC_FILES 
+            ${PULPINO_LIB_DIR}/target/pulp/system_metal.c
+            ${PULPINO_LIB_DIR}/target/pulp/crt0.S
+            ${PULPINO_LIB_DIR}/target/pulp/vectors_metal.S
+	        ${PULPINO_LIB_DIR}/libc/malloc/malloc_internal.c
+            ${PULPINO_LIB_DIR}/libc/malloc/cl_l1_malloc.c
+            ${PULPINO_LIB_DIR}/libc/syscalls.c
+            ${PULPINO_LIB_DIR}/libc/pulp_malloc.c              
+        )
+    ENDIF()
+
+    ADD_EXECUTABLE(${TARGET_NAME} ${SRC_FILES})
+    
+    PULPINO_SETTINGS_POST(${TARGET_NAME})
+ENDMACRO()
+
+MACRO(ADD_EXECUTABLE_PULPINO TARGET_NAME)
+    ADD_EXECUTABLE_PULPINO_INTERNAL(${TARGET_NAME} ON ${ARGN})
+ENDMACRO()
+
+MACRO(ADD_EXECUTABLE_PULPINO_RAW TARGET_NAME)
+    ADD_EXECUTABLE_PULPINO_INTERNAL(${TARGET_NAME} OFF ${ARGN})
+ENDMACRO()
