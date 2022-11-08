@@ -1,12 +1,11 @@
-SET(GVSOC_LIB_DIR ${CMAKE_CURRENT_LIST_DIR})
-SET(GVSOC_TARGET_LIB_DIR ${GVSOC_LIB_DIR}/target/pulp)
+SET(PULP_LIB_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 MACRO(PULP_SETTINGS_PRE)
     SET(PULP_INCLUDES
-            ${GVSOC_TARGET_LIB_DIR}/include
-            ${GVSOC_LIB_DIR}/target/arch
-            ${GVSOC_LIB_DIR}/libc/malloc/include
-            ${GVSOC_LIB_DIR}/drivers/include
+            ${PULP_LIB_DIR}/target/pulp/include
+            ${PULP_LIB_DIR}/target/arch
+            ${PULP_LIB_DIR}/libc/malloc/include
+            ${PULP_LIB_DIR}/drivers/include
     )
 
     SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -33,7 +32,7 @@ MACRO(ADD_EXECUTABLE_PULP_INTERNAL TARGET_NAME ADD_PLATFORM_FILES)
     IF(NOT PULP_MACRO_ALREADY_EXECUTED)
         SET(CMAKE_EXE_LINKER_FLAGS
             "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles \
-            -T ${GVSOC_TARGET_LIB_DIR}/link.ld \
+            -T ${PULP_LIB_DIR}/target/pulp/link.ld \
             "
         )
     ENDIF()
@@ -44,13 +43,13 @@ MACRO(ADD_EXECUTABLE_PULP_INTERNAL TARGET_NAME ADD_PLATFORM_FILES)
     SET(SRC_FILES ${ARGS})
     IF(${ADD_PLATFORM_FILES})
         LIST(APPEND SRC_FILES 
-            ${GVSOC_TARGET_LIB_DIR}/system_metal.c
-            ${GVSOC_TARGET_LIB_DIR}/crt0.S
-            ${GVSOC_TARGET_LIB_DIR}/vectors_metal.S
-	        ${GVSOC_LIB_DIR}/libc/malloc/malloc_internal.c
-            ${GVSOC_LIB_DIR}/libc/malloc/cl_l1_malloc.c
-            ${GVSOC_LIB_DIR}/libc/syscalls.c
-            ${GVSOC_LIB_DIR}/libc/pulp_malloc.c              
+            ${PULP_LIB_DIR}/target/pulp/system_metal.c
+            ${PULP_LIB_DIR}/target/pulp/crt0.S
+            ${PULP_LIB_DIR}/target/pulp/vectors_metal.S
+	        ${PULP_LIB_DIR}/libc/malloc/malloc_internal.c
+            ${PULP_LIB_DIR}/libc/malloc/cl_l1_malloc.c
+            ${PULP_LIB_DIR}/libc/syscalls.c
+            ${PULP_LIB_DIR}/libc/pulp_malloc.c              
         )
     ENDIF()
 
