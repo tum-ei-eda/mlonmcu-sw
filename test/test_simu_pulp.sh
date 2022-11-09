@@ -19,8 +19,8 @@ cd build/bin
 
 PULP_CURRENT_CONFIG=pulp@config_file=chips/pulp/pulp.json \
 PULP_CONFIGS_PATH=/mnt/d/time_5_semester_TUM/hiwi/pulpino2/pulp-freertos/support/pulp-configs/configs \
-PYTHONPATH=/mnt/d/time_5_semester_TUM/hiwi/pulpino2/pulp-freertos/support/install/python \
-INSTALL_DIR="/mnt/d/time_5_semester_TUM/hiwi/pulpino2/pulp-freertos/support/install" \
+PYTHONPATH=/tmp/pulp-freertos/support/install/python \
+INSTALL_DIR="/tmp/pulp-freertos/support/install" \
 make -C "/mnt/d/time_5_semester_TUM/hiwi/pulpino2/pulp-freertos/support/gvsoc" build ARCHI_DIR=/mnt/d/time_5_semester_TUM/hiwi/pulpino2/pulp-freertos/support/archi/include
 
 
