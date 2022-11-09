@@ -1,5 +1,5 @@
 cd build/bin
-# change the path in the script
+
 source /mnt/d/time_5_semester_TUM/hiwi/pulpino2/pulp-freertos/env/pulp.sh
 
 PULP_CURRENT_CONFIG=pulpissimo@config_file=chips/pulpissimo/pulpissimo.json \

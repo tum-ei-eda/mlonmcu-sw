@@ -1,10 +1,11 @@
 Step 1:
 modify the path in scripts
 Step 2:
-run test_script.sh to compile
+run populate_support_install.sh
 Step 3:
+run test_script.sh to compile
+Step 4:
 run test_simu.sh to simulate
-the pulp-freertos/support/install will be populated automatically
 
 If you want to reset the pulp-rtos folder
 You can use the following command
