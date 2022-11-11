@@ -105,6 +105,10 @@ IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
 
+IF(ANDES_LIBNN)
+    INCLUDE(features/andes_libnn)
+ENDIF()
+
 IF(RISCV_AUTO_VECTORIZE)
     INCLUDE(features/auto_vectorize_${TOOLCHAIN})
 ENDIF()
