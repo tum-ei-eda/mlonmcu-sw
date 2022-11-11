@@ -140,8 +140,7 @@ IF(EXISTS ${TFLM_SRC}/flatbuffer_utils.cc)
     LIST(APPEND OPT_SRC ${TFLM_SRC}/flatbuffer_utils.cc)
 ENDIF()
 
-ADD_LIBRARY(
-    tflm STATIC
+SET(TFLM_SOURCES
     # Not really needed?
     ${TFLM_SRC}/micro_error_reporter.cc
     ${TFLM_SRC}/debug_log.cc
@@ -155,21 +154,41 @@ ADD_LIBRARY(
     ${TFLM_SRC}/kernels/kernel_util.cc
     ${TFLM_SRC}/all_ops_resolver.cc
     ${TFLM_SRC}/micro_utils.cc
-    ${TFLM_SRC}/micro_log.cc
     ${TFL_SRC}/kernels/internal/quantization_util.cc
     ${TFL_SRC}/kernels/kernel_util.cc
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
-    ${TFLM_SRC}/micro_allocation_info.cc
     ${TFLM_SRC}/micro_resource_variable.cc
-    ${TFLM_SRC}/arena_allocator/single_arena_buffer_allocator.cc
     ${TFLM_SRC}/memory_helpers.cc
     ${TFLM_SRC}/memory_planner/greedy_memory_planner.cc
     ${TFL_SRC}/core/api/tensor_utils.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
-    ${TFL_SRC}/c/common.cc
     ${OPT_SRC}
+)
+
+IF(EXISTS ${TFLM_SRC}/micro_log.cc)
+    LIST(APPEND TFLM_SOURCES ${TFLM_SRC}/micro_log.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/micro_allocation_info.cc)
+    LIST(APPEND TFLM_SOURCES ${TFLM_SRC}/micro_allocation_info.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/single_arena_buffer_allocator.cc)
+    LIST(APPEND TFLM_SOURCES ${TFLM_SRC}/single_arena_buffer_allocator.cc)
+ENDIF()
+IF(EXISTS ${TFLM_SRC}/simple_memory_allocator.cc)
+    LIST(APPEND TFLM_SOURCES ${TFLM_SRC}/simple_memory_allocator.cc)
+ENDIF()
+IF(EXISTS ${TFL_SRC}/c/common.cc)
+    LIST(APPEND TFLM_SOURCES ${TFL_SRC}/c/common.cc)
+ENDIF()
+IF(EXISTS ${TFL_SRC}/c/common.c)
+    LIST(APPEND TFLM_SOURCES ${TFL_SRC}/c/common.c)
+ENDIF()
+
+ADD_LIBRARY(
+    tflm STATIC
+    ${TFLM_SOURCES}
 )
 
 IF(TFLM_EXTRA_KERNEL_LIBS)
