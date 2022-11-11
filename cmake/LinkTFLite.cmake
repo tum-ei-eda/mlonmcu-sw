@@ -126,22 +126,7 @@ FOREACH(src ${TFLM_EXTRA_KERNEL_SRCS})
     ENDIF()
 ENDFOREACH()
 
-# This files only exists in newer versions of TF
-IF(EXISTS ${TFL_SRC}/schema/schema_utils.cc)
-    LIST(APPEND OPT_SRC ${TFL_SRC}/schema/schema_utils.cc)
-ENDIF()
-IF(EXISTS ${TFLM_SRC}/micro_context.cc)
-    LIST(APPEND OPT_SRC ${TFLM_SRC}/micro_context.cc)
-ENDIF()
-IF(EXISTS ${TFLM_SRC}/micro_graph.cc)
-    LIST(APPEND OPT_SRC ${TFLM_SRC}/micro_graph.cc)
-ENDIF()
-IF(EXISTS ${TFLM_SRC}/flatbuffer_utils.cc)
-    LIST(APPEND OPT_SRC ${TFLM_SRC}/flatbuffer_utils.cc)
-ENDIF()
-
-ADD_LIBRARY(
-    tflm STATIC
+SET(TFLM_SRCS
     # Not really needed?
     ${TFLM_SRC}/micro_error_reporter.cc
     ${TFLM_SRC}/debug_log.cc
@@ -160,16 +145,36 @@ ADD_LIBRARY(
     ${TFL_SRC}/kernels/kernel_util.cc
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
+    ${TFLM_SRC}/simple_memory_allocator.cc
     ${TFLM_SRC}/micro_allocation_info.cc
     ${TFLM_SRC}/micro_resource_variable.cc
     ${TFLM_SRC}/arena_allocator/single_arena_buffer_allocator.cc
+    ${TFLM_SRC}/arena_allocator/persistent_arena_buffer_allocator.cc
+    ${TFLM_SRC}/arena_allocator/non_persistent_arena_buffer_allocator.cc
     ${TFLM_SRC}/memory_helpers.cc
     ${TFLM_SRC}/memory_planner/greedy_memory_planner.cc
     ${TFL_SRC}/core/api/tensor_utils.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
-    ${TFL_SRC}/c/common.cc
+    ${TFL_SRC}/c/common.cc  # new
+    ${TFL_SRC}/c/common.c  # old
+    ${TFLM_SRC}/flatbuffer_utils.cc
+    ${TFLM_SRC}/micro_graph.cc
+    ${TFLM_SRC}/micro_context.cc
+    ${TFL_SRC}/schema/schema_utils.cc
     ${OPT_SRC}
+)
+
+# For backwards compatibility, we drop non-existance files here.
+FOREACH(src ${TFLM_SRCS})
+    IF(NOT EXISTS ${src})
+         LIST(REMOVE_ITEM TFLM_SRCS ${src})
+    ENDIF()
+ENDFOREACH()
+
+ADD_LIBRARY(
+    tflm STATIC
+    ${TFLM_SRCS}
 )
 
 IF(TFLM_EXTRA_KERNEL_LIBS)
