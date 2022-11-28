@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.13 FATAL_ERROR)
-
+MESSAGE(${EXTRA_CMAKE_CXX_FLAGS})
 SET(TARGET_SYSTEM
     "host_x86"
     CACHE STRING "Specify which toolchain to use."
@@ -68,6 +68,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE
     -fno-rtti \
     -fno-exceptions \
     -fno-threadsafe-statics \
+    ${EXTRA_CMAKE_CXX_FLAGS} \
 "
 )
 SET(CMAKE_C_FLAGS_RELEASE
@@ -75,6 +76,7 @@ SET(CMAKE_C_FLAGS_RELEASE
     -O${OPTIMIZE} \
     -ffunction-sections \
     -fdata-sections \
+    ${EXTRA_CMAKE_C_FLAGS} \
 "
 )
 SET(CMAKE_EXE_LINKER_FLAGS_RELEASE
