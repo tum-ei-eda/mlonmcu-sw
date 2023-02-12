@@ -37,7 +37,7 @@ SET(CV_LDFLAGS "\
 -Wl,--gc-sections \
 -Wl,-Map,memory.map") # -Wl,--print-gc-sections
 
-LIST(APPEND CV_LDFLAGS " -Wstack-usage=1024")
+# LIST(APPEND CV_LDFLAGS " -Wstack-usage=1024")
 
 # the following is transfered from PULP-FreeRTOS repository
 # https://github.com/pulp-platform/pulp-freertos/blob/master/default_targets.mk#L77-L87
