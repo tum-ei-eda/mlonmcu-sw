@@ -7,15 +7,10 @@ SET(CMAKE_CXX_COMPILER ${CLANG++_EXECUTABLE})
 SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
 # set(CMAKE_C_LINKER lld-13) # TODO(fabianpedd): doesnt work, need to use -fuse-ld=lld-13 instead
 
-message("This is included, Yeah!!!")
+
 # RV32GC processor
 SET(CMAKE_SYSTEM_PROCESSOR Pulpissimo)
 
-
-SET(CMAKE_LINKER ${TC_PREFIX}ld${EXE_EXT})
-SET(CMAKE_OBJCOPY ${TC_PREFIX}objcopy${EXE_EXT})
-SET(CMAKE_AR ${TC_PREFIX}ar${EXE_EXT})
-SET(CMAKE_RANLIB ${TC_PREFIX}ranlib${EXE_EXT})
 # The linker argument setting below will break the cmake test program on 64-bit, so disable test program linking for
 # now.
 SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
