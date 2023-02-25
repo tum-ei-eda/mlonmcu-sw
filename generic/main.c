@@ -1,5 +1,6 @@
 #include "ml_interface.h"
-#include <stdio.h>
+#include "printf.h" // so that ara llvm can work, very strange
+// #include <stdio.h>
 
 void init_target();
 void deinit_target();
