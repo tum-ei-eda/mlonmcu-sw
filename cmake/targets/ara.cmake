@@ -25,31 +25,6 @@ SET(RISCV_ELF_GCC_BASENAME
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 # end of transferred from https://github.com/pulp-platform/ara/blob/70a059a7ed5a8c534e782994d25806bed07f0b83/apps/common/runtime.mk#L42-L45 
 
-# SET(GVSOC_BASIC_CMAKE_DIR
-#     ""
-#     CACHE STRING "Directory of GVSOC basic cmake directory"
-# )
-
-# SET(GVSOC_PULP_TC_DIR ${ETISS_DIR}/examples/SW/riscv/cmake)
-# ADD_DEFINITIONS(-DGVSOC_PULP_NO_GPIO)
-
-# SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GVSOC_BASIC_CMAKE_DIR}")
-# IF(NOT GVSOC_PULPISSIMO_ROM_START)
-#     SET(GVSOC_PULPISSIMO_ROM_START 0x0)
-# ENDIF()
-# IF(NOT GVSOC_PULPISSIMO_ROM_SIZE)
-#     SET(GVSOC_PULPISSIMO_ROM_SIZE 0x100000)
-# ENDIF()
-# IF(NOT GVSOC_PULPISSIMO_RAM_START)
-#     SET(GVSOC_PULPISSIMO_RAM_START 0x100000)
-# ENDIF()
-# IF(NOT GVSOC_PULPISSIMO_RAM_SIZE)
-#     SET(GVSOC_PULPISSIMO_RAM_SIZE 0x200000)
-# ENDIF()
-# SET(GVSOC_PULPISSIMO_MIN_STACK_SIZE 0x4000)
-# SET(GVSOC_PULPISSIMO_MIN_HEAP_SIZE 0x4000)
-# SET(ETISS_LOGGER_ADDR 0xf0000000)
-
 INCLUDE(targets/ara/araTarget)
 MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     ADD_LIBRARY_ARA(${TARGET_NAME} ${ARGN})
@@ -63,15 +38,24 @@ ENDMACRO()
 ADD_DEFINITIONS(-march=${RISCV_ARCH})
 ADD_DEFINITIONS(-mabi=${RISCV_ABI})
 
-# Defines
-# ENV_DEFINES ?=
-# ifeq ($(vcd_dump),1)
-# ENV_DEFINES += -DVCD_DUMP=1
-# endif
-# MAKE_DEFINES = -DNR_LANES=$(nr_lanes) -DVLEN=$(vlen)
-# DEFINES += $(ENV_DEFINES) $(MAKE_DEFINES)
-SET(DEFINES "-DNR_LANES=16 -DVLEN=16384")
+# The following is transferred from https://github.com/pulp-platform/ara/blob/70a059a7ed5a8c534e782994d25806bed07f0b83/apps/common/runtime.mk#L34
+# +The original config files are located at https://github.com/pulp-platform/ara/tree/70a059a7ed5a8c534e782994d25806bed07f0b83/config
+# +The orignal config files suggest the following combinations:
+# +nr_lanes = 2 vlen = 2048
+# +nr_lanes = 4 vlen = 4096
+# +nr_lanes = 8 vlen = 8192
+# +nr_lanes = 16 vlen = 16384
+SET(MLONMCU_ARA_NR_LANES
+    "4"
+    CACHE STRING "nr_lanes of ara"
+)
+SET(MLONMCU_ARA_VLEN
+    "4096"
+    CACHE STRING "vlan of ara"
+)
+SET(DEFINES -DNR_LANES=${MLONMCU_ARA_NR_LANES} -DVLEN=${MLONMCU_ARA_VLEN})
 ADD_DEFINITIONS(${DEFINES})
+# end of transferred from https://github.com/pulp-platform/ara/blob/70a059a7ed5a8c534e782994d25806bed07f0b83/apps/common/runtime.mk#L24-L34
 
 # IF(RISCV_VEXT)
 #     ADD_DEFINITIONS(-DUSE_VEXT)
