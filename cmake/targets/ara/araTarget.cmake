@@ -29,7 +29,7 @@ MACRO(ADD_EXECUTABLE_ARA_INTERNAL TARGET_NAME ADD_PLATFORM_FILES)
     IF(NOT ARA_MACRO_ALREADY_EXECUTED)
         SET(CMAKE_EXE_LINKER_FLAGS
             "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles \
-            -T ${ARA_COMMON_DIR}/link.ld \
+            -T ${CMAKE_BINARY_DIR}/my_link.ld \
             "
         )
     ENDIF()
@@ -51,6 +51,18 @@ MACRO(ADD_EXECUTABLE_ARA_INTERNAL TARGET_NAME ADD_PLATFORM_FILES)
     # ${ARA_COMMON_DIR}/printf.c
 
     ADD_EXECUTABLE(${TARGET_NAME} ${SRC_FILES})
+
+    IF(NOT ARA_MACRO_ALREADY_EXECUTED)
+        # this link might be useful https://stackoverflow.com/questions/73871879/adding-a-step-for-building-linker-script-file-from-template-in-cmake
+        # the following is transferred from https://github.com/pulp-platform/ara/blob/main/apps/Makefile#L48-L53
+        ADD_CUSTOM_COMMAND(TARGET ${TARGET_NAME}
+            PRE_LINK
+            COMMAND chmod +x ${ARA_COMMON_DIR}/script/align_sections.sh
+            COMMAND cp ${ARA_COMMON_DIR}/arch.link.ld ${CMAKE_BINARY_DIR}/my_link.ld
+            COMMAND ${ARA_COMMON_DIR}/script/align_sections.sh ${MLONMCU_ARA_NR_LANES} ${CMAKE_BINARY_DIR}/my_link.ld
+        )
+        SET(ARA_MACRO_ALREADY_EXECUTED ON)
+    ENDIF()
     
     ARA_SETTINGS_POST(${TARGET_NAME})
 ENDMACRO()
