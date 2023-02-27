@@ -53,9 +53,8 @@ MACRO(ADD_EXECUTABLE_ARA_INTERNAL TARGET_NAME ADD_PLATFORM_FILES)
     ADD_EXECUTABLE(${TARGET_NAME} ${SRC_FILES})
 
     IF(NOT ARA_MACRO_ALREADY_EXECUTED)
-        # this link might be useful https://stackoverflow.com/questions/73871879/adding-a-step-for-building-linker-script-file-from-template-in-cmake
         # the following is transferred from https://github.com/pulp-platform/ara/blob/main/apps/Makefile#L48-L53
-        ADD_CUSTOM_COMMAND(TARGET ${TARGET_NAME}
+        ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} # Is the PROJECT_NAME here OK?
             PRE_LINK
             COMMAND chmod +x ${ARA_COMMON_DIR}/script/align_sections.sh
             COMMAND cp ${ARA_COMMON_DIR}/arch.link.ld ${CMAKE_BINARY_DIR}/my_link.ld
