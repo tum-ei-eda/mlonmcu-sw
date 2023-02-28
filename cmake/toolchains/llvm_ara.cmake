@@ -26,7 +26,7 @@ SET(LLVM_V_FLAGS "${LLVM_V_FLAGS} -fno-vectorize -mllvm -scalable-vectorization=
 
 SET(RISCV_FLAGS "${LLVM_FLAGS} ${LLVM_V_FLAGS} ${RISCV_WARNINGS} -mcmodel=medany -static -ffast-math -fno-common")
 # the following line is not in the ara repo, it is added so that stdc lib can be used
-SET(RISCV_FLAGS "${RISCV_FLAGS} -lstdc++ --gcc-toolchain=${RISCV_GCC_PREFIX}  --sysroot=${RISCV_GCC_PREFIX}/${RISCV_GCC_BASENAME}")
+SET(RISCV_FLAGS "${RISCV_FLAGS} -lstdc++ --gcc-toolchain=${RISCV_ELF_GCC_PREFIX}  --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${RISCV_FLAGS} -std=gnu99 -ffunction-sections -fdata-sections")
 
