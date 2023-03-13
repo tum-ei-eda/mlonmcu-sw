@@ -24,6 +24,10 @@ SET(RISCV_ELF_GCC_BASENAME
 )
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 # end of transferred from https://github.com/pulp-platform/ara/blob/70a059a7ed5a8c534e782994d25806bed07f0b83/apps/common/runtime.mk#L42-L45 
+SET(ARA_APPS_DIR
+    ""
+    CACHE STRING "base name of the toolchain executables"
+)
 
 INCLUDE(targets/ara/araTarget)
 MACRO(COMMON_ADD_LIBRARY TARGET_NAME)

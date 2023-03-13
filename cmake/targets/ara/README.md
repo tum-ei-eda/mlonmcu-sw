@@ -1,1 +1,0 @@
-The content of this folder is from https://github.com/pulp-platform/ara on 24/2/2023
