@@ -10,6 +10,10 @@ SET(CMSIS_PATH
     ""
     CACHE PATH "Path to CMSIS."
 )
+SET(CMSISNN_PATH
+    ""
+    CACHE PATH "Path to CMSIS-NN."
+)
 
 ADD_COMPILE_OPTIONS(
     -fomit-frame-pointer
@@ -20,7 +24,7 @@ ADD_COMPILE_OPTIONS(
 )
 
 SET(FVP_CORSTONE_300_PATH
-    "${CMSIS_PATH}/CMSIS/NN/Tests/UnitTest/Corstone-300"
+    "${CMSISNN_PATH}/CMSIS/NN/Tests/UnitTest/Corstone-300"
     CACHE PATH "Dependencies for using FVP based on Arm Corstone-300 software."
 )
 # set(CMAKE_EXECUTABLE_SUFFIX ".elf")
