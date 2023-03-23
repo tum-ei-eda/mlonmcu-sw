@@ -1,3 +1,7 @@
+IF(NOT CMSIS_DIR)
+    MESSAGE(FATAL_ERROR "Missing value: CMSIS_DIR")
+ENDIF()
+
 IF(NOT CMSISNN_DIR)
     MESSAGE(FATAL_ERROR "Missing value: CMSISNN_DIR")
 ENDIF()
@@ -24,8 +28,12 @@ IF(RISCV_ABI)
     SET(BUILD_FLAGS "${BUILD_FLAGS} -mabi=${RISCV_ABI}")
 ENDIF()
 
-SET(CMSISNN_INCLUDE_DIRS ${CMSISNN_DIR} ${CMSISNN_DIR}/CMSIS/Core/Include ${CMSISNN_DIR}/CMSIS/NN/Include
-                         ${CMSISNN_DIR}/CMSIS/DSP/Include
+SET(CMSISNN_INCLUDE_DIRS
+                         ${CMSISNN_DIR}
+                         ${CMSISNN_DIR}/Include
+                         ${CMSIS_DIR}/CMSIS/Core/Include
+                         # ${CMSISNN_DIR}/CMSIS/NN/Include
+                         # ${CMSISNN_DIR}/CMSIS/DSP/Include
 )
 
 # TODO: propagarting all toolchain specific vars does not scale well
@@ -34,7 +42,8 @@ INCLUDE(ExternalProject)
 EXTERNALPROJECT_ADD(
     cmsisnn
     PREFIX cmsisnn
-    SOURCE_DIR ${CMSISNN_DIR}/CMSIS/NN/
+    # SOURCE_DIR ${CMSISNN_DIR}/CMSIS/NN/
+    SOURCE_DIR ${CMSISNN_DIR}/
     CMAKE_ARGS -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
                -DCMAKE_C_FLAGS:STRING=${BUILD_FLAGS}
                -DCMAKE_CXX_FLAGS:STRING=${BUILD_FLAGS}
@@ -46,12 +55,13 @@ EXTERNALPROJECT_ADD(
                -DARM_FPU=${ARM_FPU}
                -DRISCV_ARCH=${RISCV_ARCH}
                -DRISCV_ABI=${RISCV_ABI}
+               -DCMSIS_PATH=${CMSIS_DIR}
     BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j 4
     INSTALL_COMMAND ""
 )
 
 EXTERNALPROJECT_GET_PROPERTY(cmsisnn BINARY_DIR)
-SET(CMSISNN_LIB ${BINARY_DIR}/Source/libcmsis-nn.a)
+SET(CMSISNN_LIB ${BINARY_DIR}/libcmsis-nn.a)
 
 # TFLite integration
 IF(TFLM_OPTIMIZED_KERNEL_LIB)
