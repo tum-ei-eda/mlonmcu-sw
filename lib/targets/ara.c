@@ -10,9 +10,9 @@ uint64_t rdcycle64(){
     uint32_t cyclesh2;
     do
     {
-        cyclesh1 = rdcycleh()
-        cyclesh2 = rdcycle()
-        cyclesh3 = rdcycleh()
+        cyclesh1 = rdcycleh();
+        cycles = rdcycle();
+        cyclesh2 = rdcycleh();
     } while (cyclesh1 != cyclesh2);
   return (((uint64_t)cyclesh1) << 32) | cycles;
 #else
@@ -27,9 +27,9 @@ uint64_t rdinstret64(){
     uint32_t cyclesh2;
     do
     {
-        cyclesh1 = rdinstreth()
-        cyclesh2 = rdinstret()
-        cyclesh3 = rdinstreth()
+        cyclesh1 = rdinstreth();
+        cycles = rdinstret();
+        cyclesh2 = rdinstreth();
     } while (cyclesh1 != cyclesh2);
   return (((uint64_t)cyclesh1) << 32) | cycles;
 #else
