@@ -22,16 +22,16 @@ uint64_t rdcycle64(){
 
 uint64_t rdinstret64(){
 #if __riscv_xlen == 32
-    uint32_t cycles;
-    uint32_t cyclesh1;
-    uint32_t cyclesh2;
+    uint32_t instrets;
+    uint32_t instretsh1;
+    uint32_t instretsh2;
     do
     {
-        cyclesh1 = rdinstreth();
-        cycles = rdinstret();
-        cyclesh2 = rdinstreth();
-    } while (cyclesh1 != cyclesh2);
-  return (((uint64_t)cyclesh1) << 32) | cycles;
+        instretsh1 = rdinstreth();
+        instrets = rdinstret();
+        instretsh2 = rdinstreth();
+    } while (instretsh1 != instretsh2);
+  return (((uint64_t)instretsh1) << 32) | instrets;
 #else
   return rdinstret();
 #endif
