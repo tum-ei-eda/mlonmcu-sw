@@ -82,7 +82,7 @@ SET(CMAKE_EXE_LINKER_FLAGS
 )
 
 ADD_LINK_OPTIONS("--specs=nosys.specs")
-ADD_LINK_OPTIONS("-Wl,--start-group")
+# ADD_LINK_OPTIONS("-Wl,--start-group")
 # add_link_options("-mcpu=${ARM_CPU}")
 
 # Where is the target environment SET(CMAKE_FIND_ROOT_PATH "${tools}") Search for programs in the build host directories
