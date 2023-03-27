@@ -6,10 +6,12 @@ void init_target();
 void deinit_target();
 
 int main() {
-  printf("Program start.\n");
   init_target();
+  printf("Program start.\n");
+  start_timer();
   mlif_run();
-  deinit_target();
+  stop_timer();
   printf("Program finish.\n");
+  deinit_target();
   return 0;
 }
