@@ -1,24 +1,36 @@
 /*
- * Copyright (c) 2009-2021 Arm Limited. All rights reserved.
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
  *
- * SPDX-License-Identifier: Apache-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * Licensed under the Apache License, Version 2.0 (the License); you may
- * not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an AS IS BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
  */
 
-/*
- *-------- <<< Use Configuration Wizard in Context Menu >>> -------------------
- */
+/*------------------ Reference System Memories -------------
+  +===================+============+=======+============+============+
+  | Memory            | Address    | Size  | CPU Access | NPU Access |
+  +===================+============+=======+============+============+
+  | ITCM              | 0x00000000 | 512KB | Yes (RO)   | No         |
+  +-------------------+------------+-------+------------+------------+
+  | DTCM              | 0x20000000 | 512KB | Yes (R/W)  | No         |
+  +-------------------+------------+-------+------------+------------+
+  | SSE-300 SRAM      | 0x21000000 |   2MB | Yes (R/W)  | Yes (R/W)  |
+  +-------------------+------------+-------+------------+------------+
+  | Data SRAM         | 0x01000000 |   2MB | Yes (R/W)  | Yes (R/W)  |
+  +-------------------+------------+-------+------------+------------+
+  | DDR               | 0x60000000 |  32MB | Yes (R/W)  | Yes (R/W)  |
+  +-------------------+------------+-------+------------+------------+ */
 
 /*---------------------- ITCM Configuration ----------------------------------
   <h> Flash Configuration
@@ -27,8 +39,7 @@
   </h>
   -----------------------------------------------------------------------------*/
 __ROM_BASE = 0x00000000;
-/*__ROM_SIZE = 0x00080000; */
-__ROM_SIZE = 0x00100000;
+__ROM_SIZE = 0x00080000;
 
 /*--------------------- DTCM RAM Configuration ----------------------------
   <h> RAM Configuration
@@ -37,8 +48,16 @@ __ROM_SIZE = 0x00100000;
   </h>
  -----------------------------------------------------------------------------*/
 __RAM_BASE = 0x20000000;
-/* __RAM_SIZE = 0x00080000; */
-__RAM_SIZE = 0x00100000;
+__RAM_SIZE = 0x00080000;
+
+/*----------------------- Data SRAM Configuration ------------------------------
+  <h> Data SRAM Configuration
+    <o0> DATA_SRAM Base Address    <0x0-0xFFFFFFFF:8>
+    <o1> DATA_SRAM Size (in Bytes) <0x0-0xFFFFFFFF:8>
+  </h>
+ -----------------------------------------------------------------------------*/
+__DATA_SRAM_BASE = 0x01000000;
+__DATA_SRAM_SIZE = 0x00200000;
 
 /*--------------------- Embedded SRAM Configuration ----------------------------
   <h> SRAM Configuration
@@ -73,10 +92,11 @@ __DDR_SIZE = 0x02000000;
 
 MEMORY
 {
-  ITCM  (rx)  : ORIGIN = __ROM_BASE, LENGTH = __ROM_SIZE
-  DTCM  (rwx) : ORIGIN = __RAM_BASE, LENGTH = __RAM_SIZE
-  SRAM  (rwx) : ORIGIN = __SRAM_BASE, LENGTH = __SRAM_SIZE
-  DDR   (rwx) : ORIGIN = __DDR_BASE, LENGTH = __DDR_SIZE
+  ITCM       (rx)  : ORIGIN = __ROM_BASE, LENGTH = __ROM_SIZE
+  DTCM       (rwx) : ORIGIN = __RAM_BASE, LENGTH = __RAM_SIZE
+  DATA_SRAM  (rwx) : ORIGIN = __DATA_SRAM_BASE, LENGTH = __DATA_SRAM_SIZE
+  SRAM       (rwx) : ORIGIN = __SRAM_BASE, LENGTH = __SRAM_SIZE
+  DDR        (rwx) : ORIGIN = __DDR_BASE, LENGTH = __DDR_SIZE
 }
 
 /* Linker script to place sections and symbol values. Should be used together
@@ -113,6 +133,16 @@ ENTRY(Reset_Handler)
 
 SECTIONS
 {
+  /* .ddr is placed before .text so that .rodata.tvm is encountered before .rodata* */
+  .ddr :
+  {
+    . = ALIGN (16);
+    *(.rodata.tvm)
+    . = ALIGN (16);
+    *(.data.tvm);
+    . = ALIGN(16);
+  } > DDR
+
   .text :
   {
     KEEP(*(.vectors))
@@ -140,18 +170,6 @@ SECTIONS
     KEEP(*(.eh_frame*))
   } > ITCM
 
-  /*
-   * SG veneers:
-   * All SG veneers are placed in the special output section .gnu.sgstubs. Its start address
-   * must be set, either with the command line option �--section-start� or in a linker script,
-   * to indicate where to place these veneers in memory.
-   */
-/*
-  .gnu.sgstubs :
-  {
-    . = ALIGN(32);
-  } > ITCM
-*/
   .ARM.extab :
   {
     *(.ARM.extab* .gnu.linkonce.armextab.*)
@@ -179,11 +197,6 @@ SECTIONS
   {
     . = ALIGN(4);
     __zero_table_start__ = .;
-    /* Add each additional bss section here */
-/*
-    LONG (__bss2_start__)
-    LONG (__bss2_end__ - __bss2_start__)
-*/
     __zero_table_end__ = .;
   } > ITCM
 
@@ -193,6 +206,11 @@ SECTIONS
    * which must be 4byte aligned
    */
   __etext = ALIGN (4);
+
+  .sram :
+  {
+    . = ALIGN(16);
+  } > SRAM AT > SRAM
 
   .data : AT (__etext)
   {
@@ -229,32 +247,10 @@ SECTIONS
 
   } > DTCM
 
-  /*
-   * Secondary data section, optional
-   *
-   * Remember to add each additional data section
-   * to the .copy.table above to asure proper
-   * initialization during startup.
-   */
-/*
-  __etext2 = ALIGN (4);
-
-  .data2 : AT (__etext2)
-  {
-    . = ALIGN(4);
-    __data2_start__ = .;
-    *(.data2)
-    *(.data2.*)
-    . = ALIGN(4);
-    __data2_end__ = .;
-
-  } > RAM2
-*/
-
-  .sram :
+  .bss.noinit (NOLOAD):
   {
     . = ALIGN(16);
-    *(.bss.NoInit)
+    *(.bss.noinit.*)
     . = ALIGN(16);
   } > SRAM AT > SRAM
 
@@ -269,25 +265,10 @@ SECTIONS
     __bss_end__ = .;
   } > DTCM AT > DTCM
 
-
-  /*
-   * Secondary bss section, optional
-   *
-   * Remember to add each additional bss section
-   * to the .zero.table above to asure proper
-   * initialization during startup.
-   */
-/*
-  .bss2 :
+  .data_sram :
   {
-    . = ALIGN(4);
-    __bss2_start__ = .;
-    *(.bss2)
-    *(.bss2.*)
-    . = ALIGN(4);
-    __bss2_end__ = .;
-  } > RAM2 AT > RAM2
-*/
+    . = ALIGN(16);
+  } > DATA_SRAM
 
   .heap (COPY) :
   {
@@ -309,6 +290,6 @@ SECTIONS
   } > DTCM
   PROVIDE(__stack = __StackTop);
 
-  /* Check if data + heap + stack exceeds DTCM limit */
-  ASSERT(__StackLimit >= __HeapLimit, "region DTCM overflowed with stack")
+  /* Check if data + stack exceeds DTCM limit */
+  ASSERT(__StackLimit >= __bss_end__, "region DTCM overflowed with stack")
 }
