@@ -27,13 +27,16 @@ static uint32_t start_instructions = 0;
 
 void init_target() {
   csr_write(0xCC0, 0b11);
+}
+
+void start_timer() {
   start_cycles = csr_read(0x780);
   start_instructions = csr_read(0x781);
   // printf("Start Cycles: %ld\n", start_cycles);
   // printf("Start Instructions: %ld\n", start_instructions);
 }
 
-void deinit_target() {
+void stop_timer() {
    uint32_t stop_cycles= csr_read(0x780);
    uint32_t stop_instructions= csr_read(0x781);
   // WARNING: 32bit ony, overflows after 4294967295 cycles (42s at 100MHz)
