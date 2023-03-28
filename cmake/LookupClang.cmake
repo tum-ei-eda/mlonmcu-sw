@@ -1,7 +1,6 @@
 set(CLANG_VERSIONS 15 14)
 
 set(LLVM_DIR "" CACHE PATH "Lookup path for the llvm installation.")
-MESSAGE("LLVM_DIR=${LLVM_DIR}")
 
 # Find clang
 function(do_lookup program out)
@@ -36,6 +35,3 @@ do_lookup(clang CLANG_EXECUTABLE)
 do_lookup(clang++ CLANG++_EXECUTABLE)
 do_lookup(lld LLD_EXECUTABLE)
 
-MESSAGE(STATUS "CLANG_EXECUTABLE=${CLANG_EXECUTABLE}")
-MESSAGE(STATUS "CLANG++_EXECUTABLE=${CLANG++_EXECUTABLE}")
-MESSAGE(STATUS "LLD_EXECUTABLE=${LLD_EXECUTABLE}")
