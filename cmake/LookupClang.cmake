@@ -1,4 +1,4 @@
-set(CLANG_VERSIONS 15 14)
+set(CLANG_VERSIONS 17 16 15 14)
 
 set(LLVM_DIR "" CACHE PATH "Lookup path for the llvm installation.")
 
