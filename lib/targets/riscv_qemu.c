@@ -113,3 +113,5 @@ void stop_timer() {
   float diff_ms = 0;  // unimplemented (see RDCYCLE_PER_SECOND)
   printf("Total Cycles: %lld\n", stop_cycles - start_cycles);
 }
+
+void deinit_target() {}
