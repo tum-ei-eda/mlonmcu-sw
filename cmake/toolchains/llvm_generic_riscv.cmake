@@ -60,6 +60,12 @@ ELSE()
     SET(RISCV_ARCH_FULL ${RISCV_ARCH})
 ENDIF()
 
+# Workarounds for unsupported march strings
+STRING(REPLACE "_zicsr" "" RISCV_ARCH_FULL ${RISCV_ARCH_FULL})
+STRING(REPLACE "_zifencei" "" RISCV_ARCH_FULL ${RISCV_ARCH_FULL})
+
+# SET(RISCV_ARCH ${RISCV_ARCH_FULL})
+
 SET(CMAKE_C_FLAGS
     "${CMAKE_C_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
 )
