@@ -1,3 +1,29 @@
+SET(TC_VARS
+    RISCV_ELF_GCC_PREFIX
+    RISCV_ELF_GCC_BASENAME
+    RISCV_ARCH
+    RISCV_ABI
+    LLVM_DIR
+)
+MESSAGE(STATUS "TC_VARS=${TC_VARS}")
+SET(RISCV_ELF_GCC_PREFIX
+    ""
+    CACHE PATH "install location for riscv-gcc toolchain"
+)
+SET(RISCV_ELF_GCC_BASENAME
+    "riscv64-unknown-elf"
+    CACHE STRING "base name of the toolchain executables"
+)
+SET(RISCV_ARCH
+    "rv32gc"
+    CACHE STRING "march argument to the compiler"
+)
+SET(RISCV_ABI
+    "ilp32d"
+    CACHE STRING "mabi argument to the compiler"
+)
+SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
+
 # Contains toolchain configurations and settings for using LLVM/Clang
 
 INCLUDE(LookupClang)

@@ -1,24 +1,6 @@
 SET(CMAKE_SYSTEM_NAME Generic)
 SET(CMAKE_SYSTEM_PROCESSOR Pulpino)
 
-SET(RISCV_ELF_GCC_PREFIX
-    ""
-    CACHE PATH "install location for riscv-gcc toolchain"
-)
-SET(RISCV_ELF_GCC_BASENAME
-    "riscv64-unknown-elf"
-    CACHE STRING "base name of the toolchain executables"
-)
-SET(RISCV_ARCH
-    "rv32gc"
-    CACHE STRING "march argument to the compiler"
-)
-SET(RISCV_ABI
-    "ilp32d"
-    CACHE STRING "mabi argument to the compiler"
-)
-SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
-
 IF(NOT MEM_ROM_ORIGIN)
     SET(MEM_ROM_ORIGIN 0x0)
 ENDIF()
@@ -51,8 +33,8 @@ MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
 ENDMACRO()
 
 ADD_DEFINITIONS(-D__riscv__)
-ADD_DEFINITIONS(-march=${RISCV_ARCH})
-ADD_DEFINITIONS(-mabi=${RISCV_ABI})
+# ADD_DEFINITIONS(-march=${RISCV_ARCH})
+# ADD_DEFINITIONS(-mabi=${RISCV_ABI})
 
 IF(RISCV_VEXT)
     ADD_DEFINITIONS(-DUSE_VEXT)
