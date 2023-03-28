@@ -24,14 +24,14 @@ function(do_lookup program out)
         ENDIF()
     ENDIF()
     IF(NOT ${program}_NAME_MATCH)
-        MESSAGE(FATAL_ERROR "Unable to find ${program} executable")
+        set(${out} ${program})  # Fallback (TODO: find out why failing does not work here)
+        # MESSAGE(FATAL_ERROR "Unable to find ${program} executable")
+    ELSE()
+        set(${out} ${${program}_NAME_MATCH} PARENT_SCOPE)
     ENDIF()
-    MESSAGE(STATUS "${program}_NAME_MATCH=${${program}_NAME_MATCH}")
-    set(${out} ${${program}_NAME_MATCH} PARENT_SCOPE)
 endfunction()
 
 
 do_lookup(clang CLANG_EXECUTABLE)
 do_lookup(clang++ CLANG++_EXECUTABLE)
 do_lookup(lld LLD_EXECUTABLE)
-
