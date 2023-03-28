@@ -31,6 +31,16 @@ IF(RISCV_ABI)
     SET(BUILD_FLAGS "${BUILD_FLAGS} -mabi=${RISCV_ABI}")
 ENDIF()
 
+# TODO: define array with all values which need to be passed for toolchain file!
+
+SET(ARGS "")
+
+FOREACH(X ${TC_VARS})
+    SET(ARGS "${ARGS} -D${X}=${${X}}")
+ENDFOREACH()
+
+separate_arguments(ARGS UNIX_COMMAND "${ARGS}")
+
 INCLUDE(ExternalProject)
 EXTERNALPROJECT_ADD(
     muriscvnn
@@ -44,13 +54,10 @@ EXTERNALPROJECT_ADD(
                -DTOOLCHAIN=${MURISCVNN_TOOLCHAIN}
                -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
                -DENABLE_UNIT_TESTS=OFF
-               -DTC_PREFIX=${TC_PREFIX}
-               -DEXE_EXT=${EXE_EXT}
-               -DRISCV_ARCH=${RISCV_ARCH}
-               -DRISCV_ABI=${RISCV_ABI}
                -DARM_CPU=${ARM_CPU}
                -DARM_FLOAT_ABI=${ARM_FLOAT_ABI}
                -DARM_FPU=${ARM_FPU}
+               ${ARGS}
     BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j4
     INSTALL_COMMAND ""
 )
