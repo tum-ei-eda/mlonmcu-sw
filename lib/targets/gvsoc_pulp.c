@@ -45,3 +45,5 @@ void stop_timer() {
   printf("Total Cycles: %ld\n", diff_cycles);
   printf("Total Instructions: %ld\n", diff_instructions);
 }
+
+void deinit_target() {}
