@@ -4,7 +4,6 @@ SET(TC_VARS
     RISCV_ARCH
     RISCV_ABI
 )
-MESSAGE(STATUS "gcc_generic_riscv.cmake> TC_VARS=${TC_VARS}")
 
 SET(RISCV_ELF_GCC_PREFIX
     ""

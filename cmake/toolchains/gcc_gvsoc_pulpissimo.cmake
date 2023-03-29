@@ -1,3 +1,10 @@
+SET(TC_VARS
+    RISCV_ELF_GCC_PREFIX
+    RISCV_ELF_GCC_BASENAME
+    RISCV_ARCH
+    RISCV_ABI
+)
+
 SET(RISCV_ELF_GCC_PREFIX
     ""
     CACHE PATH "install location for riscv-gcc toolchain"

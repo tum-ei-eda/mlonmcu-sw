@@ -5,7 +5,6 @@ SET(TC_VARS
     RISCV_ABI
     LLVM_DIR
 )
-MESSAGE(STATUS "TC_VARS=${TC_VARS}")
 SET(RISCV_ELF_GCC_PREFIX
     ""
     CACHE PATH "install location for riscv-gcc toolchain"
