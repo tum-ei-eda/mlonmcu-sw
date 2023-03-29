@@ -29,6 +29,13 @@ SET(CMSISNN_INCLUDE_DIRS ${CMSISNN_DIR} ${CMSISNN_DIR}/CMSIS/Core/Include ${CMSI
 )
 
 # TODO: propagarting all toolchain specific vars does not scale well
+SET(ARGS "")
+
+FOREACH(X ${TC_VARS})
+    SET(ARGS "${ARGS} -D${X}=${${X}}")
+ENDFOREACH()
+
+separate_arguments(ARGS UNIX_COMMAND "${ARGS}")
 
 INCLUDE(ExternalProject)
 EXTERNALPROJECT_ADD(
@@ -46,6 +53,8 @@ EXTERNALPROJECT_ADD(
                -DARM_FPU=${ARM_FPU}
                -DRISCV_ARCH=${RISCV_ARCH}
                -DRISCV_ABI=${RISCV_ABI}
+               -DCMSIS_PATH=${CMSIS_DIR}
+               ${ARGS}
     BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j 4
     INSTALL_COMMAND ""
 )
