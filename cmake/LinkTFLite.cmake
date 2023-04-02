@@ -146,6 +146,7 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
     ${TFLM_SRC}/simple_memory_allocator.cc
+    ${TFLM_SRC}/arena_allocator/simple_memory_allocator.cc
     ${TFLM_SRC}/micro_allocation_info.cc
     ${TFLM_SRC}/micro_resource_variable.cc
     ${TFLM_SRC}/arena_allocator/single_arena_buffer_allocator.cc
