@@ -58,7 +58,7 @@ EXTERNALPROJECT_ADD(
                -DARM_FLOAT_ABI=${ARM_FLOAT_ABI}
                -DARM_FPU=${ARM_FPU}
                ${ARGS}
-    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j4
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j ${SUBPROJECT_THREADS}
     INSTALL_COMMAND ""
 )
 

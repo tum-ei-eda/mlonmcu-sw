@@ -41,6 +41,11 @@ SET(PROTECT_STACK
     CACHE BOOL "Whether to enable stack guards"
 )
 
+SET(SUBPROJECT_THREADS
+    4
+    CACHE STRING "Number of threads used for building subprojects."
+)
+
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 INCLUDE(ChooseTarget)
 INCLUDE(AddAllSubdirs)

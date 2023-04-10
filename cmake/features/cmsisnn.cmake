@@ -64,7 +64,7 @@ EXTERNALPROJECT_ADD(
                -DRISCV_ABI=${RISCV_ABI}
                -DCMSIS_PATH=${CMSIS_DIR}
                ${ARGS}
-    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j 4
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j ${SUBPROJECT_THREADS}
     INSTALL_COMMAND ""
 )
 
