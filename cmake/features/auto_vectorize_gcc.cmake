@@ -9,14 +9,16 @@ ENDIF()
 SET(CMAKE_CXX_FLAGS_RELEASE
     "${CMAKE_CXX_FLAGS_RELEASE} \
     -ftree-vectorize \
-    -mriscv-vector-bits=${VLEN} \
+    -mrvv-vector-bits=${VLEN} \
 "
+    # -mriscv-vector-bits=${VLEN} \
 )
 SET(CMAKE_C_FLAGS_RELEASE
     "${CMAKE_C_FLAGS_RELEASE} \
     -ftree-vectorize \
-    -mriscv-vector-bits=${VLEN} \
+    -mrvv-vector-bits=${VLEN} \
 "
+    # -mriscv-vector-bits=${VLEN} \
 )
 IF(DEFINED RISCV_AUTO_VECTORIZE_LOOP)
     IF(NOT RISCV_AUTO_VECTORIZE_LOOP)

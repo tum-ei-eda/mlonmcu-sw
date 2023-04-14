@@ -6,15 +6,15 @@ IF(RISCV_RVV_VLEN)
 ELSE()
     SET(VLEN "?")
 ENDIF()
- SET(CMAKE_CXX_FLAGS_RELEASE
-     "${CMAKE_CXX_FLAGS_RELEASE} \
-     -mllvm \
-     --riscv-v-vector-bits-min=${VLEN} \
- "
- )
- SET(CMAKE_C_FLAGS_RELEASE
-     "${CMAKE_C_FLAGS_RELEASE} \
-     -mllvm \
-     --riscv-v-vector-bits-min=${VLEN} \
- "
- )
+SET(CMAKE_CXX_FLAGS_RELEASE
+    "${CMAKE_CXX_FLAGS_RELEASE} \
+    -mllvm \
+    --riscv-v-vector-bits-min=${VLEN} \
+"
+)
+SET(CMAKE_C_FLAGS_RELEASE
+    "${CMAKE_C_FLAGS_RELEASE} \
+    -mllvm \
+    --riscv-v-vector-bits-min=${VLEN} \
+"
+)
