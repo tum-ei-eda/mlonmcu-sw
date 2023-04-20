@@ -55,7 +55,7 @@ ENDIF()
 SET(ARGS "")
 
 FOREACH(X ${TC_VARS})
-    SET(ARGS "${ARGS} -D${X}=${${X}}")
+    SET(ARGS "${ARGS} -D${X}=\"${${X}}\"")
 ENDFOREACH()
 
 separate_arguments(ARGS UNIX_COMMAND "${ARGS}")
