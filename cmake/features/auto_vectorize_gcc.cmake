@@ -1,68 +1,32 @@
-IF(NOT RISCV_VEXT)
-    # MESSAGE(FATAL_ERROR "RISCV_AUTO_VECTORIZE requires RISCV_VEXT")
-ELSE()
+SET(AUTO_VECTORIZE_FLAGS "-ftree-vectorize")
+IF(RISCV_VEXT)
     IF(RISCV_VLEN)
-        SET(VLEN ${RISCV_VLEN})
-    ELSE()
-        SET(VLEN "?")
+        SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} -mriscv-vector-bits=${RISCV_VLEN}")
     ENDIF()
-    SET(CMAKE_CXX_FLAGS_RELEASE
-        "${CMAKE_CXX_FLAGS_RELEASE} \
-        -ftree-vectorize \
-        -mriscv-vector-bits=${VLEN} \
-    "
-    )
-    SET(CMAKE_C_FLAGS_RELEASE
-        "${CMAKE_C_FLAGS_RELEASE} \
-        -ftree-vectorize \
-        -mriscv-vector-bits=${VLEN} \
-    "
-    )
-    IF(DEFINED RISCV_AUTO_VECTORIZE_LOOP)
-        IF(NOT RISCV_AUTO_VECTORIZE_LOOP)
-            SET(CMAKE_CXX_FLAGS_RELEASE
-                "${CMAKE_CXX_FLAGS_RELEASE} \
-                -fno-tree-loop-vectorize \
-            "
-            )
-            SET(CMAKE_C_FLAGS_RELEASE
-                "${CMAKE_C_FLAGS_RELEASE} \
-                -fno-tree-loop-vectorize \
-            "
-            )
-        ENDIF()
+ENDIF()
+IF(DEFINED RISCV_AUTO_VECTORIZE_LOOP)
+    IF(NOT RISCV_AUTO_VECTORIZE_LOOP)
+        SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
+            -fno-tree-loop-vectorize \
+        ")
     ENDIF()
-    IF(DEFINED RISCV_AUTO_VECTORIZE_SLP)
-        IF(NOT RISCV_AUTO_VECTORIZE_SLP)
-            SET(CMAKE_CXX_FLAGS_RELEASE
-                "${CMAKE_CXX_FLAGS_RELEASE} \
-                -fno-tree-slp-vectorize \
-            "
-            )
-            SET(CMAKE_C_FLAGS_RELEASE
-                "${CMAKE_C_FLAGS_RELEASE} \
-                -fno-tree-slp-vectorize \
-            "
-            )
-        ENDIF()
+ENDIF()
+IF(DEFINED RISCV_AUTO_VECTORIZE_SLP)
+    IF(NOT RISCV_AUTO_VECTORIZE_SLP)
+        SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
+            -fno-tree-slp-vectorize \
+        ")
     ENDIF()
-    # Also interesting:
-    # -mriscv-vector-lmul=<lmul>  Set the vf using lmul in auto-vectorization
+ENDIF()
+# Also interesting:
+# -mriscv-vector-lmul=<lmul>  Set the vf using lmul in auto-vectorization
     # -fsimd-cost-model=[unlimited|dynamic|cheap|very-cheap] Specifies the vectorization cost model for code marked with a simd directive
 
-ENDIF()
-
 IF(RISCV_AUTO_VECTORIZE_VERBOSE)
-    SET(CMAKE_CXX_FLAGS_RELEASE
-        "${CMAKE_CXX_FLAGS_RELEASE} \
+    SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
         -fopt-info-vec \
         -fopt-info-vec-missed \
-    "
-    )
-    SET(CMAKE_C_FLAGS_RELEASE
-        "${CMAKE_C_FLAGS_RELEASE} \
-        -fopt-info-vec \
-        -fopt-info-vec-missed \
-    "
-    )
+    ")
 ENDIF()
+SET(FEATURE_EXTRA_C_FLAGS "${FEATURE_EXTRA_C_FLAGS} ${AUTO_VECTORIZE_FLAGS}")
+SET(FEATURE_EXTRA_CXX_FLAGS "${FEATURE_EXTRA_CXX_FLAGS} ${AUTO_VECTORIZE_FLAGS}")

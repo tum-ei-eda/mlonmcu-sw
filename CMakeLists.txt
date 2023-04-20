@@ -50,6 +50,12 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 INCLUDE(ChooseTarget)
 INCLUDE(AddAllSubdirs)
 
+# Toolchain-specific features
+IF(RISCV_AUTO_VECTORIZE)
+    INCLUDE(features/auto_vectorize_${TOOLCHAIN})
+ENDIF()
+
+
 PROJECT(ml_on_mcu_targetsw)
 
 ENABLE_TESTING()
@@ -124,10 +130,6 @@ ENDIF()
 
 IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
-ENDIF()
-
-IF(RISCV_AUTO_VECTORIZE)
-    INCLUDE(features/auto_vectorize_${TOOLCHAIN})
 ENDIF()
 
 INCLUDE(backends/${MLONMCU_BACKEND})
