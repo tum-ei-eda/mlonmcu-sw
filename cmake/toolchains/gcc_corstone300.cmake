@@ -4,6 +4,10 @@ SET(TC_VARS
     ARM_CPU
     ARM_FPU
     ARM_FLOAT_ABI
+    FEATURE_EXTRA_C_FLAGS
+    FEATURE_EXTRA_CXX_FLAGS
+    FEATURE_EXTRA_ASM_FLAGS
+    EXE_EXT
 )
 # Setting Linux is forcing th extension to be .o instead of .obj when building on WIndows. It is important because
 # armlink is failing when files have .obj extensions (error with scatter file section not found) SET(CMAKE_SYSTEM_NAME
@@ -31,6 +35,10 @@ IF(NOT TC_PREFIX)
         SET(TC_PREFIX "${ARM_COMPILER_PREFIX}/bin/${ARM_COMPILER_BASENAME}-")
     ENDIF()
 ENDIF()
+
+if(NOT (EXISTS "${TC_PREFIX}gcc${EXE_EXT}"))
+   MESSAGE(FATAL_ERROR, "${TC_PREFIX}gcc${EXE_EXT} NOT FOUND")
+endif()
 
 SET(CMAKE_C_COMPILER ${TC_PREFIX}gcc${EXE_EXT})
 SET(CMAKE_CXX_COMPILER ${TC_PREFIX}g++${EXE_EXT})
@@ -97,3 +105,13 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 # For libraries and headers in the target directories
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+SET(CMAKE_C_FLAGS
+    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
+)
+SET(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
+)
+SET(CMAKE_ASM_FLAGS
+    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
+)

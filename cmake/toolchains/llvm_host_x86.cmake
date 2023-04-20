@@ -1,5 +1,8 @@
 SET(TC_VARS
     LLVM_DIR
+    FEATURE_EXTRA_C_FLAGS
+    FEATURE_EXTRA_CXX_FLAGS
+    FEATURE_EXTRA_ASM_FLAGS
 )
 # Contains toolchain configurations and settings for using LLVM/Clang
 
@@ -19,18 +22,13 @@ IF(LLVM_VERSION_MAJOR LESS 13)
 ENDIF()
 # set(CMAKE_C_LINKER lld-13) # TODO(fabianpedd): doesnt work, need to use -fuse-ld=lld-13 instead
 
-# SET(CMAKE_C_FLAGS
-#     "${CMAKE_C_FLAGS} --target=riscv32 -march=${RISCV_ARCH} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
-# )
-# SET(CMAKE_C_FLAGS
-#     "${CMAKE_C_FLAGS} --gcc-toolchain=${RISCV_GCC_PREFIX} --sysroot=${RISCV_GCC_PREFIX}/${RISCV_GCC_BASENAME}"
-# )
-#
-# SET(CMAKE_ASM_FLAGS
-#     "${CMAKE_ASM_FLAGS} --target=riscv32 -march=${RISCV_ARCH} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
-# )
-# SET(CMAKE_ASM_FLAGS
-#     "${CMAKE_ASM_FLAGS} --gcc-toolchain=${RISCV_GCC_PREFIX} --sysroot=${RISCV_GCC_PREFIX}/${RISCV_GCC_BASENAME}"
-# )
-#
-# SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld-13")
+
+SET(CMAKE_C_FLAGS
+    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
+)
+SET(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
+)
+SET(CMAKE_ASM_FLAGS
+    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
+)

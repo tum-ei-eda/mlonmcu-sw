@@ -1,4 +1,13 @@
 # Contains toolchain configurations and settings for using LLVM/Clang
+SET(TC_VARS
+    RISCV_ELF_GCC_PREFIX
+    RISCV_ELF_GCC_BASENAME
+    RISCV_ARCH
+    RISCV_ABI
+    FEATURE_EXTRA_C_FLAGS
+    FEATURE_EXTRA_CXX_FLAGS
+    FEATURE_EXTRA_ASM_FLAGS
+)
 
 INCLUDE(LookupClang)
 
@@ -36,3 +45,13 @@ SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${RISCV_FLAGS} -std=gnu99 -ffunction-sec
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Iinclude ${RISCV_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}  -menable-experimental-extensions   -std=gnu99 -ffunction-sections -fdata-sections -static -nostartfiles -lm -Wl,--gc-sections -fuse-ld=lld")
 # end of transferred from https://github.com/pulp-platform/ara/blob/main/apps/common/runtime.mk#L85-L93
+
+SET(CMAKE_C_FLAGS
+    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
+)
+SET(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
+)
+SET(CMAKE_ASM_FLAGS
+    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
+)
