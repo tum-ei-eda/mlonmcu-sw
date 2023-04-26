@@ -1,5 +1,4 @@
 # Contains toolchain configurations and settings for using LLVM/Clang
-# Contains toolchain configurations and settings for using LLVM/Clang
 SET(TC_VARS
     RISCV_ELF_GCC_PREFIX
     RISCV_ELF_GCC_BASENAME
