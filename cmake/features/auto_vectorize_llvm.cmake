@@ -1,10 +1,12 @@
 SET(AUTO_VECTORIZE_FLAGS "-fvectorize -fslp-vectorize")
 IF(RISCV_VEXT)
     IF(RISCV_VLEN)
-        SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
-            -mllvm \
-            --riscv-v-vector-bits-min=${RISCV_VLEN} \
-        ")
+        IF(RISCV_VLEN GREATER_EQUAL 128)
+            SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
+                -mllvm \
+                --riscv-v-vector-bits-min=${RISCV_VLEN} \
+            ")
+        ENDIF()
     ENDIF()
 ENDIF()
 IF(DEFINED RISCV_AUTO_VECTORIZE_LOOP)
