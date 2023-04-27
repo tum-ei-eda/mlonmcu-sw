@@ -27,6 +27,7 @@ SET(RISCV_ABI
     "ilp32d"
     CACHE STRING "mabi argument to the compiler"
 )
+STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 
 INCLUDE(LookupClang)
 
@@ -48,20 +49,20 @@ SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 # Builtin mandatory flags. Need to be simply expanded variables for appends in
 # other cmake files to work correctly
 SET(CV_CFLAGS "\
---target=riscv32 \
+--target=riscv${XLEN} \
 --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME} \
 -msmall-data-limit=8 -mno-save-restore \
 -fsigned-char -ffunction-sections -fdata-sections \
 -Wall -Wextra -Wshadow -Wformat=2 -Wundef -Wsign-conversion -Wno-unused-parameter") # -std=gnu11 \
 
 SET(CV_ASFLAGS "\
---target=riscv32 \
+--target=riscv${XLEN} \
 --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME} \
 -msmall-data-limit=8 -mno-save-restore \
 -fsigned-char -ffunction-sections -fdata-sections \
 -x assembler-with-cpp")
 
-SET(CV_CPPFLAGS "--target=riscv32 --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+SET(CV_CPPFLAGS "--target=riscv${XLEN} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
 
 # note: linkerscript is included in target directory makefile.mk
 SET(CV_LDFLAGS "\

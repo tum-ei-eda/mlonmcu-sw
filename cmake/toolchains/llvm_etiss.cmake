@@ -24,6 +24,7 @@ SET(RISCV_ABI
     "ilp32d"
     CACHE STRING "mabi argument to the compiler"
 )
+STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
 # Contains toolchain configurations and settings for using LLVM/Clang
@@ -63,21 +64,21 @@ ELSE()
 ENDIF()
 
 SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
+    "${CMAKE_C_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
 )
 SET(CMAKE_C_FLAGS
     "${CMAKE_C_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
 )
 
 SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
+    "${CMAKE_CXX_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
 )
 SET(CMAKE_CXX_FLAGS
     "${CMAKE_CXX_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
 )
 
 SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
+    "${CMAKE_ASM_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI}"
 )
 SET(CMAKE_ASM_FLAGS
     "${CMAKE_ASM_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
