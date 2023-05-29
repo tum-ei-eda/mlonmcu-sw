@@ -2,7 +2,7 @@
 
 #include "model.cc.h"
 
-void mlif_run() {
+void mlonmcu_run() {
   model_init();
 
   size_t input_num = 0;

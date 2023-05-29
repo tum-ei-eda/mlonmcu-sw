@@ -1,7 +1,7 @@
 #include "ml_interface.h"
 #include "tvm_wrapper.h"
 
-void mlif_run() {
+void mlonmcu_run() {
   TVMWrap_Init();
 
   size_t input_num = 0;

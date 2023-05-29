@@ -13,23 +13,10 @@ SET(TOOLCHAIN
 )
 SET_PROPERTY(CACHE TOOLCHAIN PROPERTY STRINGS gcc llvm)
 
-SET(MLONMCU_BACKEND
-    ""
-    CACHE STRING "Specify which backend to use."
-)
-SET_PROPERTY(CACHE MLONMCU_BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
-
-SET(MLONMCU_FRAMEWORK
-    ""
-    CACHE STRING "Specify which backend to use."
-)
-SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
-
 SET(OPTIMIZE
     "3"
     CACHE STRING "Specify compiler optimization level should be used in release mode."
 )
-SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
 
 SET(ENABLE_LTO
     OFF
@@ -55,11 +42,11 @@ ENDIF()
 
 # IF(NOT DEFINED EXTRA_CMAKE_CXX_FLAGS) # I am not sure whether this should be added --Xinyu Zhou
 #     SET(EXTRA_CMAKE_CXX_FLAGS "")
-# ENDIF() 
+# ENDIF()
 
 # IF(NOT DEFINED EXTRA_CMAKE_C_FLAGS) # I am not sure whether this should be added --Xinyu Zhou
 #     SET(EXTRA_CMAKE_C_FLAGS "")
-# ENDIF() 
+# ENDIF()
 
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -123,16 +110,6 @@ ENDIF()
 
 IF(RISCV_AUTO_VECTORIZE)
     INCLUDE(features/auto_vectorize_${TOOLCHAIN})
-ENDIF()
-
-INCLUDE(backends/${MLONMCU_BACKEND})
-INCLUDE(frameworks/${MLONMCU_FRAMEWORK})
-
-IF(TF_DIR)
-    INCLUDE(LinkTFLite)
-ENDIF()
-IF(TVM_DIR)
-    INCLUDE(LinkTVM)
 ENDIF()
 
 ADD_SUBDIRECTORY(lib)

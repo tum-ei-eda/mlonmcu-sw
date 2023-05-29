@@ -11,11 +11,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-// This runs the ML model using the callbacks above.
-// The default implementation will run with garbage data.
-void mlif_run();
-
 // These can be overridden by use code.
 
 // Provides input data for the model. The default implementation retrieves input from
