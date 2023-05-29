@@ -4,7 +4,7 @@ SET(TEMPLATE
     "ml_interface"
     CACHE STRING "Specify which template to use."
 )
-SET_PROPERTY(CACHE TEMPLATE PROPERTY STRINGS ml_interface taclebench)
+SET_PROPERTY(CACHE TEMPLATE PROPERTY STRINGS ml_interface taclebench embench)
 
 ADD_SUBDIRECTORY(support)
 ADD_SUBDIRECTORY(${TEMPLATE})
