@@ -117,7 +117,3 @@ ADD_SUBDIRECTORY(generic)
 IF(RISCV_NN)
     ADD_SUBDIRECTORY(riscv_nn)
 ENDIF()
-
-IF(NOT SRC_DIR)
-    MESSAGE(FATAL_ERROR "The variable SRC_DIR is not set")
-ENDIF()
