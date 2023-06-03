@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 
 /* How many cycles (rdcycle) per second (OVPsim and Spike). */
 #define RDCYCLE_PER_SECOND 100000000UL
@@ -148,6 +149,6 @@ void deinit_target() {
   uint64_t diff_cycles = stop_cycles - start_cycles;
   uint64_t diff_instructions = stop_instructions - start_instructions;
   float diff_ms = 0;  // unimplemented (see RDCYCLE_PER_SECOND)
-  printf("Total Cycles: %lld\n", diff_cycles);
-  printf("Total Instructions: %lld\n", diff_instructions);
+  printf("Total Cycles: %llu\n", diff_cycles);
+  printf("Total Instructions: %llu\n", diff_instructions);
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 
 #define CSR_PULP_PCMR 0xCC1
 #define CSR_PULP_PCER 0xCC0
@@ -39,6 +40,7 @@ void deinit_target() {
   // WARNING: 32bit ony, overflows after 4294967295 cycles (42s at 100MHz)
   uint32_t diff_cycles = stop_cycles - start_cycles;
   uint32_t diff_instructions = stop_instructions - start_instructions;
-  printf("Total Cycles: %ld\n", diff_cycles);
-  printf("Total Instructions: %ld\n", diff_instructions);
+  // TODO: handle overflow
+  printf("Total Cycles: %lu\n", diff_cycles);
+  printf("Total Instructions: %lu\n", diff_instructions);
 }
