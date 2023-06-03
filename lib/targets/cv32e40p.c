@@ -135,7 +135,8 @@ static uint64_t start_cycles = 0;
 static uint64_t start_instructions = 0;
 
 void init_target() {
-  // enable_fext();
+  // TODO: only if fpu enabled
+  enable_fext();
 #ifdef USE_VEXT
   // enable_vext();
 #endif
