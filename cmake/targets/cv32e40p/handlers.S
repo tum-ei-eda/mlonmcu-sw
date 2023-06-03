@@ -147,14 +147,19 @@ u_sw_irq_handler:
 	sw t4, 52(sp)
 	sw t5, 56(sp)
 	sw t6, 60(sp)
-	csrr t0, mcause
-	li t1, EXCEPTION_ILLEGAL_INSN
-	beq t0, t1, handle_illegal_insn
-	li t1, EXCEPTION_ECALL_M
-	beq t0, t1, handle_ecall
-	li t1, EXCEPTION_BREAKPOINT
-	beq t0, t1, handle_ebreak
-	j handle_unknown
+	# void _trap_handler_c(unsigned long mcause, unsigned long mepc)
+	csrr    a0, mcause
+	csrr    a1, mepc
+	call    _trap_handler_c
+	j end_handler_incr_mepc
+	// csrr t0, mcause
+	// li t1, EXCEPTION_ILLEGAL_INSN
+	// beq t0, t1, handle_illegal_insn
+	// li t1, EXCEPTION_ECALL_M
+	// beq t0, t1, handle_ecall
+	// li t1, EXCEPTION_BREAKPOINT
+	// beq t0, t1, handle_ebreak
+	// j handle_unknown
 
 handle_ecall:
 	jal ra, handle_syscall
