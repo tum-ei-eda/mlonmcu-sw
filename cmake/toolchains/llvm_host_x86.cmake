@@ -1,19 +1,23 @@
+# Contains toolchain configurations and settings for using LLVM/Clang
 SET(TC_VARS
     LLVM_DIR
     FEATURE_EXTRA_C_FLAGS
     FEATURE_EXTRA_CXX_FLAGS
     FEATURE_EXTRA_ASM_FLAGS
+    CMAKE_C_COMPILER
+    CMAKE_CXX_COMPILER
+    CMAKE_ASM_COMPILER
 )
-# Contains toolchain configurations and settings for using LLVM/Clang
+
+INCLUDE(LookupClang OPTIONAL RESULT_VARIABLE LOOKUP_CLANG_MODULE)
+
+IF(LOOKUP_CLANG_MODULE)
+    SET(CMAKE_C_COMPILER ${CLANG_EXECUTABLE})
+    SET(CMAKE_CXX_COMPILER ${CLANG++_EXECUTABLE})
+    SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
+ENDIF()
 
 # Lets stick to standard .elf file ending for now set(CMAKE_EXECUTABLE_SUFFIX_C .elf)
-
-INCLUDE(LookupClang)
-
-SET(CMAKE_C_COMPILER ${CLANG_EXECUTABLE})
-SET(CMAKE_CXX_COMPILER ${CLANG++_EXECUTABLE})
-SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
-# TODO: automatic lookup with find_program
 
 SET(LLVM_VERSION_MAJOR 14)  # TODO: should not be hardcoded
 
