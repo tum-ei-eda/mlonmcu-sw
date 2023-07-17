@@ -102,14 +102,14 @@ SET(CMAKE_ASM_FLAGS
     "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
 )
 
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
-IF(RISCV_VEXT)
-    IF(RISCV_VLEN)
-        SET(FEATURE_EXTRA_CXX_FLAGS "${FEATURE_EXTRA_CXX_FLAGS} \
-            -mllvm \
-            --riscv-v-vector-bits-min=${RISCV_VLEN} \
-        ")
-    ENDIF()
-ENDIF()
+# SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
+# IF(RISCV_VEXT)
+#     IF(RISCV_VLEN)
+#         SET(FEATURE_EXTRA_CXX_FLAGS "${FEATURE_EXTRA_CXX_FLAGS} \
+#             -mllvm \
+#             --riscv-v-vector-bits-min=${RISCV_VLEN} \
+#         ")
+#     ENDIF()
+# ENDIF()
 separate_arguments(ARGS UNIX_COMMAND ${FEATURE_EXTRA_CXX_FLAGS})
 add_compile_options(${ARGS})
