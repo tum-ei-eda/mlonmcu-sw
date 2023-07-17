@@ -4,7 +4,7 @@ IF(RISCV_VEXT)
         IF(RISCV_VLEN GREATER_EQUAL 128)
             SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
                 -mllvm \
-                -mllvm -scalable-vectorization=preferred
+                -mllvm -scalable-vectorization=preferred \
             ")
                 # TODO: expose to feature
                 # --riscv-v-vector-bits-min=${RISCV_VLEN} \
