@@ -1,7 +1,7 @@
 SET(AUTO_VECTORIZE_FLAGS "-fvectorize -fslp-vectorize")
 IF(RISCV_VEXT)
     IF(RISCV_VLEN)
-        IF(RISCV_VLEN GREATER_EQUAL 128)
+        # IF(RISCV_VLEN GREATER_EQUAL 128)
             SET(AUTO_VECTORIZE_FLAGS "${AUTO_VECTORIZE_FLAGS} \
                 -mllvm \
                 -mllvm -scalable-vectorization=preferred \
@@ -9,7 +9,7 @@ IF(RISCV_VEXT)
                 # TODO: expose to feature
                 # --riscv-v-vector-bits-min=${RISCV_VLEN} \
                 # --riscv-v-vector-bits-max=${RISCV_VLEN} \
-        ENDIF()
+        # ENDIF()
     ENDIF()
 ENDIF()
 IF(DEFINED RISCV_AUTO_VECTORIZE_LOOP)
