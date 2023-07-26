@@ -117,9 +117,6 @@ add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${CXX_ARGS}>")
 separate_arguments(ASM_ARGS UNIX_COMMAND ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
 add_compile_options("$<$<COMPILE_LANGUAGE:ASM>:${ASM_ARGS}>")
 
-INCLUDE(backends/${MLONMCU_BACKEND})
-INCLUDE(frameworks/${MLONMCU_FRAMEWORK})
-
 IF(TF_DIR)
     INCLUDE(LinkTFLite)
 ENDIF()
