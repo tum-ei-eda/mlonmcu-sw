@@ -1,4 +1,5 @@
 #include "support.h"
+#include <stdio.h>
 
 void
 initialise_board ()
