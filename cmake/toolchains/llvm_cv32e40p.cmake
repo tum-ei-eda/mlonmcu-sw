@@ -9,6 +9,8 @@ SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
 SET(CMAKE_OBJCOPY ${TC_PREFIX}objcopy)
 # TODO: automatic lookup with find_program
 
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
+
 SET(LLVM_VERSION_MAJOR 14)  # TODO: should not be hardcoded
 
 IF(LLVM_VERSION_MAJOR LESS 13)
