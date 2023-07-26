@@ -15,14 +15,16 @@ stop_trigger ()
 {
 }
 
-int mlonmcu_run() {
-  int i;
-  volatile int result;
-  int correct;
-
+int mlonmcu_init() {
   initialise_board();
   initialise_benchmark();
   warm_caches(WARMUP_HEAT);
+}
+
+int mlonmcu_run() {
+  // int i;
+  volatile int result;
+  int correct;
 
   start_trigger();
   result = benchmark();

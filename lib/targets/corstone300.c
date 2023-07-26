@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#include "target.h"
+
 // DWT (Data Watchpoint and Trace) registers, only exists on ARM Cortex with a
 // DWT unit.
 #define KIN1_DWT_CONTROL (*((volatile uint32_t*)0xE0001000))

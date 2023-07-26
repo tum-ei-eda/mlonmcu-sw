@@ -2,9 +2,11 @@
 
 #include "model.cc.h"
 
-void mlonmcu_run() {
+void mlonmcu_init() {
   model_init();
+}
 
+void mlonmcu_run() {
   size_t input_num = 0;
   size_t remaining = NUM_RUNS;
   while (mlif_request_input(model_input_ptr(input_num), model_input_size(input_num)) || remaining) {

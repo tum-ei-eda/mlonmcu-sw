@@ -1,9 +1,11 @@
 #include "ml_interface.h"
 #include "tvm_wrapper.h"
 
-void mlonmcu_run() {
+void mlonmcu_init() {
   TVMWrap_Init();
+}
 
+void mlonmcu_run() {
   size_t input_num = 0;
   size_t remaining = NUM_RUNS;
   // inout data will only be applied in the first run!
