@@ -37,7 +37,7 @@ IF(RISCV_AUTO_VECTORIZE)
     INCLUDE(features/auto_vectorize_${TOOLCHAIN})
 ENDIF()
 
-PROJECT(ml_on_mcu_targetsw)
+PROJECT(mlonmcu_sw)
 
 ENABLE_TESTING()
 
