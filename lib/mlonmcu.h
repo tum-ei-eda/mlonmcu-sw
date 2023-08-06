@@ -3,5 +3,6 @@
 
 void mlonmcu_init();
 void mlonmcu_run();
+void mlonmcu_deinit();
 
 #endif

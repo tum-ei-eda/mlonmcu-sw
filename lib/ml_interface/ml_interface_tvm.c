@@ -4,6 +4,7 @@
 void mlonmcu_init() {
   TVMWrap_Init();
 }
+void mlonmcu_deinit() {}
 
 void mlonmcu_run() {
   size_t input_num = 0;

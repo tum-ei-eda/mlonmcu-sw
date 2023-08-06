@@ -19,11 +19,15 @@ int main() {
   start_bench(RUN);
   mlonmcu_run();
   stop_bench(RUN);
+  // start_bench(DEINIT);
+  mlonmcu_deinit();
+  // stop_bench(DEINIT);
   stop_bench(TOTAL);
 
   // post
   print_bench(INIT);
   print_bench(RUN);
+  // print_bench(DEINIT);
   print_bench(TOTAL);
   printf("Program finish.\n");
   target_deinit();

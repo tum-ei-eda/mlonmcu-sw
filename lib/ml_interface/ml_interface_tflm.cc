@@ -6,6 +6,8 @@ void mlonmcu_init() {
   model_init();
 }
 
+void mlonmcu_deinit() {}
+
 void mlonmcu_run() {
   size_t input_num = 0;
   size_t remaining = NUM_RUNS;
