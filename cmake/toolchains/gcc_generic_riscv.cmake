@@ -28,6 +28,7 @@ IF(RISCV_VEXT)
     ENDIF()
 ENDIF()
 
+# TODO: broken for -mllvm stuff (see cmakelists.txt for workaround)
 separate_arguments(C_ARGS UNIX_COMMAND ${FEATURE_EXTRA_C_FLAGS})
 add_compile_options("$<$<COMPILE_LANGUAGE:C>:${C_ARGS}>")
 separate_arguments(CXX_ARGS UNIX_COMMAND ${FEATURE_EXTRA_CXX_FLAGS})
