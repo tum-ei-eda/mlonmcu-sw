@@ -19,6 +19,28 @@ int32_t add16(size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
         d[i] = a[i] + b[i];
 }
 
+int32_t gather_add8(size_t n, int8_t d[restrict n], int8_t a[n], int8_t b[n])
+{
+    for (size_t i = 0; i < n/2; i++)
+        d[i] = a[i*2] + b[i*2];
+}
+int32_t gather_add16(size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
+{
+    for (size_t i = 0; i < n/2; i++)
+        d[i] = a[i*2] + b[i*2];
+}
+
+int32_t scatter_add8(size_t n, int8_t d[restrict n], int8_t a[n], int8_t b[n])
+{
+    for (size_t i = 0; i < n/2; i++)
+        d[i*2] = a[i] + b[i];
+}
+int32_t scatter_add16(size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
+{
+    for (size_t i = 0; i < n/2; i++)
+        d[i*2] = a[i] + b[i];
+}
+
 int32_t dot8(size_t n, int8_t a[n], int8_t b[n])
 {
     uint32_t acc = 0;
