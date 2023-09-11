@@ -19,6 +19,8 @@ int main() {
   start_bench(RUN);
   mlonmcu_run();
   stop_bench(RUN);
+  // TODO: time check
+  mlonmcu_check();
   // start_bench(DEINIT);
   mlonmcu_deinit();
   // stop_bench(DEINIT);
