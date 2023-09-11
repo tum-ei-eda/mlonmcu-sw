@@ -48,7 +48,6 @@ SET(CMAKE_RANLIB ${TC_PREFIX}ranlib${EXE_EXT})
 # now.
 SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
-<<<<<<< HEAD
 # the following is transferred from PULP-FreeRTOS repository
 # https://github.com/pulp-platform/pulp-freertos/blob/master/default_flags.mk#L110-L126
 # Builtin mandatory flags. Need to be simply expanded variables for appends in
@@ -81,15 +80,12 @@ SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} ${CV_CFLAGS} ${CV_CPPFLAGS} -DSTDIO_FAKE=2 
 SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${CV_ASFLAGS} ${CV_CPPFLAGS} -DportasmHANDLE_INTERRUPT=vSystemIrqHandler ")
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -DportasmHANDLE_INTERRUPT=vSystemIrqHandler ${CV_CFLAGS} ${CV_LDFLAGS}")
 
-ADD_DEFINITIONS(-march=${RISCV_ARCH})
-ADD_DEFINITIONS(-mabi=${RISCV_ABI})
-
-SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
-)
-SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
-)
-SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
-)
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()

@@ -41,9 +41,6 @@ SET(CMAKE_RANLIB ${TC_PREFIX}ranlib${EXE_EXT})
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}")
 
-ADD_DEFINITIONS(-march=${RISCV_ARCH})
-ADD_DEFINITIONS(-mabi=${RISCV_ABI})
-
 SET(CMAKE_C_FLAGS
     "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
 )
@@ -61,9 +58,12 @@ IF(RISCV_VEXT)
     ENDIF()
 ENDIF()
 
-separate_arguments(C_ARGS UNIX_COMMAND ${FEATURE_EXTRA_C_FLAGS})
-add_compile_options("$<$<COMPILE_LANGUAGE:C>:${C_ARGS}>")
-separate_arguments(CXX_ARGS UNIX_COMMAND ${FEATURE_EXTRA_CXX_FLAGS})
-add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${CXX_ARGS}>")
-separate_arguments(ASM_ARGS UNIX_COMMAND ${FEATURE_EXTRA_ASM_FLAGS})
-add_compile_options("$<$<COMPILE_LANGUAGE:ASM>:${ASM_ARGS}>")
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()

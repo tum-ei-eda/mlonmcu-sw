@@ -1,3 +1,7 @@
+IF(NOT SRC_DIR)
+    MESSAGE(FATAL_ERROR "The variable SRC_DIR is not set")
+ENDIF()
+
 SET(TVM_OUT_DIR ${SRC_DIR}/codegen/host/)
 SET(EXTRA_SRC ml_interface_tvm.c)
 

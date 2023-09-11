@@ -1,6 +1,30 @@
 PROJECT(ml_interface)
 
+SET(MLONMCU_BACKEND
+    ""
+    CACHE STRING "Specify which backend to use."
+)
+SET_PROPERTY(CACHE MLONMCU_BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
+
+SET(MLONMCU_FRAMEWORK
+    ""
+    CACHE STRING "Specify which backend to use."
+)
+SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
+
 INCLUDE(extras)
+
+IF(TF_DIR)
+    INCLUDE(LinkTFLite)
+ENDIF()
+IF(TVM_DIR)
+    INCLUDE(LinkTVM)
+ENDIF()
+
+
+INCLUDE(backends/${MLONMCU_BACKEND})
+INCLUDE(frameworks/${MLONMCU_FRAMEWORK})
+
 
 INCLUDE(frameworks/${MLONMCU_FRAMEWORK}_mlif)
 

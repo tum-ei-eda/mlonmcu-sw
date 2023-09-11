@@ -13,23 +13,10 @@ SET(TOOLCHAIN
 )
 SET_PROPERTY(CACHE TOOLCHAIN PROPERTY STRINGS gcc llvm)
 
-SET(MLONMCU_BACKEND
-    ""
-    CACHE STRING "Specify which backend to use."
-)
-SET_PROPERTY(CACHE MLONMCU_BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
-
-SET(MLONMCU_FRAMEWORK
-    ""
-    CACHE STRING "Specify which backend to use."
-)
-SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
-
 SET(OPTIMIZE
     "3"
     CACHE STRING "Specify compiler optimization level should be used in release mode."
 )
-SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
 
 SET(ENABLE_LTO
     OFF
@@ -55,7 +42,7 @@ IF(RISCV_AUTO_VECTORIZE)
     INCLUDE(features/auto_vectorize_${TOOLCHAIN})
 ENDIF()
 
-PROJECT(ml_on_mcu_targetsw)
+PROJECT(mlonmcu_sw)
 
 ENABLE_TESTING()
 
@@ -65,11 +52,11 @@ ENDIF()
 
 # IF(NOT DEFINED EXTRA_CMAKE_CXX_FLAGS) # I am not sure whether this should be added --Xinyu Zhou
 #     SET(EXTRA_CMAKE_CXX_FLAGS "")
-# ENDIF() 
+# ENDIF()
 
 # IF(NOT DEFINED EXTRA_CMAKE_C_FLAGS) # I am not sure whether this should be added --Xinyu Zhou
 #     SET(EXTRA_CMAKE_C_FLAGS "")
-# ENDIF() 
+# ENDIF()
 
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -128,29 +115,18 @@ IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
 
-separate_arguments(C_ARGS UNIX_COMMAND ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
-add_compile_options("$<$<COMPILE_LANGUAGE:C>:${C_ARGS}>")
-separate_arguments(CXX_ARGS UNIX_COMMAND ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
-add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${CXX_ARGS}>")
-separate_arguments(ASM_ARGS UNIX_COMMAND ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
-add_compile_options("$<$<COMPILE_LANGUAGE:ASM>:${ASM_ARGS}>")
-
-INCLUDE(backends/${MLONMCU_BACKEND})
-INCLUDE(frameworks/${MLONMCU_FRAMEWORK})
-
-IF(TF_DIR)
-    INCLUDE(LinkTFLite)
-ENDIF()
-IF(TVM_DIR)
-    INCLUDE(LinkTVM)
-ENDIF()
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
 
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(generic)
 IF(RISCV_NN)
     ADD_SUBDIRECTORY(riscv_nn)
-ENDIF()
-
-IF(NOT SRC_DIR)
-    MESSAGE(FATAL_ERROR "The variable SRC_DIR is not set")
 ENDIF()

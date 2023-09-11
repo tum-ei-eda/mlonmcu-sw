@@ -59,15 +59,12 @@ SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${RISCV_FLAGS_GCC}")
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -nostartfiles -lm -lgcc ${RISCV_FLAGS_GCC} ")
 # end of transferred from https://github.com/pulp-platform/ara/blob/70a059a7ed5a8c534e782994d25806bed07f0b83/apps/common/runtime.mk#L95-L99
 
-ADD_DEFINITIONS(-march=${RISCV_ARCH})
-ADD_DEFINITIONS(-mabi=${RISCV_ABI})
-
-SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
-)
-SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
-)
-SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
-)
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()

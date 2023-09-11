@@ -39,6 +39,8 @@ SET(RISCV_ABI
 STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
+
 SET(LLVM_VERSION_MAJOR 14)  # TODO: should not be hardcoded
 SET(RISCV_RVV_MAJOR 1)
 SET(RISCV_RVV_MINOR 0)
@@ -114,5 +116,13 @@ SET(CMAKE_ASM_FLAGS
 #         ")
 #     ENDIF()
 # ENDIF()
-separate_arguments(ARGS UNIX_COMMAND ${FEATURE_EXTRA_CXX_FLAGS})
-add_compile_options(${ARGS})
+
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
