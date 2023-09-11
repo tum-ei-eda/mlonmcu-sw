@@ -441,3 +441,4 @@ int mlonmcu_deinit() {
 
     return MAIN_RETURN_VAL;
 }
+int mlonmcu_check() {}

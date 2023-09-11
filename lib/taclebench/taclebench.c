@@ -6,3 +6,4 @@ int mlonmcu_deinit() {}
 int mlonmcu_run() {
     return taclebench_main();
 }
+int mlonmcu_check() {}

@@ -39,3 +39,4 @@ int mlonmcu_run() {
   result = benchmark();
   stop_trigger();
 }
+int mlonmcu_check() {}

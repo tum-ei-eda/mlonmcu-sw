@@ -6,3 +6,5 @@ int mlonmcu_deinit() {}
 int mlonmcu_run() {
     return mibench_main();
 }
+
+int mlonmcu_check() {}

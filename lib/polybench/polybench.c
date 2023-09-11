@@ -8,3 +8,4 @@ int mlonmcu_run() {
     char *argv[1];
     return polybench_main(argc, argv);
 }
+int mlonmcu_check() {}

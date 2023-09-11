@@ -16,3 +16,5 @@ int mlonmcu_run() {
   dhrystone_main();
   return 0;
 }
+
+int mlonmcu_check() {}

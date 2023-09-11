@@ -26,3 +26,5 @@ int mlonmcu_run() {
 #endif  // NARGS
     return ret == -1;
 }
+
+int mlonmcu_check() {}
