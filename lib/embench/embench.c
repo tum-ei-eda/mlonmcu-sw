@@ -28,6 +28,7 @@ int correct;
 int mlonmcu_deinit() {
   /* bmarks that use arrays will check a global array rather than int result */
   correct = verify_benchmark(result);
+  printf("correct=%d\n", correct);
 
   return (!correct);
 }
