@@ -12,11 +12,11 @@ function(do_lookup program out)
     # Custom path, explicit versions
     find_program(${program}_NAME_MATCH NAMES ${VERSION_NAMES} PATHS ${LLVM_DIR}/bin/ NO_DEFAULT_PATH)
     IF(NOT ${program}_NAME_MATCH)
-        # System path, explicit versions
-        find_program(${program}_NAME_MATCH NAMES ${VERSION_NAMES})
+        # Custom path, implicit version
+        find_program(${program}_NAME_MATCH NAMES ${program} PATHS ${LLVM_DIR}/bin/ NO_DEFAULT_PATH)
         IF(NOT ${program}_NAME_MATCH)
-            # Custom path, implicit version
-            find_program(${program}_NAME_MATCH NAMES ${program} PATHS ${LLVM_DIR}/bin/ NO_DEFAULT_PATH)
+            # System path, explicit versions
+            find_program(${program}_NAME_MATCH NAMES ${VERSION_NAMES})
             IF(NOT ${program}_NAME_MATCH)
                 # System path, implicit version
                 find_program(${program}_NAME_MATCH NAMES ${program})
@@ -33,5 +33,5 @@ endfunction()
 
 
 do_lookup(clang CLANG_EXECUTABLE)
-do_lookup(clang++ CLANG++_EXECUTABLE)
+do_lookup(clang++ CLANGPP_EXECUTABLE)
 do_lookup(lld LLD_EXECUTABLE)
