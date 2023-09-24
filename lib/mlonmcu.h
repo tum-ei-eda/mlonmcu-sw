@@ -1,8 +1,9 @@
 #ifndef MLONMCU_H
 #define MLONMCU_H
 
-void mlonmcu_init();
-void mlonmcu_run();
-void mlonmcu_deinit();
+int mlonmcu_init();
+int mlonmcu_run();
+int mlonmcu_check();
+int mlonmcu_deinit();
 
 #endif

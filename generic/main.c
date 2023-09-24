@@ -1,5 +1,6 @@
 #include "mlonmcu.h"
 #include "target.h"
+#include "exit.h"
 #include "bench.h"
 #include <stdio.h>
 
@@ -7,6 +8,7 @@
 // void deinit_target();
 
 int main() {
+  int ret;
   // pre
   target_init();
   printf("Program start.\n");
@@ -14,16 +16,30 @@ int main() {
   // main
   start_bench(TOTAL);
   start_bench(INIT);
-  mlonmcu_init();
+  ret = mlonmcu_init();
   stop_bench(INIT);
+  if (ret) {
+    goto cleanup;
+  }
   start_bench(RUN);
-  mlonmcu_run();
+  ret = mlonmcu_run();
   stop_bench(RUN);
+  if (ret) {
+    goto cleanup;
+  }
   // TODO: time check
-  mlonmcu_check();
+  ret = mlonmcu_check();
+  if (ret) {
+    goto cleanup;
+  }
   // start_bench(DEINIT);
-  mlonmcu_deinit();
+  ret = mlonmcu_deinit();
   // stop_bench(DEINIT);
+  if (ret) {
+    goto cleanup;
+  }
+
+cleanup:
   stop_bench(TOTAL);
 
   // post
@@ -34,6 +50,6 @@ int main() {
   printf("Program finish.\n");
   target_deinit();
 
-  // TODO: exit code from  mlonmcu_init and mlonmcu_bench
-  return 0;
+  mlonmcu_exit(ret);
+  return ret;
 }
