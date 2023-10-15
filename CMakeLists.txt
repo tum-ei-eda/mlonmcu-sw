@@ -20,12 +20,21 @@ SET(OPTIMIZE
 
 SET(ENABLE_LTO
     OFF
-    CACHE BOOL "Whether to enable link-time optimization"
+    CACHE BOOL "Whether to enable link-time optimization."
+)
+
+SET(ENABLE_GC
+    ON
+    CACHE BOOL "Whether to enable garbage collection to eliminate unused code."
 )
 
 SET(PROTECT_STACK
     OFF
     CACHE BOOL "Whether to enable stack guards"
+)
+SET(SLIM_CPP
+    ON
+    CACHE BOOL "Disable assertions,... for more leightweight cpp code."
 )
 
 SET(SUBPROJECT_THREADS
@@ -65,39 +74,31 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
-SET(CMAKE_CXX_FLAGS_RELEASE
-    "${CMAKE_CXX_FLAGS_RELEASE} \
-    -O${OPTIMIZE} \
-    -ffunction-sections \
-    -fdata-sections \
-    -fno-rtti \
-    -fno-exceptions \
-    -fno-threadsafe-statics \
-"
-)
-SET(CMAKE_C_FLAGS_RELEASE
-    "${CMAKE_C_FLAGS_RELEASE} \
-    -O${OPTIMIZE} \
-    -ffunction-sections \
-    -fdata-sections \
+SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O${OPTIMIZE}")
+SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O${OPTIMIZE}")
+
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE
+    "${CMAKE_EXE_LINKER_FLAGS} \
+    -Xlinker -Map=linker.map \
+    -Xlinker --cref \
 "
 )
 IF(${DEBUG_SYMBOLS})
     SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -g")
     SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g")
 ENDIF()
-
-SET(CMAKE_EXE_LINKER_FLAGS_RELEASE
-    "${CMAKE_EXE_LINKER_FLAGS} \
-    -Xlinker --gc-sections \
-    -Xlinker -Map=linker.map \
-    -Xlinker --cref \
-"
-)
+IF(ENABLE_GC)
+    SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -ffunction-sections -fdata-sections")
+    SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -ffunction-sections -fdata-sections")
+    SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker --gc-sections")
+ENDIF()
 IF(ENABLE_LTO)
     SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -flto -ffat-lto-objects")
     SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -flto -ffat-lto-objects")
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker -flto")
+ENDIF()
+IF(SLIM_CPP)
+    SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fno-rtti -fno-exceptions -fno-threadsafe-statics")
 ENDIF()
 IF(PROTECT_STACK)
     SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fstack-protector-all")
