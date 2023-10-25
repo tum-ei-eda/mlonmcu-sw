@@ -140,7 +140,7 @@ IF(EXISTS ${TFLM_SRC}/flatbuffer_utils.cc)
     LIST(APPEND OPT_SRC ${TFLM_SRC}/flatbuffer_utils.cc)
 ENDIF()
 
-ADD_LIBRARY(
+COMMON_ADD_LIBRARY(
     tflm STATIC
     # Not really needed?
     ${TFLM_SRC}/micro_error_reporter.cc
