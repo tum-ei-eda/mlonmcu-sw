@@ -40,3 +40,18 @@ extern const int num;
 #endif
 
 #endif
+/*
+const int num_data_buffers_in = 4;
+const int num_data_buffers_out = 4;
+const unsigned char data_buffer_in_0_0[] = {0x00, 0x00, 0x00, 0x00, };
+const unsigned char data_buffer_in_1_0[] = {0xc3, 0xf5, 0xc8, 0x3f, };
+const unsigned char data_buffer_in_2_0[] = {0xc3, 0xf5, 0x48, 0x40, };
+const unsigned char data_buffer_in_3_0[] = {0x52, 0xb8, 0x96, 0x40, };
+const unsigned char data_buffer_out_0_0[] = {0x30, 0x3b, 0x03, 0x3d, };
+const unsigned char data_buffer_out_1_0[] = {0x19, 0xc1, 0x73, 0x3f, };
+const unsigned char data_buffer_out_2_0[] = {0x30, 0x08, 0x40, 0xbd, };
+const unsigned char data_buffer_out_3_0[] = {0x54, 0xb4, 0x81, 0xbf, };
+const unsigned char *const data_buffers_in[] = {data_buffer_in_0_0, data_buffer_in_1_0, data_buffer_in_2_0, data_buffer_in_3_0, };
+const unsigned char *const data_buffers_out[] = {data_buffer_out_0_0, data_buffer_out_1_0, data_buffer_out_2_0, data_buffer_out_3_0, };
+const size_t data_size_in[] = {sizeof(data_buffer_in_0_0), sizeof(data_buffer_in_1_0), sizeof(data_buffer_in_2_0), sizeof(data_buffer_in_3_0), };
+const size_t data_size_out[] = {sizeof(data_buffer_out_0_0), sizeof(data_buffer_out_1_0), sizeof(data_buffer_out_2_0), sizeof(data_buffer_out_3_0), };*/
