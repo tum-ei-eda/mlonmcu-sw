@@ -20,16 +20,14 @@ int mlonmcu_init() {
   initialise_board();
   initialise_benchmark();
   warm_caches(WARMUP_HEAT);
+  return 0;
 }
 
 volatile int result;
 int correct;
 
 int mlonmcu_deinit() {
-  /* bmarks that use arrays will check a global array rather than int result */
-  correct = verify_benchmark(result);
-
-  return (!correct);
+  return 0;
 }
 
 int mlonmcu_run() {
@@ -38,5 +36,11 @@ int mlonmcu_run() {
   start_trigger();
   result = benchmark();
   stop_trigger();
+  return 0;
 }
-int mlonmcu_check() {}
+int mlonmcu_check() {
+  /* bmarks that use arrays will check a global array rather than int result */
+  correct = verify_benchmark(result);
+
+  return (!correct);
+}

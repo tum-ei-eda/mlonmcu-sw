@@ -6,9 +6,11 @@ char array2[SIZE * ELEM_SIZE / 8];
 char array3[SIZE * ELEM_SIZE / 8];
 
 int mlonmcu_init() {
+    return 0;
 }
 
 int mlonmcu_deinit() {
+    return 0;
 }
 
 int mlonmcu_run() {
@@ -24,7 +26,9 @@ int mlonmcu_run() {
 #elif NARGS == 5
     ret = FUNCTION(SIZE, array1, array2, array3, 42);
 #endif  // NARGS
-    return ret == -1;
+    return ret != 0;
 }
 
-int mlonmcu_check() {}
+int mlonmcu_check() {
+    return 0;
+}
