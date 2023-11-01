@@ -42,6 +42,11 @@ SET(SUBPROJECT_THREADS
     CACHE STRING "Number of threads used for building subprojects."
 )
 
+SET(EXTRA_C_FLAGS "" CACHE STRING "Additional C options.")
+SET(EXTRA_CXX_FLAGS "" CACHE STRING "Additional C++ options.")
+SET(EXTRA_ASM_FLAGS "" CACHE STRING "Additional ASM options.")
+SET(EXTRA_LD_FLAGS "" CACHE STRING "Additional linker options.")
+
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 INCLUDE(ChooseTarget)
 INCLUDE(AddAllSubdirs)
@@ -58,14 +63,6 @@ ENABLE_TESTING()
 IF(NOT CMAKE_BUILD_TYPE)
     SET(CMAKE_BUILD_TYPE Release)
 ENDIF()
-
-# IF(NOT DEFINED EXTRA_CMAKE_CXX_FLAGS) # I am not sure whether this should be added --Xinyu Zhou
-#     SET(EXTRA_CMAKE_CXX_FLAGS "")
-# ENDIF()
-
-# IF(NOT DEFINED EXTRA_CMAKE_C_FLAGS) # I am not sure whether this should be added --Xinyu Zhou
-#     SET(EXTRA_CMAKE_C_FLAGS "")
-# ENDIF()
 
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -116,14 +113,17 @@ IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
 
-foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+foreach(X IN ITEMS ${EXTRA__C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
 endforeach()
-foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+foreach(X IN ITEMS ${EXTRA_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
 endforeach()
-foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+foreach(X IN ITEMS ${EXTRA_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_LD_FLAGS} ${FEATURE_EXTRA_LD_FLAGS})
+    add_link_options("SHELL:${X}")
 endforeach()
 
 ADD_SUBDIRECTORY(lib)
