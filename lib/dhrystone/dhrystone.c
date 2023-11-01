@@ -17,4 +17,6 @@ int mlonmcu_run() {
   return 0;
 }
 
-int mlonmcu_check() {}
+int mlonmcu_check() {
+  return 0;
+}
