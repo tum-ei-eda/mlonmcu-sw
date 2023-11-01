@@ -2,12 +2,23 @@
 
 #include "model.cc.h"
 
+#ifdef __cplusplus
+extern "C"
+#endif
 int mlonmcu_init() {
   return model_init();
 }
 
-int mlonmcu_deinit() {}
+#ifdef __cplusplus
+extern "C"
+#endif
+int mlonmcu_deinit() {
+  return 0;
+}
 
+#ifdef __cplusplus
+extern "C"
+#endif
 int mlonmcu_run() {
   size_t remaining = NUM_RUNS;
   int ret;
@@ -21,6 +32,9 @@ int mlonmcu_run() {
   return ret;
 }
 
+#ifdef __cplusplus
+extern "C"
+#endif
 int mlonmcu_check() {
   size_t input_num = 0;
   int ret;
