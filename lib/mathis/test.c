@@ -149,6 +149,7 @@ int32_t transposed_matmul8 (size_t n, int8_t d[restrict n], int8_t a[n], int8_t 
                 d[y * n + x] += a[y * n + i] * b[x * n + i];
         }
     }
+    return 0;
 }
 
 int32_t transposed_matmul16 (size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
