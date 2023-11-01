@@ -4,6 +4,7 @@ SET(TC_VARS
     RISCV_ELF_GCC_BASENAME
     RISCV_ARCH
     RISCV_ABI
+    RISCV_ATTR
     LLVM_DIR
     FEATURE_EXTRA_C_FLAGS
     FEATURE_EXTRA_CXX_FLAGS
@@ -13,6 +14,7 @@ SET(TC_VARS
     CMAKE_ASM_COMPILER
 )
 
+ADD_DEFINITIONS(-D__riscv__)
 
 INCLUDE(LookupClang OPTIONAL RESULT_VARIABLE LOOKUP_CLANG_MODULE)
 
@@ -22,16 +24,13 @@ IF(LOOKUP_CLANG_MODULE)
     SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
 ENDIF()
 
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
+
 SET(LLVM_VERSION_MAJOR 14)  # TODO: should not be hardcoded
 
 IF(LLVM_VERSION_MAJOR LESS 13)
     MESSAGE(FATAL_ERROR "LLVM version 13 or higher is required")
 ENDIF()
-
-
-# The linker argument setting below will break the cmake test program on 64-bit, so disable test program linking for
-# now.
-SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 # the following is transferred from https://github.com/pulp-platform/ara/blob/main/apps/common/runtime.mk#L85-L93
 # -march=$(RISCV_ARCH) -mabi=$(RISCV_ABI) $(DEFINES) -T/.../link.ld is added with 'add_definition' in corresponding cmake in target folder"

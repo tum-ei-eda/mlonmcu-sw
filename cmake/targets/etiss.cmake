@@ -1,5 +1,5 @@
 SET(CMAKE_SYSTEM_NAME Generic)
-SET(CMAKE_SYSTEM_PROCESSOR Pulpino)
+SET(CMAKE_SYSTEM_PROCESSOR etiss)
 
 IF(NOT MEM_ROM_ORIGIN)
     SET(MEM_ROM_ORIGIN 0x0)
@@ -44,10 +44,8 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     ENDIF()
 ENDMACRO()
 
-ADD_DEFINITIONS(-D__riscv__)
-
-IF(RISCV_VEXT)
-    ADD_DEFINITIONS(-DUSE_VEXT)
-ENDIF()
-
 CONFIGURE_FILE(${CMAKE_CURRENT_LIST_DIR}/etiss/etiss.ld.in etiss.ld @ONLY)
+
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
+SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")

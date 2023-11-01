@@ -9,11 +9,6 @@ SET(TC_VARS
     FEATURE_EXTRA_ASM_FLAGS
     EXE_EXT
 )
-# Setting Linux is forcing th extension to be .o instead of .obj when building on WIndows. It is important because
-# armlink is failing when files have .obj extensions (error with scatter file section not found) SET(CMAKE_SYSTEM_NAME
-# Linux)
-SET(CMAKE_SYSTEM_NAME Generic)
-# SET(CMAKE_SYSTEM_PROCESSOR cortex-m55)
 
 IF(WIN32)
     SET(EXE_EXT ".exe")
