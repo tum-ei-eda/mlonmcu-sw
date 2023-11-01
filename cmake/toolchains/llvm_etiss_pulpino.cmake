@@ -4,6 +4,7 @@ SET(TC_VARS
     RISCV_ELF_GCC_BASENAME
     RISCV_ARCH
     RISCV_ABI
+    RISCV_ATTR
     LLVM_DIR
     FEATURE_EXTRA_C_FLAGS
     FEATURE_EXTRA_CXX_FLAGS
@@ -13,7 +14,10 @@ SET(TC_VARS
     CMAKE_ASM_COMPILER
     CMAKE_OBJCOPY
     CMAKE_OBJDUMP
+    FUSE_LD
 )
+
+ADD_DEFINITIONS(-D__riscv__)
 
 INCLUDE(LookupClang OPTIONAL RESULT_VARIABLE LOOKUP_CLANG_MODULE)
 
@@ -41,12 +45,20 @@ SET(RISCV_ABI
     "ilp32d"
     CACHE STRING "mabi argument to the compiler"
 )
+SET(RISCV_ATTR
+    "+m,+a,+c,+f,+d"
+    CACHE STRING "mabi argument to the compiler"
+)
+SET(FUSE_LD
+    "lld"
+    CACHE STRING "fuse-ld value"
+)
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
 # set(CMAKE_C_LINKER lld-13) # TODO(fabianpedd): doesnt work, need to use -fuse-ld=lld-13 instead
 
-SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 
 IF(RISCV_VEXT)
     IF(NOT DEFINED RISCV_RVV_MAJOR OR NOT DEFINED RISCV_RVV_MINOR)
@@ -57,42 +69,44 @@ ELSE()
     SET(RISCV_ARCH_FULL ${RISCV_ARCH})
 ENDIF()
 
-SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
-)
-SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
-)
+# Workarounds for unsupported march strings
+STRING(REPLACE "_zicsr" "" RISCV_ARCH_FULL ${RISCV_ARCH_FULL})
+STRING(REPLACE "_zifencei" "" RISCV_ARCH_FULL ${RISCV_ARCH_FULL})
 
-SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
-)
-SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
-)
-
-SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
-)
-SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
-)
-
-SET(FUSE_LD
-    "lld"
-    CACHE STRING "fuse-ld value"
-)
-
+SET(TC_C_FLAGS "")
+SET(TC_CXX_FLAGS "")
+SET(TC_ASM_FLAGS "")
+SET(TC_LD_FLAGS "")
+LIST(APPEND TC_C_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_C_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_C_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_C_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_C_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_CXX_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_CXX_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_CXX_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_CXX_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_CXX_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_ASM_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_ASM_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_ASM_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_ASM_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_ASM_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_LD_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_LD_FLAGS "-mabi=${RISCV_ABI}")
 IF(NOT "${FUSE_LD}" STREQUAL "" AND NOT "${FUSE_LD}" STREQUAL "none")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=${FUSE_LD}")
+    LIST(APPEND TC_LD_FLAGS "-fuse-ld=${FUSE_LD}")
 ENDIF()
 
-foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+foreach(X IN ITEMS ${TC_C_FLAGS} ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
 endforeach()
-foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+foreach(X IN ITEMS ${TC_CXX_FLAGS} ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
 endforeach()
-foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+foreach(X IN ITEMS ${TC_ASM_FLAGS} ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${TC_LD_FLAGS} ${EXTRA_CMAKE_LD_FLAGS} ${FEATURE_EXTRA_LD_FLAGS})
+    add_link_options("SHELL:${X}")
 endforeach()

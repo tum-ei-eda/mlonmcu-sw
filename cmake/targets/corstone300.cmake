@@ -1,5 +1,4 @@
-# SET(CMAKE_TOOLCHAIN_FILE "?")
-
+SET(CMAKE_SYSTEM_NAME Generic)
 SET(CMAKE_SYSTEM_PROCESSOR "cortex-m55") # TODO: make this variable
 IF(NOT ARM_CPU)
     SET(ARM_CPU ${CMAKE_SYSTEM_PROCESSOR})
@@ -118,5 +117,6 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     # ENDIF()
 ENDMACRO()
 
-# Alternative: target_pre target_post hooks?
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
 SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")

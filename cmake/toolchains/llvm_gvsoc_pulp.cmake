@@ -4,6 +4,7 @@ SET(TC_VARS
     RISCV_ELF_GCC_BASENAME
     RISCV_ARCH
     RISCV_ABI
+    RISCV_ATTR
     LLVM_DIR
     FEATURE_EXTRA_C_FLAGS
     FEATURE_EXTRA_CXX_FLAGS
@@ -14,6 +15,8 @@ SET(TC_VARS
     CMAKE_OBJCOPY
     CMAKE_OBJDUMP
 )
+
+ADD_DEFINITIONS(-D__riscv__)
 
 INCLUDE(LookupClang OPTIONAL RESULT_VARIABLE LOOKUP_CLANG_MODULE)
 
@@ -41,17 +44,15 @@ SET(RISCV_ABI
     "ilp32d"
     CACHE STRING "mabi argument to the compiler"
 )
+SET(RISCV_ATTR
+    "+m,+a,+c,+f,+d"
+    CACHE STRING "mabi argument to the compiler"
+)
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 
 STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 
 # set(CMAKE_C_LINKER lld-13) # TODO(fabianpedd): doesnt work, need to use -fuse-ld=lld-13 instead
-
-# RV32GC processor
-SET(CMAKE_SYSTEM_PROCESSOR Pulp)
-
-# The linker argument setting below will break the cmake test program on 64-bit, so disable test program linking for
-# now.
-SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 # the following is transfered from PULP-FreeRTOS repository
 # https://github.com/pulp-platform/pulp-freertos/blob/master/default_flags.mk#L110-L126
