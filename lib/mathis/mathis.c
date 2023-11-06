@@ -16,15 +16,15 @@ int mlonmcu_deinit() {
 int mlonmcu_run() {
     int32_t ret = -1;
 #if NARGS == 1
-    ret = FUNCTION(SIZE);
+    ret = FUNCTION(N);
 #elif NARGS == 2
-    ret = FUNCTION(SIZE, array1);
+    ret = FUNCTION(N, array1);
 #elif NARGS == 3
-    ret = FUNCTION(SIZE, array1, array2);
+    ret = FUNCTION(N, array1, array2);
 #elif NARGS == 4
-    ret = FUNCTION(SIZE, array1, array2, array3);
+    ret = FUNCTION(N, array1, array2, array3);
 #elif NARGS == 5
-    ret = FUNCTION(SIZE, array1, array2, array3, 42);
+    ret = FUNCTION(N, array1, array2, array3, 42);
 #endif  // NARGS
     return ret != 0;
 }

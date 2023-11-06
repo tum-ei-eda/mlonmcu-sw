@@ -113,7 +113,7 @@ int32_t matmul16 (size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
     return 0;
 }
 
-int32_t matmul8_a (size_t n, int8_t d[restrict n], int8_t a[n], int8_t b[n])
+int32_t matmul8_a (size_t n, int8_t d[restrict n*n], int8_t a[n*n], int8_t b[n*n])
 {
     for (size_t a_y = 0; a_y < n; a_y++)
     {
@@ -126,7 +126,7 @@ int32_t matmul8_a (size_t n, int8_t d[restrict n], int8_t a[n], int8_t b[n])
     return 0;
 }
 
-int32_t matmul16_a (size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
+int32_t matmul16_a (size_t n, int16_t d[restrict n*n], int16_t a[n*n], int16_t b[n*n])
 {
     for (size_t a_y = 0; a_y < n; a_y++)
     {
@@ -139,7 +139,7 @@ int32_t matmul16_a (size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
     return 0;
 }
 
-int32_t transposed_matmul8 (size_t n, int8_t d[restrict n], int8_t a[n], int8_t b[n])
+int32_t transposed_matmul8 (size_t n, int8_t d[restrict n*n], int8_t a[n*n], int8_t b[n*n])
 {
     for (size_t y = 0; y < n; y++)
     {
@@ -152,7 +152,7 @@ int32_t transposed_matmul8 (size_t n, int8_t d[restrict n], int8_t a[n], int8_t 
     return 0;
 }
 
-int32_t transposed_matmul16 (size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
+int32_t transposed_matmul16 (size_t n, int16_t d[restrict n*n], int16_t a[n*n], int16_t b[n*n])
 {
     for (size_t y = 0; y < n; y++)
     {
@@ -165,7 +165,7 @@ int32_t transposed_matmul16 (size_t n, int16_t d[restrict n], int16_t a[n], int1
     return 0;
 }
 
-int32_t transposed_matmul8_a (size_t n, int8_t d[restrict n], int8_t a[n], int8_t b[n])
+int32_t transposed_matmul8_a (size_t n, int8_t d[restrict n*n], int8_t a[n*n], int8_t b[n*n])
 {
     for (size_t a_y = 0; a_y < n; a_y++)
     {
@@ -178,7 +178,7 @@ int32_t transposed_matmul8_a (size_t n, int8_t d[restrict n], int8_t a[n], int8_
     return 0;
 }
 
-int32_t transposed_matmul16_a (size_t n, int16_t d[restrict n], int16_t a[n], int16_t b[n])
+int32_t transposed_matmul16_a (size_t n, int16_t d[restrict n*n], int16_t a[n*n], int16_t b[n*n])
 {
     for (size_t a_y = 0; a_y < n; a_y++)
     {
