@@ -4,18 +4,18 @@ ENDIF()
 IF(RISCV_RVV_VLEN)
     SET(VLEN ${RISCV_RVV_VLEN})
 ELSE()
-    SET(VLEN "?")
+    SET(VLEN "1024")
 ENDIF()
 SET(CMAKE_CXX_FLAGS_RELEASE
     "${CMAKE_CXX_FLAGS_RELEASE} \
     -ftree-vectorize \
-    -mriscv-vector-bits=${VLEN} \
+    -mrvv-vector-bits=${VLEN} \
 "
 )
 SET(CMAKE_C_FLAGS_RELEASE
     "${CMAKE_C_FLAGS_RELEASE} \
     -ftree-vectorize \
-    -mriscv-vector-bits=${VLEN} \
+    -mrvv-vector-bits=${VLEN} \
 "
 )
 IF(DEFINED RISCV_AUTO_VECTORIZE_LOOP)
