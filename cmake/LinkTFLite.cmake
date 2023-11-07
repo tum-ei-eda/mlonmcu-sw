@@ -40,6 +40,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/pooling.cc
     ${TFLM_SRC}/kernels/add.cc
     ${TFLM_SRC}/kernels/mul.cc
+    ${TFLM_SRC}/kernels/mul_common.cc
     ${TFLM_SRC}/kernels/conv.cc
     ${TFLM_SRC}/kernels/depthwise_conv.cc
     ${TFLM_SRC}/kernels/softmax.cc
@@ -60,7 +61,14 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/elementwise.cc
     ${TFLM_SRC}/kernels/maximum_minimum.cc
     ${TFLM_SRC}/kernels/arg_min_max.cc
+    ${TFLM_SRC}/kernels/shape.cc
     ${TFLM_SRC}/kernels/reshape.cc
+    ${TFLM_SRC}/kernels/expand_dims.cc
+    ${TFLM_SRC}/kernels/leaky_relu.cc
+    ${TFLM_SRC}/kernels/leaky_relu_common.cc
+    ${TFLM_SRC}/kernels/exp.cc
+    ${TFLM_SRC}/kernels/broadcast_args.cc
+    ${TFLM_SRC}/kernels/fill.cc
     ${TFLM_SRC}/kernels/comparisons.cc
     ${TFLM_SRC}/kernels/round.cc
     ${TFLM_SRC}/kernels/strided_slice.cc
