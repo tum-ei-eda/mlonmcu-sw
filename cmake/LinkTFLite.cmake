@@ -143,9 +143,11 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/micro_log.cc
     ${TFL_SRC}/kernels/internal/quantization_util.cc
     ${TFL_SRC}/kernels/kernel_util.cc
+    ${TFL_SRC}/kernels/internal/portable_tensor_utils.cc
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
     ${TFLM_SRC}/simple_memory_allocator.cc
+    ${TFLM_SRC}/arena_allocator/simple_memory_allocator.cc
     ${TFLM_SRC}/micro_allocation_info.cc
     ${TFLM_SRC}/micro_resource_variable.cc
     ${TFLM_SRC}/arena_allocator/single_arena_buffer_allocator.cc
@@ -156,6 +158,10 @@ SET(TFLM_SRCS
     ${TFL_SRC}/core/api/tensor_utils.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
+    ${TFLM_SRC}/micro_op_resolver.cc
+    ${TFLM_SRC}/tflite_bridge/flatbuffer_conversions_bridge.cc
+    ${TFLM_SRC}/tflite_bridge/micro_error_reporter.cc
+    ${TFL_SRC}/core/c/common.cc  # new
     ${TFL_SRC}/c/common.cc  # new
     ${TFL_SRC}/c/common.c  # old
     ${TFLM_SRC}/flatbuffer_utils.cc

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 
 /* How many cycles (rdcycle) per second (OVPsim and Spike). */
 #define RDCYCLE_PER_SECOND 100000000UL
@@ -101,12 +102,17 @@ void init_target() {
 #ifdef USE_VEXT
   enable_vext();
 #endif
+}
+
+void start_timer() {
   start_cycles = rdcycle64();
 }
 
-void deinit_target() {
+void stop_timer() {
   uint64_t stop_cycles = rdcycle64();
   uint64_t diff_cycles = stop_cycles - start_cycles;
   float diff_ms = 0;  // unimplemented (see RDCYCLE_PER_SECOND)
-  printf("Total Cycles: %lld\n", stop_cycles - start_cycles);
+  printf("Total Cycles: %llu\n", diff_cycles);
 }
+
+void deinit_target() {}

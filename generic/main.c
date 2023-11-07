@@ -1,15 +1,57 @@
-#include "ml_interface.h"
-#include "printf.h" // so that ara llvm can work, very strange
-// #include <stdio.h>
+#include "mlonmcu.h"
+#include "target.h"
+#include "exit.h"
+#include "bench.h"
+#include <stdio.h>
 
-void init_target();
-void deinit_target();
+// void init_target();
+// void deinit_target();
 
 int main() {
+  int ret;
+  // pre
+  target_init();
   printf("Program start.\n");
-  init_target();
-  mlif_run();
-  deinit_target();
+
+  // main
+  start_bench(TOTAL);
+  start_bench(INIT);
+  ret = mlonmcu_init();
+  stop_bench(INIT);
+  if (ret) {
+    goto cleanup;
+  }
+  start_bench(RUN);
+  ret = mlonmcu_run();
+  stop_bench(RUN);
+  if (ret) {
+    goto cleanup;
+  }
+  // TODO: time check
+#ifndef MLONMCU_SKIP_CHECK
+  ret = mlonmcu_check();
+  if (ret) {
+    goto cleanup;
+  }
+#endif  // !MLONMCU_SKIP_CHECK
+  // start_bench(DEINIT);
+  ret = mlonmcu_deinit();
+  // stop_bench(DEINIT);
+  if (ret) {
+    goto cleanup;
+  }
+
+cleanup:
+  stop_bench(TOTAL);
+
+  // post
+  print_bench(INIT);
+  print_bench(RUN);
+  // print_bench(DEINIT);
+  print_bench(TOTAL);
   printf("Program finish.\n");
-  return 0;
+  target_deinit();
+
+  mlonmcu_exit(ret);
+  return ret;
 }

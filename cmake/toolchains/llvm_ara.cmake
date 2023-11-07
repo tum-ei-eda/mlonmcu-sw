@@ -1,22 +1,40 @@
 # Contains toolchain configurations and settings for using LLVM/Clang
+SET(TC_VARS
+    RISCV_ELF_GCC_PREFIX
+    RISCV_ELF_GCC_BASENAME
+    RISCV_ARCH
+    RISCV_ABI
+    RISCV_ATTR
+    LLVM_DIR
+    FEATURE_EXTRA_C_FLAGS
+    FEATURE_EXTRA_CXX_FLAGS
+    FEATURE_EXTRA_ASM_FLAGS
+    CMAKE_C_COMPILER
+    CMAKE_CXX_COMPILER
+    CMAKE_ASM_COMPILER
+    CMAKE_OBJCOPY
+    CMAKE_OBJDUMP
+)
 
-INCLUDE(LookupClang)
+ADD_DEFINITIONS(-D__riscv__)
 
-SET(CMAKE_C_COMPILER ${CLANG_EXECUTABLE})
-SET(CMAKE_CXX_COMPILER ${CLANG++_EXECUTABLE})
-SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
-# TODO: automatic lookup with find_program
+INCLUDE(LookupClang OPTIONAL RESULT_VARIABLE LOOKUP_CLANG_MODULE)
+
+IF(LOOKUP_CLANG_MODULE)
+    SET(CMAKE_C_COMPILER ${CLANG_EXECUTABLE})
+    SET(CMAKE_CXX_COMPILER ${CLANGPP_EXECUTABLE})
+    SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
+    SET(CMAKE_OBJCOPY ${LLVM_OBJCOPY_EXECUTABLE})
+    SET(CMAKE_OBJDUMP ${LLVM_OBJDUMP_EXECUTABLE})
+ENDIF()
+
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 
 SET(LLVM_VERSION_MAJOR 14)  # TODO: should not be hardcoded
 
 IF(LLVM_VERSION_MAJOR LESS 13)
     MESSAGE(FATAL_ERROR "LLVM version 13 or higher is required")
 ENDIF()
-
-
-# The linker argument setting below will break the cmake test program on 64-bit, so disable test program linking for
-# now.
-SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 # the following is transferred from https://github.com/pulp-platform/ara/blob/main/apps/common/runtime.mk#L85-L93
 # -march=$(RISCV_ARCH) -mabi=$(RISCV_ABI) $(DEFINES) -T/.../link.ld is added with 'add_definition' in corresponding cmake in target folder"
@@ -38,3 +56,22 @@ SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${RISCV_FLAGS} -std=gnu99 -ffunction-sec
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Iinclude ${RISCV_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}  -menable-experimental-extensions   -std=gnu99 -ffunction-sections -fdata-sections -static -nostartfiles -lm -Wl,--gc-sections -fuse-ld=lld")
 # SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Iinclude ${RISCV_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}  -menable-experimental-extensions   -std=gnu99 -ffunction-sections -fdata-sections -static -nostartfiles -lm -Wl,--gc-sections")
 # end of transferred from https://github.com/pulp-platform/ara/blob/main/apps/common/runtime.mk#L85-L93
+
+SET(FUSE_LD
+    "lld"
+    CACHE STRING "fuse-ld value"
+)
+
+IF(NOT "${FUSE_LD}" STREQUAL "" AND NOT "${FUSE_LD}" STREQUAL "none")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=${FUSE_LD}")
+ENDIF()
+
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()

@@ -1,24 +1,5 @@
 SET(CMAKE_SYSTEM_NAME Generic)
-SET(CMAKE_SYSTEM_PROCESSOR Pulp)
-
-SET(RISCV_ELF_GCC_PREFIX
-    ""
-    CACHE PATH "install location for riscv-gcc toolchain"
-)
-SET(RISCV_ELF_GCC_BASENAME
-    "riscv32-unknown-elf-"
-    CACHE STRING "base name of the toolchain executables"
-)
-SET(RISCV_ARCH
-    "rv32imac"
-    CACHE STRING "march argument to the compiler"
-)
-# set(RISCV_ARCH "rv32imac" CACHE STRING "march argument to the compiler")
-SET(RISCV_ABI
-    "ilp32"
-    CACHE STRING "mabi argument to the compiler"
-)
-SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
+SET(CMAKE_SYSTEM_PROCESSOR gvsoc_pulp)
 
 # SET(GVSOC_BASIC_CMAKE_DIR
 #     ""
@@ -55,9 +36,6 @@ MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
     ADD_EXECUTABLE_GVSOC_PULP(${TARGET_NAME} ${ARGN})
 ENDMACRO()
 
-ADD_DEFINITIONS(-march=${RISCV_ARCH})
-ADD_DEFINITIONS(-mabi=${RISCV_ABI})
-
-IF(RISCV_VEXT)
-    ADD_DEFINITIONS(-DUSE_VEXT)
-ENDIF()
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
+SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")

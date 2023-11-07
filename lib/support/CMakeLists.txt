@@ -1,2 +1,2 @@
-COMMON_ADD_LIBRARY(support STATIC dummy.c)
+COMMON_ADD_LIBRARY(support STATIC dummy.c exit.c)
 TARGET_INCLUDE_DIRECTORIES(support PUBLIC .)

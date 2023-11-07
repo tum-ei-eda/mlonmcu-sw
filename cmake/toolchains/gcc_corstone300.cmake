@@ -1,8 +1,14 @@
-# Setting Linux is forcing th extension to be .o instead of .obj when building on WIndows. It is important because
-# armlink is failing when files have .obj extensions (error with scatter file section not found) SET(CMAKE_SYSTEM_NAME
-# Linux)
-SET(CMAKE_SYSTEM_NAME Generic)
-# SET(CMAKE_SYSTEM_PROCESSOR cortex-m55)
+SET(TC_VARS
+    ARM_COMPILER_PREFIX
+    ARM_COMPILER_BASENAME
+    ARM_CPU
+    ARM_FPU
+    ARM_FLOAT_ABI
+    FEATURE_EXTRA_C_FLAGS
+    FEATURE_EXTRA_CXX_FLAGS
+    FEATURE_EXTRA_ASM_FLAGS
+    EXE_EXT
+)
 
 IF(WIN32)
     SET(EXE_EXT ".exe")
@@ -24,6 +30,10 @@ IF(NOT TC_PREFIX)
         SET(TC_PREFIX "${ARM_COMPILER_PREFIX}/bin/${ARM_COMPILER_BASENAME}-")
     ENDIF()
 ENDIF()
+
+if(NOT (EXISTS "${TC_PREFIX}gcc${EXE_EXT}"))
+   MESSAGE(FATAL_ERROR, "${TC_PREFIX}gcc${EXE_EXT} NOT FOUND")
+endif()
 
 SET(CMAKE_C_COMPILER ${TC_PREFIX}gcc${EXE_EXT})
 SET(CMAKE_CXX_COMPILER ${TC_PREFIX}g++${EXE_EXT})
@@ -82,7 +92,7 @@ SET(CMAKE_EXE_LINKER_FLAGS
 )
 
 ADD_LINK_OPTIONS("--specs=nosys.specs")
-ADD_LINK_OPTIONS("-Wl,--start-group")
+# ADD_LINK_OPTIONS("-Wl,--start-group")
 # add_link_options("-mcpu=${ARM_CPU}")
 
 # Where is the target environment SET(CMAKE_FIND_ROOT_PATH "${tools}") Search for programs in the build host directories
@@ -90,3 +100,13 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 # For libraries and headers in the target directories
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
