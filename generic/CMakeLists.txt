@@ -20,3 +20,12 @@ IF(MLONMCU_SRCDUMP)
         COMMAND ${CMAKE_OBJDUMP} -S ${OBJDUMP_EXTRA_ARGS} ${CMAKE_BINARY_DIR}/bin/generic_mlonmcu > ${CMAKE_BINARY_DIR}/dumps/generic_mlonmcu.srcdump
         COMMENT "Invoking: Objdump (SRC)")
 ENDIF()
+
+SET(SKIP_CHECK
+    OFF
+    CACHE BOOL "Whether to skip mlonmcu_check routine."
+)
+
+IF(SKIP_CHECK)
+    TARGET_COMPILE_DEFINITIONS(generic_mlonmcu PUBLIC -DMLONMCU_SKIP_CHECK)
+ENDIF()

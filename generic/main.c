@@ -28,10 +28,12 @@ int main() {
     goto cleanup;
   }
   // TODO: time check
+#ifndef MLONMCU_SKIP_CHECK
   ret = mlonmcu_check();
   if (ret) {
     goto cleanup;
   }
+#endif  // !MLONMCU_SKIP_CHECK
   // start_bench(DEINIT);
   ret = mlonmcu_deinit();
   // stop_bench(DEINIT);
