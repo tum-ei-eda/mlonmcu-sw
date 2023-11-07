@@ -1,4 +1,5 @@
 #include "support.h"
+#include "exit.h"
 #include <stdio.h>
 
 void
@@ -23,8 +24,8 @@ int mlonmcu_init() {
   return 0;
 }
 
-volatile int result;
-int correct;
+volatile int result = 0;
+int correct = 0;
 
 int mlonmcu_deinit() {
   return 0;
@@ -41,6 +42,9 @@ int mlonmcu_run() {
 int mlonmcu_check() {
   /* bmarks that use arrays will check a global array rather than int result */
   correct = verify_benchmark(result);
+  if (!correct) {
+      return EXIT_MLIF_MISSMATCH;
+  }
 
-  return (!correct);
+  return 0;
 }
