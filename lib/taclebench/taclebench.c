@@ -1,5 +1,6 @@
-#include "taclebench_wrapper.h"
+// order of includes is relevant here since taclebench may conflictbwith stdio.h
 #include "exit.h"
+#include "taclebench_wrapper.h"
 
 int mlonmcu_init() {
   return 0;
