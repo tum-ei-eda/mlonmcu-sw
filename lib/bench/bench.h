@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <inttypes.h>
-#include <stdio.h>
+#include <printing.h>
 
 #include "target.h"
 
@@ -84,7 +84,7 @@ BENCH_DATA_DECL(INSTRUCTIONS)
 BENCH_DATA_DECL(TIME)
 #endif
 
-#define PRINT_BENCH(metric) printf("# %s " BENCH_METRIC(metric) ": %" BENCH_FMT(metric) "\n", bench_names[index], BENCH_DATA(metric)[index]);
+#define PRINT_BENCH(metric) mlonmcu_printf("# %s " BENCH_METRIC(metric) ": %" BENCH_FMT(metric) "\n", bench_names[index], BENCH_DATA(metric)[index]);
 #define PRINT_BENCH_0 \
   PRINT_BENCH(0)
 #define PRINT_BENCH_1 \

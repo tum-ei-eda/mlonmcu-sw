@@ -2,7 +2,6 @@
 #define SUPPORT_EXIT_H
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #define EXIT_MLIF_BASE (0x10)
 #define EXIT_MLIF_INVALID_SIZE (EXIT_MLIF_BASE + 1)

@@ -1,6 +1,7 @@
 #include "exit.h"
+#include "printing.h"
 
 void mlonmcu_exit(int status) {
-    printf("MLONMCU EXIT: %d\n", status);
+    mlonmcu_printf("MLONMCU EXIT: %d\n", status);
     exit(status);
 }

@@ -1,5 +1,6 @@
 #include "ml_interface.h"
 #include "tvm_wrapper.h"
+#include "printing.h"
 
 int mlonmcu_init() {
   return TVMWrap_Init();

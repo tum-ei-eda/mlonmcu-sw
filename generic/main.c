@@ -2,6 +2,7 @@
 #include "target.h"
 #include "exit.h"
 #include "bench.h"
+#include "printing.h"
 #include <stdio.h>
 
 // void init_target();
@@ -11,7 +12,7 @@ int main() {
   int ret;
   // pre
   target_init();
-  printf("Program start.\n");
+  mlonmcu_printf("Program start.\n");
 
   // main
   start_bench(TOTAL);
@@ -49,7 +50,7 @@ cleanup:
   print_bench(RUN);
   // print_bench(DEINIT);
   print_bench(TOTAL);
-  printf("Program finish.\n");
+  mlonmcu_printf("Program finish.\n");
   target_deinit();
 
   mlonmcu_exit(ret);
