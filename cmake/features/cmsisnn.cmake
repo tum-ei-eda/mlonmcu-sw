@@ -39,7 +39,7 @@ SET(CMSISNN_INCLUDE_DIRS
 # TODO: propagarting all toolchain specific vars does not scale well
 SET(ARGS "")
 
-FOREACH(X ${TC_VARS})
+FOREACH(X ${TC_VARS};CMAKE_TRY_COMPILE_TARGET_TYPE)
     SET(ARGS "${ARGS} -D${X}=\"${${X}}\"")
 ENDFOREACH()
 
