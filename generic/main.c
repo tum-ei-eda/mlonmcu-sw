@@ -9,7 +9,7 @@
 // void deinit_target();
 
 int main() {
-  int ret;
+  int ret = 0;
   // pre
   target_init();
   mlonmcu_printf("Program start.\n");
