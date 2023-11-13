@@ -15,6 +15,9 @@ float target_time();
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}
+#ifdef MLONMCU_TARGET_ARA
+#include "printf.h"
+#endif  // MLONMCU_TARGET_ARA
 #define target_printf printf
 // __attribute__((weak)) void target_printf(const char* format, ...) {
 //     va_list argptr;
