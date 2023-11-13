@@ -28,50 +28,120 @@ IF(LOOKUP_CLANG_MODULE)
     SET(CMAKE_OBJDUMP ${LLVM_OBJDUMP_EXECUTABLE})
 ENDIF()
 
+SET(RISCV_ELF_GCC_PREFIX
+    ""
+    CACHE PATH "install location for riscv-gcc toolchain"
+)
+SET(RISCV_ELF_GCC_BASENAME
+    "riscv64-unknown-elf"
+    CACHE STRING "base name of the toolchain executables"
+)
+SET(RISCV_ARCH
+    "rv64gcv"
+    CACHE STRING "march argument to the compiler"
+)
+SET(RISCV_ABI
+    "lp64d"
+    CACHE STRING "mabi argument to the compiler"
+)
+SET(RISCV_ATTR
+    "+m,+a,+c,+f,+d,+v,+64bit"
+    CACHE STRING "mabi argument to the compiler"
+)
+SET(FUSE_LD
+    "lld"
+    CACHE STRING "fuse-ld value"
+)
+SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
+STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
+SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
+
 SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 
 SET(LLVM_VERSION_MAJOR 14)  # TODO: should not be hardcoded
+SET(RISCV_RVV_MAJOR 1)
+SET(RISCV_RVV_MINOR 0)
 
 IF(LLVM_VERSION_MAJOR LESS 13)
     MESSAGE(FATAL_ERROR "LLVM version 13 or higher is required")
 ENDIF()
 
-# the following is transferred from https://github.com/pulp-platform/ara/blob/main/apps/common/runtime.mk#L85-L93
-# -march=$(RISCV_ARCH) -mabi=$(RISCV_ABI) $(DEFINES) -T/.../link.ld is added with 'add_definition' in corresponding cmake in target folder"
-SET(RISCV_WARNINGS "${RISCV_WARNINGS} -Wunused-variable -Wall -Wextra -Wno-unused-command-line-argument") # -Werror
-SET(LLVM_FLAGS "${LLVM_FLAGS} -menable-experimental-extensions -mno-relax -fuse-ld=lld")
-# SET(LLVM_FLAGS "${LLVM_FLAGS} -menable-experimental-extensions -mno-relax")
-# SET(LLVM_V_FLAGS "${LLVM_V_FLAGS} -fno-vectorize -mllvm -scalable-vectorization=off -mllvm -riscv-v-vector-bits-min=0 -Xclang -target-feature -Xclang +no-optimized-zero-stride-load")
 
-SET(RISCV_FLAGS "${LLVM_FLAGS} ${LLVM_V_FLAGS} ${RISCV_WARNINGS} -mcmodel=medany -static -ffast-math -fno-common")
-# the following line is not in the ara repo, it is added so that stdc lib can be used
-SET(RISCV_FLAGS "${RISCV_FLAGS} -lstdc++ --target=riscv64 --gcc-toolchain=${RISCV_ELF_GCC_PREFIX}  --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
-
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${RISCV_FLAGS} -std=gnu99 -ffunction-sections -fdata-sections")
-
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${RISCV_FLAGS} -ffunction-sections -fdata-sections")
-
-SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${RISCV_FLAGS} -std=gnu99 -ffunction-sections -fdata-sections")
-
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Iinclude ${RISCV_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}  -menable-experimental-extensions   -std=gnu99 -ffunction-sections -fdata-sections -static -nostartfiles -lm -Wl,--gc-sections -fuse-ld=lld")
-# SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Iinclude ${RISCV_FLAGS} -march=${RISCV_ARCH} -mabi=${RISCV_ABI}  -menable-experimental-extensions   -std=gnu99 -ffunction-sections -fdata-sections -static -nostartfiles -lm -Wl,--gc-sections")
-# end of transferred from https://github.com/pulp-platform/ara/blob/main/apps/common/runtime.mk#L85-L93
-
-SET(FUSE_LD
-    "lld"
-    CACHE STRING "fuse-ld value"
-)
-
-IF(NOT "${FUSE_LD}" STREQUAL "" AND NOT "${FUSE_LD}" STREQUAL "none")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=${FUSE_LD}")
+IF(RISCV_VEXT)
+    # IF(NOT DEFINED RISCV_RVV_MAJOR OR NOT DEFINED RISCV_RVV_MINOR)
+    #     MESSAGE(FATAL_ERROR "RISCV_VEXT requires RISCV_RVV_MAJOR and RISCV_RVV_MINOR")
+    # ENDIF()
+    # SET(RISCV_ARCH_FULL "${RISCV_ARCH}${RISCV_RVV_MAJOR}p${RISCV_RVV_MINOR}")
+    SET(RISCV_ARCH_FULL "${RISCV_ARCH}")
+    IF(LLVM_VERSION_MAJOR EQUAL 13)
+        SET(CMAKE_C_FLAGS
+            "${CMAKE_C_FLAGS} -menable-experimental-extensions -mno-relax"
+        )
+        SET(CMAKE_CXX_FLAGS
+            "${CMAKE_CXX_FLAGS} -menable-experimental-extensions -mno-relax"
+        )
+        SET(CMAKE_ASM_FLAGS
+            "${CMAKE_ASM_FLAGS} -menable-experimental-extensions -mno-relax"
+        )
+    ENDIF()
+ELSE()
+    SET(RISCV_ARCH_FULL ${RISCV_ARCH})
 ENDIF()
 
-foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+# Workarounds for unsupported march strings
+STRING(REPLACE "_zicsr" "" RISCV_ARCH_FULL ${RISCV_ARCH_FULL})
+STRING(REPLACE "_zifencei" "" RISCV_ARCH_FULL ${RISCV_ARCH_FULL})
+
+SET(TC_C_FLAGS "")
+SET(TC_CXX_FLAGS "")
+SET(TC_ASM_FLAGS "")
+SET(TC_LD_FLAGS "")
+LIST(APPEND TC_C_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_C_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_C_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_C_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_C_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_C_FLAGS "-mcmodel=medany")
+LIST(APPEND TC_C_FLAGS "-mno-relax")
+# LIST(APPEND TC_C_FLAGS "-mllvm -scalable-vectorization=off -mllvm -riscv-v-vector-bits-min=0 -Xclang -target-feature -Xclang +no-optimized-zero-stride-load -ffast-math -fno-common -fno-builtin-printf")
+LIST(APPEND TC_CXX_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_CXX_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_CXX_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_CXX_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_CXX_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_CXX_FLAGS "-mcmodel=medany")
+LIST(APPEND TC_CXX_FLAGS "-mno-relax")
+# LIST(APPEND TC_CXX_FLAGS "-mllvm -scalable-vectorization=off -mllvm -riscv-v-vector-bits-min=0 -Xclang -target-feature -Xclang +no-optimized-zero-stride-load -ffast-math -fno-common -fno-builtin-printf")
+LIST(APPEND TC_ASM_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_ASM_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_ASM_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_ASM_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_ASM_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_ASM_FLAGS "-mcmodel=medany")
+LIST(APPEND TC_ASM_FLAGS "-mno-relax")
+# LIST(APPEND TC_ASM_FLAGS "-mllvm -scalable-vectorization=off -mllvm -riscv-v-vector-bits-min=0 -Xclang -target-feature -Xclang +no-optimized-zero-stride-load -ffast-math -fno-common -fno-builtin-printf")
+LIST(APPEND TC_LD_FLAGS "-march=${RISCV_ARCH}")
+LIST(APPEND TC_LD_FLAGS "-mabi=${RISCV_ABI}")
+LIST(APPEND TC_LD_FLAGS "--target=riscv${XLEN}")
+LIST(APPEND TC_LD_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
+LIST(APPEND TC_LD_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+LIST(APPEND TC_LD_FLAGS "-mcmodel=medany")
+LIST(APPEND TC_LD_FLAGS "-mno-relax")
+# LIST(APPEND TC_LD_FLAGS "-mllvm -scalable-vectorization=off -mllvm -riscv-v-vector-bits-min=0 -Xclang -target-feature -Xclang +no-optimized-zero-stride-load -ffast-math -fno-common -fno-builtin-printf")
+
+IF(NOT "${FUSE_LD}" STREQUAL "" AND NOT "${FUSE_LD}" STREQUAL "none")
+    LIST(APPEND TC_LD_FLAGS "-fuse-ld=${FUSE_LD}")
+ENDIF()
+
+foreach(X IN ITEMS ${TC_C_FLAGS} ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
 endforeach()
-foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+foreach(X IN ITEMS ${TC_CXX_FLAGS} ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
 endforeach()
-foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+foreach(X IN ITEMS ${TC_ASM_FLAGS} ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${TC_LD_FLAGS} ${EXTRA_CMAKE_LD_FLAGS} ${FEATURE_EXTRA_LD_FLAGS})
+    add_link_options("SHELL:${X}")
 endforeach()
