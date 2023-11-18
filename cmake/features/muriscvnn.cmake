@@ -39,6 +39,13 @@ ENDIF()
 # ENDIF()
 SET(MURISCVNN_LIB muriscvnn)
 SET(SIMULATOR ETISS)  # TODO: allow None
+if(USE_VEXT AND USE_PEXT)
+  message(FATAL_ERROR "V/P-Extension can not be enabled simultaneously.")
+elseif(USE_VEXT)
+  add_definitions(-DUSE_VEXT)
+elseif(USE_PEXT)
+  add_definitions(-DUSE_PEXT)
+endif()
 ADD_SUBDIRECTORY(${MURISCVNN_DIR}/Source muriscvnn)
 target_include_directories(${MURISCVNN_LIB} PUBLIC
     ${MURISCVNN_DIR}/Include
