@@ -23,6 +23,8 @@ Original Author: Shay Gal-on
 /* Configuration: TOTAL_DATA_SIZE
         Define total size for data algorithms will operate on
 */
+#include "printing.h"
+
 #ifndef TOTAL_DATA_SIZE
 #define TOTAL_DATA_SIZE 2 * 1000
 #endif
@@ -41,7 +43,7 @@ Original Author: Shay Gal-on
 #include <stdio.h>
 #endif
 #if HAS_PRINTF
-#define ee_printf printf
+#define ee_printf mlonmcu_printf
 #endif
 
 /* Actual benchmark execution in iterate */

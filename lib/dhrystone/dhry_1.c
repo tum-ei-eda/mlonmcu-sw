@@ -16,6 +16,7 @@
  */
 
 #include "dhry.h"
+#include "printing.h"
 
 #ifndef NUMBER_OF_RUNS
 #define NUMBER_OF_RUNS 10000
@@ -105,28 +106,28 @@ void dhrystone_init ()
         /* Warning: With 16-Bit processors and Number_Of_Runs > 32000,  */
         /* overflow may occur for this array element.                   */
 
-  printf ("\n");
-  printf ("Dhrystone Benchmark, Version 2.1 (Language: C)\n");
-  printf ("\n");
+  mlonmcu_printf ("\n");
+  mlonmcu_printf ("Dhrystone Benchmark, Version 2.1 (Language: C)\n");
+  mlonmcu_printf ("\n");
   if (Reg)
   {
-    printf ("Program compiled with 'register' attribute\n");
-    printf ("\n");
+    mlonmcu_printf ("Program compiled with 'register' attribute\n");
+    mlonmcu_printf ("\n");
   }
   else
   {
-    printf ("Program compiled without 'register' attribute\n");
-    printf ("\n");
+    mlonmcu_printf ("Program compiled without 'register' attribute\n");
+    mlonmcu_printf ("\n");
   }
-  printf ("Please give the number of runs through the benchmark: ");
+  mlonmcu_printf ("Please give the number of runs through the benchmark: ");
   {
     int n;
     /*scanf ("%d", &n);*/
     Number_Of_Runs = NUMBER_OF_RUNS;
   }
-  printf ("\n");
+  mlonmcu_printf ("\n");
 
-  printf ("Execution starts, %d runs through Dhrystone\n", Number_Of_Runs);
+  mlonmcu_printf ("Execution starts, %d runs through Dhrystone\n", Number_Of_Runs);
 
   /***************/
   /* Start timer */
@@ -157,66 +158,66 @@ void dhrystone_deinit()
   End_Time = time ( (long *) 0);
 #endif
 
-  printf ("Execution ends\n");
-  printf ("\n");
-  printf ("Final values of the variables used in the benchmark:\n");
-  printf ("\n");
-  printf ("Int_Glob:            %d\n", Int_Glob);
-  printf ("        should be:   %d\n", 5);
-  printf ("Bool_Glob:           %d\n", Bool_Glob);
-  printf ("        should be:   %d\n", 1);
-  printf ("Ch_1_Glob:           %c\n", Ch_1_Glob);
-  printf ("        should be:   %c\n", 'A');
-  printf ("Ch_2_Glob:           %c\n", Ch_2_Glob);
-  printf ("        should be:   %c\n", 'B');
-  printf ("Arr_1_Glob[8]:       %d\n", Arr_1_Glob[8]);
-  printf ("        should be:   %d\n", 7);
-  printf ("Arr_2_Glob[8][7]:    %d\n", Arr_2_Glob[8][7]);
-  printf ("        should be:   Number_Of_Runs + 10\n");
-  printf ("Ptr_Glob->\n");
-  printf ("  Ptr_Comp:          %d\n", (int) Ptr_Glob->Ptr_Comp);
-  printf ("        should be:   (implementation-dependent)\n");
-  printf ("  Discr:             %d\n", Ptr_Glob->Discr);
-  printf ("        should be:   %d\n", 0);
-  printf ("  Enum_Comp:         %d\n", Ptr_Glob->variant.var_1.Enum_Comp);
-  printf ("        should be:   %d\n", 2);
-  printf ("  Int_Comp:          %d\n", Ptr_Glob->variant.var_1.Int_Comp);
-  printf ("        should be:   %d\n", 17);
-  printf ("  Str_Comp:          %s\n", Ptr_Glob->variant.var_1.Str_Comp);
-  printf ("        should be:   DHRYSTONE PROGRAM, SOME STRING\n");
-  printf ("Next_Ptr_Glob->\n");
-  printf ("  Ptr_Comp:          %d\n", (int) Next_Ptr_Glob->Ptr_Comp);
-  printf ("        should be:   (implementation-dependent), same as above\n");
-  printf ("  Discr:             %d\n", Next_Ptr_Glob->Discr);
-  printf ("        should be:   %d\n", 0);
-  printf ("  Enum_Comp:         %d\n", Next_Ptr_Glob->variant.var_1.Enum_Comp);
-  printf ("        should be:   %d\n", 1);
-  printf ("  Int_Comp:          %d\n", Next_Ptr_Glob->variant.var_1.Int_Comp);
-  printf ("        should be:   %d\n", 18);
-  printf ("  Str_Comp:          %s\n",
+  mlonmcu_printf ("Execution ends\n");
+  mlonmcu_printf ("\n");
+  mlonmcu_printf ("Final values of the variables used in the benchmark:\n");
+  mlonmcu_printf ("\n");
+  mlonmcu_printf ("Int_Glob:            %d\n", Int_Glob);
+  mlonmcu_printf ("        should be:   %d\n", 5);
+  mlonmcu_printf ("Bool_Glob:           %d\n", Bool_Glob);
+  mlonmcu_printf ("        should be:   %d\n", 1);
+  mlonmcu_printf ("Ch_1_Glob:           %c\n", Ch_1_Glob);
+  mlonmcu_printf ("        should be:   %c\n", 'A');
+  mlonmcu_printf ("Ch_2_Glob:           %c\n", Ch_2_Glob);
+  mlonmcu_printf ("        should be:   %c\n", 'B');
+  mlonmcu_printf ("Arr_1_Glob[8]:       %d\n", Arr_1_Glob[8]);
+  mlonmcu_printf ("        should be:   %d\n", 7);
+  mlonmcu_printf ("Arr_2_Glob[8][7]:    %d\n", Arr_2_Glob[8][7]);
+  mlonmcu_printf ("        should be:   Number_Of_Runs + 10\n");
+  mlonmcu_printf ("Ptr_Glob->\n");
+  mlonmcu_printf ("  Ptr_Comp:          %d\n", (int) Ptr_Glob->Ptr_Comp);
+  mlonmcu_printf ("        should be:   (implementation-dependent)\n");
+  mlonmcu_printf ("  Discr:             %d\n", Ptr_Glob->Discr);
+  mlonmcu_printf ("        should be:   %d\n", 0);
+  mlonmcu_printf ("  Enum_Comp:         %d\n", Ptr_Glob->variant.var_1.Enum_Comp);
+  mlonmcu_printf ("        should be:   %d\n", 2);
+  mlonmcu_printf ("  Int_Comp:          %d\n", Ptr_Glob->variant.var_1.Int_Comp);
+  mlonmcu_printf ("        should be:   %d\n", 17);
+  mlonmcu_printf ("  Str_Comp:          %s\n", Ptr_Glob->variant.var_1.Str_Comp);
+  mlonmcu_printf ("        should be:   DHRYSTONE PROGRAM, SOME STRING\n");
+  mlonmcu_printf ("Next_Ptr_Glob->\n");
+  mlonmcu_printf ("  Ptr_Comp:          %d\n", (int) Next_Ptr_Glob->Ptr_Comp);
+  mlonmcu_printf ("        should be:   (implementation-dependent), same as above\n");
+  mlonmcu_printf ("  Discr:             %d\n", Next_Ptr_Glob->Discr);
+  mlonmcu_printf ("        should be:   %d\n", 0);
+  mlonmcu_printf ("  Enum_Comp:         %d\n", Next_Ptr_Glob->variant.var_1.Enum_Comp);
+  mlonmcu_printf ("        should be:   %d\n", 1);
+  mlonmcu_printf ("  Int_Comp:          %d\n", Next_Ptr_Glob->variant.var_1.Int_Comp);
+  mlonmcu_printf ("        should be:   %d\n", 18);
+  mlonmcu_printf ("  Str_Comp:          %s\n",
                                 Next_Ptr_Glob->variant.var_1.Str_Comp);
-  printf ("        should be:   DHRYSTONE PROGRAM, SOME STRING\n");
-  printf ("Int_1_Loc:           %d\n", Int_1_Loc);
-  printf ("        should be:   %d\n", 5);
-  printf ("Int_2_Loc:           %d\n", Int_2_Loc);
-  printf ("        should be:   %d\n", 13);
-  printf ("Int_3_Loc:           %d\n", Int_3_Loc);
-  printf ("        should be:   %d\n", 7);
-  printf ("Enum_Loc:            %d\n", Enum_Loc);
-  printf ("        should be:   %d\n", 1);
-  printf ("Str_1_Loc:           %s\n", Str_1_Loc);
-  printf ("        should be:   DHRYSTONE PROGRAM, 1'ST STRING\n");
-  printf ("Str_2_Loc:           %s\n", Str_2_Loc);
-  printf ("        should be:   DHRYSTONE PROGRAM, 2'ND STRING\n");
-  printf ("\n");
+  mlonmcu_printf ("        should be:   DHRYSTONE PROGRAM, SOME STRING\n");
+  mlonmcu_printf ("Int_1_Loc:           %d\n", Int_1_Loc);
+  mlonmcu_printf ("        should be:   %d\n", 5);
+  mlonmcu_printf ("Int_2_Loc:           %d\n", Int_2_Loc);
+  mlonmcu_printf ("        should be:   %d\n", 13);
+  mlonmcu_printf ("Int_3_Loc:           %d\n", Int_3_Loc);
+  mlonmcu_printf ("        should be:   %d\n", 7);
+  mlonmcu_printf ("Enum_Loc:            %d\n", Enum_Loc);
+  mlonmcu_printf ("        should be:   %d\n", 1);
+  mlonmcu_printf ("Str_1_Loc:           %s\n", Str_1_Loc);
+  mlonmcu_printf ("        should be:   DHRYSTONE PROGRAM, 1'ST STRING\n");
+  mlonmcu_printf ("Str_2_Loc:           %s\n", Str_2_Loc);
+  mlonmcu_printf ("        should be:   DHRYSTONE PROGRAM, 2'ND STRING\n");
+  mlonmcu_printf ("\n");
 
   User_Time = End_Time - Begin_Time;
 
   if (User_Time < Too_Small_Time)
   {
-    printf ("Measured time too small to obtain meaningful results\n");
-    printf ("Please increase number of runs\n");
-    printf ("\n");
+    mlonmcu_printf ("Measured time too small to obtain meaningful results\n");
+    mlonmcu_printf ("Please increase number of runs\n");
+    mlonmcu_printf ("\n");
   }
   else
   {
@@ -230,11 +231,11 @@ void dhrystone_deinit()
     Dhrystones_Per_Second = ((float) HZ * (float) Number_Of_Runs)
                         / (float) User_Time;
 #endif
-    printf ("Microseconds for one run through Dhrystone: ");
-    printf ("%6.1f \n", Microseconds);
-    printf ("Dhrystones per Second:                      ");
-    printf ("%6.1f \n", Dhrystones_Per_Second);
-    printf ("\n");
+    mlonmcu_printf ("Microseconds for one run through Dhrystone: ");
+    mlonmcu_printf ("%6.1f \n", Microseconds);
+    mlonmcu_printf ("Dhrystones per Second:                      ");
+    mlonmcu_printf ("%6.1f \n", Dhrystones_Per_Second);
+    mlonmcu_printf ("\n");
   }
 }
 

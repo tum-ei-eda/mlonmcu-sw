@@ -73,7 +73,7 @@ void target_deinit() {
   __asm__ volatile("csrr %0, 0xB04" : "=r"(mhpmcounter_rval[4]));
 #endif  // HPM4
     for (int i=3; i<32; i++) {
-      printf("HPM[%d]=%d\n", i, mhpmevent_rval[i]);
+      mlonmcu_printf("HPM[%d]=%d\n", i, mhpmevent_rval[i]);
     }
 #endif  // HPM_COUNTERS
     // volatile unsigned int mcycle_rval;

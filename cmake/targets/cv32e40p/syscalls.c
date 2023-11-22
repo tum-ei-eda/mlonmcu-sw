@@ -26,6 +26,7 @@
 #include <errno.h>
 #include <machine/syscall.h>
 #include <assert.h>
+#include "printing.h"
 #undef errno
 extern int errno;
 
@@ -398,7 +399,7 @@ void handle_syscall (long a0,
 #define ECALL_FROM_M_MODE 11
 
 #define ERROR_HALT(msg)                           \
-    printf("EXCEPTION: %s at %08X\n", msg, mepc); \
+    mlonmcu_printf("EXCEPTION: %s at %08X\n", msg, mepc); \
     exit(-1);
 
 void _trap_handler_c(unsigned long mcause, unsigned long mepc)
