@@ -4,8 +4,8 @@ ENTRY( _start )
 
 MEMORY
 {
-  flash (rxai!w) : ORIGIN = 0x00000020, LENGTH = 50M
-  ram (wxa!ri) :   ORIGIN = 0x50000000, LENGTH = 2M
+  flash (rxai!w) : ORIGIN = 0x00000020, LENGTH = 30M
+  ram (wxa!ri) :   ORIGIN = 0x50000000, LENGTH = 20M
 }
 
 PHDRS
@@ -17,7 +17,7 @@ PHDRS
 
 SECTIONS
 {
-  __stack_size = DEFINED(__stack_size) ? __stack_size : 16K;
+  __stack_size = DEFINED(__stack_size) ? __stack_size : 64K;
 
   .init ORIGIN(flash)        :
   {

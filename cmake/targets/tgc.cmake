@@ -79,6 +79,7 @@ ADD_EXECUTABLE(${TARGET} ${ASM_SRCS} ${C_SRCS} ${SRC_FILES})
 SET_TARGET_PROPERTIES(${TARGET} PROPERTIES LINKER_LANGUAGE C)
 
 TARGET_LINK_LIBRARIES(${TARGET} PUBLIC ${LIBWRAP_TGC_LDFLAGS} LIBWRAP_TGC)
+TARGET_LINK_OPTIONS(${TARGET} PUBLIC -static)
 
 # Linker Flags
 TARGET_LINK_LIBRARIES(${TARGET}
@@ -88,8 +89,8 @@ TARGET_LINK_LIBRARIES(${TARGET}
         -Wl,-Map=${TARGET}.map
         -nostartfiles
         -L${ENV_DIR}
+        -Wl,--verbose
 )
-
 
 ENDMACRO()
 
@@ -97,7 +98,7 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     message(STATUS "Source files for ${TARGET_NAME}: ${ARGN}")
     ADD_LIBRARY(${TARGET_NAME} ${ARGN})
     # Setting the common compile flags
-    TARGET_COMPILE_OPTIONS(${TARGET_NAME} PRIVATE -march=${RISCV_ARCH}_zicsr_zifencei -mabi=${RISCV_ABI})
+    TARGET_COMPILE_OPTIONS(${TARGET_NAME} PRIVATE -march=${RISCV_ARCH}_zicsr_zifencei -mabi=${RISCV_ABI} -fno-use-cxa-atexit)
 
-    TARGET_LINK_OPTIONS(${TARGET_NAME} PRIVATE -march=${RISCV_ARCH}_zicsr_zifencei -mabi=${RISCV_ABI})
+    TARGET_LINK_OPTIONS(${TARGET_NAME} PRIVATE -march=${RISCV_ARCH}_zicsr_zifencei -mabi=${RISCV_ABI} -fno-use-cxa-atexit)
 ENDMACRO()
