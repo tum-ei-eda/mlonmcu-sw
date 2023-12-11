@@ -4,7 +4,7 @@ SET(TARGET_SYSTEM
     "host_x86"
     CACHE STRING "Specify which toolchain to use."
 )
-SET_PROPERTY(CACHE TARGET_SYSTEM PROPERTY STRINGS host_x86 etiss_pulpino generic_riscv corstone300)
+SET_PROPERTY(CACHE TARGET_SYSTEM PROPERTY STRINGS host_x86 etiss_pulpino generic_riscv corstone300 tgc)
 
 # Choose which toolchain you want to use, either GCC or LLVM (or x86 for native build)
 SET(TOOLCHAIN
