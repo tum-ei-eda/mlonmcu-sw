@@ -151,6 +151,7 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/micro_log.cc
     ${TFL_SRC}/kernels/internal/quantization_util.cc
     ${TFL_SRC}/kernels/kernel_util.cc
+    ${TFL_SRC}/kernels/internal/tensor_ctypes.cc
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
     ${TFLM_SRC}/simple_memory_allocator.cc
@@ -162,13 +163,23 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/arena_allocator/non_persistent_arena_buffer_allocator.cc
     ${TFLM_SRC}/memory_helpers.cc
     ${TFLM_SRC}/memory_planner/greedy_memory_planner.cc
+    ${TFLM_SRC}/memory_planner/linear_memory_planner.cc
+    ${TFLM_SRC}/tflite_bridge/flatbuffer_conversions_bridge.cc
+    ${TFLM_SRC}/tflite_bridge/micro_error_reporter.cc
     ${TFL_SRC}/core/api/tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/portable_tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/reference/portable_tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/common.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
+    ${TFL_SRC}/core/c/common.cc  # new
     ${TFL_SRC}/c/common.cc  # new
     ${TFL_SRC}/c/common.c  # old
     ${TFLM_SRC}/flatbuffer_utils.cc
     ${TFLM_SRC}/micro_graph.cc
+    ${TFLM_SRC}/micro_interpreter_graph.cc
+    ${TFLM_SRC}/micro_interpreter_context.cc
+    ${TFLM_SRC}/micro_op_resolver.cc
     ${TFLM_SRC}/micro_context.cc
     ${TFL_SRC}/schema/schema_utils.cc
     ${OPT_SRC}
