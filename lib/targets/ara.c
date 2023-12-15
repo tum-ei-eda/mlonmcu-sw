@@ -1,64 +1,51 @@
+#include <stdio.h>
+#include <stdint.h>
+#include "riscv_time.h"
+#include "riscv_utils.h"
 #include "printf.h"
-// #include <stdio.h>
-#include<stdint.h>
-#include "encoding.h"
 
-uint64_t rdcycle64(){
-#if __riscv_xlen == 32
-    uint32_t cycles;
-    uint32_t cyclesh1;
-    uint32_t cyclesh2;
-    do
-    {
-        cyclesh1 = rdcycleh();
-        cycles = rdcycle();
-        cyclesh2 = rdcycleh();
-    } while (cyclesh1 != cyclesh2);
-  return (((uint64_t)cyclesh1) << 32) | cycles;
-#else
-  return rdcycle();
-#endif
-}
-
-uint64_t rdinstret64(){
-#if __riscv_xlen == 32
-    uint32_t instrets;
-    uint32_t instretsh1;
-    uint32_t instretsh2;
-    do
-    {
-        instretsh1 = rdinstreth();
-        instrets = rdinstret();
-        instretsh2 = rdinstreth();
-    } while (instretsh1 != instretsh2);
-  return (((uint64_t)instretsh1) << 32) | instrets;
-#else
-  return rdinstret();
-#endif
-}
+/* How many cycles (rdcycle) per second (OVPsim and Spike). */
+#define RDCYCLE_PER_SECOND 100000000UL
 
 static uint64_t start_cycles = 0;
-static uint64_t start_instructions = 0;
 
-void init_target() {
+uint64_t target_cycles() { return rdcycle64(); }
+// inline int64_t get_cycle_count() {
+//   int64_t cycle_count;
+//   // The fence is needed to be sure that Ara is idle, and it is not performing
+//   // the last vector stores when we read mcycle with stop_timer()
+//   asm volatile("fence; csrr %[cycle_count], cycle"
+//                : [cycle_count] "=r"(cycle_count));
+//   return cycle_count;
+// };
+uint64_t target_instructions() { return rdinstret64(); }
+// float target_time() { return target_cycles() / (float)RDCYCLE_PER_SECOND; }
+
+void target_init() {
   // enable_fext();
-#ifdef USE_VEXT
   // enable_vext();
+#ifdef USE_VEXT
 #endif
-  start_cycles = rdcycle64();
-  start_instructions = rdinstret64();
 }
 
-void deinit_target() {
-  uint64_t stop_cycles = rdcycle64();
-  uint64_t diff_cycles = stop_cycles - start_cycles;
-  uint64_t stop_instructions = rdinstret64();
-  uint64_t diff_instructions = stop_instructions - start_instructions;
-  float diff_ms = 0;  // unimplemented (see RDCYCLE_PER_SECOND)
-  printf("Total Cycles: %ld\n", diff_cycles);
-  printf("Total Instructions: %ld\n", diff_instructions);
-}
-
-
-
-
+void target_deinit() {}
+// void target_printf(const char* format, ...) {
+//     va_list argptr;
+//     va_start(argptr, format);
+//     printf(format, argptr);
+//     va_end(argptr);
+// }
+// typedef void (*out_fct_type)(char character, void *buffer, size_t idx,
+//                              size_t maxlen);
+// static inline void _out_char(char character, void *buffer, size_t idx,
+//                              size_t maxlen);
+// static int _vsnprintf(out_fct_type out, char *buffer, const size_t maxlen,
+//                       const char *format, va_list va);
+// void target_printf_(const char *format, ...) {
+//   va_list va;
+//   va_start(va, format);
+//   char buffer[1];
+//   _vsnprintf(_out_char, buffer, (size_t)-1, format, va);
+//   va_end(va);
+// }
+#define target_printf printf_

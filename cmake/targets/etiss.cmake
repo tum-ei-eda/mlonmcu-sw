@@ -1,5 +1,5 @@
 SET(CMAKE_SYSTEM_NAME Generic)
-SET(CMAKE_SYSTEM_PROCESSOR Pulpino)
+SET(CMAKE_SYSTEM_PROCESSOR etiss)
 
 IF(NOT MEM_ROM_ORIGIN)
     SET(MEM_ROM_ORIGIN 0x0)
@@ -13,16 +13,16 @@ ENDIF()
 IF(NOT MEM_RAM_LENGTH)
     SET(MEM_RAM_LENGTH 0x100000)
 ENDIF()
-#
+
 set(MIN_STACK_SIZE 0x4000)
 set(MIN_HEAP_SIZE 0x4000)
 
 SET(ETISS_LDSCRIPT ${CMAKE_CURRENT_BINARY_DIR}/etiss.ld)
-# SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 --specs=${CMAKE_CURRENT_LIST_DIR}/etiss/etiss-semihost.specs -T ${ETISS_LDSCRIPT}")
-## SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 -nostdlib -T ${ETISS_LDSCRIPT} -lc -lsemihost")
-# SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 -T ${ETISS_LDSCRIPT} -nostdlib -lc -lgcc -lsemihost")
-# SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 -T ${ETISS_LDSCRIPT} -Xlinker --start-group -nostdlib -Xlinker -lm -Xlinker -lc -Xlinker -lgcc -Xlinker -lsemihost -Xlinker --end-group")
-SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 -T ${ETISS_LDSCRIPT} -nostdlib")
+IF(${TOOLCHAIN} STREQUAL "llvm")
+    SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 -T ${ETISS_LDSCRIPT} -nostdlib")
+ELSE()
+    SET(ETISS_LDFLAGS "-L${CMAKE_CURRENT_BINARY_DIR}/riscv_crt0 --specs=${CMAKE_CURRENT_LIST_DIR}/etiss/etiss-semihost.specs -T ${ETISS_LDSCRIPT}")
+ENDIF()
 
 SET(ETISS_CRT_DIR ${CMAKE_CURRENT_LIST_DIR}/etiss)
 
@@ -37,23 +37,21 @@ MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
 ENDMACRO()
 MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     ADD_LIBRARY(${TARGET_NAME} ${ARGN})
-    message(STATUS "ARGN=${ARGN}")
-    message(STATUS "ARGV0=${ARGV0}")
-    message(STATUS "ARGV1=${ARGV1}")
-    message(STATUS "ARGV2=${ARGV2}")
-    message(STATUS "ARGV3=${ARGV3}")
     IF("${ARGV1}" STREQUAL "OBJECT" AND "${ARGV2}" STREQUAL "IMPORTED")
-        MESSAGE(STATUS "AABB")
-        TARGET_LINK_LIBRARIES(${TARGET_NAME} INTERFACE c semihost gcc m)
+        IF(${TOOLCHAIN} STREQUAL "llvm")
+            TARGET_LINK_LIBRARIES(${TARGET_NAME} INTERFACE c semihost gcc)
+        ENDIF()
+        TARGET_LINK_LIBRARIES(${TARGET_NAME} INTERFACE etiss_crt0)
     ELSE()
-        TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE c semihost gcc)
+        IF(${TOOLCHAIN} STREQUAL "llvm")
+            TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE c semihost gcc)
+        ENDIF()
+        TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE etiss_crt0)
     ENDIF()
 ENDMACRO()
 
-ADD_DEFINITIONS(-D__riscv__)
-
-IF(RISCV_VEXT)
-    ADD_DEFINITIONS(-DUSE_VEXT)
-ENDIF()
-
 CONFIGURE_FILE(${CMAKE_CURRENT_LIST_DIR}/etiss/etiss.ld.in etiss.ld @ONLY)
+
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
+SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")

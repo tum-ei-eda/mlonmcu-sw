@@ -38,8 +38,6 @@ ENDMACRO()
 
 ADD_DEFINITIONS(-DBUILDING_FOR_ETISS)
 
-ADD_DEFINITIONS(-D__riscv__)
-
-IF(RISCV_VEXT)
-    ADD_DEFINITIONS(-DUSE_VEXT)
-ENDIF()
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
+SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")

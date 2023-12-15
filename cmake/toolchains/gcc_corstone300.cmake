@@ -9,11 +9,6 @@ SET(TC_VARS
     FEATURE_EXTRA_ASM_FLAGS
     EXE_EXT
 )
-# Setting Linux is forcing th extension to be .o instead of .obj when building on WIndows. It is important because
-# armlink is failing when files have .obj extensions (error with scatter file section not found) SET(CMAKE_SYSTEM_NAME
-# Linux)
-SET(CMAKE_SYSTEM_NAME Generic)
-# SET(CMAKE_SYSTEM_PROCESSOR cortex-m55)
 
 IF(WIN32)
     SET(EXE_EXT ".exe")
@@ -106,12 +101,12 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
-SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
-)
-SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
-)
-SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
-)
+foreach(X IN ITEMS ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()

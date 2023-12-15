@@ -35,6 +35,6 @@ SET(DEFINES -DNR_LANES=${MLONMCU_ARA_NR_LANES} -DVLEN=${MLONMCU_ARA_VLEN})
 ADD_DEFINITIONS(${DEFINES})
 # end of transferred from https://github.com/pulp-platform/ara/blob/70a059a7ed5a8c534e782994d25806bed07f0b83/apps/common/runtime.mk#L24-L34
 
-# IF(RISCV_VEXT)
-#     ADD_DEFINITIONS(-DUSE_VEXT)
-# ENDIF()
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
+SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")

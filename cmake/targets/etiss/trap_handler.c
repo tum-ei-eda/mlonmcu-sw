@@ -24,6 +24,7 @@
 
 #define ERROR_HALT(msg)                           \
     printf("EXCEPTION: %s at %08X\n", msg, mepc); \
+    printf("MLONMCU EXIT: -1\n"); \
     exit(-1);
 
 void _trap_handler_c(unsigned long mcause, unsigned long mepc)

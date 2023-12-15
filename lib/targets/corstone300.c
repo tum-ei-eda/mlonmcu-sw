@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "uart_stdout.h"
+#include <stdint.h>
+#include "target.h"
 
 // DWT (Data Watchpoint and Trace) registers, only exists on ARM Cortex with a
 // DWT unit.
@@ -56,9 +58,11 @@ void start_timer() {
 void stop_timer() {
   int32_t stop_cycles = GetCurrentTimeTicks();
   int32_t diff_cycles = stop_cycles - start_cycles;
-  printf("Total Cycles: %ld\n", diff_cycles);
 }
 void deinit_target() {
+  // int32_t diff_ms = diff_cycles / (ticks_per_second() / 1000);
+  // printf("Total Time: %ld ms\n", diff_ms);
+  printf("Total Cycles: %ld\n", diff_cycles);
   printf("EXITTHESIM\n");
   while (1)
     ;
