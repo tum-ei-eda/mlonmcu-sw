@@ -63,6 +63,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/arg_min_max.cc
     ${TFLM_SRC}/kernels/shape.cc
     ${TFLM_SRC}/kernels/reshape.cc
+    ${TFLM_SRC}/kernels/reshape_common.cc
     ${TFLM_SRC}/kernels/expand_dims.cc
     ${TFLM_SRC}/kernels/leaky_relu.cc
     ${TFLM_SRC}/kernels/leaky_relu_common.cc
