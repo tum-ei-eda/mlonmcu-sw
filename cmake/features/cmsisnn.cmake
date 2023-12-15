@@ -63,10 +63,7 @@ EXTERNALPROJECT_ADD(
                -DRISCV_ARCH=${RISCV_ARCH}
                -DRISCV_ABI=${RISCV_ABI}
                -DCMSIS_PATH=${CMSIS_DIR}
-<<<<<<< HEAD
                ${ARGS}
-=======
->>>>>>> 75a5732... refactor cmsisnn feature and corstone300 (WIP)
     BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j 4
     INSTALL_COMMAND ""
 )
