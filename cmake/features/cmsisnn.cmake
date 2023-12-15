@@ -40,7 +40,7 @@ SET(CMSISNN_INCLUDE_DIRS
 SET(ARGS "")
 
 FOREACH(X ${TC_VARS})
-    SET(ARGS "${ARGS} -D${X}=${${X}}")
+    SET(ARGS "${ARGS} -D${X}=\"${${X}}\"")
 ENDFOREACH()
 
 separate_arguments(ARGS UNIX_COMMAND "${ARGS}")
@@ -63,11 +63,8 @@ EXTERNALPROJECT_ADD(
                -DRISCV_ARCH=${RISCV_ARCH}
                -DRISCV_ABI=${RISCV_ABI}
                -DCMSIS_PATH=${CMSIS_DIR}
-<<<<<<< HEAD
                ${ARGS}
-=======
->>>>>>> 75a5732... refactor cmsisnn feature and corstone300 (WIP)
-    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j 4
+    BUILD_COMMAND "${CMAKE_COMMAND}" --build . -j ${SUBPROJECT_THREADS}
     INSTALL_COMMAND ""
 )
 

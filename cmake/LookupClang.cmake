@@ -1,7 +1,6 @@
-set(CLANG_VERSIONS 15 14)
+set(CLANG_VERSIONS 17 16 15 14)
 
 set(LLVM_DIR "" CACHE PATH "Lookup path for the llvm installation.")
-MESSAGE("LLVM_DIR=${LLVM_DIR}")
 
 # Find clang
 function(do_lookup program out)
@@ -25,17 +24,14 @@ function(do_lookup program out)
         ENDIF()
     ENDIF()
     IF(NOT ${program}_NAME_MATCH)
-        MESSAGE(FATAL_ERROR "Unable to find ${program} executable")
+        set(${out} ${program})  # Fallback (TODO: find out why failing does not work here)
+        # MESSAGE(FATAL_ERROR "Unable to find ${program} executable")
+    ELSE()
+        set(${out} ${${program}_NAME_MATCH} PARENT_SCOPE)
     ENDIF()
-    MESSAGE(STATUS "${program}_NAME_MATCH=${${program}_NAME_MATCH}")
-    set(${out} ${${program}_NAME_MATCH} PARENT_SCOPE)
 endfunction()
 
 
 do_lookup(clang CLANG_EXECUTABLE)
 do_lookup(clang++ CLANG++_EXECUTABLE)
 do_lookup(lld LLD_EXECUTABLE)
-
-MESSAGE(STATUS "CLANG_EXECUTABLE=${CLANG_EXECUTABLE}")
-MESSAGE(STATUS "CLANG++_EXECUTABLE=${CLANG++_EXECUTABLE}")
-MESSAGE(STATUS "LLD_EXECUTABLE=${LLD_EXECUTABLE}")

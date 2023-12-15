@@ -1,10 +1,44 @@
-# Contains toolchain configurations and settings for using LLVM/Clang
+SET(TC_VARS
+    RISCV_ELF_GCC_PREFIX
+    RISCV_ELF_GCC_BASENAME
+    RISCV_ARCH
+    RISCV_ABI
+    LLVM_DIR
+    FEATURE_EXTRA_C_FLAGS
+    FEATURE_EXTRA_CXX_FLAGS
+    FEATURE_EXTRA_ASM_FLAGS
+    CMAKE_C_COMPILER
+    CMAKE_CXX_COMPILER
+    CMAKE_ASM_COMPILER
+)
 
-INCLUDE(LookupClang)
+INCLUDE(LookupClang OPTIONAL RESULT_VARIABLE LOOKUP_CLANG_MODULE)
 
-SET(CMAKE_C_COMPILER ${CLANG_EXECUTABLE})
-SET(CMAKE_CXX_COMPILER ${CLANG++_EXECUTABLE})
-SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
+IF(LOOKUP_CLANG_MODULE)
+    SET(CMAKE_C_COMPILER ${CLANG_EXECUTABLE})
+    SET(CMAKE_CXX_COMPILER ${CLANG++_EXECUTABLE})
+    SET(CMAKE_ASM_COMPILER ${CLANG_EXECUTABLE})
+ENDIF()
+
+SET(RISCV_ELF_GCC_PREFIX
+    ""
+    CACHE PATH "install location for riscv-gcc toolchain"
+)
+SET(RISCV_ELF_GCC_BASENAME
+    "riscv64-unknown-elf"
+    CACHE STRING "base name of the toolchain executables"
+)
+SET(RISCV_ARCH
+    "rv32gc"
+    CACHE STRING "march argument to the compiler"
+)
+SET(RISCV_ABI
+    "ilp32d"
+    CACHE STRING "mabi argument to the compiler"
+)
+STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
+SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
+
 # set(CMAKE_C_LINKER lld-13) # TODO(fabianpedd): doesnt work, need to use -fuse-ld=lld-13 instead
 
 IF(RISCV_VEXT)
@@ -17,21 +51,21 @@ ELSE()
 ENDIF()
 
 SET(CMAKE_C_FLAGS
-    "${CMAKE_C_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
+    "${CMAKE_C_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
 )
 SET(CMAKE_C_FLAGS
     "${CMAKE_C_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
 )
 
 SET(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
+    "${CMAKE_CXX_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
 )
 SET(CMAKE_CXX_FLAGS
     "${CMAKE_CXX_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
 )
 
 SET(CMAKE_ASM_FLAGS
-    "${CMAKE_ASM_FLAGS} --target=riscv32 -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
+    "${CMAKE_ASM_FLAGS} --target=riscv${XLEN} -march=${RISCV_ARCH_FULL} -mabi=${RISCV_ABI} -menable-experimental-extensions -mno-relax"
 )
 SET(CMAKE_ASM_FLAGS
     "${CMAKE_ASM_FLAGS} --gcc-toolchain=${RISCV_ELF_GCC_PREFIX} --sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}"
@@ -39,25 +73,12 @@ SET(CMAKE_ASM_FLAGS
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld")
 
-IF(RISCV_AUTO_VECTORIZE)
-   IF(NOT RISCV_VEXT)
-       MESSAGE(FATAL_ERROR "RISCV_AUTO_VECTORIZE requires RISCV_VEXT")
-   ENDIF()
-   IF(RISCV_RVV_VLEN)
-       SET(VLEN ${RISCV_RVV_VLEN})
-   ELSE()
-       SET(VLEN "?")
-   ENDIF()
-    SET(CMAKE_CXX_FLAGS_RELEASE
-        "${CMAKE_CXX_FLAGS_RELEASE} \
-        -mllvm \
-        --riscv-v-vector-bits-min=${VLEN} \
-    "
-    )
-    SET(CMAKE_C_FLAGS_RELEASE
-        "${CMAKE_C_FLAGS_RELEASE} \
-        -mllvm \
-        --riscv-v-vector-bits-min=${VLEN} \
-    "
-    )
-ENDIF()
+SET(CMAKE_C_FLAGS
+    "${CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS}"
+)
+SET(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS}"
+)
+SET(CMAKE_ASM_FLAGS
+    "${CMAKE_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS}"
+)
