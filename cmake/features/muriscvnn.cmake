@@ -39,6 +39,7 @@ ENDIF()
 # ENDIF()
 SET(MURISCVNN_LIB muriscvnn)
 SET(SIMULATOR ETISS)  # TODO: allow None
+MESSAGE(STATUS "USE_VEXT=${USE_VEXT}")
 if(USE_VEXT AND USE_PEXT)
   message(FATAL_ERROR "V/P-Extension can not be enabled simultaneously.")
 elseif(USE_VEXT)
@@ -47,11 +48,24 @@ elseif(USE_PEXT)
   add_definitions(-DUSE_PEXT)
 endif()
 ADD_SUBDIRECTORY(${MURISCVNN_DIR}/Source muriscvnn)
+target_link_libraries(${MURISCVNN_LIB} PUBLIC support)
 target_include_directories(${MURISCVNN_LIB} PUBLIC
     ${MURISCVNN_DIR}/Include
     ${MURISCVNN_DIR}/Include/CMSIS/NN/Include
+    /work/git/mlonmcu/mlonmcu/workspace_ara/deps/src/ara/apps/common
 )
 target_link_libraries(${MURISCVNN_LIB} PUBLIC m)
+MESSAGE(STATUS "FEATURE_EXTRA_C_FLAGS3=${FEATURE_EXTRA_C_FLAGS}")
+
+foreach(X IN ITEMS ${EXTRA_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+    target_compile_options(${MURISCVNN_LIB} PUBLIC "SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})
+    target_compile_options(${MURISCVNN_LIB} PUBLIC "SHELL:$<$<COMPILE_LANGUAGE:CXX>:${X}>")
+endforeach()
+foreach(X IN ITEMS ${EXTRA_ASM_FLAGS} ${FEATURE_EXTRA_ASM_FLAGS})
+    target_compile_options(${MURISCVNN_LIB} PUBLIC "SHELL:$<$<COMPILE_LANGUAGE:ASM>:${X}>")
+endforeach()
 
 # SET(MURISCVNN_INCLUDE_DIRS ${MURISCVNN_DIR}/Include ${MURISCVNN_DIR}/Include/CMSIS/NN/Include)
 SET(MURISCVNN_INCLUDE_DIRS ${MURISCVNN_DIR}/Include ${MURISCVNN_DIR}/Include/CMSIS/NN/Include ${MURISCVNN_DIR}/Include/CMSIS/NN)
