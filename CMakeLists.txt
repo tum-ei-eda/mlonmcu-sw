@@ -116,8 +116,6 @@ IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
 
-MESSAGE(STATUS "FEATURE_EXTRA_C_FLAGS2=${FEATURE_EXTRA_C_FLAGS}")
-
 foreach(X IN ITEMS ${EXTRA_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
 endforeach()
