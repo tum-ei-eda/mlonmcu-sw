@@ -13,12 +13,12 @@ SET(RISCV_ELF_GCC_BASENAME
 )
 SET(RISCV_ARCH
     "rv32imc"
-    CACHE STRING "march argument to the compiler" FORCE
+    CACHE STRING "march argument to the compiler"
 )
 # set(RISCV_ARCH "rv32" CACHE STRING "march argument to the compiler" FORCE)
 SET(RISCV_ABI
     "ilp32"
-    CACHE STRING "mabi argument to the compiler" FORCE
+    CACHE STRING "mabi argument to the compiler" 
 )
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
