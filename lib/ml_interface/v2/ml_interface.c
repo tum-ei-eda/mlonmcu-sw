@@ -4,37 +4,55 @@
 #include <string.h>
 #include <stdlib.h>
 
-__attribute__((weak)) int mlif_request_input(void *model_input_ptr, size_t model_input_sz, bool *new_) {
-  static int num_done = 0;
-  *new_ = true;
-  if (num_done == num_data_buffers_in) {
-    // static bool run_once = true;
-    // if (num_data_buffers_in == 0 && run_once) {
-    //   // Minimal run. Just run the model without data.
-    //   run_once = false;
-    //   return true;
-    // }
-    *new_ = false;
-    return 0;
-  }
-
-  int ret = mlif_process_input(data_buffers_in[num_done], data_size_in[num_done], model_input_ptr, model_input_sz);
-  num_done++;
+__attribute__((weak)) int mlif_request_inputs(size_t batch_idx, bool *new_) {
+  int ret = mlif_process_inputs(batch_idx, new_);
   return ret;
 }
 
-__attribute__((weak)) int mlif_handle_result(void *model_output_ptr, size_t model_output_sz) {
-  static int num_done = 0;
+__attribute__((weak)) int mlif_handle_results(size_t batch_idx) {
+  int ret = mlif_process_outputs(batch_idx);
+  return ret;
+}
+
+int mlonmcu_init() {
+  return mlif_init();
+}
+int mlonmcu_deinit() {return 0;}
+
+int mlonmcu_run() {
+  size_t remaining = NUM_RUNS;
   int ret = 0;
-
-  if (num_data_buffers_out == 0) {
-    return 0;
+  while (remaining) {
+    ret = mlif_invoke();
+    if (ret) {
+      return ret;
+    }
+    remaining--;
   }
+  return ret;
+}
 
-  if (num_done < num_data_buffers_out) {
-    ret = mlif_process_output(model_output_ptr, model_output_sz, data_buffers_out[num_done], data_size_out[num_done]);
+int mlonmcu_check() {
+  // size_t batch_size = mlif_get_batch_size();
+  size_t batch_size = BATCH_SIZE;
+  int ret = 0;
+  bool new_ = false;
+  for (size_t batch_idx = 0; batch_idx < batch_size; batch_idx++) {
+    ret = mlif_request_inputs(batch_idx, &new_);
+    if (ret) {
+      return ret;
+    }
+    if (!new_) {
+      break;
+    }
+    ret = mlif_invoke();
+    if (ret) {
+      return ret;
+    }
+    ret = mlif_handle_results(batch_idx);
+    if (ret) {
+      return ret;
+    }
   }
-
-  num_done++;
   return ret;
 }
