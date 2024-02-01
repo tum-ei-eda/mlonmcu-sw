@@ -51,8 +51,13 @@
 #define BENCH_TYPE_1 uint64_t
 #define BENCH_TYPE_2 float
 
+#if defined(MLONMCU_TARGET_VICUNA)
+#define BENCH_FMT_0 "u"
+#define BENCH_FMT_1 "u"
+#else
 #define BENCH_FMT_0 PRIu64
 #define BENCH_FMT_1 PRIu64
+#endif
 #define BENCH_FMT_2 "f"
 
 #define BENCH_FUNC_0 target_cycles
