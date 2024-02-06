@@ -7,7 +7,8 @@ SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 SET(VICUNA_DIR "" CACHE PATH "Path to Vicuna.")
 
 # Linker file settings.
-SET(LINK_FILE "${VICUNA_DIR}/sw/lld_link.ld")
+# SET(LINK_FILE "${VICUNA_DIR}/sw/lld_link.ld")  # Original file
+SET(LINK_FILE "${CMAKE_CURRENT_LIST_DIR}/vicuna/lld_link.ld")  # Custom (fixed) file
 SET(LINK_FILE_OPTION "-T")
 
 SET(BOOT_SRCS ${CMAKE_CURRENT_LIST_DIR}/vicuna/crt0.S ${CMAKE_CURRENT_LIST_DIR}/vicuna/vicuna_crt.c ${VICUNA_DIR}/sw/lib/runtime.c ${VICUNA_DIR}/sw/lib/uart.c ${CMAKE_CURRENT_LIST_DIR}/vicuna/syscalls.c)
