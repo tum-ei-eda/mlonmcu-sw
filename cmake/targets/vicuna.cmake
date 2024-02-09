@@ -16,10 +16,11 @@ SET(VICUNA_CRT_DIR ${CMAKE_CURRENT_LIST_DIR}/vicuna/)
 
 MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
     ADD_EXECUTABLE(${TARGET_NAME} ${ARGN} ${BOOT_SRCS})
-    # TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
-    #     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
-    #     $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
-    # )
+    TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
+        $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
+        $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+        # $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
+    )
     # TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/vicuna/ ${VICUNA_DIR}/sw/lib/)
     TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PUBLIC ${VICUNA_CRT_DIR} ${VICUNA_DIR}/sw/lib/)
     TARGET_LINK_OPTIONS(${TARGET_NAME} PRIVATE ${LINK_FILE_OPTION} ${LINK_FILE})
@@ -45,10 +46,11 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PUBLIC ${VICUNA_CRT_DIR} ${VICUNA_DIR}/sw/lib/)
     # TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE femto)
     # ADD_DEPENDENCIES(${TARGET_NAME} femto)
-    # TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
-    #     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
-    #     $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
-    # )
+    TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
+        $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
+        $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+        # $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
+    )
     # IF("${ARGV1}" STREQUAL "OBJECT" AND "${ARGV2}" STREQUAL "IMPORTED")
     # ELSE()
     # ENDIF()
@@ -56,7 +58,7 @@ ENDMACRO()
 
 SET(CMAKE_EXE_LINKER_FLAGS
     # "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -nostdlib -mcmodel=medany -fvisibility=hidden"
-    "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -mcmodel=medany -fvisibility=hidden"
+    "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -mcmodel=medany -fvisibility=hidden -fno-use-cxa-atexit"
 )
 
 # The linker argument setting will break the cmake test program on 64-bit,
