@@ -34,7 +34,9 @@ SET(RISCV_ATTR
     "+m,+a,+c,+f,+d"
     CACHE STRING "mabi argument to the compiler"
 )
+
 SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
+STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
 # The linker argument setting below will break the cmake test program on 64-bit, so disable test program linking for

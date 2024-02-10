@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "printing.h"
 
 #define INSTRUCTION_ADDRESS_MISALIGNED 0
 #define INSTRUCTION_ACCESS_FAULT 1
@@ -23,8 +24,8 @@
 #define ECALL_FROM_M_MODE 11
 
 #define ERROR_HALT(msg)                           \
-    printf("EXCEPTION: %s at %08X\n", msg, mepc); \
-    printf("MLONMCU EXIT: -1\n"); \
+    mlonmcu_printf("EXCEPTION: %s at %08X\n", msg, mepc); \
+    mlonmcu_printf("MLONMCU EXIT: -1\n"); \
     exit(-1);
 
 void _trap_handler_c(unsigned long mcause, unsigned long mepc)

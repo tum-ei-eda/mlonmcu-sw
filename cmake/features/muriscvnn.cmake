@@ -52,6 +52,9 @@ target_include_directories(${MURISCVNN_LIB} PUBLIC
     ${MURISCVNN_DIR}/Include/CMSIS/NN/Include
 )
 target_link_libraries(${MURISCVNN_LIB} PUBLIC m)
+foreach(X IN ITEMS ${FEATURE_EXTRA_C_FLAGS})
+	target_compile_options(${MURISCVNN_LIB} PUBLIC "SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
+endforeach()
 
 # SET(MURISCVNN_INCLUDE_DIRS ${MURISCVNN_DIR}/Include ${MURISCVNN_DIR}/Include/CMSIS/NN/Include)
 SET(MURISCVNN_INCLUDE_DIRS ${MURISCVNN_DIR}/Include ${MURISCVNN_DIR}/Include/CMSIS/NN/Include ${MURISCVNN_DIR}/Include/CMSIS/NN)

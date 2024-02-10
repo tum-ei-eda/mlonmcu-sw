@@ -15,7 +15,7 @@ IF(TVM_OBJS)
         IMPORTED_OBJECTS ${TVM_OBJS}
     )
     IF(NOT TVM_SRCS)
-        ADD_LIBRARY(tvm_extension ALIAS tvm_extension_objs)
+        COMMON_ADD_LIBRARY(tvm_extension ALIAS tvm_extension_objs)
     ENDIF()
 ENDIF()
 IF(TVM_SRCS)
@@ -30,7 +30,7 @@ IF(TVM_SRCS)
 ENDIF()
 
 SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/${TVM_WRAPPER_FILENAME})
-TARGET_LINK_LIBRARIES(${TVM_LIB} PUBLIC tvm_extension)
+TARGET_LINK_LIBRARIES(${TVM_LIB} PUBLIC tvm_extension m)
 SET(EXTRA_INC ${TVM_OUT_DIR}/include ${SRC_DIR})
 
 SET(EXTRA_LIBS tvm_extension ${TVM_LIB})

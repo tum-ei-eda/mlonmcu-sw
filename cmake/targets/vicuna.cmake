@@ -7,7 +7,8 @@ SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 SET(VICUNA_DIR "" CACHE PATH "Path to Vicuna.")
 
 # Linker file settings.
-SET(LINK_FILE "${VICUNA_DIR}/sw/lld_link.ld")
+# SET(LINK_FILE "${VICUNA_DIR}/sw/lld_link.ld")  # Original file
+SET(LINK_FILE "${CMAKE_CURRENT_LIST_DIR}/vicuna/lld_link.ld")  # Custom (fixed) file
 SET(LINK_FILE_OPTION "-T")
 
 SET(BOOT_SRCS ${CMAKE_CURRENT_LIST_DIR}/vicuna/crt0.S ${CMAKE_CURRENT_LIST_DIR}/vicuna/vicuna_crt.c ${VICUNA_DIR}/sw/lib/runtime.c ${VICUNA_DIR}/sw/lib/uart.c ${CMAKE_CURRENT_LIST_DIR}/vicuna/syscalls.c)
@@ -15,10 +16,11 @@ SET(VICUNA_CRT_DIR ${CMAKE_CURRENT_LIST_DIR}/vicuna/)
 
 MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
     ADD_EXECUTABLE(${TARGET_NAME} ${ARGN} ${BOOT_SRCS})
-    # TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
-    #     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
-    #     $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
-    # )
+    TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
+        $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
+        $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+        # $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
+    )
     # TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/vicuna/ ${VICUNA_DIR}/sw/lib/)
     TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PUBLIC ${VICUNA_CRT_DIR} ${VICUNA_DIR}/sw/lib/)
     TARGET_LINK_OPTIONS(${TARGET_NAME} PRIVATE ${LINK_FILE_OPTION} ${LINK_FILE})
@@ -44,10 +46,11 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     TARGET_INCLUDE_DIRECTORIES(${TARGET_NAME} PUBLIC ${VICUNA_CRT_DIR} ${VICUNA_DIR}/sw/lib/)
     # TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE femto)
     # ADD_DEPENDENCIES(${TARGET_NAME} femto)
-    # TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
-    #     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
-    #     $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
-    # )
+    TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
+        $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
+        $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+        # $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
+    )
     # IF("${ARGV1}" STREQUAL "OBJECT" AND "${ARGV2}" STREQUAL "IMPORTED")
     # ELSE()
     # ENDIF()
@@ -55,7 +58,7 @@ ENDMACRO()
 
 SET(CMAKE_EXE_LINKER_FLAGS
     # "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -nostdlib -mcmodel=medany -fvisibility=hidden"
-    "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -mcmodel=medany -fvisibility=hidden"
+    "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -mcmodel=medany -fvisibility=hidden -fno-use-cxa-atexit"
 )
 
 # The linker argument setting will break the cmake test program on 64-bit,
