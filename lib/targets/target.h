@@ -15,10 +15,15 @@ float target_time();
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}
-#ifdef MLONMCU_TARGET_ARA
+#if defined(MLONMCU_TARGET_ARA)
 #include "printf.h"
-#endif  // MLONMCU_TARGET_ARA
 #define target_printf printf
+#elif defined(MLONMCU_TARGET_VICUNA)
+#include "uart.h"
+#define target_printf uart_printf
+#else
+#define target_printf printf
+#endif
 // __attribute__((weak)) void target_printf(const char* format, ...) {
 //     va_list argptr;
 //     va_start(argptr, format);
