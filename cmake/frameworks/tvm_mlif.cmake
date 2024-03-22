@@ -29,6 +29,11 @@ IF(TVM_SRCS)
     ENDIF()
 ENDIF()
 
+IF(${GLOBAL_ISEL})
+target_compile_options(tvm_extension PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel=1>")
+target_compile_options(tvm_extension PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel=1>")
+ENDIF()
+
 SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/${TVM_WRAPPER_FILENAME})
 TARGET_LINK_LIBRARIES(${TVM_LIB} PUBLIC tvm_extension m)
 SET(EXTRA_INC ${TVM_OUT_DIR}/include ${SRC_DIR})
