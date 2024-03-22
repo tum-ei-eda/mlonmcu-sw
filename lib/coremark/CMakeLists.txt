@@ -25,3 +25,8 @@ TARGET_COMPILE_DEFINITIONS(${PROJECT_NAME} PRIVATE
 )
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE target_support support)
+
+IF(${GLOBAL_ISEL})
+target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel=1>")
+target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel=1>")
+ENDIF()

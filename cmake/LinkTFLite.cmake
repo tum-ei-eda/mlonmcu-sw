@@ -258,3 +258,8 @@ TARGET_COMPILE_OPTIONS(tflm PUBLIC
     -fno-exceptions
 )
 # cmake-format: on
+
+IF(${GLOBAL_ISEL})
+target_compile_options(tflm PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel=1>")
+target_compile_options(tflm PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel=1>")
+ENDIF()

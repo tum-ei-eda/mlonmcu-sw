@@ -53,6 +53,10 @@ SET(FUSE_LD
     "lld"
     CACHE STRING "fuse-ld value"
 )
+SET(GLOBAL_ISEL
+    OFF
+    CACHE BOOL "global-isel value"
+)
 SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
@@ -117,6 +121,10 @@ LIST(APPEND TC_LD_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASEN
 IF(NOT "${FUSE_LD}" STREQUAL "" AND NOT "${FUSE_LD}" STREQUAL "none")
     LIST(APPEND TC_LD_FLAGS "-fuse-ld=${FUSE_LD}")
 ENDIF()
+# IF(${GLOBAL_ISEL})
+#     LIST(APPEND TC_C_FLAGS "-mllvm -global-isel=1")
+#     LIST(APPEND TC_CXX_FLAGS "-mllvm -global-isel=1")
+# ENDIF()
 
 foreach(X IN ITEMS ${TC_C_FLAGS} ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
