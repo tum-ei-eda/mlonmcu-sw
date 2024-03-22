@@ -57,6 +57,10 @@ SET(GLOBAL_ISEL
     OFF
     CACHE BOOL "global-isel value"
 )
+SET(EXTEND_ATTRS
+    OFF
+    CACHE BOOL "Convert -mattr to -Xclang -X -target-feature args"
+)
 SET(OBJDUMP_EXTRA_ARGS "--mattr=${RISCV_ATTR}")
 STRING(SUBSTRING ${RISCV_ARCH} 2 2 XLEN)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
@@ -117,6 +121,15 @@ LIST(APPEND TC_LD_FLAGS "-mabi=${RISCV_ABI}")
 LIST(APPEND TC_LD_FLAGS "--target=riscv${XLEN}")
 LIST(APPEND TC_LD_FLAGS "--gcc-toolchain=${RISCV_ELF_GCC_PREFIX}")
 LIST(APPEND TC_LD_FLAGS "--sysroot=${RISCV_ELF_GCC_PREFIX}/${RISCV_ELF_GCC_BASENAME}")
+
+if(EXTEND_ATTRS)
+    string(REPLACE "," ";" RISCV_ATTR_LIST ${RISCV_ATTR})
+    foreach(X IN ITEMS ${RISCV_ATTR_LIST})
+        LIST(APPEND TC_C_FLAGS "-Xclang -target-feature -Xclang ${X}")
+        LIST(APPEND TC_CXX_FLAGS "-Xclang -target-feature -Xclang ${X}")
+        LIST(APPEND TC_ASM_FLAGS "-Xclang -target-feature -Xclang ${X}")
+    endforeach()
+endif()
 
 IF(NOT "${FUSE_LD}" STREQUAL "" AND NOT "${FUSE_LD}" STREQUAL "none")
     LIST(APPEND TC_LD_FLAGS "-fuse-ld=${FUSE_LD}")
