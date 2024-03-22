@@ -1,3 +1,6 @@
+SET(CMAKE_CXX_COMPILER_WORKS 1)
+SET(CMAKE_C_COMPILER_WORKS 1)
+
 # Contains toolchain configurations and settings for using LLVM/Clang
 SET(TC_VARS
     RISCV_ELF_GCC_PREFIX
