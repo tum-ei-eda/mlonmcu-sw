@@ -44,6 +44,12 @@ SET(SUBPROJECT_THREADS
     CACHE STRING "Number of threads used for building subprojects."
 )
 
+SET(UNROLL_LOOPS
+    "AUTO"
+    CACHE STRING "Specify loop unrolling behavior."
+)
+SET_PROPERTY(CACHE UNROLL_LOOPS PROPERTY STRINGS AUTO ON OFF)
+
 SET(EXTRA_C_FLAGS "" CACHE STRING "Additional C options.")
 SET(EXTRA_CXX_FLAGS "" CACHE STRING "Additional C++ options.")
 SET(EXTRA_ASM_FLAGS "" CACHE STRING "Additional ASM options.")
@@ -105,6 +111,15 @@ IF(PROTECT_STACK)
     SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -fstack-protector-all")
     SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fstack-protector-all")
     SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -fstack-protector-all")
+ENDIF()
+IF(NOT "${UNROLL_LOOPS}" STREQUAL "AUTO")
+    IF(UNROLL_LOOPS)
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -funroll-loops")
+        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -funroll-loops")
+    ELSE()
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-unroll-loops")
+        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-unroll-loops")
+    ENDIF()
 ENDIF()
 
 # TODO: pass list of features dynamically?
