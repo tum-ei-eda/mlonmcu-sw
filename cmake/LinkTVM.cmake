@@ -21,7 +21,7 @@ ELSE()
 ENDIF()
 
 # cmake-format: off
-ADD_LIBRARY(tvm_static_rt STATIC
+COMMON_ADD_LIBRARY(tvm_static_rt STATIC
     ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c
     ${TVM_DIR}/src/runtime/crt/memory/stack_allocator.c
 )
@@ -36,7 +36,7 @@ TARGET_COMPILE_DEFINITIONS(tvm_static_rt PUBLIC
 # cmake-format: on
 
 # cmake-format: off
-ADD_LIBRARY(tvm_graph_rt STATIC
+COMMON_ADD_LIBRARY(tvm_graph_rt STATIC
     ${TVM_DIR}/src/runtime/crt/common/crt_backend_api.c
     ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c
     ${TVM_DIR}/src/runtime/crt/common/func_registry.c

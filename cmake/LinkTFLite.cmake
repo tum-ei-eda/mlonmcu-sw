@@ -38,20 +38,24 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/softmax.cc
     ${TFLM_SRC}/kernels/fully_connected.cc
     ${TFLM_SRC}/kernels/pooling.cc
-    ${TFLM_SRC}/kernels/add.cc
     ${TFLM_SRC}/kernels/mul.cc
+    ${TFLM_SRC}/kernels/mul_common.cc
     ${TFLM_SRC}/kernels/conv.cc
     ${TFLM_SRC}/kernels/depthwise_conv.cc
     ${TFLM_SRC}/kernels/softmax.cc
     ${TFLM_SRC}/kernels/fully_connected.cc
     ${TFLM_SRC}/kernels/pooling.cc
     ${TFLM_SRC}/kernels/add.cc
+    ${TFLM_SRC}/kernels/add_n.cc
     ${TFLM_SRC}/kernels/mul.cc
     ${TFLM_SRC}/kernels/conv.cc
     ${TFLM_SRC}/kernels/depthwise_conv.cc
     ${TFLM_SRC}/kernels/logical.cc
     ${TFLM_SRC}/kernels/logistic.cc
     ${TFLM_SRC}/kernels/svdf.cc
+    ${TFLM_SRC}/kernels/unidirectional_sequence_lstm.cc
+    ${TFLM_SRC}/kernels/lstm_eval.cc
+    ${TFLM_SRC}/kernels/lstm_eval_common.cc
     ${TFLM_SRC}/kernels/concatenation.cc
     ${TFLM_SRC}/kernels/ceil.cc
     ${TFLM_SRC}/kernels/floor.cc
@@ -60,7 +64,15 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/elementwise.cc
     ${TFLM_SRC}/kernels/maximum_minimum.cc
     ${TFLM_SRC}/kernels/arg_min_max.cc
+    ${TFLM_SRC}/kernels/shape.cc
     ${TFLM_SRC}/kernels/reshape.cc
+    ${TFLM_SRC}/kernels/reshape_common.cc
+    ${TFLM_SRC}/kernels/expand_dims.cc
+    ${TFLM_SRC}/kernels/leaky_relu.cc
+    ${TFLM_SRC}/kernels/leaky_relu_common.cc
+    ${TFLM_SRC}/kernels/exp.cc
+    ${TFLM_SRC}/kernels/broadcast_args.cc
+    ${TFLM_SRC}/kernels/fill.cc
     ${TFLM_SRC}/kernels/comparisons.cc
     ${TFLM_SRC}/kernels/round.cc
     ${TFLM_SRC}/kernels/strided_slice.cc
@@ -70,6 +82,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/unpack.cc
     ${TFLM_SRC}/kernels/quantize.cc
     ${TFLM_SRC}/kernels/activations.cc
+    ${TFLM_SRC}/kernels/activations_common.cc
     ${TFLM_SRC}/kernels/dequantize.cc
     ${TFLM_SRC}/kernels/reduce.cc
     ${TFLM_SRC}/kernels/sub.cc
@@ -126,49 +139,72 @@ FOREACH(src ${TFLM_EXTRA_KERNEL_SRCS})
     ENDIF()
 ENDFOREACH()
 
-# This files only exists in newer versions of TF
-IF(EXISTS ${TFL_SRC}/schema/schema_utils.cc)
-    LIST(APPEND OPT_SRC ${TFL_SRC}/schema/schema_utils.cc)
-ENDIF()
-IF(EXISTS ${TFLM_SRC}/micro_context.cc)
-    LIST(APPEND OPT_SRC ${TFLM_SRC}/micro_context.cc)
-ENDIF()
-IF(EXISTS ${TFLM_SRC}/micro_graph.cc)
-    LIST(APPEND OPT_SRC ${TFLM_SRC}/micro_graph.cc)
-ENDIF()
-IF(EXISTS ${TFLM_SRC}/flatbuffer_utils.cc)
-    LIST(APPEND OPT_SRC ${TFLM_SRC}/flatbuffer_utils.cc)
-ENDIF()
-
-COMMON_ADD_LIBRARY(
-    tflm STATIC
+SET(TFLM_SRCS
     # Not really needed?
     ${TFLM_SRC}/micro_error_reporter.cc
     ${TFLM_SRC}/debug_log.cc
     ${TFLM_SRC}/micro_string.cc
     # For reporter->Report
     ${TF_DIR}/tensorflow/lite/core/api/error_reporter.cc
-    # Kernels
-    ${TFLM_REFERENCE_KERNEL_SRCS}
-    ${TFLM_EXTRA_KERNEL_SRCS}
     # Kernel deps
     ${TFLM_SRC}/kernels/kernel_util.cc
     ${TFLM_SRC}/all_ops_resolver.cc
     ${TFLM_SRC}/micro_utils.cc
+    ${TFLM_SRC}/micro_log.cc
     ${TFL_SRC}/kernels/internal/quantization_util.cc
     ${TFL_SRC}/kernels/kernel_util.cc
+    ${TFL_SRC}/kernels/internal/tensor_ctypes.cc
+    ${TFL_SRC}/kernels/internal/portable_tensor_utils.cc
+    # Kernels
+    ${TFLM_REFERENCE_KERNEL_SRCS}
+    ${TFLM_EXTRA_KERNEL_SRCS}
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
+    ${TFLM_SRC}/simple_memory_allocator.cc
+    ${TFLM_SRC}/arena_allocator/simple_memory_allocator.cc
     ${TFLM_SRC}/micro_allocation_info.cc
     ${TFLM_SRC}/micro_resource_variable.cc
-    ${TFLM_SRC}/arena_allocator/simple_memory_allocator.cc
+    ${TFLM_SRC}/arena_allocator/single_arena_buffer_allocator.cc
+    ${TFLM_SRC}/arena_allocator/persistent_arena_buffer_allocator.cc
+    ${TFLM_SRC}/arena_allocator/non_persistent_arena_buffer_allocator.cc
     ${TFLM_SRC}/memory_helpers.cc
     ${TFLM_SRC}/memory_planner/greedy_memory_planner.cc
+    ${TFLM_SRC}/memory_planner/linear_memory_planner.cc
+    ${TFLM_SRC}/tflite_bridge/flatbuffer_conversions_bridge.cc
+    ${TFLM_SRC}/tflite_bridge/micro_error_reporter.cc
     ${TFL_SRC}/core/api/tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/portable_tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/reference/portable_tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/common.cc
     ${TFL_SRC}/core/api/flatbuffer_conversions.cc
     ${TFL_SRC}/core/api/op_resolver.cc
-    ${TFL_SRC}/c/common.cc
+    ${TFLM_SRC}/micro_op_resolver.cc
+    ${TFLM_SRC}/tflite_bridge/flatbuffer_conversions_bridge.cc
+    ${TFLM_SRC}/tflite_bridge/micro_error_reporter.cc
+    ${TFL_SRC}/core/c/common.cc  # new
+    ${TFL_SRC}/c/common.cc  # new
+    ${TFL_SRC}/c/common.c  # old
+    ${TFLM_SRC}/flatbuffer_utils.cc
+    ${TFLM_SRC}/micro_graph.cc
+    ${TFLM_SRC}/micro_interpreter_graph.cc
+    ${TFLM_SRC}/micro_interpreter_context.cc
+    ${TFLM_SRC}/micro_op_resolver.cc
+    ${TFLM_SRC}/micro_context.cc
+    ${TFL_SRC}/schema/schema_utils.cc
     ${OPT_SRC}
+)
+
+# For backwards compatibility, we drop non-existance files here.
+FOREACH(src ${TFLM_SRCS})
+    IF(NOT EXISTS ${src})
+         LIST(REMOVE_ITEM TFLM_SRCS ${src})
+    ENDIF()
+ENDFOREACH()
+
+COMMON_ADD_LIBRARY(
+    tflm STATIC
+    ${TFLM_SRCS}
 )
 
 IF(TFLM_EXTRA_KERNEL_LIBS)

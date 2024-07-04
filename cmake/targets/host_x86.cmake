@@ -1,4 +1,9 @@
-# Nothing to do...
-set(CMAKE_SYSTEM_NAME Linux)
+IF(WIN32)
+    MESSAGE(FATAL_ERROR "Windows target is not supported")
+ELSEIF(APPLE)
+    SET(CMAKE_SYSTEM_NAME Darwin)
+ELSEIF(UNIX)
+    SET(CMAKE_SYSTEM_NAME Linux)
+ENDIF()
 
-set(CMAKE_SYSTEM_PROCESSOR x86_64)
+SET(CMAKE_SYSTEM_PROCESSOR host_x86)

@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include "uart_stdout.h"
+#include <stdint.h>
+#include "target.h"
 
 // DWT (Data Watchpoint and Trace) registers, only exists on ARM Cortex with a
 // DWT unit.
@@ -35,27 +38,32 @@ int32_t ticks_per_second() { return 25e6; }
 
 int32_t GetCurrentTimeTicks() { return KIN1_GetCycleCounter(); }
 
-extern void uart_init(void);
-
 static int32_t start_cycles = 0;
 
 void init_target() {
-  uart_init();
+  UartStdOutInit();
   KIN1_UnlockAccessToDWT();
   KIN1_InitCycleCounter();
   KIN1_ResetCycleCounter();
   KIN1_EnableCycleCounter();
   int32_t ticks = GetCurrentTimeTicks();
   start_cycles = ticks;
-  printf("GetCurrentTimeTicks=%ld\n", ticks);
 }
 
-void deinit_target() {
+void start_timer() {
+  int32_t ticks = GetCurrentTimeTicks();
+  start_cycles = ticks;
+}
+
+void stop_timer() {
   int32_t stop_cycles = GetCurrentTimeTicks();
-  int32_t diff_cycles = stop_cycles-start_cycles;
+  int32_t diff_cycles = stop_cycles - start_cycles;
+}
+void deinit_target() {
   // int32_t diff_ms = diff_cycles / (ticks_per_second() / 1000);
   // printf("Total Time: %ld ms\n", diff_ms);
   printf("Total Cycles: %ld\n", diff_cycles);
   printf("EXITTHESIM\n");
-  while (1);
+  while (1)
+    ;
 }

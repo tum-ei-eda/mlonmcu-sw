@@ -1,0 +1,3 @@
+#define main taclebench_main
+#include "@BENCH_FILE@"
+#undef main

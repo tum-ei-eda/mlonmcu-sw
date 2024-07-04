@@ -1,0 +1,1 @@
+The default system clock and total heap size can be changed in the "system_metal_conf.h"
