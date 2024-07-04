@@ -18,13 +18,13 @@ SET(RISCV_ARCH
 # set(RISCV_ARCH "rv32" CACHE STRING "march argument to the compiler" FORCE)
 SET(RISCV_ABI
     "ilp32"
-    CACHE STRING "mabi argument to the compiler" 
+    CACHE STRING "mabi argument to the compiler"
 )
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
 #SET(RISCV_ATTR "" CACHE STRING "set empty attr" FORCE)
 
-INCLUDE(/home/gabriel/mlonmcu-sw/mlonmcu-sw/cmake/targets/tgc/CMakeLists.txt)
+ADD_SUBDIRECTORY(cmake/targets/tgc)
 
 MACRO(COMMON_ADD_EXECUTABLE TARGET)
 
@@ -79,7 +79,7 @@ ADD_EXECUTABLE(${TARGET} ${ASM_SRCS} ${C_SRCS} ${SRC_FILES})
 SET_TARGET_PROPERTIES(${TARGET} PROPERTIES LINKER_LANGUAGE C)
 
 TARGET_LINK_LIBRARIES(${TARGET} PUBLIC ${LIBWRAP_TGC_LDFLAGS} LIBWRAP_TGC)
-TARGET_LINK_OPTIONS(${TARGET} PUBLIC -static) 
+TARGET_LINK_OPTIONS(${TARGET} PUBLIC -static)
 
 # Linker Flags
 TARGET_LINK_LIBRARIES(${TARGET}
