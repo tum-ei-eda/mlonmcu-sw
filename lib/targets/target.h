@@ -5,13 +5,19 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#ifdef MLONMCU_TARGET_HOST_X86
+#define HAS_CYCLES 1
+#define HAS_INSTRUCTIONS 0
+#define HAS_TIME 1
+#else
 #define HAS_CYCLES 1
 #define HAS_INSTRUCTIONS 1
 // #define HAS_TIME 1
+#endif  // MLONMCU_TARGET_HOST_X86
 
 uint64_t target_cycles();
 uint64_t target_instructions();
-float target_time();
+uint64_t target_time();
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}
