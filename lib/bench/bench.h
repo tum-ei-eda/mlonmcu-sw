@@ -15,28 +15,45 @@
 #define TOTAL 2
 
 #if HAS_CYCLES && HAS_INSTRUCTIONS && HAS_TIME
+
 #define MAX_METRICS_IDX 2
+#define CYCLES 0
+#define INSTRUCTIONS 1
+#define TIME 2
+
 #elif HAS_CYCLES && HAS_INSTRUCTIONS
+
 #define CYCLES 0
 #define INSTRUCTIONS 1
 #define MAX_METRICS_IDX 1
+
 #elif HAS_CYCLES && HAS_TIME
+
 #define CYCLES 0
 #define TIME 1
 #define MAX_METRICS_IDX 1
+
 #elif HAS_INSTRUCTIONS && HAS_TIME
+
 #define INSTRUCTIONS 0
 #define TIME 1
 #define MAX_METRICS_IDX 1
+
 #elif HAS_CYCLES
+
 #define CYCLES 0
 #define MAX_METRICS_IDX 0
+
 #elif HAS_INSTRUCTIONS
+
 #define INSTRUCTIONS 0
 #define MAX_METRICS_IDX 0
+
 #elif HAS_TIME
+
 #define TIME 0
 #define MAX_METRICS_IDX 0
+
 #endif
 
 #define BENCH_NAME_0 "Setup"
@@ -45,15 +62,15 @@
 
 #define BENCH_METRIC_0 "Cycles"
 #define BENCH_METRIC_1 "Instructions"
-#define BENCH_METRIC_2 "Runtime"
+#define BENCH_METRIC_2 "Runtime [us]"
 
 #define BENCH_TYPE_0 uint64_t
 #define BENCH_TYPE_1 uint64_t
-#define BENCH_TYPE_2 float
+#define BENCH_TYPE_2 uint64_t
 
 #define BENCH_FMT_0 PRIu64
 #define BENCH_FMT_1 PRIu64
-#define BENCH_FMT_2 "f"
+#define BENCH_FMT_2 PRIu64
 
 #define BENCH_FUNC_0 target_cycles
 #define BENCH_FUNC_1 target_instructions

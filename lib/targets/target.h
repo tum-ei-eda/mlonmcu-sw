@@ -11,7 +11,7 @@
 
 uint64_t target_cycles();
 uint64_t target_instructions();
-float target_time();
+uint64_t target_time();
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}
