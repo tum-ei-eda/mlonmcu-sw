@@ -2,47 +2,55 @@
 
 void start_bench(size_t index) {
 #ifdef CYCLES
-    BENCH_TYPE(CYCLES) cycles = BENCH_FUNC(CYCLES)();
+    BENCH_TYPE(BENCH_METRIC_CYCLES) cycles = BENCH_FUNC(BENCH_METRIC_CYCLES)();
 #endif
 #ifdef INSTRUCTIONS
-    BENCH_TYPE(INSTRUCTIONS) instructions = BENCH_FUNC(INSTRUCTIONS)();
+    BENCH_TYPE(BENCH_METRIC_INSTRUCTIONS) instructions = BENCH_FUNC(BENCH_METRIC_INSTRUCTIONS)();
 #endif
 #ifdef TIME
-    BENCH_TYPE(TIME) time = BENCH_FUNC(TIME)();
+    BENCH_TYPE(BENCH_METRIC_TIME) time = BENCH_FUNC(BENCH_METRIC_TIME)();
 #endif
 #ifdef CYCLES
-    BENCH_DATA(CYCLES)[index] = cycles;
+    BENCH_DATA(BENCH_METRIC_CYCLES)[index] = cycles;
 #endif
 #ifdef INSTRUCTIONS
-    BENCH_DATA(INSTRUCTIONS)[index] = instructions;
+    BENCH_DATA(BENCH_METRIC_INSTRUCTIONS)[index] = instructions;
 #endif
 #ifdef TIME
-    BENCH_DATA(TIME)[index] = time;
+    BENCH_DATA(BENCH_METRIC_TIME)[index] = time;
 #endif
 }
 
 void stop_bench(size_t index) {
 #ifdef CYCLES
-    BENCH_TYPE(CYCLES) cycles = BENCH_FUNC(CYCLES)();
+    BENCH_TYPE(BENCH_METRIC_CYCLES) cycles = BENCH_FUNC(BENCH_METRIC_CYCLES)();
 #endif
 #ifdef INSTRUCTIONS
-    BENCH_TYPE(INSTRUCTIONS) instructions = BENCH_FUNC(INSTRUCTIONS)();
+    BENCH_TYPE(BENCH_METRIC_INSTRUCTIONS) instructions = BENCH_FUNC(BENCH_METRIC_INSTRUCTIONS)();
 #endif
 #ifdef TIME
-    BENCH_TYPE(TIME) time = BENCH_FUNC(TIME)();
+    BENCH_TYPE(BENCH_METRIC_TIME) time = BENCH_FUNC(BENCH_METRIC_TIME)();
 #endif
     // TODO: check for overflow
 #ifdef CYCLES
-    BENCH_DATA(CYCLES)[index] = cycles - BENCH_DATA(CYCLES)[index];
+    BENCH_DATA(BENCH_METRIC_CYCLES)[index] = cycles - BENCH_DATA(BENCH_METRIC_CYCLES)[index];
 #endif
 #ifdef INSTRUCTIONS
-    BENCH_DATA(INSTRUCTIONS)[index] = instructions - BENCH_DATA(INSTRUCTIONS)[index];
+    BENCH_DATA(BENCH_METRIC_INSTRUCTIONS)[index] = instructions - BENCH_DATA(BENCH_METRIC_INSTRUCTIONS)[index];
 #endif
 #ifdef TIME
-    BENCH_DATA(TIME)[index] = time - BENCH_DATA(TIME)[index];
+    BENCH_DATA(BENCH_METRIC_TIME)[index] = time - BENCH_DATA(BENCH_METRIC_TIME)[index];
 #endif
 }
 
 void print_bench(size_t index) {
-    PRINT_BENCH_ALL
+#ifdef CYCLES
+    PRINT_BENCH(BENCH_METRIC_CYCLES)
+#endif
+#ifdef INSTRUCTIONS
+    PRINT_BENCH(BENCH_METRIC_INSTRUCTIONS)
+#endif
+#ifdef TIME
+    PRINT_BENCH(BENCH_METRIC_TIME)
+#endif
 }

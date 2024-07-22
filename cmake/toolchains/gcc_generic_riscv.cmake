@@ -25,6 +25,10 @@ SET(RISCV_ABI
     "ilp32d"
     CACHE STRING "mabi argument to the compiler"
 )
+SET(RISCV_LINUX
+    OFF
+    CACHE STRING "is unix toolchain"
+)
 SET(TC_PREFIX "${RISCV_ELF_GCC_PREFIX}/bin/${RISCV_ELF_GCC_BASENAME}-")
 
 if(NOT (EXISTS "${TC_PREFIX}gcc${EXE_EXT}"))
@@ -52,6 +56,9 @@ LIST(APPEND TC_ASM_FLAGS "-march=${RISCV_ARCH}")
 LIST(APPEND TC_ASM_FLAGS "-mabi=${RISCV_ABI}")
 LIST(APPEND TC_LD_FLAGS "-march=${RISCV_ARCH}")
 LIST(APPEND TC_LD_FLAGS "-mabi=${RISCV_ABI}")
+IF(RISCV_LINUX)
+LIST(APPEND TC_LD_FLAGS "-static")
+ENDIF()
 
 foreach(X IN ITEMS ${TC_C_FLAGS} ${EXTRA_CMAKE_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
