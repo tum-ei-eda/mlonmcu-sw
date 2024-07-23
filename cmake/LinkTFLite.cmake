@@ -192,6 +192,7 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/micro_op_resolver.cc
     ${TFLM_SRC}/micro_context.cc
     ${TFL_SRC}/schema/schema_utils.cc
+    ${TF_DIR}/tensorflow/compiler/mlir/lite/schema/schema_utils.cc
     ${OPT_SRC}
 )
 
