@@ -4,6 +4,9 @@ IF(MEMGRAPH_LLVM_CDFG)
 
     IF(${TOOLCHAIN} STREQUAL "llvm")
         LIST(APPEND CDFG_FLAGS "-mllvm -cdfg-enable=1")
+        IF(MEMGRAPH_LLVM_CDFG_SESSION)
+            LIST(APPEND CDFG_FLAGS "-mllvm -cdfg-memgrapg_session=${MEMGRAPH_LLVM_CDFG_SESSION}")
+        ENDIF()
         # TODO: move to new feature
         LIST(APPEND CDFG_FLAGS "-fbasic-block-sections=labels")
     ENDIF()
