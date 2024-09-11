@@ -44,6 +44,12 @@ SET(SUBPROJECT_THREADS
     CACHE STRING "Number of threads used for building subprojects."
 )
 
+SET(UNROLL_LOOPS
+    "AUTO"
+    CACHE STRING "Specify loop unrolling behavior."
+)
+SET_PROPERTY(CACHE UNROLL_LOOPS PROPERTY STRINGS AUTO ON OFF)
+
 SET(EXTRA_C_FLAGS "" CACHE STRING "Additional C options.")
 SET(EXTRA_CXX_FLAGS "" CACHE STRING "Additional C++ options.")
 SET(EXTRA_ASM_FLAGS "" CACHE STRING "Additional ASM options.")
@@ -93,8 +99,12 @@ IF(ENABLE_GC)
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker --gc-sections")
 ENDIF()
 IF(ENABLE_LTO)
-    SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -flto -ffat-lto-objects")
-    SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -flto -ffat-lto-objects")
+    SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -flto")
+    SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -flto")
+    IF(TOOLCHAIN STREQUAL "gcc")
+        SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -ffat-lto-objects")
+        SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -ffat-lto-objects")
+    ENDIF()
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker -flto")
 ENDIF()
 IF(SLIM_CPP)
@@ -106,6 +116,15 @@ IF(PROTECT_STACK)
     SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fstack-protector-all")
     SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -fstack-protector-all")
 ENDIF()
+IF(NOT "${UNROLL_LOOPS}" STREQUAL "AUTO")
+    IF(UNROLL_LOOPS)
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -funroll-loops")
+        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -funroll-loops")
+    ELSE()
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-unroll-loops")
+        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-unroll-loops")
+    ENDIF()
+ENDIF()
 
 # TODO: pass list of features dynamically?
 IF(CMSISNN)
@@ -116,7 +135,7 @@ IF(MURISCVNN)
     INCLUDE(features/muriscvnn)
 ENDIF()
 
-foreach(X IN ITEMS ${EXTRA__C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
+foreach(X IN ITEMS ${EXTRA_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
 endforeach()
 foreach(X IN ITEMS ${EXTRA_CXX_FLAGS} ${FEATURE_EXTRA_CXX_FLAGS})

@@ -15,7 +15,7 @@ IF(TVM_OBJS)
         IMPORTED_OBJECTS ${TVM_OBJS}
     )
     IF(NOT TVM_SRCS)
-        ADD_LIBRARY(tvm_extension ALIAS tvm_extension_objs)
+        COMMON_ADD_LIBRARY(tvm_extension ALIAS tvm_extension_objs)
     ENDIF()
 ENDIF()
 IF(TVM_SRCS)

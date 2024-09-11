@@ -14,6 +14,7 @@ MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
     TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
         $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
         $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
+        $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
     )
     TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE support)
     TARGET_LINK_OPTIONS(${TARGET_NAME} PRIVATE ${LINK_FILE_OPTION} ${LINK_FILE})
@@ -28,17 +29,21 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     ADD_LIBRARY(${TARGET_NAME} ${ARGN})
     # TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE femto)
     # ADD_DEPENDENCIES(${TARGET_NAME} femto)
-    # TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
-    #     $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
-    #     $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
-    # )
-    # IF("${ARGV1}" STREQUAL "OBJECT" AND "${ARGV2}" STREQUAL "IMPORTED")
-    # ELSE()
-    # ENDIF()
+    IF("${ARGV1}" STREQUAL "ALIAS")
+        # do nothing
+    ELSEIF("${ARGV1}" STREQUAL "OBJECT" AND "${ARGV2}" STREQUAL "IMPORTED")
+        # do nothing
+    ELSE()
+        TARGET_COMPILE_OPTIONS(${TARGET_NAME} PUBLIC
+            $<$<COMPILE_LANGUAGE:CXX>:-std=c++17>
+            $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
+            $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+        )
+    ENDIF()
 ENDMACRO()
 
 SET(CMAKE_EXE_LINKER_FLAGS
-    "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles"
+    "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -fno-use-cxa-atexit"
 )
 
 IF("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")

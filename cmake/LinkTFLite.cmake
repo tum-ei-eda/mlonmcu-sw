@@ -38,7 +38,6 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/softmax.cc
     ${TFLM_SRC}/kernels/fully_connected.cc
     ${TFLM_SRC}/kernels/pooling.cc
-    ${TFLM_SRC}/kernels/add.cc
     ${TFLM_SRC}/kernels/mul.cc
     ${TFLM_SRC}/kernels/mul_common.cc
     ${TFLM_SRC}/kernels/conv.cc
@@ -47,12 +46,16 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/fully_connected.cc
     ${TFLM_SRC}/kernels/pooling.cc
     ${TFLM_SRC}/kernels/add.cc
+    ${TFLM_SRC}/kernels/add_n.cc
     ${TFLM_SRC}/kernels/mul.cc
     ${TFLM_SRC}/kernels/conv.cc
     ${TFLM_SRC}/kernels/depthwise_conv.cc
     ${TFLM_SRC}/kernels/logical.cc
     ${TFLM_SRC}/kernels/logistic.cc
     ${TFLM_SRC}/kernels/svdf.cc
+    ${TFLM_SRC}/kernels/unidirectional_sequence_lstm.cc
+    ${TFLM_SRC}/kernels/lstm_eval.cc
+    ${TFLM_SRC}/kernels/lstm_eval_common.cc
     ${TFLM_SRC}/kernels/concatenation.cc
     ${TFLM_SRC}/kernels/ceil.cc
     ${TFLM_SRC}/kernels/floor.cc
@@ -79,6 +82,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/unpack.cc
     ${TFLM_SRC}/kernels/quantize.cc
     ${TFLM_SRC}/kernels/activations.cc
+    ${TFLM_SRC}/kernels/activations_common.cc
     ${TFLM_SRC}/kernels/dequantize.cc
     ${TFLM_SRC}/kernels/reduce.cc
     ${TFLM_SRC}/kernels/sub.cc
@@ -142,9 +146,6 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/micro_string.cc
     # For reporter->Report
     ${TF_DIR}/tensorflow/lite/core/api/error_reporter.cc
-    # Kernels
-    ${TFLM_REFERENCE_KERNEL_SRCS}
-    ${TFLM_EXTRA_KERNEL_SRCS}
     # Kernel deps
     ${TFLM_SRC}/kernels/kernel_util.cc
     ${TFLM_SRC}/all_ops_resolver.cc
@@ -154,6 +155,9 @@ SET(TFLM_SRCS
     ${TFL_SRC}/kernels/kernel_util.cc
     ${TFL_SRC}/kernels/internal/tensor_ctypes.cc
     ${TFL_SRC}/kernels/internal/portable_tensor_utils.cc
+    # Kernels
+    ${TFLM_REFERENCE_KERNEL_SRCS}
+    ${TFLM_EXTRA_KERNEL_SRCS}
     ${TFLM_SRC}/micro_interpreter.cc
     ${TFLM_SRC}/micro_allocator.cc
     ${TFLM_SRC}/simple_memory_allocator.cc
@@ -169,6 +173,7 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/tflite_bridge/flatbuffer_conversions_bridge.cc
     ${TFLM_SRC}/tflite_bridge/micro_error_reporter.cc
     ${TFL_SRC}/core/api/tensor_utils.cc
+    ${TFL_SRC}/kernels/internal/tensor_utils.cc
     ${TFL_SRC}/kernels/internal/portable_tensor_utils.cc
     ${TFL_SRC}/kernels/internal/reference/portable_tensor_utils.cc
     ${TFL_SRC}/kernels/internal/common.cc
@@ -187,6 +192,7 @@ SET(TFLM_SRCS
     ${TFLM_SRC}/micro_op_resolver.cc
     ${TFLM_SRC}/micro_context.cc
     ${TFL_SRC}/schema/schema_utils.cc
+    ${TF_DIR}/tensorflow/compiler/mlir/lite/schema/schema_utils.cc
     ${OPT_SRC}
 )
 
@@ -197,7 +203,7 @@ FOREACH(src ${TFLM_SRCS})
     ENDIF()
 ENDFOREACH()
 
-ADD_LIBRARY(
+COMMON_ADD_LIBRARY(
     tflm STATIC
     ${TFLM_SRCS}
 )
