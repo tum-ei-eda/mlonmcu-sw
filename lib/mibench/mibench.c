@@ -1,10 +1,10 @@
 #include "mibench_wrapper.h"
 
-int mlonmcu_init() {}
-int mlonmcu_deinit() {}
+int mlonmcu_init() {return 0;}
+int mlonmcu_deinit() {return 0;}
 
 int mlonmcu_run() {
     return mibench_main();
 }
 
-int mlonmcu_check() {}
+int mlonmcu_check() {return 0;}
