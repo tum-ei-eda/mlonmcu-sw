@@ -13,12 +13,18 @@ initialise_board ()
 {
 }
 
-void __attribute__ ((noinline)) __attribute__ ((externally_visible))
+void __attribute__ ((noinline))
+#if !defined(__clang__)
+__attribute__ ((externally_visible))
+#endif
 start_trigger ()
 {
 }
 
-void __attribute__ ((noinline)) __attribute__ ((externally_visible))
+void __attribute__ ((noinline))
+#if !defined(__clang__)
+__attribute__ ((externally_visible))
+#endif
 stop_trigger ()
 {
 }
