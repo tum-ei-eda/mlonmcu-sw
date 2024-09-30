@@ -63,6 +63,9 @@
 
 #ifdef NOPRINT
 #define printf(format, ...)
+#else
+#include "printing.h"
+#define printf(format, ...) mlonmcu_printf(format, ...)
 #endif
 int
 decrypt (int statemt[32], int key[32], int type)

@@ -65,6 +65,9 @@
 
 #ifdef NOPRINT
 #define printf(format, ...)
+#else
+#include "printing.h"
+#define printf(format, ...) mlonmcu_printf(format, ...)
 #endif
 
 int
