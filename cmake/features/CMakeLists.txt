@@ -26,6 +26,8 @@ ENDMACRO()
 INCLUDE(auto_vectorize)
 INCLUDE(memgraph_llvm_cdfg)
 INCLUDE(global_isel)
+INCLUDE(llvm_basic_block_sections)
+INCLUDE(global_isel)
 INCLUDE(cmsisnn)
 INCLUDE(muriscvnn)
 

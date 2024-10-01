@@ -64,6 +64,9 @@ INCLUDE(AddAllSubdirs)
 IF(RISCV_AUTO_VECTORIZE)
     INCLUDE(features/auto_vectorize_${TOOLCHAIN})
 ENDIF()
+INCLUDE(features/memgraph_llvm_cdfg)
+INCLUDE(features/global_isel)
+INCLUDE(features/llvm_basic_block_sections)
 
 PROJECT(mlonmcu_sw)
 
