@@ -1,6 +1,3 @@
-# IF(NOT ${TOOLCHAIN} STREQUAL "llvm")
-#     MESSAGE(FATAL_ERROR "global_isel feature needs llvm toolchain")
-# ENDIF()
 # SET(GISEL_FLAGS)
 # LIST(APPEND GISEL_FLAGS "-mllvm -global-isel=1")
 # LIST(APPEND GISEL_FLAGS "-mllvm -global-isel-abort=2")
