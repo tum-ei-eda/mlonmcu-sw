@@ -60,10 +60,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 INCLUDE(ChooseTarget)
 INCLUDE(AddAllSubdirs)
 
-# Toolchain-specific features
-IF(RISCV_AUTO_VECTORIZE)
-    INCLUDE(features/auto_vectorize_${TOOLCHAIN})
-ENDIF()
+INCLUDE(features/auto_vectorize)
 INCLUDE(features/memgraph_llvm_cdfg)
 INCLUDE(features/global_isel)
 INCLUDE(features/llvm_basic_block_sections)
@@ -130,13 +127,8 @@ IF(NOT "${UNROLL_LOOPS}" STREQUAL "AUTO")
 ENDIF()
 
 # TODO: pass list of features dynamically?
-IF(CMSISNN)
-    INCLUDE(features/cmsisnn)
-ENDIF()
-
-IF(MURISCVNN)
-    INCLUDE(features/muriscvnn)
-ENDIF()
+INCLUDE(features/cmsisnn)
+INCLUDE(features/muriscvnn)
 
 foreach(X IN ITEMS ${EXTRA_C_FLAGS} ${FEATURE_EXTRA_C_FLAGS})
     add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:${X}>")
