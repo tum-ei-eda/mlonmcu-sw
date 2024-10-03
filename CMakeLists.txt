@@ -125,6 +125,10 @@ IF(NOT "${UNROLL_LOOPS}" STREQUAL "AUTO")
         SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-unroll-loops")
     ENDIF()
 ENDIF()
+# SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fno-asynchronous-unwind-tables -fno-unwind-tables")
+# SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -fno-asynchronous-unwind-tables -fno-unwind-tables")
+# SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-asynchronous-unwind-tables -fno-unwind-tables")
+# SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -fno-asynchronous-unwind-tables -fno-unwind-tables")
 
 # TODO: pass list of features dynamically?
 IF(CMSISNN)
