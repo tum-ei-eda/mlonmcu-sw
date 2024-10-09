@@ -50,6 +50,7 @@ COMMON_ADD_LIBRARY(tvm_graph_rt STATIC
 # cmake-format: on
 
 TARGET_INCLUDE_DIRECTORIES(tvm_graph_rt PUBLIC ${TVM_HEADERS})
+TARGET_COMPILE_OPTIONS(tvm_graph_rt PRIVATE -Wno-incompatible-pointer-types)
 
 # cmake-format: off
 TARGET_COMPILE_DEFINITIONS(tvm_graph_rt PUBLIC
