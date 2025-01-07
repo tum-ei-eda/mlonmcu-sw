@@ -22,6 +22,13 @@ ELSE()
     SET(USE_PEXT ${MURISCVNN_PEXT})
 ENDIF()
 
+MESSAGE(STATUS "MURISCVNN_COREV=${MURISCVNN_COREV}")
+
+IF("${MURISCVNN_COREV}")
+    SET(USE_COREV ON)
+ELSE()
+    SET(USE_COREV OFF)
+ENDIF()
 
 # IF(RISCV_AUTO_VECTORIZE)
 #     SET(USE_AUTO_VECTORIZE ${RISCV_AUTO_VECTORIZE})
@@ -45,6 +52,9 @@ elseif(USE_VEXT)
   add_definitions(-DUSE_VEXT)
 elseif(USE_PEXT)
   add_definitions(-DUSE_PEXT)
+endif()
+if(USE_COREV)
+  add_definitions(-DUSE_COREV)
 endif()
 ADD_SUBDIRECTORY(${MURISCVNN_DIR}/Source muriscvnn)
 target_include_directories(${MURISCVNN_LIB} PUBLIC
