@@ -21,6 +21,7 @@ Original Author: Shay Gal-on
    initial parameters, tun t he benchmark and report the results.
 */
 #include "coremark.h"
+#include "exit.h"
 
 /* Function: iterate
         Run the benchmark for a specified number of iterations.
@@ -441,4 +442,9 @@ int mlonmcu_deinit() {
 
     return MAIN_RETURN_VAL;
 }
-int mlonmcu_check() { return 0; }
+int mlonmcu_check() {
+    if (total_errors > 0) {
+        return EXIT_MLIF_MISSMATCH;
+    }
+    return 0;
+}

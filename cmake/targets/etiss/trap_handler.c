@@ -28,7 +28,7 @@
     mlonmcu_printf("MLONMCU EXIT: -1\n"); \
     exit(-1);
 
-void _trap_handler_c(unsigned long mcause, unsigned long mepc)
+void _trap_handler_c(uint32_t mcause, uint32_t mepc)
 {
     switch (mcause)
     {
