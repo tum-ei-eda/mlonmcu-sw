@@ -35,9 +35,9 @@ int main() {
     goto cleanup;
   }
 #endif  // !MLONMCU_SKIP_CHECK
-  // start_bench(DEINIT);
+  start_bench(DEINIT);
   ret = mlonmcu_deinit();
-  // stop_bench(DEINIT);
+  stop_bench(DEINIT);
   if (ret) {
     goto cleanup;
   }
@@ -48,7 +48,7 @@ cleanup:
   // post
   print_bench(INIT);
   print_bench(RUN);
-  // print_bench(DEINIT);
+  print_bench(DEINIT);
   print_bench(TOTAL);
   mlonmcu_printf("Program finish.\n");
   target_deinit();
