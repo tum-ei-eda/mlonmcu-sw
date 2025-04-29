@@ -54,22 +54,77 @@ target_compile_options(iree_base_base PRIVATE -Wno-error=format -Wno-error=char-
 target_compile_options(iree_vm_impl PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_vm_bytecode_utils_utils PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_hal_hal PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_hal_hal PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_executable_environment PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_hal_local_local PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_hal_local_local PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_file_transfer PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_files PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_semaphore_base PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_drivers_local_sync_sync_driver PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_executable_loader PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_hal_local_executable_library_util PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_hal_local_executable_library_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_hal_local_executable_plugin_manager PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_hal_local_executable_plugin_manager PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_hal_local_elf_arch PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_hal_local_elf_elf_module PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_hal_local_loaders_embedded_elf_loader PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_hal_local_loaders_embedded_elf_loader PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_loaders_vmvx_module_loader PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_loaders_registration_registration PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_plugins_embedded_elf_plugin PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_plugins_registration_registration PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_drivers_local_sync_registration_registration PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_drivers_drivers PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_modules_hal_debugging PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_modules_hal_types PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_modules_hal_utils_buffer_diagnostics PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_modules_hal_utils_buffer_diagnostics PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_modules_hal_hal PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_modules_hal_hal PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_vm_bytecode_module PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_base_loop_sync PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_hal_local_loaders_static_library_loader PRIVATE -Wno-error=format -Wno-error=char-subscripts)
+target_compile_options(iree_hal_local_loaders_static_library_loader PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_io_stream PRIVATE -Wno-error=format -Wno-error=char-subscripts)
 target_compile_options(iree_io_formats_gguf_gguf PRIVATE -Wno-error=format)
 target_compile_options(iree_io_formats_irpa_irpa PRIVATE -Wno-error=format)
 target_compile_options(iree_modules_hal_inline_inline PRIVATE -Wno-error=format)
+target_compile_options(iree_modules_hal_inline_inline PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_runtime_impl PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_elf_elf_module_test_binary PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_local_plugins_static_plugin PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_caching_allocator PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_debug_allocator PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_allocators PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_collective_batch PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_file_cache PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_mpi_channel_provider PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_hal_utils_stream_tracing PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_io_parameter_provider PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_io_parameter_index_provider PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_modules_hal_loader_loader PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_io_vec_stream PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast -Wno-error=format)  # TODO: old iree only
 target_compile_options(iree_modules_io_parameters_parameters PRIVATE -Wno-error=format)
+target_compile_options(iree_modules_io_parameters_parameters PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_runtime_demo_hello_world_file PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_buffer_view_matchers PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_device_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_parameter_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_context_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_numpy_io PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_function_io PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_function_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_instrument_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+target_compile_options(iree_tooling_run_module PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+IF(TARGET iree_hal_drivers_null_null)
+target_compile_options(iree_hal_drivers_null_null PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+ENDIF()
+IF(TARGET iree_hal_drivers_null_registration_registration)
+target_compile_options(iree_hal_drivers_null_registration_registration PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+ENDIF()
+target_compile_options(iree_io_memory_stream PRIVATE -Wno-error=format)  # TODO: only if exists/old iree
 target_compile_options(iree_io_formats_safetensors_safetensors PRIVATE -Wno-error=char-subscripts)
 #TODO: replace no-err with: "-DIREE_DEVICE_SIZE_T=uint32_t" "-DPRIdsz=PRIu32"
 # add_compile_options("foo")
