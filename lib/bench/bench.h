@@ -8,11 +8,12 @@
 
 #include "target.h"
 
-#define MAX_NUM_BENCH 3
+#define MAX_NUM_BENCH 4
 
 #define INIT 0
 #define RUN 1
 #define TOTAL 2
+#define DEINIT 3
 
 #if HAS_CYCLES && HAS_INSTRUCTIONS && HAS_TIME
 
@@ -63,6 +64,7 @@
 #define BENCH_NAME_0 "Setup"
 #define BENCH_NAME_1 "Run"
 #define BENCH_NAME_2 "Total"
+#define BENCH_NAME_3 "Deinit"
 
 #define BENCH_METRIC_CYCLES 0
 #define BENCH_METRIC_INSTRUCTIONS 1
@@ -121,6 +123,7 @@ static char* bench_names[MAX_NUM_BENCH] = {
     BENCH_NAME_0,
     BENCH_NAME_1,
     BENCH_NAME_2,
+    BENCH_NAME_3,
 };
 
 
