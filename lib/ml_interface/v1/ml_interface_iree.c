@@ -5,7 +5,9 @@
 int mlonmcu_init() {
   return IREE_Init();
 }
-int mlonmcu_deinit() {return 0;}
+int mlonmcu_deinit() {
+  return IREE_Deinit();
+}
 
 int mlonmcu_run() {
   size_t remaining = NUM_RUNS;
