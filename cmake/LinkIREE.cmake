@@ -93,7 +93,9 @@ target_compile_options(iree_io_formats_irpa_irpa PRIVATE -Wno-error=format)
 target_compile_options(iree_modules_hal_inline_inline PRIVATE -Wno-error=format)
 target_compile_options(iree_modules_hal_inline_inline PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_runtime_impl PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+IF(TARGET iree_hal_local_elf_elf_module_test_binary)
 target_compile_options(iree_hal_local_elf_elf_module_test_binary PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+ENDIF()
 target_compile_options(iree_hal_local_plugins_static_plugin PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_hal_utils_caching_allocator PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_hal_utils_debug_allocator PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
@@ -105,10 +107,14 @@ target_compile_options(iree_hal_utils_stream_tracing PRIVATE -Wno-error=pointer-
 target_compile_options(iree_io_parameter_provider PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_io_parameter_index_provider PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_modules_hal_loader_loader PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+IF(TARGET iree_io_vec_stream)
 target_compile_options(iree_io_vec_stream PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast -Wno-error=format)  # TODO: old iree only
+ENDIF()
 target_compile_options(iree_modules_io_parameters_parameters PRIVATE -Wno-error=format)
 target_compile_options(iree_modules_io_parameters_parameters PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+IF(TARGET iree_runtime_demo_hello_world_file)
 target_compile_options(iree_runtime_demo_hello_world_file PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
+ENDIF()
 target_compile_options(iree_tooling_buffer_view_matchers PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_tooling_device_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 target_compile_options(iree_tooling_parameter_util PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
@@ -124,7 +130,9 @@ ENDIF()
 IF(TARGET iree_hal_drivers_null_registration_registration)
 target_compile_options(iree_hal_drivers_null_registration_registration PRIVATE -Wno-error=pointer-to-int-cast -Wno-error=int-to-pointer-cast)  # TODO: old iree only
 ENDIF()
+IF(TARGET iree_io_memory_stream)
 target_compile_options(iree_io_memory_stream PRIVATE -Wno-error=format)  # TODO: only if exists/old iree
+ENDIF()
 target_compile_options(iree_io_formats_safetensors_safetensors PRIVATE -Wno-error=char-subscripts)
 #TODO: replace no-err with: "-DIREE_DEVICE_SIZE_T=uint32_t" "-DPRIdsz=PRIu32"
 # add_compile_options("foo")
