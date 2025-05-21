@@ -39,7 +39,8 @@ SET(EXTRA_SRC ${EXTRA_SRC} ${IREE_SRCS} ${SRC_DIR}/iree_wrapper.c ${IREE_OBJS})
 SET(EXTRA_INC ${SRC_DIR} ${IREE_INCS} ${IREE_SRC_DIR}/runtime/src)
 #
 SET(IREE_LIBS iree_runtime_unified)
-IF(IREE_EMITC)
+# IF(IREE_EMITC)
+IF(NOT IREE_VMVX)
     # TODO: use correct target
     ADD_COMPILE_DEFINITIONS(EMITC_IMPLEMENTATION)
     LIST(APPEND IREE_LIBS iree_hal_local_loaders_static_library_loader)
