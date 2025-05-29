@@ -1,0 +1,25 @@
+# The Generic system name is used for bare-metal targets (without OS) in CMake
+SET(CMAKE_SYSTEM_NAME Generic)
+SET(CMAKE_SYSTEM_PROCESSOR generic_riscv)
+
+# The linker argument setting will break the cmake test program on 64-bit,
+# so disable test program linking for now.
+SET(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
+set(TGC_BSP_DIR ${CMAKE_CURRENT_LIST_DIR}/MNRS-BM-BSP CACHE STRING "Path to TGC BSP")
+set(BOARD "iss" CACHE STRING "Target board")
+
+MACRO(COMMON_ADD_EXECUTABLE TARGET_NAME)
+	  SET(SRC_FILES "${ARGN}")
+    # ADD_SUBDIRECTORY(${ETISS_CRT_DIR} ${CMAKE_CURRENT_BINARY_DIR}/etiss_crt0)
+    add_subdirectory(${TGC_BSP_DIR} bsp)
+
+	  ADD_EXECUTABLE(${TARGET_NAME} ${SRC_FILES})
+	  ADD_DEPENDENCIES(${TARGET_NAME} bsp)
+    # SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ETISS_LDFLAGS}")
+    TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE bsp)
+ENDMACRO()
+MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
+    ADD_LIBRARY(${TARGET_NAME} ${ARGN})
+    TARGET_LINK_LIBRARIES(${TARGET_NAME} PRIVATE bsp)
+ENDMACRO()
