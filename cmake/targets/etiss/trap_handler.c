@@ -68,3 +68,9 @@ void _trap_handler_c(uint32_t mcause, uint32_t mepc)
         ERROR_HALT("Unhandled cause");
     }
 }
+
+// Return global reent struct if any newlib functions are linked to bootloader
+struct _reent *__getreent(void)
+{
+    return _GLOBAL_REENT;
+}
