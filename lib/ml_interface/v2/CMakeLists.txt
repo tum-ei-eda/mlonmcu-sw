@@ -4,13 +4,13 @@ SET(MLONMCU_BACKEND
     ""
     CACHE STRING "Specify which backend to use."
 )
-SET_PROPERTY(CACHE MLONMCU_BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg)
+SET_PROPERTY(CACHE MLONMCU_BACKEND PROPERTY STRINGS tflmc tflmi tvmaot tvmrt tvmcg ireevmvx)
 
 SET(MLONMCU_FRAMEWORK
     ""
     CACHE STRING "Specify which backend to use."
 )
-SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm)
+SET_PROPERTY(CACHE MLONMCU_FRAMEWORK PROPERTY STRINGS tflm tvm iree)
 
 INCLUDE(extras)
 
@@ -19,6 +19,9 @@ IF(TF_DIR)
 ENDIF()
 IF(TVM_DIR)
     INCLUDE(LinkTVM)
+ENDIF()
+IF(IREE_DIR)
+    INCLUDE(LinkIREE)
 ENDIF()
 
 
