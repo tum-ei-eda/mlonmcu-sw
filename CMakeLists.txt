@@ -49,6 +49,11 @@ SET(UNROLL_LOOPS
     CACHE STRING "Specify loop unrolling behavior."
 )
 SET_PROPERTY(CACHE UNROLL_LOOPS PROPERTY STRINGS AUTO ON OFF)
+SET(INLINE_FUNCTIONS
+    "AUTO"
+    CACHE STRING "Specify function inlining behavior."
+)
+SET_PROPERTY(CACHE INLINE_FUNCTIONS PROPERTY STRINGS AUTO ON OFF)
 
 SET(EXTRA_C_FLAGS "" CACHE STRING "Additional C options.")
 SET(EXTRA_CXX_FLAGS "" CACHE STRING "Additional C++ options.")
@@ -123,6 +128,15 @@ IF(NOT "${UNROLL_LOOPS}" STREQUAL "AUTO")
     ELSE()
         add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:-fno-unroll-loops>")
         add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:-fno-unroll-loops>")
+    ENDIF()
+ENDIF()
+IF(NOT "${INLINE_FUNCTIONS}" STREQUAL "AUTO")
+    IF(INLINE_FUNCTIONS)
+        add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:-finline-functions>")
+        add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:-finline-functions>")
+    ELSE()
+        add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:C>:-fno-inline-functions>")
+        add_compile_options("SHELL:$<$<COMPILE_LANGUAGE:CXX>:-fno-inline-functions>")
     ENDIF()
 ENDIF()
 # SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fno-asynchronous-unwind-tables -fno-unwind-tables")
