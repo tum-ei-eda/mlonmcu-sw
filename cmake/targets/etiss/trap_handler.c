@@ -74,3 +74,8 @@ struct _reent *__getreent(void)
 {
     return _GLOBAL_REENT;
 }
+
+void __cxa_pure_virtual() {
+  // You can optionally put a breakpoint or error handler here
+  while (1) {} // or abort(), if available
+}
