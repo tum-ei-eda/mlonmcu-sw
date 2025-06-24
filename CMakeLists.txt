@@ -167,7 +167,23 @@ foreach(X IN ITEMS ${EXTRA_LD_FLAGS} ${FEATURE_EXTRA_LD_FLAGS})
 endforeach()
 
 ADD_SUBDIRECTORY(lib)
-ADD_SUBDIRECTORY(generic)
+
+# Handle entry
+SET(CUSTOM_ENTRY
+    ""
+    CACHE STRING "Specify a custom entry point directory."
+)
+
+IF(CUSTOM_ENTRY)
+    IF(EXISTS ${CUSTOM_ENTRY})
+        ADD_SUBDIRECTORY(${CUSTOM_ENTRY} generic)
+    ELSE()
+        MESSAGE(FATAL_ERROR "CUSTOM_ENTRY (${CUSTOM_ENTRY}) not found")
+    ENDIF()
+ELSE()
+    ADD_SUBDIRECTORY(generic)
+ENDIF()
+
 IF(RISCV_NN)
     ADD_SUBDIRECTORY(riscv_nn)
 ENDIF()
