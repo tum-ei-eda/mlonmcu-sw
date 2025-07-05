@@ -1,0 +1,13 @@
+SET(RVV_BENCH_BENCHMARK
+    ""
+    CACHE STRING "Specify benchmark to run."
+)
+SET_PROPERTY(CACHE RVV_BENCH_BENCHMARK PROPERTY STRINGS instructions_scalar instructions_rvv)
+
+IF(RVV_BENCH_BENCHMARK MATCHES "instructions_.*")
+    ADD_SUBDIRECTORY(${RVV_BENCH_BENCHMARK})
+ELSE()
+    ADD_SUBDIRECTORY(bench)
+ENDIF()
+
+ADD_LIBRARY(rvv_bench ALIAS rvv_bench_${RVV_BENCH_BENCHMARK})
