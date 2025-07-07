@@ -24,7 +24,7 @@ __attribute__((weak)) void target_deinit() {}
 #if defined(MLONMCU_TARGET_ARA)
 #include "printf.h"
 #define target_printf printf
-#elif defined(MLONMCU_TARGET_VICUNA)
+#elif defined(MLONMCU_TARGET_VICUNA) || defined(MLONMCU_TARGET_VICUNA2)
 #include "uart.h"
 #define target_printf uart_printf
 #else

@@ -7,6 +7,8 @@ void mlonmcu_exit(int status) {
     // do nothing
 #elif defined(MLONMCU_TARGET_VICUNA)
     asm volatile("jr x0"); // jump to address 0 (ends simulation)
+#elif defined(MLONMCU_TARGET_VICUNA2)
+    exit(status);  // TODO: ?
 #else
     exit(status);
 #endif  // !MLONMCU_TARGET_ARA

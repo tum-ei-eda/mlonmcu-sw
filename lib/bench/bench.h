@@ -77,7 +77,7 @@
 #define BENCH_TYPE_1 uint64_t
 #define BENCH_TYPE_2 uint64_t
 
-#if defined(MLONMCU_TARGET_VICUNA)
+#if defined(MLONMCU_TARGET_VICUNA) || defined(MLONMCU_TARGET_VICUNA2)
 #define BENCH_FMT_0 "u"
 #define BENCH_FMT_1 "u"
 #define BENCH_FMT_2 "u"
