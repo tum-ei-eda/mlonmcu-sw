@@ -1,0 +1,40 @@
+PROJECT(iss_bench C CXX ASM)
+
+SET(ISS_BENCH_BENCHMARK
+    ""
+    CACHE STRING "Specify which benchmark to run."
+)
+
+IF(NOT ISS_BENCH_BENCHMARK)
+    MESSAGE(FATAL_ERROR "Undefined: ISS_BENCH_BENCHMARK")
+ENDIF()
+
+SET(ISS_BENCH_ITERATIONS
+    100
+    CACHE STRING "How many iterations to run."
+)
+
+SET(ISS_BENCH_DTYPE
+    uint32_t
+    # uint64_t
+    CACHE STRING "Datatype to use."
+)
+
+SET(ISS_BENCH_ARRAY_SIZE
+    1048576  # 1024*1024
+    CACHE STRING "Array size for mem_heay program."
+)
+
+# TODO: subdirs!
+COMMON_ADD_LIBRARY(${PROJECT_NAME} STATIC ${ISS_BENCH_BENCHMARK}.c)
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC .)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE support)
+TARGET_COMPILE_DEFINITIONS(${PROJECT_NAME} PRIVATE -DITER=${ISS_BENCH_ITERATIONS})
+
+IF(${GLOBAL_ISEL})
+target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel=1>")
+target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel=1>")
+SET(GLOBAL_ISEL_ABORT 2)
+target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel-abort=${GLOBAL_ISEL_ABORT}>")
+target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel-abort=${GLOBAL_ISEL_ABORT}>")
+ENDIF()
