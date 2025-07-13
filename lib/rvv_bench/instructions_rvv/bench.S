@@ -116,7 +116,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_mf8
 	bench_mf8:
-	
+
 	defptr bench_add_m1
 	defptr bench_mul_m1
 	defptr bench_vaddvv_m1
@@ -743,7 +743,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_mf4
 	bench_mf4:
-	
+
 	defptr bench_add_m1
 	defptr bench_mul_m1
 	defptr bench_vaddvv_m1
@@ -1370,7 +1370,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_mf2
 	bench_mf2:
-	
+
 	defptr bench_add_m1
 	defptr bench_mul_m1
 	defptr bench_vaddvv_m1
@@ -1997,7 +1997,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_m1
 	bench_m1:
-	
+
 	defptr bench_add_m1
 	defptr bench_mul_m1
 	defptr bench_vaddvv_m1
@@ -2624,7 +2624,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_m2
 	bench_m2:
-	
+
 	defptr bench_add_m2
 	defptr bench_mul_m2
 	defptr bench_vaddvv_m2
@@ -3251,7 +3251,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_m4
 	bench_m4:
-	
+
 	defptr bench_add_m4
 	defptr bench_mul_m4
 	defptr bench_vaddvv_m4
@@ -3878,7 +3878,7 @@ vmseq.vx v8, v0, t0
 
 .global bench_m8
 	bench_m8:
-	
+
 	defptr bench_add_m8
 	defptr bench_mul_m8
 	defptr bench_vaddvv_m8
@@ -4505,7 +4505,7 @@ vmseq.vx v8, v0, t0
 .balign 8
 .global bench_types
 	bench_types:
-	
+
 	defptr T_A
 	defptr T_A
 	defptr T_A
@@ -5130,7 +5130,7 @@ vmseq.vx v8, v0, t0
 .balign 8
 .global bench_names
 	bench_names:
-	
+
 	.string "add t0,t1,t2"
 	.string "mul t0,t1,t2"
 	.string "vadd.vv v8,v16,v24"
@@ -5787,8 +5787,8 @@ u64_cycle:
 
 
 
-	
-bench_add_m1:	
+
+bench_add_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -5856,10 +5856,10 @@ add t7,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_mul_m1:	
+
+bench_mul_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -5927,10 +5927,10 @@ mul t7,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvv_m1:	
+
+bench_vaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -5998,10 +5998,10 @@ vadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvvm_m1:	
+
+bench_vaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6069,10 +6069,10 @@ vadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvx_m1:	
+
+bench_vaddvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6140,10 +6140,10 @@ vadd.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvxm_m1:	
+
+bench_vaddvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6211,10 +6211,10 @@ vadd.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvi_m1:	
+
+bench_vaddvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6282,10 +6282,10 @@ vadd.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvim_m1:	
+
+bench_vaddvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6353,10 +6353,10 @@ vadd.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvv_m1:	
+
+bench_vsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6424,10 +6424,10 @@ vsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvvm_m1:	
+
+bench_vsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6495,10 +6495,10 @@ vsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvx_m1:	
+
+bench_vsubvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6566,10 +6566,10 @@ vsub.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvxm_m1:	
+
+bench_vsubvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6637,10 +6637,10 @@ vsub.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvx_m1:	
+
+bench_vrsubvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6708,10 +6708,10 @@ vrsub.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvxm_m1:	
+
+bench_vrsubvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6779,10 +6779,10 @@ vrsub.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvi_m1:	
+
+bench_vrsubvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6850,10 +6850,10 @@ vrsub.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvim_m1:	
+
+bench_vrsubvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6921,10 +6921,10 @@ vrsub.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvv_m1:	
+
+bench_vminuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -6992,10 +6992,10 @@ vminu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvvm_m1:	
+
+bench_vminuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7063,10 +7063,10 @@ vminu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvx_m1:	
+
+bench_vminuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7134,10 +7134,10 @@ vminu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvxm_m1:	
+
+bench_vminuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7205,10 +7205,10 @@ vminu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvv_m1:	
+
+bench_vminvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7276,10 +7276,10 @@ vmin.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvvm_m1:	
+
+bench_vminvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7347,10 +7347,10 @@ vmin.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvx_m1:	
+
+bench_vminvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7418,10 +7418,10 @@ vmin.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvxm_m1:	
+
+bench_vminvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7489,10 +7489,10 @@ vmin.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvv_m1:	
+
+bench_vmaxuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7560,10 +7560,10 @@ vmaxu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvvm_m1:	
+
+bench_vmaxuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7631,10 +7631,10 @@ vmaxu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvx_m1:	
+
+bench_vmaxuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7702,10 +7702,10 @@ vmaxu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvxm_m1:	
+
+bench_vmaxuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7773,10 +7773,10 @@ vmaxu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvv_m1:	
+
+bench_vmaxvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7844,10 +7844,10 @@ vmax.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvvm_m1:	
+
+bench_vmaxvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7915,10 +7915,10 @@ vmax.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvx_m1:	
+
+bench_vmaxvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -7986,10 +7986,10 @@ vmax.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvxm_m1:	
+
+bench_vmaxvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8057,10 +8057,10 @@ vmax.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvv_m1:	
+
+bench_vandvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8128,10 +8128,10 @@ vand.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvvm_m1:	
+
+bench_vandvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8199,10 +8199,10 @@ vand.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvx_m1:	
+
+bench_vandvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8270,10 +8270,10 @@ vand.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvxm_m1:	
+
+bench_vandvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8341,10 +8341,10 @@ vand.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvi_m1:	
+
+bench_vandvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8412,10 +8412,10 @@ vand.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvim_m1:	
+
+bench_vandvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8483,10 +8483,10 @@ vand.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvv_m1:	
+
+bench_vorvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8554,10 +8554,10 @@ vor.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvvm_m1:	
+
+bench_vorvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8625,10 +8625,10 @@ vor.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvx_m1:	
+
+bench_vorvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8696,10 +8696,10 @@ vor.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvxm_m1:	
+
+bench_vorvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8767,10 +8767,10 @@ vor.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvi_m1:	
+
+bench_vorvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8838,10 +8838,10 @@ vor.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvim_m1:	
+
+bench_vorvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8909,10 +8909,10 @@ vor.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvv_m1:	
+
+bench_vxorvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -8980,10 +8980,10 @@ vxor.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvvm_m1:	
+
+bench_vxorvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9051,10 +9051,10 @@ vxor.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvx_m1:	
+
+bench_vxorvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9122,10 +9122,10 @@ vxor.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvxm_m1:	
+
+bench_vxorvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9193,10 +9193,10 @@ vxor.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvi_m1:	
+
+bench_vxorvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9264,10 +9264,10 @@ vxor.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvim_m1:	
+
+bench_vxorvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9335,11 +9335,11 @@ vxor.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vrgathervv_m1:	
+
+bench_vrgathervv_m1:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -9407,10 +9407,10 @@ vrgather.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervvm_m1:	
+
+bench_vrgathervvm_m1:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -9478,10 +9478,10 @@ vrgather.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervx_m1:	
+
+bench_vrgathervx_m1:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -9549,10 +9549,10 @@ vrgather.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervxm_m1:	
+
+bench_vrgathervxm_m1:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -9620,10 +9620,10 @@ vrgather.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervi_m1:	
+
+bench_vrgathervi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9691,10 +9691,10 @@ vrgather.vi v15,v23,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervim_m1:	
+
+bench_vrgathervim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9762,10 +9762,10 @@ vrgather.vi v15,v23,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvx_m1:	
+
+bench_vslideupvx_m1:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -9833,10 +9833,10 @@ vslideup.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvxm_m1:	
+
+bench_vslideupvxm_m1:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -9904,10 +9904,10 @@ vslideup.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvi_m1:	
+
+bench_vslideupvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -9975,10 +9975,10 @@ vslideup.vi v15,v23,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvim_m1:	
+
+bench_vslideupvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10046,10 +10046,10 @@ vslideup.vi v15,v23,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vv_m1:	
+
+bench_vrgatherei16vv_m1:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -10117,10 +10117,10 @@ vrgatherei16.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vvm_m1:	
+
+bench_vrgatherei16vvm_m1:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -10188,11 +10188,11 @@ vrgatherei16.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslidedownvx_m1:	
+
+bench_vslidedownvx_m1:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -10260,10 +10260,10 @@ vslidedown.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvxm_m1:	
+
+bench_vslidedownvxm_m1:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -10331,10 +10331,10 @@ vslidedown.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvi_m1:	
+
+bench_vslidedownvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10402,10 +10402,10 @@ vslidedown.vi v15,v23,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvim_m1:	
+
+bench_vslidedownvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10473,11 +10473,11 @@ vslidedown.vi v15,v23,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vredsumvs_m1:	
+
+bench_vredsumvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10545,10 +10545,10 @@ vredsum.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredsumvsm_m1:	
+
+bench_vredsumvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10616,10 +10616,10 @@ vredsum.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvs_m1:	
+
+bench_vredandvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10687,10 +10687,10 @@ vredand.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvsm_m1:	
+
+bench_vredandvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10758,10 +10758,10 @@ vredand.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvs_m1:	
+
+bench_vredorvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10829,10 +10829,10 @@ vredor.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvsm_m1:	
+
+bench_vredorvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10900,10 +10900,10 @@ vredor.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvs_m1:	
+
+bench_vredxorvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -10971,10 +10971,10 @@ vredxor.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvsm_m1:	
+
+bench_vredxorvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11042,10 +11042,10 @@ vredxor.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvs_m1:	
+
+bench_vredminuvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11113,10 +11113,10 @@ vredminu.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvsm_m1:	
+
+bench_vredminuvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11184,10 +11184,10 @@ vredminu.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvs_m1:	
+
+bench_vredminvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11255,10 +11255,10 @@ vredmin.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvsm_m1:	
+
+bench_vredminvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11326,10 +11326,10 @@ vredmin.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvs_m1:	
+
+bench_vredmaxuvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11397,10 +11397,10 @@ vredmaxu.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvsm_m1:	
+
+bench_vredmaxuvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11468,10 +11468,10 @@ vredmaxu.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvs_m1:	
+
+bench_vredmaxvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11539,10 +11539,10 @@ vredmax.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvsm_m1:	
+
+bench_vredmaxvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11610,11 +11610,11 @@ vredmax.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vaadduvv_m1:	
+
+bench_vaadduvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11682,10 +11682,10 @@ vaaddu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvvm_m1:	
+
+bench_vaadduvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11753,10 +11753,10 @@ vaaddu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvx_m1:	
+
+bench_vaadduvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11824,10 +11824,10 @@ vaaddu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvxm_m1:	
+
+bench_vaadduvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11895,10 +11895,10 @@ vaaddu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvv_m1:	
+
+bench_vaaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -11966,10 +11966,10 @@ vaadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvvm_m1:	
+
+bench_vaaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12037,10 +12037,10 @@ vaadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvx_m1:	
+
+bench_vaaddvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12108,10 +12108,10 @@ vaadd.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvxm_m1:	
+
+bench_vaaddvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12179,10 +12179,10 @@ vaadd.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvv_m1:	
+
+bench_vasubuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12250,10 +12250,10 @@ vasubu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvvm_m1:	
+
+bench_vasubuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12321,10 +12321,10 @@ vasubu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvx_m1:	
+
+bench_vasubuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12392,10 +12392,10 @@ vasubu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvxm_m1:	
+
+bench_vasubuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12463,10 +12463,10 @@ vasubu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvv_m1:	
+
+bench_vasubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12534,10 +12534,10 @@ vasub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvvm_m1:	
+
+bench_vasubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12605,10 +12605,10 @@ vasub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvx_m1:	
+
+bench_vasubvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12676,10 +12676,10 @@ vasub.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvxm_m1:	
+
+bench_vasubvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12747,11 +12747,11 @@ vasub.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslide1upvx_m1:	
+
+bench_vslide1upvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12819,10 +12819,10 @@ vslide1up.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1upvxm_m1:	
+
+bench_vslide1upvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12890,10 +12890,10 @@ vslide1up.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvx_m1:	
+
+bench_vslide1downvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -12961,10 +12961,10 @@ vslide1down.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvxm_m1:	
+
+bench_vslide1downvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13032,11 +13032,11 @@ vslide1down.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vadcvvm_m1:	
+
+bench_vadcvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13104,10 +13104,10 @@ vadc.vvm v15,v23,v31,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvxm_m1:	
+
+bench_vadcvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13175,10 +13175,10 @@ vadc.vxm v15,v23,t7,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvim_m1:	
+
+bench_vadcvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13246,10 +13246,10 @@ vadc.vim v15,v23,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvvm_m1:	
+
+bench_vmadcvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13317,10 +13317,10 @@ vmadc.vvm v15,v23,v31,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvxm_m1:	
+
+bench_vmadcvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13388,10 +13388,10 @@ vmadc.vxm v15,v23,t7,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvim_m1:	
+
+bench_vmadcvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13459,10 +13459,10 @@ vmadc.vim v15,v23,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvv_m1:	
+
+bench_vmadcvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13530,10 +13530,10 @@ vmadc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvx_m1:	
+
+bench_vmadcvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13601,10 +13601,10 @@ vmadc.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvi_m1:	
+
+bench_vmadcvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13672,10 +13672,10 @@ vmadc.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsbcvvm_m1:	
+
+bench_vsbcvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13743,10 +13743,10 @@ vsbc.vvm v15,v23,v31,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vsbcvxm_m1:	
+
+bench_vsbcvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13814,10 +13814,10 @@ vsbc.vxm v15,v23,t7,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvvm_m1:	
+
+bench_vmsbcvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13885,10 +13885,10 @@ vmsbc.vvm v15,v23,v31,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmsbcvxm_m1:	
+
+bench_vmsbcvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -13956,10 +13956,10 @@ vmsbc.vxm v15,v23,t7,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvv_m1:	
+
+bench_vmsbcvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14027,10 +14027,10 @@ vmsbc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvx_m1:	
+
+bench_vmsbcvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14098,11 +14098,11 @@ vmsbc.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmergevvm_m1:	
+
+bench_vmergevvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14170,10 +14170,10 @@ vmerge.vvm v15,v23,v31,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevxm_m1:	
+
+bench_vmergevxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14241,10 +14241,10 @@ vmerge.vxm v15,v23,t7,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevim_m1:	
+
+bench_vmergevim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14312,10 +14312,10 @@ vmerge.vim v15,v23,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvv_m1:	
+
+bench_vmvvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14383,10 +14383,10 @@ vmv.v.v v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvx_m1:	
+
+bench_vmvvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14454,10 +14454,10 @@ vmv.v.x v15,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvi_m1:	
+
+bench_vmvvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14525,10 +14525,10 @@ vmv.v.i v15,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvv_m1:	
+
+bench_vmseqvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14596,10 +14596,10 @@ vmseq.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvvm_m1:	
+
+bench_vmseqvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14667,10 +14667,10 @@ vmseq.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvx_m1:	
+
+bench_vmseqvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14738,10 +14738,10 @@ vmseq.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvxm_m1:	
+
+bench_vmseqvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14809,10 +14809,10 @@ vmseq.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvi_m1:	
+
+bench_vmseqvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14880,10 +14880,10 @@ vmseq.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvim_m1:	
+
+bench_vmseqvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -14951,10 +14951,10 @@ vmseq.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevv_m1:	
+
+bench_vmsnevv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15022,10 +15022,10 @@ vmsne.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevvm_m1:	
+
+bench_vmsnevvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15093,10 +15093,10 @@ vmsne.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevx_m1:	
+
+bench_vmsnevx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15164,10 +15164,10 @@ vmsne.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevxm_m1:	
+
+bench_vmsnevxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15235,10 +15235,10 @@ vmsne.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevi_m1:	
+
+bench_vmsnevi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15306,10 +15306,10 @@ vmsne.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevim_m1:	
+
+bench_vmsnevim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15377,10 +15377,10 @@ vmsne.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvv_m1:	
+
+bench_vmsltuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15448,10 +15448,10 @@ vmsltu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvvm_m1:	
+
+bench_vmsltuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15519,10 +15519,10 @@ vmsltu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvx_m1:	
+
+bench_vmsltuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15590,10 +15590,10 @@ vmsltu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvxm_m1:	
+
+bench_vmsltuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15661,10 +15661,10 @@ vmsltu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvv_m1:	
+
+bench_vmsltvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15732,10 +15732,10 @@ vmslt.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvvm_m1:	
+
+bench_vmsltvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15803,10 +15803,10 @@ vmslt.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvx_m1:	
+
+bench_vmsltvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15874,10 +15874,10 @@ vmslt.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvxm_m1:	
+
+bench_vmsltvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -15945,10 +15945,10 @@ vmslt.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvv_m1:	
+
+bench_vmsleuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16016,10 +16016,10 @@ vmsleu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvvm_m1:	
+
+bench_vmsleuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16087,10 +16087,10 @@ vmsleu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvx_m1:	
+
+bench_vmsleuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16158,10 +16158,10 @@ vmsleu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvxm_m1:	
+
+bench_vmsleuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16229,10 +16229,10 @@ vmsleu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvi_m1:	
+
+bench_vmsleuvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16300,10 +16300,10 @@ vmsleu.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvim_m1:	
+
+bench_vmsleuvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16371,10 +16371,10 @@ vmsleu.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevv_m1:	
+
+bench_vmslevv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16442,10 +16442,10 @@ vmsle.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevvm_m1:	
+
+bench_vmslevvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16513,10 +16513,10 @@ vmsle.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevx_m1:	
+
+bench_vmslevx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16584,10 +16584,10 @@ vmsle.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevxm_m1:	
+
+bench_vmslevxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16655,10 +16655,10 @@ vmsle.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevi_m1:	
+
+bench_vmslevi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16726,10 +16726,10 @@ vmsle.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevim_m1:	
+
+bench_vmslevim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16797,10 +16797,10 @@ vmsle.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvx_m1:	
+
+bench_vmsgtuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16868,10 +16868,10 @@ vmsgtu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvxm_m1:	
+
+bench_vmsgtuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -16939,10 +16939,10 @@ vmsgtu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvi_m1:	
+
+bench_vmsgtuvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17010,10 +17010,10 @@ vmsgtu.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvim_m1:	
+
+bench_vmsgtuvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17081,10 +17081,10 @@ vmsgtu.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvx_m1:	
+
+bench_vmsgtvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17152,10 +17152,10 @@ vmsgt.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvxm_m1:	
+
+bench_vmsgtvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17223,10 +17223,10 @@ vmsgt.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvi_m1:	
+
+bench_vmsgtvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17294,10 +17294,10 @@ vmsgt.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvim_m1:	
+
+bench_vmsgtvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17365,11 +17365,11 @@ vmsgt.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcompressvm_m1:	
+
+bench_vcompressvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17437,11 +17437,11 @@ vcompress.vm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmandnmm_m1:	
+
+bench_vmandnmm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17509,10 +17509,10 @@ vmandn.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmandmm_m1:	
+
+bench_vmandmm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17580,10 +17580,10 @@ vmand.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmormm_m1:	
+
+bench_vmormm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17651,10 +17651,10 @@ vmor.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxormm_m1:	
+
+bench_vmxormm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17722,10 +17722,10 @@ vmxor.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmornmm_m1:	
+
+bench_vmornmm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17793,10 +17793,10 @@ vmorn.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnandmm_m1:	
+
+bench_vmnandmm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17864,10 +17864,10 @@ vmnand.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnormm_m1:	
+
+bench_vmnormm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -17935,10 +17935,10 @@ vmnor.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxnormm_m1:	
+
+bench_vmxnormm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18006,11 +18006,11 @@ vmxnor.mm v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vsadduvv_m1:	
+
+bench_vsadduvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18078,10 +18078,10 @@ vsaddu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvvm_m1:	
+
+bench_vsadduvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18149,10 +18149,10 @@ vsaddu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvx_m1:	
+
+bench_vsadduvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18220,10 +18220,10 @@ vsaddu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvxm_m1:	
+
+bench_vsadduvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18291,10 +18291,10 @@ vsaddu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvi_m1:	
+
+bench_vsadduvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18362,10 +18362,10 @@ vsaddu.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvim_m1:	
+
+bench_vsadduvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18433,10 +18433,10 @@ vsaddu.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvv_m1:	
+
+bench_vsaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18504,10 +18504,10 @@ vsadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvvm_m1:	
+
+bench_vsaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18575,10 +18575,10 @@ vsadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvx_m1:	
+
+bench_vsaddvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18646,10 +18646,10 @@ vsadd.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvxm_m1:	
+
+bench_vsaddvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18717,10 +18717,10 @@ vsadd.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvi_m1:	
+
+bench_vsaddvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18788,10 +18788,10 @@ vsadd.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvim_m1:	
+
+bench_vsaddvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18859,10 +18859,10 @@ vsadd.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvv_m1:	
+
+bench_vssubuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -18930,10 +18930,10 @@ vssubu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvvm_m1:	
+
+bench_vssubuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19001,10 +19001,10 @@ vssubu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvx_m1:	
+
+bench_vssubuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19072,10 +19072,10 @@ vssubu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvxm_m1:	
+
+bench_vssubuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19143,10 +19143,10 @@ vssubu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvv_m1:	
+
+bench_vssubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19214,10 +19214,10 @@ vssub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvvm_m1:	
+
+bench_vssubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19285,10 +19285,10 @@ vssub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvx_m1:	
+
+bench_vssubvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19356,10 +19356,10 @@ vssub.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvxm_m1:	
+
+bench_vssubvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19427,10 +19427,10 @@ vssub.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvv_m1:	
+
+bench_vsllvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19498,10 +19498,10 @@ vsll.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvvm_m1:	
+
+bench_vsllvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19569,10 +19569,10 @@ vsll.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvx_m1:	
+
+bench_vsllvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19640,10 +19640,10 @@ vsll.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvxm_m1:	
+
+bench_vsllvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19711,10 +19711,10 @@ vsll.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvi_m1:	
+
+bench_vsllvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19782,10 +19782,10 @@ vsll.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvim_m1:	
+
+bench_vsllvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19853,10 +19853,10 @@ vsll.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvv_m1:	
+
+bench_vsmulvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19924,10 +19924,10 @@ vsmul.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvvm_m1:	
+
+bench_vsmulvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -19995,10 +19995,10 @@ vsmul.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvx_m1:	
+
+bench_vsmulvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20066,10 +20066,10 @@ vsmul.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvxm_m1:	
+
+bench_vsmulvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20137,10 +20137,10 @@ vsmul.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv1rv_m1:	
+
+bench_vmv1rv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20208,21 +20208,21 @@ vmv1r.v v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv2rv_m1:	
+
+bench_vmv2rv_m1:
 	m_nop
 	li a0, WARMUP
 1:
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 
@@ -20247,14 +20247,14 @@ m_unimpl
 	li a0, LOOP
 1:
 .rept UNROLL
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 
@@ -20279,21 +20279,21 @@ m_unimpl
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv4rv_m1:	
+
+bench_vmv4rv_m1:
 	m_nop
 	li a0, WARMUP
 1:
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 
@@ -20318,14 +20318,14 @@ m_unimpl
 	li a0, LOOP
 1:
 .rept UNROLL
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 
@@ -20350,21 +20350,21 @@ m_unimpl
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv8rv_m1:	
+
+bench_vmv8rv_m1:
 	m_nop
 	li a0, WARMUP
 1:
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 
@@ -20389,14 +20389,14 @@ m_unimpl
 	li a0, LOOP
 1:
 .rept UNROLL
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 
@@ -20421,10 +20421,10 @@ m_unimpl
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvv_m1:	
+
+bench_vsrlvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20492,10 +20492,10 @@ vsrl.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvvm_m1:	
+
+bench_vsrlvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20563,10 +20563,10 @@ vsrl.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvx_m1:	
+
+bench_vsrlvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20634,10 +20634,10 @@ vsrl.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvxm_m1:	
+
+bench_vsrlvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20705,10 +20705,10 @@ vsrl.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvi_m1:	
+
+bench_vsrlvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20776,10 +20776,10 @@ vsrl.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvim_m1:	
+
+bench_vsrlvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20847,10 +20847,10 @@ vsrl.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravv_m1:	
+
+bench_vsravv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20918,10 +20918,10 @@ vsra.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravvm_m1:	
+
+bench_vsravvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -20989,10 +20989,10 @@ vsra.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravx_m1:	
+
+bench_vsravx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21060,10 +21060,10 @@ vsra.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravxm_m1:	
+
+bench_vsravxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21131,10 +21131,10 @@ vsra.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravi_m1:	
+
+bench_vsravi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21202,10 +21202,10 @@ vsra.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravim_m1:	
+
+bench_vsravim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21273,10 +21273,10 @@ vsra.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvv_m1:	
+
+bench_vssrlvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21344,10 +21344,10 @@ vssrl.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvvm_m1:	
+
+bench_vssrlvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21415,10 +21415,10 @@ vssrl.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvx_m1:	
+
+bench_vssrlvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21486,10 +21486,10 @@ vssrl.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvxm_m1:	
+
+bench_vssrlvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21557,10 +21557,10 @@ vssrl.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvi_m1:	
+
+bench_vssrlvi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21628,10 +21628,10 @@ vssrl.vi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvim_m1:	
+
+bench_vssrlvim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21699,11 +21699,11 @@ vssrl.vi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vdivuvv_m1:	
+
+bench_vdivuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21771,10 +21771,10 @@ vdivu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvvm_m1:	
+
+bench_vdivuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21842,10 +21842,10 @@ vdivu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvx_m1:	
+
+bench_vdivuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21913,10 +21913,10 @@ vdivu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvxm_m1:	
+
+bench_vdivuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -21984,10 +21984,10 @@ vdivu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvv_m1:	
+
+bench_vdivvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22055,10 +22055,10 @@ vdiv.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvvm_m1:	
+
+bench_vdivvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22126,10 +22126,10 @@ vdiv.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvx_m1:	
+
+bench_vdivvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22197,10 +22197,10 @@ vdiv.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvxm_m1:	
+
+bench_vdivvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22268,10 +22268,10 @@ vdiv.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvv_m1:	
+
+bench_vremuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22339,10 +22339,10 @@ vremu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvvm_m1:	
+
+bench_vremuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22410,10 +22410,10 @@ vremu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvx_m1:	
+
+bench_vremuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22481,10 +22481,10 @@ vremu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvxm_m1:	
+
+bench_vremuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22552,10 +22552,10 @@ vremu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvv_m1:	
+
+bench_vremvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22623,10 +22623,10 @@ vrem.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvvm_m1:	
+
+bench_vremvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22694,10 +22694,10 @@ vrem.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvx_m1:	
+
+bench_vremvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22765,10 +22765,10 @@ vrem.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvxm_m1:	
+
+bench_vremvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22836,10 +22836,10 @@ vrem.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvv_m1:	
+
+bench_vmulhuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22907,10 +22907,10 @@ vmulhu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvvm_m1:	
+
+bench_vmulhuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -22978,10 +22978,10 @@ vmulhu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvx_m1:	
+
+bench_vmulhuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23049,10 +23049,10 @@ vmulhu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvxm_m1:	
+
+bench_vmulhuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23120,10 +23120,10 @@ vmulhu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvv_m1:	
+
+bench_vmulvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23191,10 +23191,10 @@ vmul.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvvm_m1:	
+
+bench_vmulvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23262,10 +23262,10 @@ vmul.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvx_m1:	
+
+bench_vmulvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23333,10 +23333,10 @@ vmul.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvxm_m1:	
+
+bench_vmulvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23404,10 +23404,10 @@ vmul.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvv_m1:	
+
+bench_vmulhsuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23475,10 +23475,10 @@ vmulhsu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvvm_m1:	
+
+bench_vmulhsuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23546,10 +23546,10 @@ vmulhsu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvx_m1:	
+
+bench_vmulhsuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23617,10 +23617,10 @@ vmulhsu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvxm_m1:	
+
+bench_vmulhsuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23688,10 +23688,10 @@ vmulhsu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvv_m1:	
+
+bench_vmulhvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23759,10 +23759,10 @@ vmulh.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvvm_m1:	
+
+bench_vmulhvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23830,10 +23830,10 @@ vmulh.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvx_m1:	
+
+bench_vmulhvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23901,10 +23901,10 @@ vmulh.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvxm_m1:	
+
+bench_vmulhvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -23972,10 +23972,10 @@ vmulh.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvv_m1:	
+
+bench_vmaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24043,10 +24043,10 @@ vmadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvvm_m1:	
+
+bench_vmaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24114,10 +24114,10 @@ vmadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvx_m1:	
+
+bench_vmaddvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24185,10 +24185,10 @@ vmadd.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvxm_m1:	
+
+bench_vmaddvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24256,10 +24256,10 @@ vmadd.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvv_m1:	
+
+bench_vmaccvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24327,10 +24327,10 @@ vmacc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvvm_m1:	
+
+bench_vmaccvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24398,10 +24398,10 @@ vmacc.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvx_m1:	
+
+bench_vmaccvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24469,10 +24469,10 @@ vmacc.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvxm_m1:	
+
+bench_vmaccvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24540,11 +24540,11 @@ vmacc.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vnsrlwv_m1:	
+
+bench_vnsrlwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24612,10 +24612,10 @@ vnsrl.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwvm_m1:	
+
+bench_vnsrlwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24683,10 +24683,10 @@ vnsrl.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwx_m1:	
+
+bench_vnsrlwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24754,10 +24754,10 @@ vnsrl.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwxm_m1:	
+
+bench_vnsrlwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24825,10 +24825,10 @@ vnsrl.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwi_m1:	
+
+bench_vnsrlwi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24896,10 +24896,10 @@ vnsrl.wi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwim_m1:	
+
+bench_vnsrlwim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -24967,10 +24967,10 @@ vnsrl.wi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawv_m1:	
+
+bench_vnsrawv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25038,10 +25038,10 @@ vnsra.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawvm_m1:	
+
+bench_vnsrawvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25109,10 +25109,10 @@ vnsra.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawx_m1:	
+
+bench_vnsrawx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25180,10 +25180,10 @@ vnsra.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawxm_m1:	
+
+bench_vnsrawxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25251,10 +25251,10 @@ vnsra.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawi_m1:	
+
+bench_vnsrawi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25322,10 +25322,10 @@ vnsra.wi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawim_m1:	
+
+bench_vnsrawim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25393,10 +25393,10 @@ vnsra.wi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwv_m1:	
+
+bench_vnclipuwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25464,10 +25464,10 @@ vnclipu.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwvm_m1:	
+
+bench_vnclipuwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25535,10 +25535,10 @@ vnclipu.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwx_m1:	
+
+bench_vnclipuwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25606,10 +25606,10 @@ vnclipu.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwxm_m1:	
+
+bench_vnclipuwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25677,10 +25677,10 @@ vnclipu.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwi_m1:	
+
+bench_vnclipuwi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25748,10 +25748,10 @@ vnclipu.wi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwim_m1:	
+
+bench_vnclipuwim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25819,10 +25819,10 @@ vnclipu.wi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwv_m1:	
+
+bench_vnclipwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25890,10 +25890,10 @@ vnclip.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwvm_m1:	
+
+bench_vnclipwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -25961,10 +25961,10 @@ vnclip.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwx_m1:	
+
+bench_vnclipwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26032,10 +26032,10 @@ vnclip.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwxm_m1:	
+
+bench_vnclipwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26103,10 +26103,10 @@ vnclip.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwi_m1:	
+
+bench_vnclipwi_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26174,10 +26174,10 @@ vnclip.wi v15,v23,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwim_m1:	
+
+bench_vnclipwim_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26245,10 +26245,10 @@ vnclip.wi v15,v23,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvv_m1:	
+
+bench_vnmsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26316,10 +26316,10 @@ vnmsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvvm_m1:	
+
+bench_vnmsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26387,10 +26387,10 @@ vnmsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvx_m1:	
+
+bench_vnmsubvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26458,10 +26458,10 @@ vnmsub.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvxm_m1:	
+
+bench_vnmsubvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26529,10 +26529,10 @@ vnmsub.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvv_m1:	
+
+bench_vnmsacvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26600,10 +26600,10 @@ vnmsac.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvvm_m1:	
+
+bench_vnmsacvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26671,10 +26671,10 @@ vnmsac.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvx_m1:	
+
+bench_vnmsacvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26742,10 +26742,10 @@ vnmsac.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvxm_m1:	
+
+bench_vnmsacvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26813,11 +26813,11 @@ vnmsac.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwadduvv_m1:	
+
+bench_vwadduvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26885,10 +26885,10 @@ vwaddu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvvm_m1:	
+
+bench_vwadduvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -26956,10 +26956,10 @@ vwaddu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvx_m1:	
+
+bench_vwadduvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27027,10 +27027,10 @@ vwaddu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvxm_m1:	
+
+bench_vwadduvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27098,10 +27098,10 @@ vwaddu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvv_m1:	
+
+bench_vwaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27169,10 +27169,10 @@ vwadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvvm_m1:	
+
+bench_vwaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27240,10 +27240,10 @@ vwadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvx_m1:	
+
+bench_vwaddvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27311,10 +27311,10 @@ vwadd.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvxm_m1:	
+
+bench_vwaddvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27382,10 +27382,10 @@ vwadd.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvv_m1:	
+
+bench_vwsubuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27453,10 +27453,10 @@ vwsubu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvvm_m1:	
+
+bench_vwsubuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27524,10 +27524,10 @@ vwsubu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvx_m1:	
+
+bench_vwsubuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27595,10 +27595,10 @@ vwsubu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvxm_m1:	
+
+bench_vwsubuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27666,10 +27666,10 @@ vwsubu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvv_m1:	
+
+bench_vwsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27737,10 +27737,10 @@ vwsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvvm_m1:	
+
+bench_vwsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27808,10 +27808,10 @@ vwsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvx_m1:	
+
+bench_vwsubvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27879,10 +27879,10 @@ vwsub.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvxm_m1:	
+
+bench_vwsubvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -27950,10 +27950,10 @@ vwsub.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwv_m1:	
+
+bench_vwadduwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28021,10 +28021,10 @@ vwaddu.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwvm_m1:	
+
+bench_vwadduwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28092,10 +28092,10 @@ vwaddu.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwx_m1:	
+
+bench_vwadduwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28163,10 +28163,10 @@ vwaddu.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwxm_m1:	
+
+bench_vwadduwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28234,10 +28234,10 @@ vwaddu.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwv_m1:	
+
+bench_vwaddwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28305,10 +28305,10 @@ vwadd.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwvm_m1:	
+
+bench_vwaddwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28376,10 +28376,10 @@ vwadd.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwx_m1:	
+
+bench_vwaddwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28447,10 +28447,10 @@ vwadd.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwxm_m1:	
+
+bench_vwaddwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28518,10 +28518,10 @@ vwadd.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwv_m1:	
+
+bench_vwsubuwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28589,10 +28589,10 @@ vwsubu.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwvm_m1:	
+
+bench_vwsubuwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28660,10 +28660,10 @@ vwsubu.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwx_m1:	
+
+bench_vwsubuwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28731,10 +28731,10 @@ vwsubu.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwxm_m1:	
+
+bench_vwsubuwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28802,10 +28802,10 @@ vwsubu.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwv_m1:	
+
+bench_vwsubwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28873,10 +28873,10 @@ vwsub.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwvm_m1:	
+
+bench_vwsubwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -28944,10 +28944,10 @@ vwsub.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwx_m1:	
+
+bench_vwsubwx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29015,10 +29015,10 @@ vwsub.wx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwxm_m1:	
+
+bench_vwsubwxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29086,10 +29086,10 @@ vwsub.wx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvv_m1:	
+
+bench_vwmuluvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29157,10 +29157,10 @@ vwmulu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvvm_m1:	
+
+bench_vwmuluvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29228,10 +29228,10 @@ vwmulu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvx_m1:	
+
+bench_vwmuluvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29299,10 +29299,10 @@ vwmulu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvxm_m1:	
+
+bench_vwmuluvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29370,10 +29370,10 @@ vwmulu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvv_m1:	
+
+bench_vwmulsuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29441,10 +29441,10 @@ vwmulsu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvvm_m1:	
+
+bench_vwmulsuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29512,10 +29512,10 @@ vwmulsu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvx_m1:	
+
+bench_vwmulsuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29583,10 +29583,10 @@ vwmulsu.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvxm_m1:	
+
+bench_vwmulsuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29654,10 +29654,10 @@ vwmulsu.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvv_m1:	
+
+bench_vwmulvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29725,10 +29725,10 @@ vwmul.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvvm_m1:	
+
+bench_vwmulvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29796,10 +29796,10 @@ vwmul.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvx_m1:	
+
+bench_vwmulvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29867,10 +29867,10 @@ vwmul.vx v15,v23,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvxm_m1:	
+
+bench_vwmulvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -29938,10 +29938,10 @@ vwmul.vx v15,v23,t7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvv_m1:	
+
+bench_vwmaccuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30009,10 +30009,10 @@ vwmaccu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvvm_m1:	
+
+bench_vwmaccuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30080,10 +30080,10 @@ vwmaccu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvx_m1:	
+
+bench_vwmaccuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30151,10 +30151,10 @@ vwmaccu.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvxm_m1:	
+
+bench_vwmaccuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30222,10 +30222,10 @@ vwmaccu.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvv_m1:	
+
+bench_vwmaccvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30293,10 +30293,10 @@ vwmacc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvvm_m1:	
+
+bench_vwmaccvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30364,10 +30364,10 @@ vwmacc.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvx_m1:	
+
+bench_vwmaccvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30435,10 +30435,10 @@ vwmacc.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvxm_m1:	
+
+bench_vwmaccvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30506,10 +30506,10 @@ vwmacc.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvv_m1:	
+
+bench_vwmaccsuvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30577,10 +30577,10 @@ vwmaccsu.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvvm_m1:	
+
+bench_vwmaccsuvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30648,10 +30648,10 @@ vwmaccsu.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvx_m1:	
+
+bench_vwmaccsuvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30719,10 +30719,10 @@ vwmaccsu.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvxm_m1:	
+
+bench_vwmaccsuvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30790,10 +30790,10 @@ vwmaccsu.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvx_m1:	
+
+bench_vwmaccusvx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30861,10 +30861,10 @@ vwmaccus.vx v15,t7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvxm_m1:	
+
+bench_vwmaccusvxm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -30932,11 +30932,11 @@ vwmaccus.vx v15,t7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfaddvv_m1:	
+
+bench_vfaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31004,10 +31004,10 @@ vfadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvvm_m1:	
+
+bench_vfaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31075,10 +31075,10 @@ vfadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvf_m1:	
+
+bench_vfaddvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31146,10 +31146,10 @@ vfadd.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvfm_m1:	
+
+bench_vfaddvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31217,10 +31217,10 @@ vfadd.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvv_m1:	
+
+bench_vfsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31288,10 +31288,10 @@ vfsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvvm_m1:	
+
+bench_vfsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31359,10 +31359,10 @@ vfsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvf_m1:	
+
+bench_vfsubvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31430,10 +31430,10 @@ vfsub.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvfm_m1:	
+
+bench_vfsubvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31501,10 +31501,10 @@ vfsub.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvv_m1:	
+
+bench_vfminvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31572,10 +31572,10 @@ vfmin.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvvm_m1:	
+
+bench_vfminvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31643,10 +31643,10 @@ vfmin.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvf_m1:	
+
+bench_vfminvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31714,10 +31714,10 @@ vfmin.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvfm_m1:	
+
+bench_vfminvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31785,10 +31785,10 @@ vfmin.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvv_m1:	
+
+bench_vfmaxvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31856,10 +31856,10 @@ vfmax.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvvm_m1:	
+
+bench_vfmaxvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31927,10 +31927,10 @@ vfmax.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvf_m1:	
+
+bench_vfmaxvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -31998,10 +31998,10 @@ vfmax.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvfm_m1:	
+
+bench_vfmaxvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32069,10 +32069,10 @@ vfmax.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvv_m1:	
+
+bench_vfsgnjvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32140,10 +32140,10 @@ vfsgnj.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvvm_m1:	
+
+bench_vfsgnjvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32211,10 +32211,10 @@ vfsgnj.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvf_m1:	
+
+bench_vfsgnjvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32282,10 +32282,10 @@ vfsgnj.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvfm_m1:	
+
+bench_vfsgnjvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32353,10 +32353,10 @@ vfsgnj.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvv_m1:	
+
+bench_vfsgnjnvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32424,10 +32424,10 @@ vfsgnjn.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvvm_m1:	
+
+bench_vfsgnjnvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32495,10 +32495,10 @@ vfsgnjn.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvf_m1:	
+
+bench_vfsgnjnvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32566,10 +32566,10 @@ vfsgnjn.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvfm_m1:	
+
+bench_vfsgnjnvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32637,10 +32637,10 @@ vfsgnjn.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvv_m1:	
+
+bench_vfsgnjxvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32708,10 +32708,10 @@ vfsgnjx.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvvm_m1:	
+
+bench_vfsgnjxvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32779,10 +32779,10 @@ vfsgnjx.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvf_m1:	
+
+bench_vfsgnjxvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32850,10 +32850,10 @@ vfsgnjx.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvfm_m1:	
+
+bench_vfsgnjxvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32921,10 +32921,10 @@ vfsgnjx.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvf_m1:	
+
+bench_vfslide1upvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -32992,10 +32992,10 @@ vfslide1up.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvfm_m1:	
+
+bench_vfslide1upvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33063,10 +33063,10 @@ vfslide1up.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvf_m1:	
+
+bench_vfslide1downvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33134,10 +33134,10 @@ vfslide1down.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvfm_m1:	
+
+bench_vfslide1downvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33205,11 +33205,11 @@ vfslide1down.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfredusumvs_m1:	
+
+bench_vfredusumvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33277,10 +33277,10 @@ vfredusum.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredusumvsm_m1:	
+
+bench_vfredusumvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33348,10 +33348,10 @@ vfredusum.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvs_m1:	
+
+bench_vfredosumvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33419,10 +33419,10 @@ vfredosum.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvsm_m1:	
+
+bench_vfredosumvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33490,10 +33490,10 @@ vfredosum.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvs_m1:	
+
+bench_vfredminvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33561,10 +33561,10 @@ vfredmin.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvsm_m1:	
+
+bench_vfredminvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33632,10 +33632,10 @@ vfredmin.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvs_m1:	
+
+bench_vfredmaxvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33703,10 +33703,10 @@ vfredmax.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvsm_m1:	
+
+bench_vfredmaxvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33774,11 +33774,11 @@ vfredmax.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmergevfm_m1:	
+
+bench_vfmergevfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33846,10 +33846,10 @@ vfmerge.vfm v15,v23,ft7,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvvf_m1:	
+
+bench_vfmvvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33917,11 +33917,11 @@ vfmv.v.f v15,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmfeqvv_m1:	
+
+bench_vmfeqvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -33989,10 +33989,10 @@ vmfeq.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvvm_m1:	
+
+bench_vmfeqvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34060,10 +34060,10 @@ vmfeq.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvf_m1:	
+
+bench_vmfeqvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34131,10 +34131,10 @@ vmfeq.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvfm_m1:	
+
+bench_vmfeqvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34202,10 +34202,10 @@ vmfeq.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevv_m1:	
+
+bench_vmflevv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34273,10 +34273,10 @@ vmfle.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevvm_m1:	
+
+bench_vmflevvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34344,10 +34344,10 @@ vmfle.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevf_m1:	
+
+bench_vmflevf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34415,10 +34415,10 @@ vmfle.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevfm_m1:	
+
+bench_vmflevfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34486,10 +34486,10 @@ vmfle.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvv_m1:	
+
+bench_vmfltvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34557,10 +34557,10 @@ vmflt.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvvm_m1:	
+
+bench_vmfltvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34628,10 +34628,10 @@ vmflt.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvf_m1:	
+
+bench_vmfltvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34699,10 +34699,10 @@ vmflt.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvfm_m1:	
+
+bench_vmfltvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34770,10 +34770,10 @@ vmflt.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevv_m1:	
+
+bench_vmfnevv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34841,10 +34841,10 @@ vmfne.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevvm_m1:	
+
+bench_vmfnevvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34912,10 +34912,10 @@ vmfne.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevf_m1:	
+
+bench_vmfnevf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -34983,10 +34983,10 @@ vmfne.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevfm_m1:	
+
+bench_vmfnevfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35054,10 +35054,10 @@ vmfne.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvv_m1:	
+
+bench_vmfgtvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35125,10 +35125,10 @@ vmfgt.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvvm_m1:	
+
+bench_vmfgtvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35196,10 +35196,10 @@ vmfgt.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvf_m1:	
+
+bench_vmfgtvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35267,10 +35267,10 @@ vmfgt.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvfm_m1:	
+
+bench_vmfgtvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35338,10 +35338,10 @@ vmfgt.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevv_m1:	
+
+bench_vmfgevv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35409,10 +35409,10 @@ vmfge.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevvm_m1:	
+
+bench_vmfgevvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35480,10 +35480,10 @@ vmfge.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevf_m1:	
+
+bench_vmfgevf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35551,10 +35551,10 @@ vmfge.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevfm_m1:	
+
+bench_vmfgevfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35622,11 +35622,11 @@ vmfge.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfdivvv_m1:	
+
+bench_vfdivvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35694,10 +35694,10 @@ vfdiv.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvvm_m1:	
+
+bench_vfdivvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35765,10 +35765,10 @@ vfdiv.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvf_m1:	
+
+bench_vfdivvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35836,10 +35836,10 @@ vfdiv.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvfm_m1:	
+
+bench_vfdivvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35907,10 +35907,10 @@ vfdiv.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvf_m1:	
+
+bench_vfrdivvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -35978,10 +35978,10 @@ vfrdiv.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvfm_m1:	
+
+bench_vfrdivvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36049,10 +36049,10 @@ vfrdiv.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvv_m1:	
+
+bench_vfmulvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36120,10 +36120,10 @@ vfmul.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvvm_m1:	
+
+bench_vfmulvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36191,10 +36191,10 @@ vfmul.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvf_m1:	
+
+bench_vfmulvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36262,10 +36262,10 @@ vfmul.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvfm_m1:	
+
+bench_vfmulvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36333,10 +36333,10 @@ vfmul.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvf_m1:	
+
+bench_vfrsubvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36404,10 +36404,10 @@ vfrsub.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvfm_m1:	
+
+bench_vfrsubvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36475,10 +36475,10 @@ vfrsub.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvv_m1:	
+
+bench_vfmaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36546,10 +36546,10 @@ vfmadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvvm_m1:	
+
+bench_vfmaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36617,10 +36617,10 @@ vfmadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvf_m1:	
+
+bench_vfmaddvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36688,10 +36688,10 @@ vfmadd.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvfm_m1:	
+
+bench_vfmaddvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36759,10 +36759,10 @@ vfmadd.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvv_m1:	
+
+bench_vfmsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36830,10 +36830,10 @@ vfmsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvvm_m1:	
+
+bench_vfmsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36901,10 +36901,10 @@ vfmsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvf_m1:	
+
+bench_vfmsubvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -36972,10 +36972,10 @@ vfmsub.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvfm_m1:	
+
+bench_vfmsubvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37043,10 +37043,10 @@ vfmsub.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvv_m1:	
+
+bench_vfmaccvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37114,10 +37114,10 @@ vfmacc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvvm_m1:	
+
+bench_vfmaccvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37185,10 +37185,10 @@ vfmacc.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvf_m1:	
+
+bench_vfmaccvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37256,10 +37256,10 @@ vfmacc.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvfm_m1:	
+
+bench_vfmaccvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37327,10 +37327,10 @@ vfmacc.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvv_m1:	
+
+bench_vfmsacvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37398,10 +37398,10 @@ vfmsac.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvvm_m1:	
+
+bench_vfmsacvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37469,10 +37469,10 @@ vfmsac.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvf_m1:	
+
+bench_vfmsacvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37540,10 +37540,10 @@ vfmsac.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvfm_m1:	
+
+bench_vfmsacvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37611,11 +37611,11 @@ vfmsac.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfnmsacvv_m1:	
+
+bench_vfnmsacvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37683,10 +37683,10 @@ vfnmsac.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvvm_m1:	
+
+bench_vfnmsacvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37754,10 +37754,10 @@ vfnmsac.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvf_m1:	
+
+bench_vfnmsacvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37825,10 +37825,10 @@ vfnmsac.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvfm_m1:	
+
+bench_vfnmsacvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37896,10 +37896,10 @@ vfnmsac.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvv_m1:	
+
+bench_vfnmaccvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -37967,10 +37967,10 @@ vfnmacc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvvm_m1:	
+
+bench_vfnmaccvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38038,10 +38038,10 @@ vfnmacc.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvf_m1:	
+
+bench_vfnmaccvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38109,10 +38109,10 @@ vfnmacc.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvfm_m1:	
+
+bench_vfnmaccvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38180,10 +38180,10 @@ vfnmacc.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvv_m1:	
+
+bench_vfnmsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38251,10 +38251,10 @@ vfnmsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvvm_m1:	
+
+bench_vfnmsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38322,10 +38322,10 @@ vfnmsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvf_m1:	
+
+bench_vfnmsubvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38393,10 +38393,10 @@ vfnmsub.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvfm_m1:	
+
+bench_vfnmsubvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38464,10 +38464,10 @@ vfnmsub.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvv_m1:	
+
+bench_vfnmaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38535,10 +38535,10 @@ vfnmadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvvm_m1:	
+
+bench_vfnmaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38606,10 +38606,10 @@ vfnmadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvf_m1:	
+
+bench_vfnmaddvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38677,10 +38677,10 @@ vfnmadd.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvfm_m1:	
+
+bench_vfnmaddvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38748,11 +38748,11 @@ vfnmadd.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwredsumuvs_m1:	
+
+bench_vwredsumuvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38820,10 +38820,10 @@ vwredsumu.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumuvsm_m1:	
+
+bench_vwredsumuvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38891,10 +38891,10 @@ vwredsumu.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvs_m1:	
+
+bench_vwredsumvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -38962,10 +38962,10 @@ vwredsum.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvsm_m1:	
+
+bench_vwredsumvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39033,11 +39033,11 @@ vwredsum.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwaddvv_m1:	
+
+bench_vfwaddvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39105,10 +39105,10 @@ vfwadd.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvvm_m1:	
+
+bench_vfwaddvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39176,10 +39176,10 @@ vfwadd.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvf_m1:	
+
+bench_vfwaddvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39247,10 +39247,10 @@ vfwadd.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvfm_m1:	
+
+bench_vfwaddvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39318,10 +39318,10 @@ vfwadd.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvv_m1:	
+
+bench_vfwsubvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39389,10 +39389,10 @@ vfwsub.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvvm_m1:	
+
+bench_vfwsubvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39460,10 +39460,10 @@ vfwsub.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvf_m1:	
+
+bench_vfwsubvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39531,10 +39531,10 @@ vfwsub.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvfm_m1:	
+
+bench_vfwsubvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39602,10 +39602,10 @@ vfwsub.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwv_m1:	
+
+bench_vfwaddwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39673,10 +39673,10 @@ vfwadd.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwvm_m1:	
+
+bench_vfwaddwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39744,10 +39744,10 @@ vfwadd.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwf_m1:	
+
+bench_vfwaddwf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39815,10 +39815,10 @@ vfwadd.wf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwfm_m1:	
+
+bench_vfwaddwfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39886,10 +39886,10 @@ vfwadd.wf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwv_m1:	
+
+bench_vfwsubwv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -39957,10 +39957,10 @@ vfwsub.wv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwvm_m1:	
+
+bench_vfwsubwvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40028,10 +40028,10 @@ vfwsub.wv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwf_m1:	
+
+bench_vfwsubwf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40099,10 +40099,10 @@ vfwsub.wf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwfm_m1:	
+
+bench_vfwsubwfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40170,10 +40170,10 @@ vfwsub.wf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvv_m1:	
+
+bench_vfwmulvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40241,10 +40241,10 @@ vfwmul.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvvm_m1:	
+
+bench_vfwmulvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40312,10 +40312,10 @@ vfwmul.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvf_m1:	
+
+bench_vfwmulvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40383,10 +40383,10 @@ vfwmul.vf v15,v23,ft7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvfm_m1:	
+
+bench_vfwmulvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40454,10 +40454,10 @@ vfwmul.vf v15,v23,ft7,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvv_m1:	
+
+bench_vfwmaccvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40525,10 +40525,10 @@ vfwmacc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvvm_m1:	
+
+bench_vfwmaccvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40596,10 +40596,10 @@ vfwmacc.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvf_m1:	
+
+bench_vfwmaccvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40667,10 +40667,10 @@ vfwmacc.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvfm_m1:	
+
+bench_vfwmaccvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40738,10 +40738,10 @@ vfwmacc.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvv_m1:	
+
+bench_vfwnmaccvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40809,10 +40809,10 @@ vfwnmacc.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvvm_m1:	
+
+bench_vfwnmaccvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40880,10 +40880,10 @@ vfwnmacc.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvf_m1:	
+
+bench_vfwnmaccvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -40951,10 +40951,10 @@ vfwnmacc.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvfm_m1:	
+
+bench_vfwnmaccvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41022,10 +41022,10 @@ vfwnmacc.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvv_m1:	
+
+bench_vfwmsacvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41093,10 +41093,10 @@ vfwmsac.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvvm_m1:	
+
+bench_vfwmsacvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41164,10 +41164,10 @@ vfwmsac.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvf_m1:	
+
+bench_vfwmsacvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41235,10 +41235,10 @@ vfwmsac.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvfm_m1:	
+
+bench_vfwmsacvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41306,10 +41306,10 @@ vfwmsac.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvv_m1:	
+
+bench_vfwnmsacvv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41377,10 +41377,10 @@ vfwnmsac.vv v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvvm_m1:	
+
+bench_vfwnmsacvvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41448,10 +41448,10 @@ vfwnmsac.vv v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvf_m1:	
+
+bench_vfwnmsacvf_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41519,10 +41519,10 @@ vfwnmsac.vf v15,ft7,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvfm_m1:	
+
+bench_vfwnmsacvfm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41590,11 +41590,11 @@ vfwnmsac.vf v15,ft7,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwredosumvs_m1:	
+
+bench_vfwredosumvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41662,10 +41662,10 @@ vfwredosum.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredosumvsm_m1:	
+
+bench_vfwredosumvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41733,10 +41733,10 @@ vfwredosum.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvs_m1:	
+
+bench_vfwredusumvs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41804,10 +41804,10 @@ vfwredusum.vs v15,v23,v31
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvsm_m1:	
+
+bench_vfwredusumvsm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41875,11 +41875,11 @@ vfwredusum.vs v15,v23,v31,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmvsx_m1:	
+
+bench_vmvsx_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -41947,10 +41947,10 @@ vmv.s.x v15,t7
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvxs_m1:	
+
+bench_vmvxs_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -42018,11 +42018,11 @@ vmv.x.s t7,v15
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcpopm_m1:	
+
+bench_vcpopm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -42090,10 +42090,10 @@ vcpop.m t7,v15
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vcpopmm_m1:	
+
+bench_vcpopmm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -42161,10 +42161,10 @@ vcpop.m t7,v15,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstm_m1:	
+
+bench_vfirstm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42232,10 +42232,10 @@ vfirst.m t7,v15
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstmm_m1:	
+
+bench_vfirstmm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42303,10 +42303,10 @@ vfirst.m t7,v15,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2_m1:	
+
+bench_vzextvf2_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42374,10 +42374,10 @@ vzext.vf2 v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2m_m1:	
+
+bench_vzextvf2m_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42445,10 +42445,10 @@ vzext.vf2 v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2_m1:	
+
+bench_vsextvf2_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42516,10 +42516,10 @@ vsext.vf2 v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2m_m1:	
+
+bench_vsextvf2m_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42587,10 +42587,10 @@ vsext.vf2 v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4_m1:	
+
+bench_vzextvf4_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42658,10 +42658,10 @@ vzext.vf4 v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4m_m1:	
+
+bench_vzextvf4m_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42729,10 +42729,10 @@ vzext.vf4 v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4_m1:	
+
+bench_vsextvf4_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42800,10 +42800,10 @@ vsext.vf4 v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4m_m1:	
+
+bench_vsextvf4m_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42871,10 +42871,10 @@ vsext.vf4 v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8_m1:	
+
+bench_vzextvf8_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -42942,10 +42942,10 @@ vzext.vf8 v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8m_m1:	
+
+bench_vzextvf8m_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -43013,10 +43013,10 @@ vzext.vf8 v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8_m1:	
+
+bench_vsextvf8_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -43084,10 +43084,10 @@ vsext.vf8 v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8m_m1:	
+
+bench_vsextvf8m_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -43155,3708 +43155,3708 @@ vsext.vf8 v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
-
-
-	
-bench_vfmvfs_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfmv.f.s ft0,v8
-vfmv.f.s ft1,v9
-vfmv.f.s ft2,v10
-vfmv.f.s ft3,v11
-vfmv.f.s ft4,v12
-vfmv.f.s ft5,v13
-vfmv.f.s ft6,v14
-vfmv.f.s ft7,v15
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfmv.f.s ft0,v8
-vfmv.f.s ft1,v9
-vfmv.f.s ft2,v10
-vfmv.f.s ft3,v11
-vfmv.f.s ft4,v12
-vfmv.f.s ft5,v13
-vfmv.f.s ft6,v14
-vfmv.f.s ft7,v15
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfmvsf_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfmv.s.f v8,ft0
-vfmv.s.f v9,ft1
-vfmv.s.f v10,ft2
-vfmv.s.f v11,ft3
-vfmv.s.f v12,ft4
-vfmv.s.f v13,ft5
-vfmv.s.f v14,ft6
-vfmv.s.f v15,ft7
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfmv.s.f v8,ft0
-vfmv.s.f v9,ft1
-vfmv.s.f v10,ft2
-vfmv.s.f v11,ft3
-vfmv.s.f v12,ft4
-vfmv.s.f v13,ft5
-vfmv.s.f v14,ft6
-vfmv.s.f v15,ft7
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-
-	
-bench_vfcvtxufv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.xu.f.v v8,v16
-vfcvt.xu.f.v v9,v17
-vfcvt.xu.f.v v10,v18
-vfcvt.xu.f.v v11,v19
-vfcvt.xu.f.v v12,v20
-vfcvt.xu.f.v v13,v21
-vfcvt.xu.f.v v14,v22
-vfcvt.xu.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.xu.f.v v8,v16
-vfcvt.xu.f.v v9,v17
-vfcvt.xu.f.v v10,v18
-vfcvt.xu.f.v v11,v19
-vfcvt.xu.f.v v12,v20
-vfcvt.xu.f.v v13,v21
-vfcvt.xu.f.v v14,v22
-vfcvt.xu.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtxufvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.xu.f.v v8,v16,v0.t
-vfcvt.xu.f.v v9,v17,v0.t
-vfcvt.xu.f.v v10,v18,v0.t
-vfcvt.xu.f.v v11,v19,v0.t
-vfcvt.xu.f.v v12,v20,v0.t
-vfcvt.xu.f.v v13,v21,v0.t
-vfcvt.xu.f.v v14,v22,v0.t
-vfcvt.xu.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.xu.f.v v8,v16,v0.t
-vfcvt.xu.f.v v9,v17,v0.t
-vfcvt.xu.f.v v10,v18,v0.t
-vfcvt.xu.f.v v11,v19,v0.t
-vfcvt.xu.f.v v12,v20,v0.t
-vfcvt.xu.f.v v13,v21,v0.t
-vfcvt.xu.f.v v14,v22,v0.t
-vfcvt.xu.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtxfv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.x.f.v v8,v16
-vfcvt.x.f.v v9,v17
-vfcvt.x.f.v v10,v18
-vfcvt.x.f.v v11,v19
-vfcvt.x.f.v v12,v20
-vfcvt.x.f.v v13,v21
-vfcvt.x.f.v v14,v22
-vfcvt.x.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.x.f.v v8,v16
-vfcvt.x.f.v v9,v17
-vfcvt.x.f.v v10,v18
-vfcvt.x.f.v v11,v19
-vfcvt.x.f.v v12,v20
-vfcvt.x.f.v v13,v21
-vfcvt.x.f.v v14,v22
-vfcvt.x.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtxfvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.x.f.v v8,v16,v0.t
-vfcvt.x.f.v v9,v17,v0.t
-vfcvt.x.f.v v10,v18,v0.t
-vfcvt.x.f.v v11,v19,v0.t
-vfcvt.x.f.v v12,v20,v0.t
-vfcvt.x.f.v v13,v21,v0.t
-vfcvt.x.f.v v14,v22,v0.t
-vfcvt.x.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.x.f.v v8,v16,v0.t
-vfcvt.x.f.v v9,v17,v0.t
-vfcvt.x.f.v v10,v18,v0.t
-vfcvt.x.f.v v11,v19,v0.t
-vfcvt.x.f.v v12,v20,v0.t
-vfcvt.x.f.v v13,v21,v0.t
-vfcvt.x.f.v v14,v22,v0.t
-vfcvt.x.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtfxuv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.f.xu.v v8,v16
-vfcvt.f.xu.v v9,v17
-vfcvt.f.xu.v v10,v18
-vfcvt.f.xu.v v11,v19
-vfcvt.f.xu.v v12,v20
-vfcvt.f.xu.v v13,v21
-vfcvt.f.xu.v v14,v22
-vfcvt.f.xu.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.f.xu.v v8,v16
-vfcvt.f.xu.v v9,v17
-vfcvt.f.xu.v v10,v18
-vfcvt.f.xu.v v11,v19
-vfcvt.f.xu.v v12,v20
-vfcvt.f.xu.v v13,v21
-vfcvt.f.xu.v v14,v22
-vfcvt.f.xu.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtfxuvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.f.xu.v v8,v16,v0.t
-vfcvt.f.xu.v v9,v17,v0.t
-vfcvt.f.xu.v v10,v18,v0.t
-vfcvt.f.xu.v v11,v19,v0.t
-vfcvt.f.xu.v v12,v20,v0.t
-vfcvt.f.xu.v v13,v21,v0.t
-vfcvt.f.xu.v v14,v22,v0.t
-vfcvt.f.xu.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.f.xu.v v8,v16,v0.t
-vfcvt.f.xu.v v9,v17,v0.t
-vfcvt.f.xu.v v10,v18,v0.t
-vfcvt.f.xu.v v11,v19,v0.t
-vfcvt.f.xu.v v12,v20,v0.t
-vfcvt.f.xu.v v13,v21,v0.t
-vfcvt.f.xu.v v14,v22,v0.t
-vfcvt.f.xu.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtfxv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.f.x.v v8,v16
-vfcvt.f.x.v v9,v17
-vfcvt.f.x.v v10,v18
-vfcvt.f.x.v v11,v19
-vfcvt.f.x.v v12,v20
-vfcvt.f.x.v v13,v21
-vfcvt.f.x.v v14,v22
-vfcvt.f.x.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.f.x.v v8,v16
-vfcvt.f.x.v v9,v17
-vfcvt.f.x.v v10,v18
-vfcvt.f.x.v v11,v19
-vfcvt.f.x.v v12,v20
-vfcvt.f.x.v v13,v21
-vfcvt.f.x.v v14,v22
-vfcvt.f.x.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtfxvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.f.x.v v8,v16,v0.t
-vfcvt.f.x.v v9,v17,v0.t
-vfcvt.f.x.v v10,v18,v0.t
-vfcvt.f.x.v v11,v19,v0.t
-vfcvt.f.x.v v12,v20,v0.t
-vfcvt.f.x.v v13,v21,v0.t
-vfcvt.f.x.v v14,v22,v0.t
-vfcvt.f.x.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.f.x.v v8,v16,v0.t
-vfcvt.f.x.v v9,v17,v0.t
-vfcvt.f.x.v v10,v18,v0.t
-vfcvt.f.x.v v11,v19,v0.t
-vfcvt.f.x.v v12,v20,v0.t
-vfcvt.f.x.v v13,v21,v0.t
-vfcvt.f.x.v v14,v22,v0.t
-vfcvt.f.x.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtrtzxfv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.rtz.x.f.v v8,v16
-vfcvt.rtz.x.f.v v9,v17
-vfcvt.rtz.x.f.v v10,v18
-vfcvt.rtz.x.f.v v11,v19
-vfcvt.rtz.x.f.v v12,v20
-vfcvt.rtz.x.f.v v13,v21
-vfcvt.rtz.x.f.v v14,v22
-vfcvt.rtz.x.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.rtz.x.f.v v8,v16
-vfcvt.rtz.x.f.v v9,v17
-vfcvt.rtz.x.f.v v10,v18
-vfcvt.rtz.x.f.v v11,v19
-vfcvt.rtz.x.f.v v12,v20
-vfcvt.rtz.x.f.v v13,v21
-vfcvt.rtz.x.f.v v14,v22
-vfcvt.rtz.x.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtrtzxfvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.rtz.x.f.v v8,v16,v0.t
-vfcvt.rtz.x.f.v v9,v17,v0.t
-vfcvt.rtz.x.f.v v10,v18,v0.t
-vfcvt.rtz.x.f.v v11,v19,v0.t
-vfcvt.rtz.x.f.v v12,v20,v0.t
-vfcvt.rtz.x.f.v v13,v21,v0.t
-vfcvt.rtz.x.f.v v14,v22,v0.t
-vfcvt.rtz.x.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.rtz.x.f.v v8,v16,v0.t
-vfcvt.rtz.x.f.v v9,v17,v0.t
-vfcvt.rtz.x.f.v v10,v18,v0.t
-vfcvt.rtz.x.f.v v11,v19,v0.t
-vfcvt.rtz.x.f.v v12,v20,v0.t
-vfcvt.rtz.x.f.v v13,v21,v0.t
-vfcvt.rtz.x.f.v v14,v22,v0.t
-vfcvt.rtz.x.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtrtzxufv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.rtz.xu.f.v v8,v16
-vfcvt.rtz.xu.f.v v9,v17
-vfcvt.rtz.xu.f.v v10,v18
-vfcvt.rtz.xu.f.v v11,v19
-vfcvt.rtz.xu.f.v v12,v20
-vfcvt.rtz.xu.f.v v13,v21
-vfcvt.rtz.xu.f.v v14,v22
-vfcvt.rtz.xu.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.rtz.xu.f.v v8,v16
-vfcvt.rtz.xu.f.v v9,v17
-vfcvt.rtz.xu.f.v v10,v18
-vfcvt.rtz.xu.f.v v11,v19
-vfcvt.rtz.xu.f.v v12,v20
-vfcvt.rtz.xu.f.v v13,v21
-vfcvt.rtz.xu.f.v v14,v22
-vfcvt.rtz.xu.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfcvtrtzxufvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfcvt.rtz.xu.f.v v8,v16,v0.t
-vfcvt.rtz.xu.f.v v9,v17,v0.t
-vfcvt.rtz.xu.f.v v10,v18,v0.t
-vfcvt.rtz.xu.f.v v11,v19,v0.t
-vfcvt.rtz.xu.f.v v12,v20,v0.t
-vfcvt.rtz.xu.f.v v13,v21,v0.t
-vfcvt.rtz.xu.f.v v14,v22,v0.t
-vfcvt.rtz.xu.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfcvt.rtz.xu.f.v v8,v16,v0.t
-vfcvt.rtz.xu.f.v v9,v17,v0.t
-vfcvt.rtz.xu.f.v v10,v18,v0.t
-vfcvt.rtz.xu.f.v v11,v19,v0.t
-vfcvt.rtz.xu.f.v v12,v20,v0.t
-vfcvt.rtz.xu.f.v v13,v21,v0.t
-vfcvt.rtz.xu.f.v v14,v22,v0.t
-vfcvt.rtz.xu.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-
-	
-bench_vfwcvtxufv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.xu.f.v v8,v16
-vfwcvt.xu.f.v v9,v17
-vfwcvt.xu.f.v v10,v18
-vfwcvt.xu.f.v v11,v19
-vfwcvt.xu.f.v v12,v20
-vfwcvt.xu.f.v v13,v21
-vfwcvt.xu.f.v v14,v22
-vfwcvt.xu.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.xu.f.v v8,v16
-vfwcvt.xu.f.v v9,v17
-vfwcvt.xu.f.v v10,v18
-vfwcvt.xu.f.v v11,v19
-vfwcvt.xu.f.v v12,v20
-vfwcvt.xu.f.v v13,v21
-vfwcvt.xu.f.v v14,v22
-vfwcvt.xu.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtxufvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.xu.f.v v8,v16,v0.t
-vfwcvt.xu.f.v v9,v17,v0.t
-vfwcvt.xu.f.v v10,v18,v0.t
-vfwcvt.xu.f.v v11,v19,v0.t
-vfwcvt.xu.f.v v12,v20,v0.t
-vfwcvt.xu.f.v v13,v21,v0.t
-vfwcvt.xu.f.v v14,v22,v0.t
-vfwcvt.xu.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.xu.f.v v8,v16,v0.t
-vfwcvt.xu.f.v v9,v17,v0.t
-vfwcvt.xu.f.v v10,v18,v0.t
-vfwcvt.xu.f.v v11,v19,v0.t
-vfwcvt.xu.f.v v12,v20,v0.t
-vfwcvt.xu.f.v v13,v21,v0.t
-vfwcvt.xu.f.v v14,v22,v0.t
-vfwcvt.xu.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtxfv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.x.f.v v8,v16
-vfwcvt.x.f.v v9,v17
-vfwcvt.x.f.v v10,v18
-vfwcvt.x.f.v v11,v19
-vfwcvt.x.f.v v12,v20
-vfwcvt.x.f.v v13,v21
-vfwcvt.x.f.v v14,v22
-vfwcvt.x.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.x.f.v v8,v16
-vfwcvt.x.f.v v9,v17
-vfwcvt.x.f.v v10,v18
-vfwcvt.x.f.v v11,v19
-vfwcvt.x.f.v v12,v20
-vfwcvt.x.f.v v13,v21
-vfwcvt.x.f.v v14,v22
-vfwcvt.x.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtxfvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.x.f.v v8,v16,v0.t
-vfwcvt.x.f.v v9,v17,v0.t
-vfwcvt.x.f.v v10,v18,v0.t
-vfwcvt.x.f.v v11,v19,v0.t
-vfwcvt.x.f.v v12,v20,v0.t
-vfwcvt.x.f.v v13,v21,v0.t
-vfwcvt.x.f.v v14,v22,v0.t
-vfwcvt.x.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.x.f.v v8,v16,v0.t
-vfwcvt.x.f.v v9,v17,v0.t
-vfwcvt.x.f.v v10,v18,v0.t
-vfwcvt.x.f.v v11,v19,v0.t
-vfwcvt.x.f.v v12,v20,v0.t
-vfwcvt.x.f.v v13,v21,v0.t
-vfwcvt.x.f.v v14,v22,v0.t
-vfwcvt.x.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtfxuv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.f.xu.v v8,v16
-vfwcvt.f.xu.v v9,v17
-vfwcvt.f.xu.v v10,v18
-vfwcvt.f.xu.v v11,v19
-vfwcvt.f.xu.v v12,v20
-vfwcvt.f.xu.v v13,v21
-vfwcvt.f.xu.v v14,v22
-vfwcvt.f.xu.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.f.xu.v v8,v16
-vfwcvt.f.xu.v v9,v17
-vfwcvt.f.xu.v v10,v18
-vfwcvt.f.xu.v v11,v19
-vfwcvt.f.xu.v v12,v20
-vfwcvt.f.xu.v v13,v21
-vfwcvt.f.xu.v v14,v22
-vfwcvt.f.xu.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtfxuvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.f.xu.v v8,v16,v0.t
-vfwcvt.f.xu.v v9,v17,v0.t
-vfwcvt.f.xu.v v10,v18,v0.t
-vfwcvt.f.xu.v v11,v19,v0.t
-vfwcvt.f.xu.v v12,v20,v0.t
-vfwcvt.f.xu.v v13,v21,v0.t
-vfwcvt.f.xu.v v14,v22,v0.t
-vfwcvt.f.xu.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.f.xu.v v8,v16,v0.t
-vfwcvt.f.xu.v v9,v17,v0.t
-vfwcvt.f.xu.v v10,v18,v0.t
-vfwcvt.f.xu.v v11,v19,v0.t
-vfwcvt.f.xu.v v12,v20,v0.t
-vfwcvt.f.xu.v v13,v21,v0.t
-vfwcvt.f.xu.v v14,v22,v0.t
-vfwcvt.f.xu.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtfxv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.f.x.v v8,v16
-vfwcvt.f.x.v v9,v17
-vfwcvt.f.x.v v10,v18
-vfwcvt.f.x.v v11,v19
-vfwcvt.f.x.v v12,v20
-vfwcvt.f.x.v v13,v21
-vfwcvt.f.x.v v14,v22
-vfwcvt.f.x.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.f.x.v v8,v16
-vfwcvt.f.x.v v9,v17
-vfwcvt.f.x.v v10,v18
-vfwcvt.f.x.v v11,v19
-vfwcvt.f.x.v v12,v20
-vfwcvt.f.x.v v13,v21
-vfwcvt.f.x.v v14,v22
-vfwcvt.f.x.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtfxvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.f.x.v v8,v16,v0.t
-vfwcvt.f.x.v v9,v17,v0.t
-vfwcvt.f.x.v v10,v18,v0.t
-vfwcvt.f.x.v v11,v19,v0.t
-vfwcvt.f.x.v v12,v20,v0.t
-vfwcvt.f.x.v v13,v21,v0.t
-vfwcvt.f.x.v v14,v22,v0.t
-vfwcvt.f.x.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.f.x.v v8,v16,v0.t
-vfwcvt.f.x.v v9,v17,v0.t
-vfwcvt.f.x.v v10,v18,v0.t
-vfwcvt.f.x.v v11,v19,v0.t
-vfwcvt.f.x.v v12,v20,v0.t
-vfwcvt.f.x.v v13,v21,v0.t
-vfwcvt.f.x.v v14,v22,v0.t
-vfwcvt.f.x.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtffv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.f.f.v v8,v16
-vfwcvt.f.f.v v9,v17
-vfwcvt.f.f.v v10,v18
-vfwcvt.f.f.v v11,v19
-vfwcvt.f.f.v v12,v20
-vfwcvt.f.f.v v13,v21
-vfwcvt.f.f.v v14,v22
-vfwcvt.f.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.f.f.v v8,v16
-vfwcvt.f.f.v v9,v17
-vfwcvt.f.f.v v10,v18
-vfwcvt.f.f.v v11,v19
-vfwcvt.f.f.v v12,v20
-vfwcvt.f.f.v v13,v21
-vfwcvt.f.f.v v14,v22
-vfwcvt.f.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtffvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.f.f.v v8,v16,v0.t
-vfwcvt.f.f.v v9,v17,v0.t
-vfwcvt.f.f.v v10,v18,v0.t
-vfwcvt.f.f.v v11,v19,v0.t
-vfwcvt.f.f.v v12,v20,v0.t
-vfwcvt.f.f.v v13,v21,v0.t
-vfwcvt.f.f.v v14,v22,v0.t
-vfwcvt.f.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.f.f.v v8,v16,v0.t
-vfwcvt.f.f.v v9,v17,v0.t
-vfwcvt.f.f.v v10,v18,v0.t
-vfwcvt.f.f.v v11,v19,v0.t
-vfwcvt.f.f.v v12,v20,v0.t
-vfwcvt.f.f.v v13,v21,v0.t
-vfwcvt.f.f.v v14,v22,v0.t
-vfwcvt.f.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtrtzxufv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.rtz.xu.f.v v8,v16
-vfwcvt.rtz.xu.f.v v9,v17
-vfwcvt.rtz.xu.f.v v10,v18
-vfwcvt.rtz.xu.f.v v11,v19
-vfwcvt.rtz.xu.f.v v12,v20
-vfwcvt.rtz.xu.f.v v13,v21
-vfwcvt.rtz.xu.f.v v14,v22
-vfwcvt.rtz.xu.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.rtz.xu.f.v v8,v16
-vfwcvt.rtz.xu.f.v v9,v17
-vfwcvt.rtz.xu.f.v v10,v18
-vfwcvt.rtz.xu.f.v v11,v19
-vfwcvt.rtz.xu.f.v v12,v20
-vfwcvt.rtz.xu.f.v v13,v21
-vfwcvt.rtz.xu.f.v v14,v22
-vfwcvt.rtz.xu.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtrtzxufvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.rtz.xu.f.v v8,v16,v0.t
-vfwcvt.rtz.xu.f.v v9,v17,v0.t
-vfwcvt.rtz.xu.f.v v10,v18,v0.t
-vfwcvt.rtz.xu.f.v v11,v19,v0.t
-vfwcvt.rtz.xu.f.v v12,v20,v0.t
-vfwcvt.rtz.xu.f.v v13,v21,v0.t
-vfwcvt.rtz.xu.f.v v14,v22,v0.t
-vfwcvt.rtz.xu.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.rtz.xu.f.v v8,v16,v0.t
-vfwcvt.rtz.xu.f.v v9,v17,v0.t
-vfwcvt.rtz.xu.f.v v10,v18,v0.t
-vfwcvt.rtz.xu.f.v v11,v19,v0.t
-vfwcvt.rtz.xu.f.v v12,v20,v0.t
-vfwcvt.rtz.xu.f.v v13,v21,v0.t
-vfwcvt.rtz.xu.f.v v14,v22,v0.t
-vfwcvt.rtz.xu.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtrtzxfv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.rtz.x.f.v v8,v16
-vfwcvt.rtz.x.f.v v9,v17
-vfwcvt.rtz.x.f.v v10,v18
-vfwcvt.rtz.x.f.v v11,v19
-vfwcvt.rtz.x.f.v v12,v20
-vfwcvt.rtz.x.f.v v13,v21
-vfwcvt.rtz.x.f.v v14,v22
-vfwcvt.rtz.x.f.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.rtz.x.f.v v8,v16
-vfwcvt.rtz.x.f.v v9,v17
-vfwcvt.rtz.x.f.v v10,v18
-vfwcvt.rtz.x.f.v v11,v19
-vfwcvt.rtz.x.f.v v12,v20
-vfwcvt.rtz.x.f.v v13,v21
-vfwcvt.rtz.x.f.v v14,v22
-vfwcvt.rtz.x.f.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfwcvtrtzxfvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfwcvt.rtz.x.f.v v8,v16,v0.t
-vfwcvt.rtz.x.f.v v9,v17,v0.t
-vfwcvt.rtz.x.f.v v10,v18,v0.t
-vfwcvt.rtz.x.f.v v11,v19,v0.t
-vfwcvt.rtz.x.f.v v12,v20,v0.t
-vfwcvt.rtz.x.f.v v13,v21,v0.t
-vfwcvt.rtz.x.f.v v14,v22,v0.t
-vfwcvt.rtz.x.f.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfwcvt.rtz.x.f.v v8,v16,v0.t
-vfwcvt.rtz.x.f.v v9,v17,v0.t
-vfwcvt.rtz.x.f.v v10,v18,v0.t
-vfwcvt.rtz.x.f.v v11,v19,v0.t
-vfwcvt.rtz.x.f.v v12,v20,v0.t
-vfwcvt.rtz.x.f.v v13,v21,v0.t
-vfwcvt.rtz.x.f.v v14,v22,v0.t
-vfwcvt.rtz.x.f.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-
-	
-bench_vfncvtxufw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.xu.f.w v8,v16
-vfncvt.xu.f.w v9,v17
-vfncvt.xu.f.w v10,v18
-vfncvt.xu.f.w v11,v19
-vfncvt.xu.f.w v12,v20
-vfncvt.xu.f.w v13,v21
-vfncvt.xu.f.w v14,v22
-vfncvt.xu.f.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.xu.f.w v8,v16
-vfncvt.xu.f.w v9,v17
-vfncvt.xu.f.w v10,v18
-vfncvt.xu.f.w v11,v19
-vfncvt.xu.f.w v12,v20
-vfncvt.xu.f.w v13,v21
-vfncvt.xu.f.w v14,v22
-vfncvt.xu.f.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtxufwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.xu.f.w v8,v16,v0.t
-vfncvt.xu.f.w v9,v17,v0.t
-vfncvt.xu.f.w v10,v18,v0.t
-vfncvt.xu.f.w v11,v19,v0.t
-vfncvt.xu.f.w v12,v20,v0.t
-vfncvt.xu.f.w v13,v21,v0.t
-vfncvt.xu.f.w v14,v22,v0.t
-vfncvt.xu.f.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.xu.f.w v8,v16,v0.t
-vfncvt.xu.f.w v9,v17,v0.t
-vfncvt.xu.f.w v10,v18,v0.t
-vfncvt.xu.f.w v11,v19,v0.t
-vfncvt.xu.f.w v12,v20,v0.t
-vfncvt.xu.f.w v13,v21,v0.t
-vfncvt.xu.f.w v14,v22,v0.t
-vfncvt.xu.f.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtxfw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.x.f.w v8,v16
-vfncvt.x.f.w v9,v17
-vfncvt.x.f.w v10,v18
-vfncvt.x.f.w v11,v19
-vfncvt.x.f.w v12,v20
-vfncvt.x.f.w v13,v21
-vfncvt.x.f.w v14,v22
-vfncvt.x.f.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.x.f.w v8,v16
-vfncvt.x.f.w v9,v17
-vfncvt.x.f.w v10,v18
-vfncvt.x.f.w v11,v19
-vfncvt.x.f.w v12,v20
-vfncvt.x.f.w v13,v21
-vfncvt.x.f.w v14,v22
-vfncvt.x.f.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtxfwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.x.f.w v8,v16,v0.t
-vfncvt.x.f.w v9,v17,v0.t
-vfncvt.x.f.w v10,v18,v0.t
-vfncvt.x.f.w v11,v19,v0.t
-vfncvt.x.f.w v12,v20,v0.t
-vfncvt.x.f.w v13,v21,v0.t
-vfncvt.x.f.w v14,v22,v0.t
-vfncvt.x.f.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.x.f.w v8,v16,v0.t
-vfncvt.x.f.w v9,v17,v0.t
-vfncvt.x.f.w v10,v18,v0.t
-vfncvt.x.f.w v11,v19,v0.t
-vfncvt.x.f.w v12,v20,v0.t
-vfncvt.x.f.w v13,v21,v0.t
-vfncvt.x.f.w v14,v22,v0.t
-vfncvt.x.f.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtfxuw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.f.xu.w v8,v16
-vfncvt.f.xu.w v9,v17
-vfncvt.f.xu.w v10,v18
-vfncvt.f.xu.w v11,v19
-vfncvt.f.xu.w v12,v20
-vfncvt.f.xu.w v13,v21
-vfncvt.f.xu.w v14,v22
-vfncvt.f.xu.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.f.xu.w v8,v16
-vfncvt.f.xu.w v9,v17
-vfncvt.f.xu.w v10,v18
-vfncvt.f.xu.w v11,v19
-vfncvt.f.xu.w v12,v20
-vfncvt.f.xu.w v13,v21
-vfncvt.f.xu.w v14,v22
-vfncvt.f.xu.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtfxuwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.f.xu.w v8,v16,v0.t
-vfncvt.f.xu.w v9,v17,v0.t
-vfncvt.f.xu.w v10,v18,v0.t
-vfncvt.f.xu.w v11,v19,v0.t
-vfncvt.f.xu.w v12,v20,v0.t
-vfncvt.f.xu.w v13,v21,v0.t
-vfncvt.f.xu.w v14,v22,v0.t
-vfncvt.f.xu.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.f.xu.w v8,v16,v0.t
-vfncvt.f.xu.w v9,v17,v0.t
-vfncvt.f.xu.w v10,v18,v0.t
-vfncvt.f.xu.w v11,v19,v0.t
-vfncvt.f.xu.w v12,v20,v0.t
-vfncvt.f.xu.w v13,v21,v0.t
-vfncvt.f.xu.w v14,v22,v0.t
-vfncvt.f.xu.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtfxw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.f.x.w v8,v16
-vfncvt.f.x.w v9,v17
-vfncvt.f.x.w v10,v18
-vfncvt.f.x.w v11,v19
-vfncvt.f.x.w v12,v20
-vfncvt.f.x.w v13,v21
-vfncvt.f.x.w v14,v22
-vfncvt.f.x.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.f.x.w v8,v16
-vfncvt.f.x.w v9,v17
-vfncvt.f.x.w v10,v18
-vfncvt.f.x.w v11,v19
-vfncvt.f.x.w v12,v20
-vfncvt.f.x.w v13,v21
-vfncvt.f.x.w v14,v22
-vfncvt.f.x.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtfxwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.f.x.w v8,v16,v0.t
-vfncvt.f.x.w v9,v17,v0.t
-vfncvt.f.x.w v10,v18,v0.t
-vfncvt.f.x.w v11,v19,v0.t
-vfncvt.f.x.w v12,v20,v0.t
-vfncvt.f.x.w v13,v21,v0.t
-vfncvt.f.x.w v14,v22,v0.t
-vfncvt.f.x.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.f.x.w v8,v16,v0.t
-vfncvt.f.x.w v9,v17,v0.t
-vfncvt.f.x.w v10,v18,v0.t
-vfncvt.f.x.w v11,v19,v0.t
-vfncvt.f.x.w v12,v20,v0.t
-vfncvt.f.x.w v13,v21,v0.t
-vfncvt.f.x.w v14,v22,v0.t
-vfncvt.f.x.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtffw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.f.f.w v8,v16
-vfncvt.f.f.w v9,v17
-vfncvt.f.f.w v10,v18
-vfncvt.f.f.w v11,v19
-vfncvt.f.f.w v12,v20
-vfncvt.f.f.w v13,v21
-vfncvt.f.f.w v14,v22
-vfncvt.f.f.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.f.f.w v8,v16
-vfncvt.f.f.w v9,v17
-vfncvt.f.f.w v10,v18
-vfncvt.f.f.w v11,v19
-vfncvt.f.f.w v12,v20
-vfncvt.f.f.w v13,v21
-vfncvt.f.f.w v14,v22
-vfncvt.f.f.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtffwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.f.f.w v8,v16,v0.t
-vfncvt.f.f.w v9,v17,v0.t
-vfncvt.f.f.w v10,v18,v0.t
-vfncvt.f.f.w v11,v19,v0.t
-vfncvt.f.f.w v12,v20,v0.t
-vfncvt.f.f.w v13,v21,v0.t
-vfncvt.f.f.w v14,v22,v0.t
-vfncvt.f.f.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.f.f.w v8,v16,v0.t
-vfncvt.f.f.w v9,v17,v0.t
-vfncvt.f.f.w v10,v18,v0.t
-vfncvt.f.f.w v11,v19,v0.t
-vfncvt.f.f.w v12,v20,v0.t
-vfncvt.f.f.w v13,v21,v0.t
-vfncvt.f.f.w v14,v22,v0.t
-vfncvt.f.f.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtrtzxfw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.rtz.x.f.w v8,v16
-vfncvt.rtz.x.f.w v9,v17
-vfncvt.rtz.x.f.w v10,v18
-vfncvt.rtz.x.f.w v11,v19
-vfncvt.rtz.x.f.w v12,v20
-vfncvt.rtz.x.f.w v13,v21
-vfncvt.rtz.x.f.w v14,v22
-vfncvt.rtz.x.f.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.rtz.x.f.w v8,v16
-vfncvt.rtz.x.f.w v9,v17
-vfncvt.rtz.x.f.w v10,v18
-vfncvt.rtz.x.f.w v11,v19
-vfncvt.rtz.x.f.w v12,v20
-vfncvt.rtz.x.f.w v13,v21
-vfncvt.rtz.x.f.w v14,v22
-vfncvt.rtz.x.f.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtrtzxfwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.rtz.x.f.w v8,v16,v0.t
-vfncvt.rtz.x.f.w v9,v17,v0.t
-vfncvt.rtz.x.f.w v10,v18,v0.t
-vfncvt.rtz.x.f.w v11,v19,v0.t
-vfncvt.rtz.x.f.w v12,v20,v0.t
-vfncvt.rtz.x.f.w v13,v21,v0.t
-vfncvt.rtz.x.f.w v14,v22,v0.t
-vfncvt.rtz.x.f.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.rtz.x.f.w v8,v16,v0.t
-vfncvt.rtz.x.f.w v9,v17,v0.t
-vfncvt.rtz.x.f.w v10,v18,v0.t
-vfncvt.rtz.x.f.w v11,v19,v0.t
-vfncvt.rtz.x.f.w v12,v20,v0.t
-vfncvt.rtz.x.f.w v13,v21,v0.t
-vfncvt.rtz.x.f.w v14,v22,v0.t
-vfncvt.rtz.x.f.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtrtzxufw_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.rtz.xu.f.w v8,v16
-vfncvt.rtz.xu.f.w v9,v17
-vfncvt.rtz.xu.f.w v10,v18
-vfncvt.rtz.xu.f.w v11,v19
-vfncvt.rtz.xu.f.w v12,v20
-vfncvt.rtz.xu.f.w v13,v21
-vfncvt.rtz.xu.f.w v14,v22
-vfncvt.rtz.xu.f.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.rtz.xu.f.w v8,v16
-vfncvt.rtz.xu.f.w v9,v17
-vfncvt.rtz.xu.f.w v10,v18
-vfncvt.rtz.xu.f.w v11,v19
-vfncvt.rtz.xu.f.w v12,v20
-vfncvt.rtz.xu.f.w v13,v21
-vfncvt.rtz.xu.f.w v14,v22
-vfncvt.rtz.xu.f.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvtrtzxufwm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.rtz.xu.f.w v8,v16,v0.t
-vfncvt.rtz.xu.f.w v9,v17,v0.t
-vfncvt.rtz.xu.f.w v10,v18,v0.t
-vfncvt.rtz.xu.f.w v11,v19,v0.t
-vfncvt.rtz.xu.f.w v12,v20,v0.t
-vfncvt.rtz.xu.f.w v13,v21,v0.t
-vfncvt.rtz.xu.f.w v14,v22,v0.t
-vfncvt.rtz.xu.f.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.rtz.xu.f.w v8,v16,v0.t
-vfncvt.rtz.xu.f.w v9,v17,v0.t
-vfncvt.rtz.xu.f.w v10,v18,v0.t
-vfncvt.rtz.xu.f.w v11,v19,v0.t
-vfncvt.rtz.xu.f.w v12,v20,v0.t
-vfncvt.rtz.xu.f.w v13,v21,v0.t
-vfncvt.rtz.xu.f.w v14,v22,v0.t
-vfncvt.rtz.xu.f.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvt.rod.f.f.w_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.rod.f.f.w v8,v16
-vfncvt.rod.f.f.w v9,v17
-vfncvt.rod.f.f.w v10,v18
-vfncvt.rod.f.f.w v11,v19
-vfncvt.rod.f.f.w v12,v20
-vfncvt.rod.f.f.w v13,v21
-vfncvt.rod.f.f.w v14,v22
-vfncvt.rod.f.f.w v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.rod.f.f.w v8,v16
-vfncvt.rod.f.f.w v9,v17
-vfncvt.rod.f.f.w v10,v18
-vfncvt.rod.f.f.w v11,v19
-vfncvt.rod.f.f.w v12,v20
-vfncvt.rod.f.f.w v13,v21
-vfncvt.rod.f.f.w v14,v22
-vfncvt.rod.f.f.w v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfncvt.rod.f.f.wm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfncvt.rod.f.f.w v8,v16,v0.t
-vfncvt.rod.f.f.w v9,v17,v0.t
-vfncvt.rod.f.f.w v10,v18,v0.t
-vfncvt.rod.f.f.w v11,v19,v0.t
-vfncvt.rod.f.f.w v12,v20,v0.t
-vfncvt.rod.f.f.w v13,v21,v0.t
-vfncvt.rod.f.f.w v14,v22,v0.t
-vfncvt.rod.f.f.w v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfncvt.rod.f.f.w v8,v16,v0.t
-vfncvt.rod.f.f.w v9,v17,v0.t
-vfncvt.rod.f.f.w v10,v18,v0.t
-vfncvt.rod.f.f.w v11,v19,v0.t
-vfncvt.rod.f.f.w v12,v20,v0.t
-vfncvt.rod.f.f.w v13,v21,v0.t
-vfncvt.rod.f.f.w v14,v22,v0.t
-vfncvt.rod.f.f.w v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-
-	
-bench_vfsqrtv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfsqrt.v v8,v16
-vfsqrt.v v9,v17
-vfsqrt.v v10,v18
-vfsqrt.v v11,v19
-vfsqrt.v v12,v20
-vfsqrt.v v13,v21
-vfsqrt.v v14,v22
-vfsqrt.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfsqrt.v v8,v16
-vfsqrt.v v9,v17
-vfsqrt.v v10,v18
-vfsqrt.v v11,v19
-vfsqrt.v v12,v20
-vfsqrt.v v13,v21
-vfsqrt.v v14,v22
-vfsqrt.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfsqrtvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfsqrt.v v8,v16,v0.t
-vfsqrt.v v9,v17,v0.t
-vfsqrt.v v10,v18,v0.t
-vfsqrt.v v11,v19,v0.t
-vfsqrt.v v12,v20,v0.t
-vfsqrt.v v13,v21,v0.t
-vfsqrt.v v14,v22,v0.t
-vfsqrt.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfsqrt.v v8,v16,v0.t
-vfsqrt.v v9,v17,v0.t
-vfsqrt.v v10,v18,v0.t
-vfsqrt.v v11,v19,v0.t
-vfsqrt.v v12,v20,v0.t
-vfsqrt.v v13,v21,v0.t
-vfsqrt.v v14,v22,v0.t
-vfsqrt.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfrsqrt7v_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfrsqrt7.v v8,v16
-vfrsqrt7.v v9,v17
-vfrsqrt7.v v10,v18
-vfrsqrt7.v v11,v19
-vfrsqrt7.v v12,v20
-vfrsqrt7.v v13,v21
-vfrsqrt7.v v14,v22
-vfrsqrt7.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfrsqrt7.v v8,v16
-vfrsqrt7.v v9,v17
-vfrsqrt7.v v10,v18
-vfrsqrt7.v v11,v19
-vfrsqrt7.v v12,v20
-vfrsqrt7.v v13,v21
-vfrsqrt7.v v14,v22
-vfrsqrt7.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfrsqrt7vm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfrsqrt7.v v8,v16,v0.t
-vfrsqrt7.v v9,v17,v0.t
-vfrsqrt7.v v10,v18,v0.t
-vfrsqrt7.v v11,v19,v0.t
-vfrsqrt7.v v12,v20,v0.t
-vfrsqrt7.v v13,v21,v0.t
-vfrsqrt7.v v14,v22,v0.t
-vfrsqrt7.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfrsqrt7.v v8,v16,v0.t
-vfrsqrt7.v v9,v17,v0.t
-vfrsqrt7.v v10,v18,v0.t
-vfrsqrt7.v v11,v19,v0.t
-vfrsqrt7.v v12,v20,v0.t
-vfrsqrt7.v v13,v21,v0.t
-vfrsqrt7.v v14,v22,v0.t
-vfrsqrt7.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfrec7v_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfrec7.v v8,v16
-vfrec7.v v9,v17
-vfrec7.v v10,v18
-vfrec7.v v11,v19
-vfrec7.v v12,v20
-vfrec7.v v13,v21
-vfrec7.v v14,v22
-vfrec7.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfrec7.v v8,v16
-vfrec7.v v9,v17
-vfrec7.v v10,v18
-vfrec7.v v11,v19
-vfrec7.v v12,v20
-vfrec7.v v13,v21
-vfrec7.v v14,v22
-vfrec7.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfrec7vm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfrec7.v v8,v16,v0.t
-vfrec7.v v9,v17,v0.t
-vfrec7.v v10,v18,v0.t
-vfrec7.v v11,v19,v0.t
-vfrec7.v v12,v20,v0.t
-vfrec7.v v13,v21,v0.t
-vfrec7.v v14,v22,v0.t
-vfrec7.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfrec7.v v8,v16,v0.t
-vfrec7.v v9,v17,v0.t
-vfrec7.v v10,v18,v0.t
-vfrec7.v v11,v19,v0.t
-vfrec7.v v12,v20,v0.t
-vfrec7.v v13,v21,v0.t
-vfrec7.v v14,v22,v0.t
-vfrec7.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfclassv_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfclass.v v8,v16
-vfclass.v v9,v17
-vfclass.v v10,v18
-vfclass.v v11,v19
-vfclass.v v12,v20
-vfclass.v v13,v21
-vfclass.v v14,v22
-vfclass.v v15,v23
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfclass.v v8,v16
-vfclass.v v9,v17
-vfclass.v v10,v18
-vfclass.v v11,v19
-vfclass.v v12,v20
-vfclass.v v13,v21
-vfclass.v v14,v22
-vfclass.v v15,v23
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-	
-bench_vfclassvm_m1:	
-	m_nop
-	li a0, WARMUP
-1:
-vfclass.v v8,v16,v0.t
-vfclass.v v9,v17,v0.t
-vfclass.v v10,v18,v0.t
-vfclass.v v11,v19,v0.t
-vfclass.v v12,v20,v0.t
-vfclass.v v13,v21,v0.t
-vfclass.v v14,v22,v0.t
-vfclass.v v15,v23,v0.t
-
-
-
-	addi a0, a0, -1
-	bnez a0, 1b
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a3, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a3, mcycle
-#else
-	csrr a3, cycle
-#endif
-	li a0, LOOP
-1:
-.rept UNROLL
-vfclass.v v8,v16,v0.t
-vfclass.v v9,v17,v0.t
-vfclass.v v10,v18,v0.t
-vfclass.v v11,v19,v0.t
-vfclass.v v12,v20,v0.t
-vfclass.v v13,v21,v0.t
-vfclass.v v14,v22,v0.t
-vfclass.v v15,v23,v0.t
-
-
-
-.endr
-	addi a0, a0, -1
-	bnez a0, 1b
-	fence.i
-#if defined(USE_PERF_EVENT_SLOW)
-	ld a0, nolibc_perf_event_fd
-	la a1, u64_cycle
-	li a2, 8
-	li a7, 63
-	ecall # clobbers vregs and vtype
-	ld a0, u64_cycle
-	vsetvl VL, VL, s2
-	bnez VL, 2f
-	vsetvl VL, x0, s2
-	2:
-#elif defined(READ_MCYCLE)
-	csrr a0, mcycle
-#else
-	csrr a0, cycle
-#endif
-	sub a0, a0, a3
-ret	
-
-
-	
-bench_vmsbfm_m1:	
+ret
+
+
+
+// bench_vfmvfs_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfmv.f.s ft0,v8
+// vfmv.f.s ft1,v9
+// vfmv.f.s ft2,v10
+// vfmv.f.s ft3,v11
+// vfmv.f.s ft4,v12
+// vfmv.f.s ft5,v13
+// vfmv.f.s ft6,v14
+// vfmv.f.s ft7,v15
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfmv.f.s ft0,v8
+// vfmv.f.s ft1,v9
+// vfmv.f.s ft2,v10
+// vfmv.f.s ft3,v11
+// vfmv.f.s ft4,v12
+// vfmv.f.s ft5,v13
+// vfmv.f.s ft6,v14
+// vfmv.f.s ft7,v15
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfmvsf_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfmv.s.f v8,ft0
+// vfmv.s.f v9,ft1
+// vfmv.s.f v10,ft2
+// vfmv.s.f v11,ft3
+// vfmv.s.f v12,ft4
+// vfmv.s.f v13,ft5
+// vfmv.s.f v14,ft6
+// vfmv.s.f v15,ft7
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfmv.s.f v8,ft0
+// vfmv.s.f v9,ft1
+// vfmv.s.f v10,ft2
+// vfmv.s.f v11,ft3
+// vfmv.s.f v12,ft4
+// vfmv.s.f v13,ft5
+// vfmv.s.f v14,ft6
+// vfmv.s.f v15,ft7
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+//
+// bench_vfcvtxufv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.xu.f.v v8,v16
+// vfcvt.xu.f.v v9,v17
+// vfcvt.xu.f.v v10,v18
+// vfcvt.xu.f.v v11,v19
+// vfcvt.xu.f.v v12,v20
+// vfcvt.xu.f.v v13,v21
+// vfcvt.xu.f.v v14,v22
+// vfcvt.xu.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.xu.f.v v8,v16
+// vfcvt.xu.f.v v9,v17
+// vfcvt.xu.f.v v10,v18
+// vfcvt.xu.f.v v11,v19
+// vfcvt.xu.f.v v12,v20
+// vfcvt.xu.f.v v13,v21
+// vfcvt.xu.f.v v14,v22
+// vfcvt.xu.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtxufvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.xu.f.v v8,v16,v0.t
+// vfcvt.xu.f.v v9,v17,v0.t
+// vfcvt.xu.f.v v10,v18,v0.t
+// vfcvt.xu.f.v v11,v19,v0.t
+// vfcvt.xu.f.v v12,v20,v0.t
+// vfcvt.xu.f.v v13,v21,v0.t
+// vfcvt.xu.f.v v14,v22,v0.t
+// vfcvt.xu.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.xu.f.v v8,v16,v0.t
+// vfcvt.xu.f.v v9,v17,v0.t
+// vfcvt.xu.f.v v10,v18,v0.t
+// vfcvt.xu.f.v v11,v19,v0.t
+// vfcvt.xu.f.v v12,v20,v0.t
+// vfcvt.xu.f.v v13,v21,v0.t
+// vfcvt.xu.f.v v14,v22,v0.t
+// vfcvt.xu.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtxfv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.x.f.v v8,v16
+// vfcvt.x.f.v v9,v17
+// vfcvt.x.f.v v10,v18
+// vfcvt.x.f.v v11,v19
+// vfcvt.x.f.v v12,v20
+// vfcvt.x.f.v v13,v21
+// vfcvt.x.f.v v14,v22
+// vfcvt.x.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.x.f.v v8,v16
+// vfcvt.x.f.v v9,v17
+// vfcvt.x.f.v v10,v18
+// vfcvt.x.f.v v11,v19
+// vfcvt.x.f.v v12,v20
+// vfcvt.x.f.v v13,v21
+// vfcvt.x.f.v v14,v22
+// vfcvt.x.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtxfvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.x.f.v v8,v16,v0.t
+// vfcvt.x.f.v v9,v17,v0.t
+// vfcvt.x.f.v v10,v18,v0.t
+// vfcvt.x.f.v v11,v19,v0.t
+// vfcvt.x.f.v v12,v20,v0.t
+// vfcvt.x.f.v v13,v21,v0.t
+// vfcvt.x.f.v v14,v22,v0.t
+// vfcvt.x.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.x.f.v v8,v16,v0.t
+// vfcvt.x.f.v v9,v17,v0.t
+// vfcvt.x.f.v v10,v18,v0.t
+// vfcvt.x.f.v v11,v19,v0.t
+// vfcvt.x.f.v v12,v20,v0.t
+// vfcvt.x.f.v v13,v21,v0.t
+// vfcvt.x.f.v v14,v22,v0.t
+// vfcvt.x.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtfxuv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.f.xu.v v8,v16
+// vfcvt.f.xu.v v9,v17
+// vfcvt.f.xu.v v10,v18
+// vfcvt.f.xu.v v11,v19
+// vfcvt.f.xu.v v12,v20
+// vfcvt.f.xu.v v13,v21
+// vfcvt.f.xu.v v14,v22
+// vfcvt.f.xu.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.f.xu.v v8,v16
+// vfcvt.f.xu.v v9,v17
+// vfcvt.f.xu.v v10,v18
+// vfcvt.f.xu.v v11,v19
+// vfcvt.f.xu.v v12,v20
+// vfcvt.f.xu.v v13,v21
+// vfcvt.f.xu.v v14,v22
+// vfcvt.f.xu.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtfxuvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.f.xu.v v8,v16,v0.t
+// vfcvt.f.xu.v v9,v17,v0.t
+// vfcvt.f.xu.v v10,v18,v0.t
+// vfcvt.f.xu.v v11,v19,v0.t
+// vfcvt.f.xu.v v12,v20,v0.t
+// vfcvt.f.xu.v v13,v21,v0.t
+// vfcvt.f.xu.v v14,v22,v0.t
+// vfcvt.f.xu.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.f.xu.v v8,v16,v0.t
+// vfcvt.f.xu.v v9,v17,v0.t
+// vfcvt.f.xu.v v10,v18,v0.t
+// vfcvt.f.xu.v v11,v19,v0.t
+// vfcvt.f.xu.v v12,v20,v0.t
+// vfcvt.f.xu.v v13,v21,v0.t
+// vfcvt.f.xu.v v14,v22,v0.t
+// vfcvt.f.xu.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtfxv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.f.x.v v8,v16
+// vfcvt.f.x.v v9,v17
+// vfcvt.f.x.v v10,v18
+// vfcvt.f.x.v v11,v19
+// vfcvt.f.x.v v12,v20
+// vfcvt.f.x.v v13,v21
+// vfcvt.f.x.v v14,v22
+// vfcvt.f.x.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.f.x.v v8,v16
+// vfcvt.f.x.v v9,v17
+// vfcvt.f.x.v v10,v18
+// vfcvt.f.x.v v11,v19
+// vfcvt.f.x.v v12,v20
+// vfcvt.f.x.v v13,v21
+// vfcvt.f.x.v v14,v22
+// vfcvt.f.x.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtfxvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.f.x.v v8,v16,v0.t
+// vfcvt.f.x.v v9,v17,v0.t
+// vfcvt.f.x.v v10,v18,v0.t
+// vfcvt.f.x.v v11,v19,v0.t
+// vfcvt.f.x.v v12,v20,v0.t
+// vfcvt.f.x.v v13,v21,v0.t
+// vfcvt.f.x.v v14,v22,v0.t
+// vfcvt.f.x.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.f.x.v v8,v16,v0.t
+// vfcvt.f.x.v v9,v17,v0.t
+// vfcvt.f.x.v v10,v18,v0.t
+// vfcvt.f.x.v v11,v19,v0.t
+// vfcvt.f.x.v v12,v20,v0.t
+// vfcvt.f.x.v v13,v21,v0.t
+// vfcvt.f.x.v v14,v22,v0.t
+// vfcvt.f.x.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtrtzxfv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.rtz.x.f.v v8,v16
+// vfcvt.rtz.x.f.v v9,v17
+// vfcvt.rtz.x.f.v v10,v18
+// vfcvt.rtz.x.f.v v11,v19
+// vfcvt.rtz.x.f.v v12,v20
+// vfcvt.rtz.x.f.v v13,v21
+// vfcvt.rtz.x.f.v v14,v22
+// vfcvt.rtz.x.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.rtz.x.f.v v8,v16
+// vfcvt.rtz.x.f.v v9,v17
+// vfcvt.rtz.x.f.v v10,v18
+// vfcvt.rtz.x.f.v v11,v19
+// vfcvt.rtz.x.f.v v12,v20
+// vfcvt.rtz.x.f.v v13,v21
+// vfcvt.rtz.x.f.v v14,v22
+// vfcvt.rtz.x.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtrtzxfvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.rtz.x.f.v v8,v16,v0.t
+// vfcvt.rtz.x.f.v v9,v17,v0.t
+// vfcvt.rtz.x.f.v v10,v18,v0.t
+// vfcvt.rtz.x.f.v v11,v19,v0.t
+// vfcvt.rtz.x.f.v v12,v20,v0.t
+// vfcvt.rtz.x.f.v v13,v21,v0.t
+// vfcvt.rtz.x.f.v v14,v22,v0.t
+// vfcvt.rtz.x.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.rtz.x.f.v v8,v16,v0.t
+// vfcvt.rtz.x.f.v v9,v17,v0.t
+// vfcvt.rtz.x.f.v v10,v18,v0.t
+// vfcvt.rtz.x.f.v v11,v19,v0.t
+// vfcvt.rtz.x.f.v v12,v20,v0.t
+// vfcvt.rtz.x.f.v v13,v21,v0.t
+// vfcvt.rtz.x.f.v v14,v22,v0.t
+// vfcvt.rtz.x.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtrtzxufv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.rtz.xu.f.v v8,v16
+// vfcvt.rtz.xu.f.v v9,v17
+// vfcvt.rtz.xu.f.v v10,v18
+// vfcvt.rtz.xu.f.v v11,v19
+// vfcvt.rtz.xu.f.v v12,v20
+// vfcvt.rtz.xu.f.v v13,v21
+// vfcvt.rtz.xu.f.v v14,v22
+// vfcvt.rtz.xu.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.rtz.xu.f.v v8,v16
+// vfcvt.rtz.xu.f.v v9,v17
+// vfcvt.rtz.xu.f.v v10,v18
+// vfcvt.rtz.xu.f.v v11,v19
+// vfcvt.rtz.xu.f.v v12,v20
+// vfcvt.rtz.xu.f.v v13,v21
+// vfcvt.rtz.xu.f.v v14,v22
+// vfcvt.rtz.xu.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfcvtrtzxufvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfcvt.rtz.xu.f.v v8,v16,v0.t
+// vfcvt.rtz.xu.f.v v9,v17,v0.t
+// vfcvt.rtz.xu.f.v v10,v18,v0.t
+// vfcvt.rtz.xu.f.v v11,v19,v0.t
+// vfcvt.rtz.xu.f.v v12,v20,v0.t
+// vfcvt.rtz.xu.f.v v13,v21,v0.t
+// vfcvt.rtz.xu.f.v v14,v22,v0.t
+// vfcvt.rtz.xu.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfcvt.rtz.xu.f.v v8,v16,v0.t
+// vfcvt.rtz.xu.f.v v9,v17,v0.t
+// vfcvt.rtz.xu.f.v v10,v18,v0.t
+// vfcvt.rtz.xu.f.v v11,v19,v0.t
+// vfcvt.rtz.xu.f.v v12,v20,v0.t
+// vfcvt.rtz.xu.f.v v13,v21,v0.t
+// vfcvt.rtz.xu.f.v v14,v22,v0.t
+// vfcvt.rtz.xu.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+//
+// bench_vfwcvtxufv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.xu.f.v v8,v16
+// vfwcvt.xu.f.v v9,v17
+// vfwcvt.xu.f.v v10,v18
+// vfwcvt.xu.f.v v11,v19
+// vfwcvt.xu.f.v v12,v20
+// vfwcvt.xu.f.v v13,v21
+// vfwcvt.xu.f.v v14,v22
+// vfwcvt.xu.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.xu.f.v v8,v16
+// vfwcvt.xu.f.v v9,v17
+// vfwcvt.xu.f.v v10,v18
+// vfwcvt.xu.f.v v11,v19
+// vfwcvt.xu.f.v v12,v20
+// vfwcvt.xu.f.v v13,v21
+// vfwcvt.xu.f.v v14,v22
+// vfwcvt.xu.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtxufvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.xu.f.v v8,v16,v0.t
+// vfwcvt.xu.f.v v9,v17,v0.t
+// vfwcvt.xu.f.v v10,v18,v0.t
+// vfwcvt.xu.f.v v11,v19,v0.t
+// vfwcvt.xu.f.v v12,v20,v0.t
+// vfwcvt.xu.f.v v13,v21,v0.t
+// vfwcvt.xu.f.v v14,v22,v0.t
+// vfwcvt.xu.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.xu.f.v v8,v16,v0.t
+// vfwcvt.xu.f.v v9,v17,v0.t
+// vfwcvt.xu.f.v v10,v18,v0.t
+// vfwcvt.xu.f.v v11,v19,v0.t
+// vfwcvt.xu.f.v v12,v20,v0.t
+// vfwcvt.xu.f.v v13,v21,v0.t
+// vfwcvt.xu.f.v v14,v22,v0.t
+// vfwcvt.xu.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtxfv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.x.f.v v8,v16
+// vfwcvt.x.f.v v9,v17
+// vfwcvt.x.f.v v10,v18
+// vfwcvt.x.f.v v11,v19
+// vfwcvt.x.f.v v12,v20
+// vfwcvt.x.f.v v13,v21
+// vfwcvt.x.f.v v14,v22
+// vfwcvt.x.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.x.f.v v8,v16
+// vfwcvt.x.f.v v9,v17
+// vfwcvt.x.f.v v10,v18
+// vfwcvt.x.f.v v11,v19
+// vfwcvt.x.f.v v12,v20
+// vfwcvt.x.f.v v13,v21
+// vfwcvt.x.f.v v14,v22
+// vfwcvt.x.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtxfvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.x.f.v v8,v16,v0.t
+// vfwcvt.x.f.v v9,v17,v0.t
+// vfwcvt.x.f.v v10,v18,v0.t
+// vfwcvt.x.f.v v11,v19,v0.t
+// vfwcvt.x.f.v v12,v20,v0.t
+// vfwcvt.x.f.v v13,v21,v0.t
+// vfwcvt.x.f.v v14,v22,v0.t
+// vfwcvt.x.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.x.f.v v8,v16,v0.t
+// vfwcvt.x.f.v v9,v17,v0.t
+// vfwcvt.x.f.v v10,v18,v0.t
+// vfwcvt.x.f.v v11,v19,v0.t
+// vfwcvt.x.f.v v12,v20,v0.t
+// vfwcvt.x.f.v v13,v21,v0.t
+// vfwcvt.x.f.v v14,v22,v0.t
+// vfwcvt.x.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtfxuv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.f.xu.v v8,v16
+// vfwcvt.f.xu.v v9,v17
+// vfwcvt.f.xu.v v10,v18
+// vfwcvt.f.xu.v v11,v19
+// vfwcvt.f.xu.v v12,v20
+// vfwcvt.f.xu.v v13,v21
+// vfwcvt.f.xu.v v14,v22
+// vfwcvt.f.xu.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.f.xu.v v8,v16
+// vfwcvt.f.xu.v v9,v17
+// vfwcvt.f.xu.v v10,v18
+// vfwcvt.f.xu.v v11,v19
+// vfwcvt.f.xu.v v12,v20
+// vfwcvt.f.xu.v v13,v21
+// vfwcvt.f.xu.v v14,v22
+// vfwcvt.f.xu.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtfxuvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.f.xu.v v8,v16,v0.t
+// vfwcvt.f.xu.v v9,v17,v0.t
+// vfwcvt.f.xu.v v10,v18,v0.t
+// vfwcvt.f.xu.v v11,v19,v0.t
+// vfwcvt.f.xu.v v12,v20,v0.t
+// vfwcvt.f.xu.v v13,v21,v0.t
+// vfwcvt.f.xu.v v14,v22,v0.t
+// vfwcvt.f.xu.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.f.xu.v v8,v16,v0.t
+// vfwcvt.f.xu.v v9,v17,v0.t
+// vfwcvt.f.xu.v v10,v18,v0.t
+// vfwcvt.f.xu.v v11,v19,v0.t
+// vfwcvt.f.xu.v v12,v20,v0.t
+// vfwcvt.f.xu.v v13,v21,v0.t
+// vfwcvt.f.xu.v v14,v22,v0.t
+// vfwcvt.f.xu.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtfxv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.f.x.v v8,v16
+// vfwcvt.f.x.v v9,v17
+// vfwcvt.f.x.v v10,v18
+// vfwcvt.f.x.v v11,v19
+// vfwcvt.f.x.v v12,v20
+// vfwcvt.f.x.v v13,v21
+// vfwcvt.f.x.v v14,v22
+// vfwcvt.f.x.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.f.x.v v8,v16
+// vfwcvt.f.x.v v9,v17
+// vfwcvt.f.x.v v10,v18
+// vfwcvt.f.x.v v11,v19
+// vfwcvt.f.x.v v12,v20
+// vfwcvt.f.x.v v13,v21
+// vfwcvt.f.x.v v14,v22
+// vfwcvt.f.x.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtfxvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.f.x.v v8,v16,v0.t
+// vfwcvt.f.x.v v9,v17,v0.t
+// vfwcvt.f.x.v v10,v18,v0.t
+// vfwcvt.f.x.v v11,v19,v0.t
+// vfwcvt.f.x.v v12,v20,v0.t
+// vfwcvt.f.x.v v13,v21,v0.t
+// vfwcvt.f.x.v v14,v22,v0.t
+// vfwcvt.f.x.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.f.x.v v8,v16,v0.t
+// vfwcvt.f.x.v v9,v17,v0.t
+// vfwcvt.f.x.v v10,v18,v0.t
+// vfwcvt.f.x.v v11,v19,v0.t
+// vfwcvt.f.x.v v12,v20,v0.t
+// vfwcvt.f.x.v v13,v21,v0.t
+// vfwcvt.f.x.v v14,v22,v0.t
+// vfwcvt.f.x.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtffv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.f.f.v v8,v16
+// vfwcvt.f.f.v v9,v17
+// vfwcvt.f.f.v v10,v18
+// vfwcvt.f.f.v v11,v19
+// vfwcvt.f.f.v v12,v20
+// vfwcvt.f.f.v v13,v21
+// vfwcvt.f.f.v v14,v22
+// vfwcvt.f.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.f.f.v v8,v16
+// vfwcvt.f.f.v v9,v17
+// vfwcvt.f.f.v v10,v18
+// vfwcvt.f.f.v v11,v19
+// vfwcvt.f.f.v v12,v20
+// vfwcvt.f.f.v v13,v21
+// vfwcvt.f.f.v v14,v22
+// vfwcvt.f.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtffvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.f.f.v v8,v16,v0.t
+// vfwcvt.f.f.v v9,v17,v0.t
+// vfwcvt.f.f.v v10,v18,v0.t
+// vfwcvt.f.f.v v11,v19,v0.t
+// vfwcvt.f.f.v v12,v20,v0.t
+// vfwcvt.f.f.v v13,v21,v0.t
+// vfwcvt.f.f.v v14,v22,v0.t
+// vfwcvt.f.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.f.f.v v8,v16,v0.t
+// vfwcvt.f.f.v v9,v17,v0.t
+// vfwcvt.f.f.v v10,v18,v0.t
+// vfwcvt.f.f.v v11,v19,v0.t
+// vfwcvt.f.f.v v12,v20,v0.t
+// vfwcvt.f.f.v v13,v21,v0.t
+// vfwcvt.f.f.v v14,v22,v0.t
+// vfwcvt.f.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtrtzxufv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.rtz.xu.f.v v8,v16
+// vfwcvt.rtz.xu.f.v v9,v17
+// vfwcvt.rtz.xu.f.v v10,v18
+// vfwcvt.rtz.xu.f.v v11,v19
+// vfwcvt.rtz.xu.f.v v12,v20
+// vfwcvt.rtz.xu.f.v v13,v21
+// vfwcvt.rtz.xu.f.v v14,v22
+// vfwcvt.rtz.xu.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.rtz.xu.f.v v8,v16
+// vfwcvt.rtz.xu.f.v v9,v17
+// vfwcvt.rtz.xu.f.v v10,v18
+// vfwcvt.rtz.xu.f.v v11,v19
+// vfwcvt.rtz.xu.f.v v12,v20
+// vfwcvt.rtz.xu.f.v v13,v21
+// vfwcvt.rtz.xu.f.v v14,v22
+// vfwcvt.rtz.xu.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtrtzxufvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.rtz.xu.f.v v8,v16,v0.t
+// vfwcvt.rtz.xu.f.v v9,v17,v0.t
+// vfwcvt.rtz.xu.f.v v10,v18,v0.t
+// vfwcvt.rtz.xu.f.v v11,v19,v0.t
+// vfwcvt.rtz.xu.f.v v12,v20,v0.t
+// vfwcvt.rtz.xu.f.v v13,v21,v0.t
+// vfwcvt.rtz.xu.f.v v14,v22,v0.t
+// vfwcvt.rtz.xu.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.rtz.xu.f.v v8,v16,v0.t
+// vfwcvt.rtz.xu.f.v v9,v17,v0.t
+// vfwcvt.rtz.xu.f.v v10,v18,v0.t
+// vfwcvt.rtz.xu.f.v v11,v19,v0.t
+// vfwcvt.rtz.xu.f.v v12,v20,v0.t
+// vfwcvt.rtz.xu.f.v v13,v21,v0.t
+// vfwcvt.rtz.xu.f.v v14,v22,v0.t
+// vfwcvt.rtz.xu.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtrtzxfv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.rtz.x.f.v v8,v16
+// vfwcvt.rtz.x.f.v v9,v17
+// vfwcvt.rtz.x.f.v v10,v18
+// vfwcvt.rtz.x.f.v v11,v19
+// vfwcvt.rtz.x.f.v v12,v20
+// vfwcvt.rtz.x.f.v v13,v21
+// vfwcvt.rtz.x.f.v v14,v22
+// vfwcvt.rtz.x.f.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.rtz.x.f.v v8,v16
+// vfwcvt.rtz.x.f.v v9,v17
+// vfwcvt.rtz.x.f.v v10,v18
+// vfwcvt.rtz.x.f.v v11,v19
+// vfwcvt.rtz.x.f.v v12,v20
+// vfwcvt.rtz.x.f.v v13,v21
+// vfwcvt.rtz.x.f.v v14,v22
+// vfwcvt.rtz.x.f.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfwcvtrtzxfvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfwcvt.rtz.x.f.v v8,v16,v0.t
+// vfwcvt.rtz.x.f.v v9,v17,v0.t
+// vfwcvt.rtz.x.f.v v10,v18,v0.t
+// vfwcvt.rtz.x.f.v v11,v19,v0.t
+// vfwcvt.rtz.x.f.v v12,v20,v0.t
+// vfwcvt.rtz.x.f.v v13,v21,v0.t
+// vfwcvt.rtz.x.f.v v14,v22,v0.t
+// vfwcvt.rtz.x.f.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfwcvt.rtz.x.f.v v8,v16,v0.t
+// vfwcvt.rtz.x.f.v v9,v17,v0.t
+// vfwcvt.rtz.x.f.v v10,v18,v0.t
+// vfwcvt.rtz.x.f.v v11,v19,v0.t
+// vfwcvt.rtz.x.f.v v12,v20,v0.t
+// vfwcvt.rtz.x.f.v v13,v21,v0.t
+// vfwcvt.rtz.x.f.v v14,v22,v0.t
+// vfwcvt.rtz.x.f.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+//
+// bench_vfncvtxufw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.xu.f.w v8,v16
+// vfncvt.xu.f.w v9,v17
+// vfncvt.xu.f.w v10,v18
+// vfncvt.xu.f.w v11,v19
+// vfncvt.xu.f.w v12,v20
+// vfncvt.xu.f.w v13,v21
+// vfncvt.xu.f.w v14,v22
+// vfncvt.xu.f.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.xu.f.w v8,v16
+// vfncvt.xu.f.w v9,v17
+// vfncvt.xu.f.w v10,v18
+// vfncvt.xu.f.w v11,v19
+// vfncvt.xu.f.w v12,v20
+// vfncvt.xu.f.w v13,v21
+// vfncvt.xu.f.w v14,v22
+// vfncvt.xu.f.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtxufwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.xu.f.w v8,v16,v0.t
+// vfncvt.xu.f.w v9,v17,v0.t
+// vfncvt.xu.f.w v10,v18,v0.t
+// vfncvt.xu.f.w v11,v19,v0.t
+// vfncvt.xu.f.w v12,v20,v0.t
+// vfncvt.xu.f.w v13,v21,v0.t
+// vfncvt.xu.f.w v14,v22,v0.t
+// vfncvt.xu.f.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.xu.f.w v8,v16,v0.t
+// vfncvt.xu.f.w v9,v17,v0.t
+// vfncvt.xu.f.w v10,v18,v0.t
+// vfncvt.xu.f.w v11,v19,v0.t
+// vfncvt.xu.f.w v12,v20,v0.t
+// vfncvt.xu.f.w v13,v21,v0.t
+// vfncvt.xu.f.w v14,v22,v0.t
+// vfncvt.xu.f.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtxfw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.x.f.w v8,v16
+// vfncvt.x.f.w v9,v17
+// vfncvt.x.f.w v10,v18
+// vfncvt.x.f.w v11,v19
+// vfncvt.x.f.w v12,v20
+// vfncvt.x.f.w v13,v21
+// vfncvt.x.f.w v14,v22
+// vfncvt.x.f.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.x.f.w v8,v16
+// vfncvt.x.f.w v9,v17
+// vfncvt.x.f.w v10,v18
+// vfncvt.x.f.w v11,v19
+// vfncvt.x.f.w v12,v20
+// vfncvt.x.f.w v13,v21
+// vfncvt.x.f.w v14,v22
+// vfncvt.x.f.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtxfwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.x.f.w v8,v16,v0.t
+// vfncvt.x.f.w v9,v17,v0.t
+// vfncvt.x.f.w v10,v18,v0.t
+// vfncvt.x.f.w v11,v19,v0.t
+// vfncvt.x.f.w v12,v20,v0.t
+// vfncvt.x.f.w v13,v21,v0.t
+// vfncvt.x.f.w v14,v22,v0.t
+// vfncvt.x.f.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.x.f.w v8,v16,v0.t
+// vfncvt.x.f.w v9,v17,v0.t
+// vfncvt.x.f.w v10,v18,v0.t
+// vfncvt.x.f.w v11,v19,v0.t
+// vfncvt.x.f.w v12,v20,v0.t
+// vfncvt.x.f.w v13,v21,v0.t
+// vfncvt.x.f.w v14,v22,v0.t
+// vfncvt.x.f.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtfxuw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.f.xu.w v8,v16
+// vfncvt.f.xu.w v9,v17
+// vfncvt.f.xu.w v10,v18
+// vfncvt.f.xu.w v11,v19
+// vfncvt.f.xu.w v12,v20
+// vfncvt.f.xu.w v13,v21
+// vfncvt.f.xu.w v14,v22
+// vfncvt.f.xu.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.f.xu.w v8,v16
+// vfncvt.f.xu.w v9,v17
+// vfncvt.f.xu.w v10,v18
+// vfncvt.f.xu.w v11,v19
+// vfncvt.f.xu.w v12,v20
+// vfncvt.f.xu.w v13,v21
+// vfncvt.f.xu.w v14,v22
+// vfncvt.f.xu.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtfxuwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.f.xu.w v8,v16,v0.t
+// vfncvt.f.xu.w v9,v17,v0.t
+// vfncvt.f.xu.w v10,v18,v0.t
+// vfncvt.f.xu.w v11,v19,v0.t
+// vfncvt.f.xu.w v12,v20,v0.t
+// vfncvt.f.xu.w v13,v21,v0.t
+// vfncvt.f.xu.w v14,v22,v0.t
+// vfncvt.f.xu.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.f.xu.w v8,v16,v0.t
+// vfncvt.f.xu.w v9,v17,v0.t
+// vfncvt.f.xu.w v10,v18,v0.t
+// vfncvt.f.xu.w v11,v19,v0.t
+// vfncvt.f.xu.w v12,v20,v0.t
+// vfncvt.f.xu.w v13,v21,v0.t
+// vfncvt.f.xu.w v14,v22,v0.t
+// vfncvt.f.xu.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtfxw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.f.x.w v8,v16
+// vfncvt.f.x.w v9,v17
+// vfncvt.f.x.w v10,v18
+// vfncvt.f.x.w v11,v19
+// vfncvt.f.x.w v12,v20
+// vfncvt.f.x.w v13,v21
+// vfncvt.f.x.w v14,v22
+// vfncvt.f.x.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.f.x.w v8,v16
+// vfncvt.f.x.w v9,v17
+// vfncvt.f.x.w v10,v18
+// vfncvt.f.x.w v11,v19
+// vfncvt.f.x.w v12,v20
+// vfncvt.f.x.w v13,v21
+// vfncvt.f.x.w v14,v22
+// vfncvt.f.x.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtfxwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.f.x.w v8,v16,v0.t
+// vfncvt.f.x.w v9,v17,v0.t
+// vfncvt.f.x.w v10,v18,v0.t
+// vfncvt.f.x.w v11,v19,v0.t
+// vfncvt.f.x.w v12,v20,v0.t
+// vfncvt.f.x.w v13,v21,v0.t
+// vfncvt.f.x.w v14,v22,v0.t
+// vfncvt.f.x.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.f.x.w v8,v16,v0.t
+// vfncvt.f.x.w v9,v17,v0.t
+// vfncvt.f.x.w v10,v18,v0.t
+// vfncvt.f.x.w v11,v19,v0.t
+// vfncvt.f.x.w v12,v20,v0.t
+// vfncvt.f.x.w v13,v21,v0.t
+// vfncvt.f.x.w v14,v22,v0.t
+// vfncvt.f.x.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtffw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.f.f.w v8,v16
+// vfncvt.f.f.w v9,v17
+// vfncvt.f.f.w v10,v18
+// vfncvt.f.f.w v11,v19
+// vfncvt.f.f.w v12,v20
+// vfncvt.f.f.w v13,v21
+// vfncvt.f.f.w v14,v22
+// vfncvt.f.f.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.f.f.w v8,v16
+// vfncvt.f.f.w v9,v17
+// vfncvt.f.f.w v10,v18
+// vfncvt.f.f.w v11,v19
+// vfncvt.f.f.w v12,v20
+// vfncvt.f.f.w v13,v21
+// vfncvt.f.f.w v14,v22
+// vfncvt.f.f.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtffwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.f.f.w v8,v16,v0.t
+// vfncvt.f.f.w v9,v17,v0.t
+// vfncvt.f.f.w v10,v18,v0.t
+// vfncvt.f.f.w v11,v19,v0.t
+// vfncvt.f.f.w v12,v20,v0.t
+// vfncvt.f.f.w v13,v21,v0.t
+// vfncvt.f.f.w v14,v22,v0.t
+// vfncvt.f.f.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.f.f.w v8,v16,v0.t
+// vfncvt.f.f.w v9,v17,v0.t
+// vfncvt.f.f.w v10,v18,v0.t
+// vfncvt.f.f.w v11,v19,v0.t
+// vfncvt.f.f.w v12,v20,v0.t
+// vfncvt.f.f.w v13,v21,v0.t
+// vfncvt.f.f.w v14,v22,v0.t
+// vfncvt.f.f.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtrtzxfw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.rtz.x.f.w v8,v16
+// vfncvt.rtz.x.f.w v9,v17
+// vfncvt.rtz.x.f.w v10,v18
+// vfncvt.rtz.x.f.w v11,v19
+// vfncvt.rtz.x.f.w v12,v20
+// vfncvt.rtz.x.f.w v13,v21
+// vfncvt.rtz.x.f.w v14,v22
+// vfncvt.rtz.x.f.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.rtz.x.f.w v8,v16
+// vfncvt.rtz.x.f.w v9,v17
+// vfncvt.rtz.x.f.w v10,v18
+// vfncvt.rtz.x.f.w v11,v19
+// vfncvt.rtz.x.f.w v12,v20
+// vfncvt.rtz.x.f.w v13,v21
+// vfncvt.rtz.x.f.w v14,v22
+// vfncvt.rtz.x.f.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtrtzxfwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.rtz.x.f.w v8,v16,v0.t
+// vfncvt.rtz.x.f.w v9,v17,v0.t
+// vfncvt.rtz.x.f.w v10,v18,v0.t
+// vfncvt.rtz.x.f.w v11,v19,v0.t
+// vfncvt.rtz.x.f.w v12,v20,v0.t
+// vfncvt.rtz.x.f.w v13,v21,v0.t
+// vfncvt.rtz.x.f.w v14,v22,v0.t
+// vfncvt.rtz.x.f.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.rtz.x.f.w v8,v16,v0.t
+// vfncvt.rtz.x.f.w v9,v17,v0.t
+// vfncvt.rtz.x.f.w v10,v18,v0.t
+// vfncvt.rtz.x.f.w v11,v19,v0.t
+// vfncvt.rtz.x.f.w v12,v20,v0.t
+// vfncvt.rtz.x.f.w v13,v21,v0.t
+// vfncvt.rtz.x.f.w v14,v22,v0.t
+// vfncvt.rtz.x.f.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtrtzxufw_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.rtz.xu.f.w v8,v16
+// vfncvt.rtz.xu.f.w v9,v17
+// vfncvt.rtz.xu.f.w v10,v18
+// vfncvt.rtz.xu.f.w v11,v19
+// vfncvt.rtz.xu.f.w v12,v20
+// vfncvt.rtz.xu.f.w v13,v21
+// vfncvt.rtz.xu.f.w v14,v22
+// vfncvt.rtz.xu.f.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.rtz.xu.f.w v8,v16
+// vfncvt.rtz.xu.f.w v9,v17
+// vfncvt.rtz.xu.f.w v10,v18
+// vfncvt.rtz.xu.f.w v11,v19
+// vfncvt.rtz.xu.f.w v12,v20
+// vfncvt.rtz.xu.f.w v13,v21
+// vfncvt.rtz.xu.f.w v14,v22
+// vfncvt.rtz.xu.f.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvtrtzxufwm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.rtz.xu.f.w v8,v16,v0.t
+// vfncvt.rtz.xu.f.w v9,v17,v0.t
+// vfncvt.rtz.xu.f.w v10,v18,v0.t
+// vfncvt.rtz.xu.f.w v11,v19,v0.t
+// vfncvt.rtz.xu.f.w v12,v20,v0.t
+// vfncvt.rtz.xu.f.w v13,v21,v0.t
+// vfncvt.rtz.xu.f.w v14,v22,v0.t
+// vfncvt.rtz.xu.f.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.rtz.xu.f.w v8,v16,v0.t
+// vfncvt.rtz.xu.f.w v9,v17,v0.t
+// vfncvt.rtz.xu.f.w v10,v18,v0.t
+// vfncvt.rtz.xu.f.w v11,v19,v0.t
+// vfncvt.rtz.xu.f.w v12,v20,v0.t
+// vfncvt.rtz.xu.f.w v13,v21,v0.t
+// vfncvt.rtz.xu.f.w v14,v22,v0.t
+// vfncvt.rtz.xu.f.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvt.rod.f.f.w_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.rod.f.f.w v8,v16
+// vfncvt.rod.f.f.w v9,v17
+// vfncvt.rod.f.f.w v10,v18
+// vfncvt.rod.f.f.w v11,v19
+// vfncvt.rod.f.f.w v12,v20
+// vfncvt.rod.f.f.w v13,v21
+// vfncvt.rod.f.f.w v14,v22
+// vfncvt.rod.f.f.w v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.rod.f.f.w v8,v16
+// vfncvt.rod.f.f.w v9,v17
+// vfncvt.rod.f.f.w v10,v18
+// vfncvt.rod.f.f.w v11,v19
+// vfncvt.rod.f.f.w v12,v20
+// vfncvt.rod.f.f.w v13,v21
+// vfncvt.rod.f.f.w v14,v22
+// vfncvt.rod.f.f.w v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfncvt.rod.f.f.wm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfncvt.rod.f.f.w v8,v16,v0.t
+// vfncvt.rod.f.f.w v9,v17,v0.t
+// vfncvt.rod.f.f.w v10,v18,v0.t
+// vfncvt.rod.f.f.w v11,v19,v0.t
+// vfncvt.rod.f.f.w v12,v20,v0.t
+// vfncvt.rod.f.f.w v13,v21,v0.t
+// vfncvt.rod.f.f.w v14,v22,v0.t
+// vfncvt.rod.f.f.w v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfncvt.rod.f.f.w v8,v16,v0.t
+// vfncvt.rod.f.f.w v9,v17,v0.t
+// vfncvt.rod.f.f.w v10,v18,v0.t
+// vfncvt.rod.f.f.w v11,v19,v0.t
+// vfncvt.rod.f.f.w v12,v20,v0.t
+// vfncvt.rod.f.f.w v13,v21,v0.t
+// vfncvt.rod.f.f.w v14,v22,v0.t
+// vfncvt.rod.f.f.w v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+//
+// bench_vfsqrtv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfsqrt.v v8,v16
+// vfsqrt.v v9,v17
+// vfsqrt.v v10,v18
+// vfsqrt.v v11,v19
+// vfsqrt.v v12,v20
+// vfsqrt.v v13,v21
+// vfsqrt.v v14,v22
+// vfsqrt.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfsqrt.v v8,v16
+// vfsqrt.v v9,v17
+// vfsqrt.v v10,v18
+// vfsqrt.v v11,v19
+// vfsqrt.v v12,v20
+// vfsqrt.v v13,v21
+// vfsqrt.v v14,v22
+// vfsqrt.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfsqrtvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfsqrt.v v8,v16,v0.t
+// vfsqrt.v v9,v17,v0.t
+// vfsqrt.v v10,v18,v0.t
+// vfsqrt.v v11,v19,v0.t
+// vfsqrt.v v12,v20,v0.t
+// vfsqrt.v v13,v21,v0.t
+// vfsqrt.v v14,v22,v0.t
+// vfsqrt.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfsqrt.v v8,v16,v0.t
+// vfsqrt.v v9,v17,v0.t
+// vfsqrt.v v10,v18,v0.t
+// vfsqrt.v v11,v19,v0.t
+// vfsqrt.v v12,v20,v0.t
+// vfsqrt.v v13,v21,v0.t
+// vfsqrt.v v14,v22,v0.t
+// vfsqrt.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfrsqrt7v_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfrsqrt7.v v8,v16
+// vfrsqrt7.v v9,v17
+// vfrsqrt7.v v10,v18
+// vfrsqrt7.v v11,v19
+// vfrsqrt7.v v12,v20
+// vfrsqrt7.v v13,v21
+// vfrsqrt7.v v14,v22
+// vfrsqrt7.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfrsqrt7.v v8,v16
+// vfrsqrt7.v v9,v17
+// vfrsqrt7.v v10,v18
+// vfrsqrt7.v v11,v19
+// vfrsqrt7.v v12,v20
+// vfrsqrt7.v v13,v21
+// vfrsqrt7.v v14,v22
+// vfrsqrt7.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfrsqrt7vm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfrsqrt7.v v8,v16,v0.t
+// vfrsqrt7.v v9,v17,v0.t
+// vfrsqrt7.v v10,v18,v0.t
+// vfrsqrt7.v v11,v19,v0.t
+// vfrsqrt7.v v12,v20,v0.t
+// vfrsqrt7.v v13,v21,v0.t
+// vfrsqrt7.v v14,v22,v0.t
+// vfrsqrt7.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfrsqrt7.v v8,v16,v0.t
+// vfrsqrt7.v v9,v17,v0.t
+// vfrsqrt7.v v10,v18,v0.t
+// vfrsqrt7.v v11,v19,v0.t
+// vfrsqrt7.v v12,v20,v0.t
+// vfrsqrt7.v v13,v21,v0.t
+// vfrsqrt7.v v14,v22,v0.t
+// vfrsqrt7.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfrec7v_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfrec7.v v8,v16
+// vfrec7.v v9,v17
+// vfrec7.v v10,v18
+// vfrec7.v v11,v19
+// vfrec7.v v12,v20
+// vfrec7.v v13,v21
+// vfrec7.v v14,v22
+// vfrec7.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfrec7.v v8,v16
+// vfrec7.v v9,v17
+// vfrec7.v v10,v18
+// vfrec7.v v11,v19
+// vfrec7.v v12,v20
+// vfrec7.v v13,v21
+// vfrec7.v v14,v22
+// vfrec7.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfrec7vm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfrec7.v v8,v16,v0.t
+// vfrec7.v v9,v17,v0.t
+// vfrec7.v v10,v18,v0.t
+// vfrec7.v v11,v19,v0.t
+// vfrec7.v v12,v20,v0.t
+// vfrec7.v v13,v21,v0.t
+// vfrec7.v v14,v22,v0.t
+// vfrec7.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfrec7.v v8,v16,v0.t
+// vfrec7.v v9,v17,v0.t
+// vfrec7.v v10,v18,v0.t
+// vfrec7.v v11,v19,v0.t
+// vfrec7.v v12,v20,v0.t
+// vfrec7.v v13,v21,v0.t
+// vfrec7.v v14,v22,v0.t
+// vfrec7.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfclassv_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfclass.v v8,v16
+// vfclass.v v9,v17
+// vfclass.v v10,v18
+// vfclass.v v11,v19
+// vfclass.v v12,v20
+// vfclass.v v13,v21
+// vfclass.v v14,v22
+// vfclass.v v15,v23
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfclass.v v8,v16
+// vfclass.v v9,v17
+// vfclass.v v10,v18
+// vfclass.v v11,v19
+// vfclass.v v12,v20
+// vfclass.v v13,v21
+// vfclass.v v14,v22
+// vfclass.v v15,v23
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+//
+//
+// bench_vfclassvm_m1:
+// 	m_nop
+// 	li a0, WARMUP
+// 1:
+// vfclass.v v8,v16,v0.t
+// vfclass.v v9,v17,v0.t
+// vfclass.v v10,v18,v0.t
+// vfclass.v v11,v19,v0.t
+// vfclass.v v12,v20,v0.t
+// vfclass.v v13,v21,v0.t
+// vfclass.v v14,v22,v0.t
+// vfclass.v v15,v23,v0.t
+//
+//
+//
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a3, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a3, mcycle
+// #else
+// 	csrr a3, cycle
+// #endif
+// 	li a0, LOOP
+// 1:
+// .rept UNROLL
+// vfclass.v v8,v16,v0.t
+// vfclass.v v9,v17,v0.t
+// vfclass.v v10,v18,v0.t
+// vfclass.v v11,v19,v0.t
+// vfclass.v v12,v20,v0.t
+// vfclass.v v13,v21,v0.t
+// vfclass.v v14,v22,v0.t
+// vfclass.v v15,v23,v0.t
+//
+//
+//
+// .endr
+// 	addi a0, a0, -1
+// 	bnez a0, 1b
+// 	fence.i
+// #if defined(USE_PERF_EVENT_SLOW)
+// 	ld a0, nolibc_perf_event_fd
+// 	la a1, u64_cycle
+// 	li a2, 8
+// 	li a7, 63
+// 	ecall # clobbers vregs and vtype
+// 	ld a0, u64_cycle
+// 	vsetvl VL, VL, s2
+// 	bnez VL, 2f
+// 	vsetvl VL, x0, s2
+// 	2:
+// #elif defined(READ_MCYCLE)
+// 	csrr a0, mcycle
+// #else
+// 	csrr a0, cycle
+// #endif
+// 	sub a0, a0, a3
+// ret
+
+
+
+bench_vmsbfm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -46924,10 +46924,10 @@ vmsbf.m v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbfmm_m1:	
+
+bench_vmsbfmm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -46995,10 +46995,10 @@ vmsbf.m v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofm_m1:	
+
+bench_vmsofm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -47066,10 +47066,10 @@ vmsof.m v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofmm_m1:	
+
+bench_vmsofmm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -47137,10 +47137,10 @@ vmsof.m v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifm_m1:	
+
+bench_vmsifm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -47208,10 +47208,10 @@ vmsif.m v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifmm_m1:	
+
+bench_vmsifmm_m1:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -47279,10 +47279,10 @@ vmsif.m v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotam_m1:	
+
+bench_viotam_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47350,10 +47350,10 @@ viota.m v15,v23
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotamm_m1:	
+
+bench_viotamm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47421,10 +47421,10 @@ viota.m v15,v23,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidv_m1:	
+
+bench_vidv_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47492,10 +47492,10 @@ vid.v v15
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidvm_m1:	
+
+bench_vidvm_m1:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47563,14 +47563,14 @@ vid.v v15,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
 
 
 
-	
-bench_add_m2:	
+
+bench_add_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47638,10 +47638,10 @@ add t6,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_mul_m2:	
+
+bench_mul_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47709,10 +47709,10 @@ mul t6,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvv_m2:	
+
+bench_vaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47780,10 +47780,10 @@ vadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvvm_m2:	
+
+bench_vaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47851,10 +47851,10 @@ vadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvx_m2:	
+
+bench_vaddvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47922,10 +47922,10 @@ vadd.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvxm_m2:	
+
+bench_vaddvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -47993,10 +47993,10 @@ vadd.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvi_m2:	
+
+bench_vaddvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48064,10 +48064,10 @@ vadd.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvim_m2:	
+
+bench_vaddvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48135,10 +48135,10 @@ vadd.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvv_m2:	
+
+bench_vsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48206,10 +48206,10 @@ vsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvvm_m2:	
+
+bench_vsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48277,10 +48277,10 @@ vsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvx_m2:	
+
+bench_vsubvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48348,10 +48348,10 @@ vsub.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvxm_m2:	
+
+bench_vsubvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48419,10 +48419,10 @@ vsub.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvx_m2:	
+
+bench_vrsubvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48490,10 +48490,10 @@ vrsub.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvxm_m2:	
+
+bench_vrsubvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48561,10 +48561,10 @@ vrsub.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvi_m2:	
+
+bench_vrsubvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48632,10 +48632,10 @@ vrsub.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvim_m2:	
+
+bench_vrsubvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48703,10 +48703,10 @@ vrsub.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvv_m2:	
+
+bench_vminuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48774,10 +48774,10 @@ vminu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvvm_m2:	
+
+bench_vminuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48845,10 +48845,10 @@ vminu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvx_m2:	
+
+bench_vminuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48916,10 +48916,10 @@ vminu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvxm_m2:	
+
+bench_vminuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -48987,10 +48987,10 @@ vminu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvv_m2:	
+
+bench_vminvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49058,10 +49058,10 @@ vmin.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvvm_m2:	
+
+bench_vminvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49129,10 +49129,10 @@ vmin.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvx_m2:	
+
+bench_vminvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49200,10 +49200,10 @@ vmin.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvxm_m2:	
+
+bench_vminvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49271,10 +49271,10 @@ vmin.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvv_m2:	
+
+bench_vmaxuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49342,10 +49342,10 @@ vmaxu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvvm_m2:	
+
+bench_vmaxuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49413,10 +49413,10 @@ vmaxu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvx_m2:	
+
+bench_vmaxuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49484,10 +49484,10 @@ vmaxu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvxm_m2:	
+
+bench_vmaxuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49555,10 +49555,10 @@ vmaxu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvv_m2:	
+
+bench_vmaxvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49626,10 +49626,10 @@ vmax.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvvm_m2:	
+
+bench_vmaxvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49697,10 +49697,10 @@ vmax.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvx_m2:	
+
+bench_vmaxvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49768,10 +49768,10 @@ vmax.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvxm_m2:	
+
+bench_vmaxvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49839,10 +49839,10 @@ vmax.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvv_m2:	
+
+bench_vandvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49910,10 +49910,10 @@ vand.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvvm_m2:	
+
+bench_vandvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -49981,10 +49981,10 @@ vand.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvx_m2:	
+
+bench_vandvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50052,10 +50052,10 @@ vand.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvxm_m2:	
+
+bench_vandvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50123,10 +50123,10 @@ vand.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvi_m2:	
+
+bench_vandvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50194,10 +50194,10 @@ vand.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvim_m2:	
+
+bench_vandvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50265,10 +50265,10 @@ vand.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvv_m2:	
+
+bench_vorvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50336,10 +50336,10 @@ vor.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvvm_m2:	
+
+bench_vorvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50407,10 +50407,10 @@ vor.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvx_m2:	
+
+bench_vorvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50478,10 +50478,10 @@ vor.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvxm_m2:	
+
+bench_vorvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50549,10 +50549,10 @@ vor.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvi_m2:	
+
+bench_vorvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50620,10 +50620,10 @@ vor.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvim_m2:	
+
+bench_vorvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50691,10 +50691,10 @@ vor.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvv_m2:	
+
+bench_vxorvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50762,10 +50762,10 @@ vxor.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvvm_m2:	
+
+bench_vxorvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50833,10 +50833,10 @@ vxor.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvx_m2:	
+
+bench_vxorvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50904,10 +50904,10 @@ vxor.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvxm_m2:	
+
+bench_vxorvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -50975,10 +50975,10 @@ vxor.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvi_m2:	
+
+bench_vxorvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -51046,10 +51046,10 @@ vxor.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvim_m2:	
+
+bench_vxorvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -51117,11 +51117,11 @@ vxor.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vrgathervv_m2:	
+
+bench_vrgathervv_m2:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -51189,10 +51189,10 @@ vrgather.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervvm_m2:	
+
+bench_vrgathervvm_m2:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -51260,10 +51260,10 @@ vrgather.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervx_m2:	
+
+bench_vrgathervx_m2:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -51331,10 +51331,10 @@ vrgather.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervxm_m2:	
+
+bench_vrgathervxm_m2:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -51402,10 +51402,10 @@ vrgather.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervi_m2:	
+
+bench_vrgathervi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -51473,10 +51473,10 @@ vrgather.vi v14,v22,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervim_m2:	
+
+bench_vrgathervim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -51544,10 +51544,10 @@ vrgather.vi v14,v22,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvx_m2:	
+
+bench_vslideupvx_m2:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -51615,10 +51615,10 @@ vslideup.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvxm_m2:	
+
+bench_vslideupvxm_m2:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -51686,10 +51686,10 @@ vslideup.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvi_m2:	
+
+bench_vslideupvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -51757,10 +51757,10 @@ vslideup.vi v14,v22,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvim_m2:	
+
+bench_vslideupvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -51828,10 +51828,10 @@ vslideup.vi v14,v22,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vv_m2:	
+
+bench_vrgatherei16vv_m2:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -51899,10 +51899,10 @@ vrgatherei16.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vvm_m2:	
+
+bench_vrgatherei16vvm_m2:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -51970,11 +51970,11 @@ vrgatherei16.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslidedownvx_m2:	
+
+bench_vslidedownvx_m2:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -52042,10 +52042,10 @@ vslidedown.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvxm_m2:	
+
+bench_vslidedownvxm_m2:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -52113,10 +52113,10 @@ vslidedown.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvi_m2:	
+
+bench_vslidedownvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52184,10 +52184,10 @@ vslidedown.vi v14,v22,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvim_m2:	
+
+bench_vslidedownvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52255,11 +52255,11 @@ vslidedown.vi v14,v22,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vredsumvs_m2:	
+
+bench_vredsumvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52327,10 +52327,10 @@ vredsum.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredsumvsm_m2:	
+
+bench_vredsumvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52398,10 +52398,10 @@ vredsum.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvs_m2:	
+
+bench_vredandvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52469,10 +52469,10 @@ vredand.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvsm_m2:	
+
+bench_vredandvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52540,10 +52540,10 @@ vredand.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvs_m2:	
+
+bench_vredorvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52611,10 +52611,10 @@ vredor.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvsm_m2:	
+
+bench_vredorvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52682,10 +52682,10 @@ vredor.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvs_m2:	
+
+bench_vredxorvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52753,10 +52753,10 @@ vredxor.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvsm_m2:	
+
+bench_vredxorvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52824,10 +52824,10 @@ vredxor.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvs_m2:	
+
+bench_vredminuvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52895,10 +52895,10 @@ vredminu.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvsm_m2:	
+
+bench_vredminuvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -52966,10 +52966,10 @@ vredminu.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvs_m2:	
+
+bench_vredminvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53037,10 +53037,10 @@ vredmin.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvsm_m2:	
+
+bench_vredminvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53108,10 +53108,10 @@ vredmin.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvs_m2:	
+
+bench_vredmaxuvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53179,10 +53179,10 @@ vredmaxu.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvsm_m2:	
+
+bench_vredmaxuvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53250,10 +53250,10 @@ vredmaxu.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvs_m2:	
+
+bench_vredmaxvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53321,10 +53321,10 @@ vredmax.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvsm_m2:	
+
+bench_vredmaxvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53392,11 +53392,11 @@ vredmax.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vaadduvv_m2:	
+
+bench_vaadduvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53464,10 +53464,10 @@ vaaddu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvvm_m2:	
+
+bench_vaadduvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53535,10 +53535,10 @@ vaaddu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvx_m2:	
+
+bench_vaadduvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53606,10 +53606,10 @@ vaaddu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvxm_m2:	
+
+bench_vaadduvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53677,10 +53677,10 @@ vaaddu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvv_m2:	
+
+bench_vaaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53748,10 +53748,10 @@ vaadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvvm_m2:	
+
+bench_vaaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53819,10 +53819,10 @@ vaadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvx_m2:	
+
+bench_vaaddvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53890,10 +53890,10 @@ vaadd.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvxm_m2:	
+
+bench_vaaddvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -53961,10 +53961,10 @@ vaadd.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvv_m2:	
+
+bench_vasubuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54032,10 +54032,10 @@ vasubu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvvm_m2:	
+
+bench_vasubuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54103,10 +54103,10 @@ vasubu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvx_m2:	
+
+bench_vasubuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54174,10 +54174,10 @@ vasubu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvxm_m2:	
+
+bench_vasubuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54245,10 +54245,10 @@ vasubu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvv_m2:	
+
+bench_vasubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54316,10 +54316,10 @@ vasub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvvm_m2:	
+
+bench_vasubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54387,10 +54387,10 @@ vasub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvx_m2:	
+
+bench_vasubvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54458,10 +54458,10 @@ vasub.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvxm_m2:	
+
+bench_vasubvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54529,11 +54529,11 @@ vasub.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslide1upvx_m2:	
+
+bench_vslide1upvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54601,10 +54601,10 @@ vslide1up.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1upvxm_m2:	
+
+bench_vslide1upvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54672,10 +54672,10 @@ vslide1up.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvx_m2:	
+
+bench_vslide1downvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54743,10 +54743,10 @@ vslide1down.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvxm_m2:	
+
+bench_vslide1downvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54814,11 +54814,11 @@ vslide1down.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vadcvvm_m2:	
+
+bench_vadcvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54886,10 +54886,10 @@ vadc.vvm v14,v22,v30,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvxm_m2:	
+
+bench_vadcvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -54957,10 +54957,10 @@ vadc.vxm v14,v22,t6,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvim_m2:	
+
+bench_vadcvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55028,10 +55028,10 @@ vadc.vim v14,v22,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvvm_m2:	
+
+bench_vmadcvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55099,10 +55099,10 @@ vmadc.vvm v14,v22,v30,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvxm_m2:	
+
+bench_vmadcvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55170,10 +55170,10 @@ vmadc.vxm v14,v22,t6,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvim_m2:	
+
+bench_vmadcvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55241,10 +55241,10 @@ vmadc.vim v14,v22,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvv_m2:	
+
+bench_vmadcvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55312,10 +55312,10 @@ vmadc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvx_m2:	
+
+bench_vmadcvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55383,10 +55383,10 @@ vmadc.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvi_m2:	
+
+bench_vmadcvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55454,10 +55454,10 @@ vmadc.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsbcvvm_m2:	
+
+bench_vsbcvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55525,10 +55525,10 @@ vsbc.vvm v14,v22,v30,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vsbcvxm_m2:	
+
+bench_vsbcvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55596,10 +55596,10 @@ vsbc.vxm v14,v22,t6,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvvm_m2:	
+
+bench_vmsbcvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55667,10 +55667,10 @@ vmsbc.vvm v14,v22,v30,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmsbcvxm_m2:	
+
+bench_vmsbcvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55738,10 +55738,10 @@ vmsbc.vxm v14,v22,t6,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvv_m2:	
+
+bench_vmsbcvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55809,10 +55809,10 @@ vmsbc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvx_m2:	
+
+bench_vmsbcvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55880,11 +55880,11 @@ vmsbc.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmergevvm_m2:	
+
+bench_vmergevvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -55952,10 +55952,10 @@ vmerge.vvm v14,v22,v30,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevxm_m2:	
+
+bench_vmergevxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56023,10 +56023,10 @@ vmerge.vxm v14,v22,t6,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevim_m2:	
+
+bench_vmergevim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56094,10 +56094,10 @@ vmerge.vim v14,v22,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvv_m2:	
+
+bench_vmvvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56165,10 +56165,10 @@ vmv.v.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvx_m2:	
+
+bench_vmvvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56236,10 +56236,10 @@ vmv.v.x v14,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvi_m2:	
+
+bench_vmvvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56307,10 +56307,10 @@ vmv.v.i v14,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvv_m2:	
+
+bench_vmseqvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56378,10 +56378,10 @@ vmseq.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvvm_m2:	
+
+bench_vmseqvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56449,10 +56449,10 @@ vmseq.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvx_m2:	
+
+bench_vmseqvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56520,10 +56520,10 @@ vmseq.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvxm_m2:	
+
+bench_vmseqvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56591,10 +56591,10 @@ vmseq.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvi_m2:	
+
+bench_vmseqvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56662,10 +56662,10 @@ vmseq.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvim_m2:	
+
+bench_vmseqvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56733,10 +56733,10 @@ vmseq.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevv_m2:	
+
+bench_vmsnevv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56804,10 +56804,10 @@ vmsne.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevvm_m2:	
+
+bench_vmsnevvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56875,10 +56875,10 @@ vmsne.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevx_m2:	
+
+bench_vmsnevx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -56946,10 +56946,10 @@ vmsne.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevxm_m2:	
+
+bench_vmsnevxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57017,10 +57017,10 @@ vmsne.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevi_m2:	
+
+bench_vmsnevi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57088,10 +57088,10 @@ vmsne.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevim_m2:	
+
+bench_vmsnevim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57159,10 +57159,10 @@ vmsne.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvv_m2:	
+
+bench_vmsltuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57230,10 +57230,10 @@ vmsltu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvvm_m2:	
+
+bench_vmsltuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57301,10 +57301,10 @@ vmsltu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvx_m2:	
+
+bench_vmsltuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57372,10 +57372,10 @@ vmsltu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvxm_m2:	
+
+bench_vmsltuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57443,10 +57443,10 @@ vmsltu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvv_m2:	
+
+bench_vmsltvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57514,10 +57514,10 @@ vmslt.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvvm_m2:	
+
+bench_vmsltvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57585,10 +57585,10 @@ vmslt.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvx_m2:	
+
+bench_vmsltvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57656,10 +57656,10 @@ vmslt.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvxm_m2:	
+
+bench_vmsltvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57727,10 +57727,10 @@ vmslt.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvv_m2:	
+
+bench_vmsleuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57798,10 +57798,10 @@ vmsleu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvvm_m2:	
+
+bench_vmsleuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57869,10 +57869,10 @@ vmsleu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvx_m2:	
+
+bench_vmsleuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -57940,10 +57940,10 @@ vmsleu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvxm_m2:	
+
+bench_vmsleuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58011,10 +58011,10 @@ vmsleu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvi_m2:	
+
+bench_vmsleuvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58082,10 +58082,10 @@ vmsleu.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvim_m2:	
+
+bench_vmsleuvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58153,10 +58153,10 @@ vmsleu.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevv_m2:	
+
+bench_vmslevv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58224,10 +58224,10 @@ vmsle.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevvm_m2:	
+
+bench_vmslevvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58295,10 +58295,10 @@ vmsle.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevx_m2:	
+
+bench_vmslevx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58366,10 +58366,10 @@ vmsle.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevxm_m2:	
+
+bench_vmslevxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58437,10 +58437,10 @@ vmsle.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevi_m2:	
+
+bench_vmslevi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58508,10 +58508,10 @@ vmsle.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevim_m2:	
+
+bench_vmslevim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58579,10 +58579,10 @@ vmsle.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvx_m2:	
+
+bench_vmsgtuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58650,10 +58650,10 @@ vmsgtu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvxm_m2:	
+
+bench_vmsgtuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58721,10 +58721,10 @@ vmsgtu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvi_m2:	
+
+bench_vmsgtuvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58792,10 +58792,10 @@ vmsgtu.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvim_m2:	
+
+bench_vmsgtuvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58863,10 +58863,10 @@ vmsgtu.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvx_m2:	
+
+bench_vmsgtvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -58934,10 +58934,10 @@ vmsgt.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvxm_m2:	
+
+bench_vmsgtvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59005,10 +59005,10 @@ vmsgt.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvi_m2:	
+
+bench_vmsgtvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59076,10 +59076,10 @@ vmsgt.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvim_m2:	
+
+bench_vmsgtvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59147,11 +59147,11 @@ vmsgt.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcompressvm_m2:	
+
+bench_vcompressvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59219,11 +59219,11 @@ vcompress.vm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmandnmm_m2:	
+
+bench_vmandnmm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59291,10 +59291,10 @@ vmandn.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmandmm_m2:	
+
+bench_vmandmm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59362,10 +59362,10 @@ vmand.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmormm_m2:	
+
+bench_vmormm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59433,10 +59433,10 @@ vmor.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxormm_m2:	
+
+bench_vmxormm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59504,10 +59504,10 @@ vmxor.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmornmm_m2:	
+
+bench_vmornmm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59575,10 +59575,10 @@ vmorn.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnandmm_m2:	
+
+bench_vmnandmm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59646,10 +59646,10 @@ vmnand.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnormm_m2:	
+
+bench_vmnormm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59717,10 +59717,10 @@ vmnor.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxnormm_m2:	
+
+bench_vmxnormm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59788,11 +59788,11 @@ vmxnor.mm v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vsadduvv_m2:	
+
+bench_vsadduvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59860,10 +59860,10 @@ vsaddu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvvm_m2:	
+
+bench_vsadduvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -59931,10 +59931,10 @@ vsaddu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvx_m2:	
+
+bench_vsadduvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60002,10 +60002,10 @@ vsaddu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvxm_m2:	
+
+bench_vsadduvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60073,10 +60073,10 @@ vsaddu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvi_m2:	
+
+bench_vsadduvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60144,10 +60144,10 @@ vsaddu.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvim_m2:	
+
+bench_vsadduvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60215,10 +60215,10 @@ vsaddu.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvv_m2:	
+
+bench_vsaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60286,10 +60286,10 @@ vsadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvvm_m2:	
+
+bench_vsaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60357,10 +60357,10 @@ vsadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvx_m2:	
+
+bench_vsaddvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60428,10 +60428,10 @@ vsadd.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvxm_m2:	
+
+bench_vsaddvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60499,10 +60499,10 @@ vsadd.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvi_m2:	
+
+bench_vsaddvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60570,10 +60570,10 @@ vsadd.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvim_m2:	
+
+bench_vsaddvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60641,10 +60641,10 @@ vsadd.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvv_m2:	
+
+bench_vssubuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60712,10 +60712,10 @@ vssubu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvvm_m2:	
+
+bench_vssubuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60783,10 +60783,10 @@ vssubu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvx_m2:	
+
+bench_vssubuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60854,10 +60854,10 @@ vssubu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvxm_m2:	
+
+bench_vssubuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60925,10 +60925,10 @@ vssubu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvv_m2:	
+
+bench_vssubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -60996,10 +60996,10 @@ vssub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvvm_m2:	
+
+bench_vssubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61067,10 +61067,10 @@ vssub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvx_m2:	
+
+bench_vssubvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61138,10 +61138,10 @@ vssub.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvxm_m2:	
+
+bench_vssubvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61209,10 +61209,10 @@ vssub.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvv_m2:	
+
+bench_vsllvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61280,10 +61280,10 @@ vsll.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvvm_m2:	
+
+bench_vsllvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61351,10 +61351,10 @@ vsll.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvx_m2:	
+
+bench_vsllvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61422,10 +61422,10 @@ vsll.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvxm_m2:	
+
+bench_vsllvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61493,10 +61493,10 @@ vsll.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvi_m2:	
+
+bench_vsllvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61564,10 +61564,10 @@ vsll.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvim_m2:	
+
+bench_vsllvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61635,10 +61635,10 @@ vsll.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvv_m2:	
+
+bench_vsmulvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61706,10 +61706,10 @@ vsmul.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvvm_m2:	
+
+bench_vsmulvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61777,10 +61777,10 @@ vsmul.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvx_m2:	
+
+bench_vsmulvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61848,10 +61848,10 @@ vsmul.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvxm_m2:	
+
+bench_vsmulvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61919,10 +61919,10 @@ vsmul.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv1rv_m2:	
+
+bench_vmv1rv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -61990,10 +61990,10 @@ vmv1r.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv2rv_m2:	
+
+bench_vmv2rv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62061,22 +62061,22 @@ vmv2r.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv4rv_m2:	
+
+bench_vmv4rv_m2:
 	m_nop
 	li a0, WARMUP
 1:
 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 	addi a0, a0, -1
@@ -62101,14 +62101,14 @@ m_unimpl
 1:
 .rept UNROLL
 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 .endr
@@ -62132,22 +62132,22 @@ m_unimpl
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv8rv_m2:	
+
+bench_vmv8rv_m2:
 	m_nop
 	li a0, WARMUP
 1:
 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 	addi a0, a0, -1
@@ -62172,14 +62172,14 @@ m_unimpl
 1:
 .rept UNROLL
 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 
 .endr
@@ -62203,10 +62203,10 @@ m_unimpl
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvv_m2:	
+
+bench_vsrlvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62274,10 +62274,10 @@ vsrl.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvvm_m2:	
+
+bench_vsrlvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62345,10 +62345,10 @@ vsrl.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvx_m2:	
+
+bench_vsrlvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62416,10 +62416,10 @@ vsrl.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvxm_m2:	
+
+bench_vsrlvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62487,10 +62487,10 @@ vsrl.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvi_m2:	
+
+bench_vsrlvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62558,10 +62558,10 @@ vsrl.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvim_m2:	
+
+bench_vsrlvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62629,10 +62629,10 @@ vsrl.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravv_m2:	
+
+bench_vsravv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62700,10 +62700,10 @@ vsra.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravvm_m2:	
+
+bench_vsravvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62771,10 +62771,10 @@ vsra.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravx_m2:	
+
+bench_vsravx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62842,10 +62842,10 @@ vsra.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravxm_m2:	
+
+bench_vsravxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62913,10 +62913,10 @@ vsra.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravi_m2:	
+
+bench_vsravi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -62984,10 +62984,10 @@ vsra.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravim_m2:	
+
+bench_vsravim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63055,10 +63055,10 @@ vsra.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvv_m2:	
+
+bench_vssrlvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63126,10 +63126,10 @@ vssrl.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvvm_m2:	
+
+bench_vssrlvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63197,10 +63197,10 @@ vssrl.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvx_m2:	
+
+bench_vssrlvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63268,10 +63268,10 @@ vssrl.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvxm_m2:	
+
+bench_vssrlvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63339,10 +63339,10 @@ vssrl.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvi_m2:	
+
+bench_vssrlvi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63410,10 +63410,10 @@ vssrl.vi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvim_m2:	
+
+bench_vssrlvim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63481,11 +63481,11 @@ vssrl.vi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vdivuvv_m2:	
+
+bench_vdivuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63553,10 +63553,10 @@ vdivu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvvm_m2:	
+
+bench_vdivuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63624,10 +63624,10 @@ vdivu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvx_m2:	
+
+bench_vdivuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63695,10 +63695,10 @@ vdivu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvxm_m2:	
+
+bench_vdivuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63766,10 +63766,10 @@ vdivu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvv_m2:	
+
+bench_vdivvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63837,10 +63837,10 @@ vdiv.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvvm_m2:	
+
+bench_vdivvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63908,10 +63908,10 @@ vdiv.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvx_m2:	
+
+bench_vdivvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -63979,10 +63979,10 @@ vdiv.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvxm_m2:	
+
+bench_vdivvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64050,10 +64050,10 @@ vdiv.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvv_m2:	
+
+bench_vremuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64121,10 +64121,10 @@ vremu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvvm_m2:	
+
+bench_vremuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64192,10 +64192,10 @@ vremu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvx_m2:	
+
+bench_vremuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64263,10 +64263,10 @@ vremu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvxm_m2:	
+
+bench_vremuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64334,10 +64334,10 @@ vremu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvv_m2:	
+
+bench_vremvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64405,10 +64405,10 @@ vrem.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvvm_m2:	
+
+bench_vremvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64476,10 +64476,10 @@ vrem.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvx_m2:	
+
+bench_vremvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64547,10 +64547,10 @@ vrem.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvxm_m2:	
+
+bench_vremvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64618,10 +64618,10 @@ vrem.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvv_m2:	
+
+bench_vmulhuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64689,10 +64689,10 @@ vmulhu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvvm_m2:	
+
+bench_vmulhuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64760,10 +64760,10 @@ vmulhu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvx_m2:	
+
+bench_vmulhuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64831,10 +64831,10 @@ vmulhu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvxm_m2:	
+
+bench_vmulhuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64902,10 +64902,10 @@ vmulhu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvv_m2:	
+
+bench_vmulvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -64973,10 +64973,10 @@ vmul.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvvm_m2:	
+
+bench_vmulvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65044,10 +65044,10 @@ vmul.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvx_m2:	
+
+bench_vmulvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65115,10 +65115,10 @@ vmul.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvxm_m2:	
+
+bench_vmulvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65186,10 +65186,10 @@ vmul.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvv_m2:	
+
+bench_vmulhsuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65257,10 +65257,10 @@ vmulhsu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvvm_m2:	
+
+bench_vmulhsuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65328,10 +65328,10 @@ vmulhsu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvx_m2:	
+
+bench_vmulhsuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65399,10 +65399,10 @@ vmulhsu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvxm_m2:	
+
+bench_vmulhsuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65470,10 +65470,10 @@ vmulhsu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvv_m2:	
+
+bench_vmulhvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65541,10 +65541,10 @@ vmulh.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvvm_m2:	
+
+bench_vmulhvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65612,10 +65612,10 @@ vmulh.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvx_m2:	
+
+bench_vmulhvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65683,10 +65683,10 @@ vmulh.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvxm_m2:	
+
+bench_vmulhvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65754,10 +65754,10 @@ vmulh.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvv_m2:	
+
+bench_vmaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65825,10 +65825,10 @@ vmadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvvm_m2:	
+
+bench_vmaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65896,10 +65896,10 @@ vmadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvx_m2:	
+
+bench_vmaddvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -65967,10 +65967,10 @@ vmadd.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvxm_m2:	
+
+bench_vmaddvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66038,10 +66038,10 @@ vmadd.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvv_m2:	
+
+bench_vmaccvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66109,10 +66109,10 @@ vmacc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvvm_m2:	
+
+bench_vmaccvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66180,10 +66180,10 @@ vmacc.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvx_m2:	
+
+bench_vmaccvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66251,10 +66251,10 @@ vmacc.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvxm_m2:	
+
+bench_vmaccvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66322,11 +66322,11 @@ vmacc.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vnsrlwv_m2:	
+
+bench_vnsrlwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66394,10 +66394,10 @@ vnsrl.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwvm_m2:	
+
+bench_vnsrlwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66465,10 +66465,10 @@ vnsrl.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwx_m2:	
+
+bench_vnsrlwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66536,10 +66536,10 @@ vnsrl.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwxm_m2:	
+
+bench_vnsrlwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66607,10 +66607,10 @@ vnsrl.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwi_m2:	
+
+bench_vnsrlwi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66678,10 +66678,10 @@ vnsrl.wi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwim_m2:	
+
+bench_vnsrlwim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66749,10 +66749,10 @@ vnsrl.wi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawv_m2:	
+
+bench_vnsrawv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66820,10 +66820,10 @@ vnsra.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawvm_m2:	
+
+bench_vnsrawvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66891,10 +66891,10 @@ vnsra.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawx_m2:	
+
+bench_vnsrawx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -66962,10 +66962,10 @@ vnsra.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawxm_m2:	
+
+bench_vnsrawxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67033,10 +67033,10 @@ vnsra.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawi_m2:	
+
+bench_vnsrawi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67104,10 +67104,10 @@ vnsra.wi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawim_m2:	
+
+bench_vnsrawim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67175,10 +67175,10 @@ vnsra.wi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwv_m2:	
+
+bench_vnclipuwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67246,10 +67246,10 @@ vnclipu.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwvm_m2:	
+
+bench_vnclipuwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67317,10 +67317,10 @@ vnclipu.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwx_m2:	
+
+bench_vnclipuwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67388,10 +67388,10 @@ vnclipu.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwxm_m2:	
+
+bench_vnclipuwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67459,10 +67459,10 @@ vnclipu.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwi_m2:	
+
+bench_vnclipuwi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67530,10 +67530,10 @@ vnclipu.wi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwim_m2:	
+
+bench_vnclipuwim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67601,10 +67601,10 @@ vnclipu.wi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwv_m2:	
+
+bench_vnclipwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67672,10 +67672,10 @@ vnclip.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwvm_m2:	
+
+bench_vnclipwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67743,10 +67743,10 @@ vnclip.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwx_m2:	
+
+bench_vnclipwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67814,10 +67814,10 @@ vnclip.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwxm_m2:	
+
+bench_vnclipwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67885,10 +67885,10 @@ vnclip.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwi_m2:	
+
+bench_vnclipwi_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -67956,10 +67956,10 @@ vnclip.wi v14,v22,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwim_m2:	
+
+bench_vnclipwim_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68027,10 +68027,10 @@ vnclip.wi v14,v22,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvv_m2:	
+
+bench_vnmsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68098,10 +68098,10 @@ vnmsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvvm_m2:	
+
+bench_vnmsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68169,10 +68169,10 @@ vnmsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvx_m2:	
+
+bench_vnmsubvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68240,10 +68240,10 @@ vnmsub.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvxm_m2:	
+
+bench_vnmsubvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68311,10 +68311,10 @@ vnmsub.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvv_m2:	
+
+bench_vnmsacvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68382,10 +68382,10 @@ vnmsac.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvvm_m2:	
+
+bench_vnmsacvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68453,10 +68453,10 @@ vnmsac.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvx_m2:	
+
+bench_vnmsacvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68524,10 +68524,10 @@ vnmsac.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvxm_m2:	
+
+bench_vnmsacvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68595,11 +68595,11 @@ vnmsac.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwadduvv_m2:	
+
+bench_vwadduvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68667,10 +68667,10 @@ vwaddu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvvm_m2:	
+
+bench_vwadduvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68738,10 +68738,10 @@ vwaddu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvx_m2:	
+
+bench_vwadduvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68809,10 +68809,10 @@ vwaddu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvxm_m2:	
+
+bench_vwadduvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68880,10 +68880,10 @@ vwaddu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvv_m2:	
+
+bench_vwaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -68951,10 +68951,10 @@ vwadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvvm_m2:	
+
+bench_vwaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69022,10 +69022,10 @@ vwadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvx_m2:	
+
+bench_vwaddvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69093,10 +69093,10 @@ vwadd.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvxm_m2:	
+
+bench_vwaddvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69164,10 +69164,10 @@ vwadd.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvv_m2:	
+
+bench_vwsubuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69235,10 +69235,10 @@ vwsubu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvvm_m2:	
+
+bench_vwsubuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69306,10 +69306,10 @@ vwsubu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvx_m2:	
+
+bench_vwsubuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69377,10 +69377,10 @@ vwsubu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvxm_m2:	
+
+bench_vwsubuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69448,10 +69448,10 @@ vwsubu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvv_m2:	
+
+bench_vwsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69519,10 +69519,10 @@ vwsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvvm_m2:	
+
+bench_vwsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69590,10 +69590,10 @@ vwsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvx_m2:	
+
+bench_vwsubvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69661,10 +69661,10 @@ vwsub.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvxm_m2:	
+
+bench_vwsubvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69732,10 +69732,10 @@ vwsub.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwv_m2:	
+
+bench_vwadduwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69803,10 +69803,10 @@ vwaddu.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwvm_m2:	
+
+bench_vwadduwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69874,10 +69874,10 @@ vwaddu.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwx_m2:	
+
+bench_vwadduwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -69945,10 +69945,10 @@ vwaddu.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwxm_m2:	
+
+bench_vwadduwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70016,10 +70016,10 @@ vwaddu.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwv_m2:	
+
+bench_vwaddwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70087,10 +70087,10 @@ vwadd.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwvm_m2:	
+
+bench_vwaddwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70158,10 +70158,10 @@ vwadd.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwx_m2:	
+
+bench_vwaddwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70229,10 +70229,10 @@ vwadd.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwxm_m2:	
+
+bench_vwaddwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70300,10 +70300,10 @@ vwadd.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwv_m2:	
+
+bench_vwsubuwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70371,10 +70371,10 @@ vwsubu.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwvm_m2:	
+
+bench_vwsubuwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70442,10 +70442,10 @@ vwsubu.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwx_m2:	
+
+bench_vwsubuwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70513,10 +70513,10 @@ vwsubu.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwxm_m2:	
+
+bench_vwsubuwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70584,10 +70584,10 @@ vwsubu.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwv_m2:	
+
+bench_vwsubwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70655,10 +70655,10 @@ vwsub.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwvm_m2:	
+
+bench_vwsubwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70726,10 +70726,10 @@ vwsub.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwx_m2:	
+
+bench_vwsubwx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70797,10 +70797,10 @@ vwsub.wx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwxm_m2:	
+
+bench_vwsubwxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70868,10 +70868,10 @@ vwsub.wx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvv_m2:	
+
+bench_vwmuluvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -70939,10 +70939,10 @@ vwmulu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvvm_m2:	
+
+bench_vwmuluvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71010,10 +71010,10 @@ vwmulu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvx_m2:	
+
+bench_vwmuluvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71081,10 +71081,10 @@ vwmulu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvxm_m2:	
+
+bench_vwmuluvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71152,10 +71152,10 @@ vwmulu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvv_m2:	
+
+bench_vwmulsuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71223,10 +71223,10 @@ vwmulsu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvvm_m2:	
+
+bench_vwmulsuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71294,10 +71294,10 @@ vwmulsu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvx_m2:	
+
+bench_vwmulsuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71365,10 +71365,10 @@ vwmulsu.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvxm_m2:	
+
+bench_vwmulsuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71436,10 +71436,10 @@ vwmulsu.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvv_m2:	
+
+bench_vwmulvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71507,10 +71507,10 @@ vwmul.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvvm_m2:	
+
+bench_vwmulvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71578,10 +71578,10 @@ vwmul.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvx_m2:	
+
+bench_vwmulvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71649,10 +71649,10 @@ vwmul.vx v14,v22,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvxm_m2:	
+
+bench_vwmulvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71720,10 +71720,10 @@ vwmul.vx v14,v22,t6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvv_m2:	
+
+bench_vwmaccuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71791,10 +71791,10 @@ vwmaccu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvvm_m2:	
+
+bench_vwmaccuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71862,10 +71862,10 @@ vwmaccu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvx_m2:	
+
+bench_vwmaccuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -71933,10 +71933,10 @@ vwmaccu.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvxm_m2:	
+
+bench_vwmaccuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72004,10 +72004,10 @@ vwmaccu.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvv_m2:	
+
+bench_vwmaccvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72075,10 +72075,10 @@ vwmacc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvvm_m2:	
+
+bench_vwmaccvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72146,10 +72146,10 @@ vwmacc.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvx_m2:	
+
+bench_vwmaccvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72217,10 +72217,10 @@ vwmacc.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvxm_m2:	
+
+bench_vwmaccvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72288,10 +72288,10 @@ vwmacc.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvv_m2:	
+
+bench_vwmaccsuvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72359,10 +72359,10 @@ vwmaccsu.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvvm_m2:	
+
+bench_vwmaccsuvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72430,10 +72430,10 @@ vwmaccsu.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvx_m2:	
+
+bench_vwmaccsuvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72501,10 +72501,10 @@ vwmaccsu.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvxm_m2:	
+
+bench_vwmaccsuvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72572,10 +72572,10 @@ vwmaccsu.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvx_m2:	
+
+bench_vwmaccusvx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72643,10 +72643,10 @@ vwmaccus.vx v14,t6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvxm_m2:	
+
+bench_vwmaccusvxm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72714,11 +72714,11 @@ vwmaccus.vx v14,t6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfaddvv_m2:	
+
+bench_vfaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72786,10 +72786,10 @@ vfadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvvm_m2:	
+
+bench_vfaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72857,10 +72857,10 @@ vfadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvf_m2:	
+
+bench_vfaddvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72928,10 +72928,10 @@ vfadd.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvfm_m2:	
+
+bench_vfaddvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -72999,10 +72999,10 @@ vfadd.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvv_m2:	
+
+bench_vfsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73070,10 +73070,10 @@ vfsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvvm_m2:	
+
+bench_vfsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73141,10 +73141,10 @@ vfsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvf_m2:	
+
+bench_vfsubvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73212,10 +73212,10 @@ vfsub.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvfm_m2:	
+
+bench_vfsubvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73283,10 +73283,10 @@ vfsub.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvv_m2:	
+
+bench_vfminvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73354,10 +73354,10 @@ vfmin.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvvm_m2:	
+
+bench_vfminvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73425,10 +73425,10 @@ vfmin.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvf_m2:	
+
+bench_vfminvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73496,10 +73496,10 @@ vfmin.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvfm_m2:	
+
+bench_vfminvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73567,10 +73567,10 @@ vfmin.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvv_m2:	
+
+bench_vfmaxvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73638,10 +73638,10 @@ vfmax.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvvm_m2:	
+
+bench_vfmaxvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73709,10 +73709,10 @@ vfmax.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvf_m2:	
+
+bench_vfmaxvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73780,10 +73780,10 @@ vfmax.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvfm_m2:	
+
+bench_vfmaxvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73851,10 +73851,10 @@ vfmax.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvv_m2:	
+
+bench_vfsgnjvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73922,10 +73922,10 @@ vfsgnj.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvvm_m2:	
+
+bench_vfsgnjvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -73993,10 +73993,10 @@ vfsgnj.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvf_m2:	
+
+bench_vfsgnjvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74064,10 +74064,10 @@ vfsgnj.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvfm_m2:	
+
+bench_vfsgnjvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74135,10 +74135,10 @@ vfsgnj.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvv_m2:	
+
+bench_vfsgnjnvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74206,10 +74206,10 @@ vfsgnjn.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvvm_m2:	
+
+bench_vfsgnjnvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74277,10 +74277,10 @@ vfsgnjn.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvf_m2:	
+
+bench_vfsgnjnvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74348,10 +74348,10 @@ vfsgnjn.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvfm_m2:	
+
+bench_vfsgnjnvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74419,10 +74419,10 @@ vfsgnjn.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvv_m2:	
+
+bench_vfsgnjxvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74490,10 +74490,10 @@ vfsgnjx.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvvm_m2:	
+
+bench_vfsgnjxvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74561,10 +74561,10 @@ vfsgnjx.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvf_m2:	
+
+bench_vfsgnjxvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74632,10 +74632,10 @@ vfsgnjx.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvfm_m2:	
+
+bench_vfsgnjxvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74703,10 +74703,10 @@ vfsgnjx.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvf_m2:	
+
+bench_vfslide1upvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74774,10 +74774,10 @@ vfslide1up.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvfm_m2:	
+
+bench_vfslide1upvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74845,10 +74845,10 @@ vfslide1up.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvf_m2:	
+
+bench_vfslide1downvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74916,10 +74916,10 @@ vfslide1down.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvfm_m2:	
+
+bench_vfslide1downvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -74987,11 +74987,11 @@ vfslide1down.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfredusumvs_m2:	
+
+bench_vfredusumvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75059,10 +75059,10 @@ vfredusum.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredusumvsm_m2:	
+
+bench_vfredusumvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75130,10 +75130,10 @@ vfredusum.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvs_m2:	
+
+bench_vfredosumvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75201,10 +75201,10 @@ vfredosum.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvsm_m2:	
+
+bench_vfredosumvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75272,10 +75272,10 @@ vfredosum.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvs_m2:	
+
+bench_vfredminvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75343,10 +75343,10 @@ vfredmin.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvsm_m2:	
+
+bench_vfredminvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75414,10 +75414,10 @@ vfredmin.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvs_m2:	
+
+bench_vfredmaxvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75485,10 +75485,10 @@ vfredmax.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvsm_m2:	
+
+bench_vfredmaxvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75556,11 +75556,11 @@ vfredmax.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmergevfm_m2:	
+
+bench_vfmergevfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75628,10 +75628,10 @@ vfmerge.vfm v14,v22,ft6,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvvf_m2:	
+
+bench_vfmvvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75699,11 +75699,11 @@ vfmv.v.f v14,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmfeqvv_m2:	
+
+bench_vmfeqvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75771,10 +75771,10 @@ vmfeq.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvvm_m2:	
+
+bench_vmfeqvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75842,10 +75842,10 @@ vmfeq.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvf_m2:	
+
+bench_vmfeqvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75913,10 +75913,10 @@ vmfeq.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvfm_m2:	
+
+bench_vmfeqvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -75984,10 +75984,10 @@ vmfeq.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevv_m2:	
+
+bench_vmflevv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76055,10 +76055,10 @@ vmfle.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevvm_m2:	
+
+bench_vmflevvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76126,10 +76126,10 @@ vmfle.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevf_m2:	
+
+bench_vmflevf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76197,10 +76197,10 @@ vmfle.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevfm_m2:	
+
+bench_vmflevfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76268,10 +76268,10 @@ vmfle.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvv_m2:	
+
+bench_vmfltvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76339,10 +76339,10 @@ vmflt.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvvm_m2:	
+
+bench_vmfltvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76410,10 +76410,10 @@ vmflt.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvf_m2:	
+
+bench_vmfltvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76481,10 +76481,10 @@ vmflt.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvfm_m2:	
+
+bench_vmfltvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76552,10 +76552,10 @@ vmflt.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevv_m2:	
+
+bench_vmfnevv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76623,10 +76623,10 @@ vmfne.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevvm_m2:	
+
+bench_vmfnevvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76694,10 +76694,10 @@ vmfne.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevf_m2:	
+
+bench_vmfnevf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76765,10 +76765,10 @@ vmfne.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevfm_m2:	
+
+bench_vmfnevfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76836,10 +76836,10 @@ vmfne.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvv_m2:	
+
+bench_vmfgtvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76907,10 +76907,10 @@ vmfgt.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvvm_m2:	
+
+bench_vmfgtvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -76978,10 +76978,10 @@ vmfgt.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvf_m2:	
+
+bench_vmfgtvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77049,10 +77049,10 @@ vmfgt.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvfm_m2:	
+
+bench_vmfgtvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77120,10 +77120,10 @@ vmfgt.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevv_m2:	
+
+bench_vmfgevv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77191,10 +77191,10 @@ vmfge.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevvm_m2:	
+
+bench_vmfgevvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77262,10 +77262,10 @@ vmfge.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevf_m2:	
+
+bench_vmfgevf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77333,10 +77333,10 @@ vmfge.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevfm_m2:	
+
+bench_vmfgevfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77404,11 +77404,11 @@ vmfge.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfdivvv_m2:	
+
+bench_vfdivvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77476,10 +77476,10 @@ vfdiv.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvvm_m2:	
+
+bench_vfdivvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77547,10 +77547,10 @@ vfdiv.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvf_m2:	
+
+bench_vfdivvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77618,10 +77618,10 @@ vfdiv.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvfm_m2:	
+
+bench_vfdivvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77689,10 +77689,10 @@ vfdiv.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvf_m2:	
+
+bench_vfrdivvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77760,10 +77760,10 @@ vfrdiv.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvfm_m2:	
+
+bench_vfrdivvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77831,10 +77831,10 @@ vfrdiv.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvv_m2:	
+
+bench_vfmulvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77902,10 +77902,10 @@ vfmul.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvvm_m2:	
+
+bench_vfmulvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -77973,10 +77973,10 @@ vfmul.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvf_m2:	
+
+bench_vfmulvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78044,10 +78044,10 @@ vfmul.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvfm_m2:	
+
+bench_vfmulvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78115,10 +78115,10 @@ vfmul.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvf_m2:	
+
+bench_vfrsubvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78186,10 +78186,10 @@ vfrsub.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvfm_m2:	
+
+bench_vfrsubvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78257,10 +78257,10 @@ vfrsub.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvv_m2:	
+
+bench_vfmaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78328,10 +78328,10 @@ vfmadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvvm_m2:	
+
+bench_vfmaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78399,10 +78399,10 @@ vfmadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvf_m2:	
+
+bench_vfmaddvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78470,10 +78470,10 @@ vfmadd.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvfm_m2:	
+
+bench_vfmaddvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78541,10 +78541,10 @@ vfmadd.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvv_m2:	
+
+bench_vfmsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78612,10 +78612,10 @@ vfmsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvvm_m2:	
+
+bench_vfmsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78683,10 +78683,10 @@ vfmsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvf_m2:	
+
+bench_vfmsubvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78754,10 +78754,10 @@ vfmsub.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvfm_m2:	
+
+bench_vfmsubvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78825,10 +78825,10 @@ vfmsub.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvv_m2:	
+
+bench_vfmaccvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78896,10 +78896,10 @@ vfmacc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvvm_m2:	
+
+bench_vfmaccvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -78967,10 +78967,10 @@ vfmacc.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvf_m2:	
+
+bench_vfmaccvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79038,10 +79038,10 @@ vfmacc.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvfm_m2:	
+
+bench_vfmaccvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79109,10 +79109,10 @@ vfmacc.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvv_m2:	
+
+bench_vfmsacvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79180,10 +79180,10 @@ vfmsac.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvvm_m2:	
+
+bench_vfmsacvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79251,10 +79251,10 @@ vfmsac.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvf_m2:	
+
+bench_vfmsacvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79322,10 +79322,10 @@ vfmsac.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvfm_m2:	
+
+bench_vfmsacvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79393,11 +79393,11 @@ vfmsac.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfnmsacvv_m2:	
+
+bench_vfnmsacvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79465,10 +79465,10 @@ vfnmsac.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvvm_m2:	
+
+bench_vfnmsacvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79536,10 +79536,10 @@ vfnmsac.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvf_m2:	
+
+bench_vfnmsacvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79607,10 +79607,10 @@ vfnmsac.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvfm_m2:	
+
+bench_vfnmsacvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79678,10 +79678,10 @@ vfnmsac.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvv_m2:	
+
+bench_vfnmaccvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79749,10 +79749,10 @@ vfnmacc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvvm_m2:	
+
+bench_vfnmaccvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79820,10 +79820,10 @@ vfnmacc.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvf_m2:	
+
+bench_vfnmaccvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79891,10 +79891,10 @@ vfnmacc.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvfm_m2:	
+
+bench_vfnmaccvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -79962,10 +79962,10 @@ vfnmacc.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvv_m2:	
+
+bench_vfnmsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80033,10 +80033,10 @@ vfnmsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvvm_m2:	
+
+bench_vfnmsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80104,10 +80104,10 @@ vfnmsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvf_m2:	
+
+bench_vfnmsubvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80175,10 +80175,10 @@ vfnmsub.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvfm_m2:	
+
+bench_vfnmsubvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80246,10 +80246,10 @@ vfnmsub.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvv_m2:	
+
+bench_vfnmaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80317,10 +80317,10 @@ vfnmadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvvm_m2:	
+
+bench_vfnmaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80388,10 +80388,10 @@ vfnmadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvf_m2:	
+
+bench_vfnmaddvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80459,10 +80459,10 @@ vfnmadd.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvfm_m2:	
+
+bench_vfnmaddvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80530,11 +80530,11 @@ vfnmadd.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwredsumuvs_m2:	
+
+bench_vwredsumuvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80602,10 +80602,10 @@ vwredsumu.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumuvsm_m2:	
+
+bench_vwredsumuvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80673,10 +80673,10 @@ vwredsumu.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvs_m2:	
+
+bench_vwredsumvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80744,10 +80744,10 @@ vwredsum.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvsm_m2:	
+
+bench_vwredsumvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80815,11 +80815,11 @@ vwredsum.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwaddvv_m2:	
+
+bench_vfwaddvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80887,10 +80887,10 @@ vfwadd.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvvm_m2:	
+
+bench_vfwaddvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -80958,10 +80958,10 @@ vfwadd.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvf_m2:	
+
+bench_vfwaddvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81029,10 +81029,10 @@ vfwadd.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvfm_m2:	
+
+bench_vfwaddvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81100,10 +81100,10 @@ vfwadd.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvv_m2:	
+
+bench_vfwsubvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81171,10 +81171,10 @@ vfwsub.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvvm_m2:	
+
+bench_vfwsubvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81242,10 +81242,10 @@ vfwsub.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvf_m2:	
+
+bench_vfwsubvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81313,10 +81313,10 @@ vfwsub.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvfm_m2:	
+
+bench_vfwsubvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81384,10 +81384,10 @@ vfwsub.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwv_m2:	
+
+bench_vfwaddwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81455,10 +81455,10 @@ vfwadd.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwvm_m2:	
+
+bench_vfwaddwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81526,10 +81526,10 @@ vfwadd.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwf_m2:	
+
+bench_vfwaddwf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81597,10 +81597,10 @@ vfwadd.wf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwfm_m2:	
+
+bench_vfwaddwfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81668,10 +81668,10 @@ vfwadd.wf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwv_m2:	
+
+bench_vfwsubwv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81739,10 +81739,10 @@ vfwsub.wv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwvm_m2:	
+
+bench_vfwsubwvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81810,10 +81810,10 @@ vfwsub.wv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwf_m2:	
+
+bench_vfwsubwf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81881,10 +81881,10 @@ vfwsub.wf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwfm_m2:	
+
+bench_vfwsubwfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -81952,10 +81952,10 @@ vfwsub.wf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvv_m2:	
+
+bench_vfwmulvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82023,10 +82023,10 @@ vfwmul.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvvm_m2:	
+
+bench_vfwmulvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82094,10 +82094,10 @@ vfwmul.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvf_m2:	
+
+bench_vfwmulvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82165,10 +82165,10 @@ vfwmul.vf v14,v22,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvfm_m2:	
+
+bench_vfwmulvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82236,10 +82236,10 @@ vfwmul.vf v14,v22,ft6,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvv_m2:	
+
+bench_vfwmaccvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82307,10 +82307,10 @@ vfwmacc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvvm_m2:	
+
+bench_vfwmaccvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82378,10 +82378,10 @@ vfwmacc.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvf_m2:	
+
+bench_vfwmaccvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82449,10 +82449,10 @@ vfwmacc.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvfm_m2:	
+
+bench_vfwmaccvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82520,10 +82520,10 @@ vfwmacc.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvv_m2:	
+
+bench_vfwnmaccvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82591,10 +82591,10 @@ vfwnmacc.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvvm_m2:	
+
+bench_vfwnmaccvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82662,10 +82662,10 @@ vfwnmacc.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvf_m2:	
+
+bench_vfwnmaccvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82733,10 +82733,10 @@ vfwnmacc.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvfm_m2:	
+
+bench_vfwnmaccvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82804,10 +82804,10 @@ vfwnmacc.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvv_m2:	
+
+bench_vfwmsacvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82875,10 +82875,10 @@ vfwmsac.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvvm_m2:	
+
+bench_vfwmsacvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -82946,10 +82946,10 @@ vfwmsac.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvf_m2:	
+
+bench_vfwmsacvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83017,10 +83017,10 @@ vfwmsac.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvfm_m2:	
+
+bench_vfwmsacvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83088,10 +83088,10 @@ vfwmsac.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvv_m2:	
+
+bench_vfwnmsacvv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83159,10 +83159,10 @@ vfwnmsac.vv v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvvm_m2:	
+
+bench_vfwnmsacvvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83230,10 +83230,10 @@ vfwnmsac.vv v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvf_m2:	
+
+bench_vfwnmsacvf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83301,10 +83301,10 @@ vfwnmsac.vf v14,ft6,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvfm_m2:	
+
+bench_vfwnmsacvfm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83372,11 +83372,11 @@ vfwnmsac.vf v14,ft6,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwredosumvs_m2:	
+
+bench_vfwredosumvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83444,10 +83444,10 @@ vfwredosum.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredosumvsm_m2:	
+
+bench_vfwredosumvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83515,10 +83515,10 @@ vfwredosum.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvs_m2:	
+
+bench_vfwredusumvs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83586,10 +83586,10 @@ vfwredusum.vs v14,v22,v30
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvsm_m2:	
+
+bench_vfwredusumvsm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83657,11 +83657,11 @@ vfwredusum.vs v14,v22,v30,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmvsx_m2:	
+
+bench_vmvsx_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83729,10 +83729,10 @@ vmv.s.x v14,t6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvxs_m2:	
+
+bench_vmvxs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83800,11 +83800,11 @@ vmv.x.s t6,v14
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcpopm_m2:	
+
+bench_vcpopm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83872,10 +83872,10 @@ vcpop.m t6,v14
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vcpopmm_m2:	
+
+bench_vcpopmm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -83943,10 +83943,10 @@ vcpop.m t6,v14,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstm_m2:	
+
+bench_vfirstm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84014,10 +84014,10 @@ vfirst.m t6,v14
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstmm_m2:	
+
+bench_vfirstmm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84085,10 +84085,10 @@ vfirst.m t6,v14,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2_m2:	
+
+bench_vzextvf2_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84156,10 +84156,10 @@ vzext.vf2 v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2m_m2:	
+
+bench_vzextvf2m_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84227,10 +84227,10 @@ vzext.vf2 v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2_m2:	
+
+bench_vsextvf2_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84298,10 +84298,10 @@ vsext.vf2 v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2m_m2:	
+
+bench_vsextvf2m_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84369,10 +84369,10 @@ vsext.vf2 v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4_m2:	
+
+bench_vzextvf4_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84440,10 +84440,10 @@ vzext.vf4 v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4m_m2:	
+
+bench_vzextvf4m_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84511,10 +84511,10 @@ vzext.vf4 v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4_m2:	
+
+bench_vsextvf4_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84582,10 +84582,10 @@ vsext.vf4 v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4m_m2:	
+
+bench_vsextvf4m_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84653,10 +84653,10 @@ vsext.vf4 v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8_m2:	
+
+bench_vzextvf8_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84724,10 +84724,10 @@ vzext.vf8 v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8m_m2:	
+
+bench_vzextvf8m_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84795,10 +84795,10 @@ vzext.vf8 v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8_m2:	
+
+bench_vsextvf8_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84866,10 +84866,10 @@ vsext.vf8 v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8m_m2:	
+
+bench_vsextvf8m_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -84937,11 +84937,11 @@ vsext.vf8 v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmvfs_m2:	
+
+bench_vfmvfs_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85009,10 +85009,10 @@ vfmv.f.s ft6,v14
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvsf_m2:	
+
+bench_vfmvsf_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85080,11 +85080,11 @@ vfmv.s.f v14,ft6
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfcvtxufv_m2:	
+
+bench_vfcvtxufv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85152,10 +85152,10 @@ vfcvt.xu.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxufvm_m2:	
+
+bench_vfcvtxufvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85223,10 +85223,10 @@ vfcvt.xu.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxfv_m2:	
+
+bench_vfcvtxfv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85294,10 +85294,10 @@ vfcvt.x.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxfvm_m2:	
+
+bench_vfcvtxfvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85365,10 +85365,10 @@ vfcvt.x.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxuv_m2:	
+
+bench_vfcvtfxuv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85436,10 +85436,10 @@ vfcvt.f.xu.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxuvm_m2:	
+
+bench_vfcvtfxuvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85507,10 +85507,10 @@ vfcvt.f.xu.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxv_m2:	
+
+bench_vfcvtfxv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85578,10 +85578,10 @@ vfcvt.f.x.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxvm_m2:	
+
+bench_vfcvtfxvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85649,10 +85649,10 @@ vfcvt.f.x.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxfv_m2:	
+
+bench_vfcvtrtzxfv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85720,10 +85720,10 @@ vfcvt.rtz.x.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxfvm_m2:	
+
+bench_vfcvtrtzxfvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85791,10 +85791,10 @@ vfcvt.rtz.x.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxufv_m2:	
+
+bench_vfcvtrtzxufv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85862,10 +85862,10 @@ vfcvt.rtz.xu.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxufvm_m2:	
+
+bench_vfcvtrtzxufvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -85933,11 +85933,11 @@ vfcvt.rtz.xu.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwcvtxufv_m2:	
+
+bench_vfwcvtxufv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86005,10 +86005,10 @@ vfwcvt.xu.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxufvm_m2:	
+
+bench_vfwcvtxufvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86076,10 +86076,10 @@ vfwcvt.xu.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxfv_m2:	
+
+bench_vfwcvtxfv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86147,10 +86147,10 @@ vfwcvt.x.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxfvm_m2:	
+
+bench_vfwcvtxfvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86218,10 +86218,10 @@ vfwcvt.x.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxuv_m2:	
+
+bench_vfwcvtfxuv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86289,10 +86289,10 @@ vfwcvt.f.xu.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxuvm_m2:	
+
+bench_vfwcvtfxuvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86360,10 +86360,10 @@ vfwcvt.f.xu.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxv_m2:	
+
+bench_vfwcvtfxv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86431,10 +86431,10 @@ vfwcvt.f.x.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxvm_m2:	
+
+bench_vfwcvtfxvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86502,10 +86502,10 @@ vfwcvt.f.x.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtffv_m2:	
+
+bench_vfwcvtffv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86573,10 +86573,10 @@ vfwcvt.f.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtffvm_m2:	
+
+bench_vfwcvtffvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86644,10 +86644,10 @@ vfwcvt.f.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxufv_m2:	
+
+bench_vfwcvtrtzxufv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86715,10 +86715,10 @@ vfwcvt.rtz.xu.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxufvm_m2:	
+
+bench_vfwcvtrtzxufvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86786,10 +86786,10 @@ vfwcvt.rtz.xu.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxfv_m2:	
+
+bench_vfwcvtrtzxfv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86857,10 +86857,10 @@ vfwcvt.rtz.x.f.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxfvm_m2:	
+
+bench_vfwcvtrtzxfvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -86928,11 +86928,11 @@ vfwcvt.rtz.x.f.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfncvtxufw_m2:	
+
+bench_vfncvtxufw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87000,10 +87000,10 @@ vfncvt.xu.f.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxufwm_m2:	
+
+bench_vfncvtxufwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87071,10 +87071,10 @@ vfncvt.xu.f.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxfw_m2:	
+
+bench_vfncvtxfw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87142,10 +87142,10 @@ vfncvt.x.f.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxfwm_m2:	
+
+bench_vfncvtxfwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87213,10 +87213,10 @@ vfncvt.x.f.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxuw_m2:	
+
+bench_vfncvtfxuw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87284,10 +87284,10 @@ vfncvt.f.xu.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxuwm_m2:	
+
+bench_vfncvtfxuwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87355,10 +87355,10 @@ vfncvt.f.xu.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxw_m2:	
+
+bench_vfncvtfxw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87426,10 +87426,10 @@ vfncvt.f.x.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxwm_m2:	
+
+bench_vfncvtfxwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87497,10 +87497,10 @@ vfncvt.f.x.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtffw_m2:	
+
+bench_vfncvtffw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87568,10 +87568,10 @@ vfncvt.f.f.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtffwm_m2:	
+
+bench_vfncvtffwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87639,10 +87639,10 @@ vfncvt.f.f.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxfw_m2:	
+
+bench_vfncvtrtzxfw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87710,10 +87710,10 @@ vfncvt.rtz.x.f.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxfwm_m2:	
+
+bench_vfncvtrtzxfwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87781,10 +87781,10 @@ vfncvt.rtz.x.f.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxufw_m2:	
+
+bench_vfncvtrtzxufw_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87852,10 +87852,10 @@ vfncvt.rtz.xu.f.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxufwm_m2:	
+
+bench_vfncvtrtzxufwm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87923,10 +87923,10 @@ vfncvt.rtz.xu.f.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvt.rod.f.f.w_m2:	
+
+bench_vfncvt.rod.f.f.w_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -87994,10 +87994,10 @@ vfncvt.rod.f.f.w v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvt.rod.f.f.wm_m2:	
+
+bench_vfncvt.rod.f.f.wm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88065,11 +88065,11 @@ vfncvt.rod.f.f.w v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfsqrtv_m2:	
+
+bench_vfsqrtv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88137,10 +88137,10 @@ vfsqrt.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsqrtvm_m2:	
+
+bench_vfsqrtvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88208,10 +88208,10 @@ vfsqrt.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsqrt7v_m2:	
+
+bench_vfrsqrt7v_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88279,10 +88279,10 @@ vfrsqrt7.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsqrt7vm_m2:	
+
+bench_vfrsqrt7vm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88350,10 +88350,10 @@ vfrsqrt7.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrec7v_m2:	
+
+bench_vfrec7v_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88421,10 +88421,10 @@ vfrec7.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrec7vm_m2:	
+
+bench_vfrec7vm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88492,10 +88492,10 @@ vfrec7.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfclassv_m2:	
+
+bench_vfclassv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88563,10 +88563,10 @@ vfclass.v v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfclassvm_m2:	
+
+bench_vfclassvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -88634,11 +88634,11 @@ vfclass.v v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmsbfm_m2:	
+
+bench_vmsbfm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -88706,10 +88706,10 @@ vmsbf.m v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbfmm_m2:	
+
+bench_vmsbfmm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -88777,10 +88777,10 @@ vmsbf.m v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofm_m2:	
+
+bench_vmsofm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -88848,10 +88848,10 @@ vmsof.m v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofmm_m2:	
+
+bench_vmsofmm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -88919,10 +88919,10 @@ vmsof.m v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifm_m2:	
+
+bench_vmsifm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -88990,10 +88990,10 @@ vmsif.m v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifmm_m2:	
+
+bench_vmsifmm_m2:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -89061,10 +89061,10 @@ vmsif.m v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotam_m2:	
+
+bench_viotam_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89132,10 +89132,10 @@ viota.m v14,v22
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotamm_m2:	
+
+bench_viotamm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89203,10 +89203,10 @@ viota.m v14,v22,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidv_m2:	
+
+bench_vidv_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89274,10 +89274,10 @@ vid.v v14
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidvm_m2:	
+
+bench_vidvm_m2:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89345,14 +89345,14 @@ vid.v v14,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
 
 
 
-	
-bench_add_m4:	
+
+bench_add_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89420,10 +89420,10 @@ add t4,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_mul_m4:	
+
+bench_mul_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89491,10 +89491,10 @@ mul t4,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvv_m4:	
+
+bench_vaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89562,10 +89562,10 @@ vadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvvm_m4:	
+
+bench_vaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89633,10 +89633,10 @@ vadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvx_m4:	
+
+bench_vaddvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89704,10 +89704,10 @@ vadd.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvxm_m4:	
+
+bench_vaddvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89775,10 +89775,10 @@ vadd.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvi_m4:	
+
+bench_vaddvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89846,10 +89846,10 @@ vadd.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvim_m4:	
+
+bench_vaddvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89917,10 +89917,10 @@ vadd.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvv_m4:	
+
+bench_vsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -89988,10 +89988,10 @@ vsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvvm_m4:	
+
+bench_vsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90059,10 +90059,10 @@ vsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvx_m4:	
+
+bench_vsubvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90130,10 +90130,10 @@ vsub.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvxm_m4:	
+
+bench_vsubvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90201,10 +90201,10 @@ vsub.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvx_m4:	
+
+bench_vrsubvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90272,10 +90272,10 @@ vrsub.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvxm_m4:	
+
+bench_vrsubvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90343,10 +90343,10 @@ vrsub.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvi_m4:	
+
+bench_vrsubvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90414,10 +90414,10 @@ vrsub.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvim_m4:	
+
+bench_vrsubvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90485,10 +90485,10 @@ vrsub.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvv_m4:	
+
+bench_vminuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90556,10 +90556,10 @@ vminu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvvm_m4:	
+
+bench_vminuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90627,10 +90627,10 @@ vminu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvx_m4:	
+
+bench_vminuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90698,10 +90698,10 @@ vminu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvxm_m4:	
+
+bench_vminuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90769,10 +90769,10 @@ vminu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvv_m4:	
+
+bench_vminvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90840,10 +90840,10 @@ vmin.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvvm_m4:	
+
+bench_vminvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90911,10 +90911,10 @@ vmin.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvx_m4:	
+
+bench_vminvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -90982,10 +90982,10 @@ vmin.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvxm_m4:	
+
+bench_vminvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91053,10 +91053,10 @@ vmin.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvv_m4:	
+
+bench_vmaxuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91124,10 +91124,10 @@ vmaxu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvvm_m4:	
+
+bench_vmaxuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91195,10 +91195,10 @@ vmaxu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvx_m4:	
+
+bench_vmaxuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91266,10 +91266,10 @@ vmaxu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvxm_m4:	
+
+bench_vmaxuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91337,10 +91337,10 @@ vmaxu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvv_m4:	
+
+bench_vmaxvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91408,10 +91408,10 @@ vmax.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvvm_m4:	
+
+bench_vmaxvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91479,10 +91479,10 @@ vmax.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvx_m4:	
+
+bench_vmaxvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91550,10 +91550,10 @@ vmax.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvxm_m4:	
+
+bench_vmaxvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91621,10 +91621,10 @@ vmax.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvv_m4:	
+
+bench_vandvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91692,10 +91692,10 @@ vand.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvvm_m4:	
+
+bench_vandvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91763,10 +91763,10 @@ vand.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvx_m4:	
+
+bench_vandvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91834,10 +91834,10 @@ vand.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvxm_m4:	
+
+bench_vandvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91905,10 +91905,10 @@ vand.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvi_m4:	
+
+bench_vandvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -91976,10 +91976,10 @@ vand.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvim_m4:	
+
+bench_vandvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92047,10 +92047,10 @@ vand.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvv_m4:	
+
+bench_vorvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92118,10 +92118,10 @@ vor.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvvm_m4:	
+
+bench_vorvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92189,10 +92189,10 @@ vor.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvx_m4:	
+
+bench_vorvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92260,10 +92260,10 @@ vor.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvxm_m4:	
+
+bench_vorvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92331,10 +92331,10 @@ vor.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvi_m4:	
+
+bench_vorvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92402,10 +92402,10 @@ vor.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvim_m4:	
+
+bench_vorvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92473,10 +92473,10 @@ vor.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvv_m4:	
+
+bench_vxorvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92544,10 +92544,10 @@ vxor.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvvm_m4:	
+
+bench_vxorvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92615,10 +92615,10 @@ vxor.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvx_m4:	
+
+bench_vxorvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92686,10 +92686,10 @@ vxor.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvxm_m4:	
+
+bench_vxorvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92757,10 +92757,10 @@ vxor.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvi_m4:	
+
+bench_vxorvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92828,10 +92828,10 @@ vxor.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvim_m4:	
+
+bench_vxorvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -92899,11 +92899,11 @@ vxor.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vrgathervv_m4:	
+
+bench_vrgathervv_m4:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -92971,10 +92971,10 @@ vrgather.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervvm_m4:	
+
+bench_vrgathervvm_m4:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -93042,10 +93042,10 @@ vrgather.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervx_m4:	
+
+bench_vrgathervx_m4:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -93113,10 +93113,10 @@ vrgather.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervxm_m4:	
+
+bench_vrgathervxm_m4:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -93184,10 +93184,10 @@ vrgather.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervi_m4:	
+
+bench_vrgathervi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -93255,10 +93255,10 @@ vrgather.vi v12,v20,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervim_m4:	
+
+bench_vrgathervim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -93326,10 +93326,10 @@ vrgather.vi v12,v20,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvx_m4:	
+
+bench_vslideupvx_m4:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -93397,10 +93397,10 @@ vslideup.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvxm_m4:	
+
+bench_vslideupvxm_m4:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -93468,10 +93468,10 @@ vslideup.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvi_m4:	
+
+bench_vslideupvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -93539,10 +93539,10 @@ vslideup.vi v12,v20,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvim_m4:	
+
+bench_vslideupvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -93610,10 +93610,10 @@ vslideup.vi v12,v20,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vv_m4:	
+
+bench_vrgatherei16vv_m4:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -93681,10 +93681,10 @@ vrgatherei16.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vvm_m4:	
+
+bench_vrgatherei16vvm_m4:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -93752,11 +93752,11 @@ vrgatherei16.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslidedownvx_m4:	
+
+bench_vslidedownvx_m4:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -93824,10 +93824,10 @@ vslidedown.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvxm_m4:	
+
+bench_vslidedownvxm_m4:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -93895,10 +93895,10 @@ vslidedown.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvi_m4:	
+
+bench_vslidedownvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -93966,10 +93966,10 @@ vslidedown.vi v12,v20,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvim_m4:	
+
+bench_vslidedownvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94037,11 +94037,11 @@ vslidedown.vi v12,v20,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vredsumvs_m4:	
+
+bench_vredsumvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94109,10 +94109,10 @@ vredsum.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredsumvsm_m4:	
+
+bench_vredsumvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94180,10 +94180,10 @@ vredsum.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvs_m4:	
+
+bench_vredandvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94251,10 +94251,10 @@ vredand.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvsm_m4:	
+
+bench_vredandvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94322,10 +94322,10 @@ vredand.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvs_m4:	
+
+bench_vredorvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94393,10 +94393,10 @@ vredor.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvsm_m4:	
+
+bench_vredorvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94464,10 +94464,10 @@ vredor.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvs_m4:	
+
+bench_vredxorvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94535,10 +94535,10 @@ vredxor.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvsm_m4:	
+
+bench_vredxorvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94606,10 +94606,10 @@ vredxor.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvs_m4:	
+
+bench_vredminuvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94677,10 +94677,10 @@ vredminu.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvsm_m4:	
+
+bench_vredminuvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94748,10 +94748,10 @@ vredminu.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvs_m4:	
+
+bench_vredminvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94819,10 +94819,10 @@ vredmin.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvsm_m4:	
+
+bench_vredminvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94890,10 +94890,10 @@ vredmin.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvs_m4:	
+
+bench_vredmaxuvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -94961,10 +94961,10 @@ vredmaxu.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvsm_m4:	
+
+bench_vredmaxuvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95032,10 +95032,10 @@ vredmaxu.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvs_m4:	
+
+bench_vredmaxvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95103,10 +95103,10 @@ vredmax.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvsm_m4:	
+
+bench_vredmaxvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95174,11 +95174,11 @@ vredmax.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vaadduvv_m4:	
+
+bench_vaadduvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95246,10 +95246,10 @@ vaaddu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvvm_m4:	
+
+bench_vaadduvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95317,10 +95317,10 @@ vaaddu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvx_m4:	
+
+bench_vaadduvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95388,10 +95388,10 @@ vaaddu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvxm_m4:	
+
+bench_vaadduvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95459,10 +95459,10 @@ vaaddu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvv_m4:	
+
+bench_vaaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95530,10 +95530,10 @@ vaadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvvm_m4:	
+
+bench_vaaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95601,10 +95601,10 @@ vaadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvx_m4:	
+
+bench_vaaddvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95672,10 +95672,10 @@ vaadd.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvxm_m4:	
+
+bench_vaaddvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95743,10 +95743,10 @@ vaadd.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvv_m4:	
+
+bench_vasubuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95814,10 +95814,10 @@ vasubu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvvm_m4:	
+
+bench_vasubuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95885,10 +95885,10 @@ vasubu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvx_m4:	
+
+bench_vasubuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -95956,10 +95956,10 @@ vasubu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvxm_m4:	
+
+bench_vasubuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96027,10 +96027,10 @@ vasubu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvv_m4:	
+
+bench_vasubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96098,10 +96098,10 @@ vasub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvvm_m4:	
+
+bench_vasubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96169,10 +96169,10 @@ vasub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvx_m4:	
+
+bench_vasubvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96240,10 +96240,10 @@ vasub.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvxm_m4:	
+
+bench_vasubvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96311,11 +96311,11 @@ vasub.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslide1upvx_m4:	
+
+bench_vslide1upvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96383,10 +96383,10 @@ vslide1up.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1upvxm_m4:	
+
+bench_vslide1upvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96454,10 +96454,10 @@ vslide1up.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvx_m4:	
+
+bench_vslide1downvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96525,10 +96525,10 @@ vslide1down.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvxm_m4:	
+
+bench_vslide1downvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96596,11 +96596,11 @@ vslide1down.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vadcvvm_m4:	
+
+bench_vadcvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96668,10 +96668,10 @@ vadc.vvm v12,v20,v28,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvxm_m4:	
+
+bench_vadcvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96739,10 +96739,10 @@ vadc.vxm v12,v20,t4,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvim_m4:	
+
+bench_vadcvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96810,10 +96810,10 @@ vadc.vim v12,v20,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvvm_m4:	
+
+bench_vmadcvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96881,10 +96881,10 @@ vmadc.vvm v12,v20,v28,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvxm_m4:	
+
+bench_vmadcvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -96952,10 +96952,10 @@ vmadc.vxm v12,v20,t4,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvim_m4:	
+
+bench_vmadcvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97023,10 +97023,10 @@ vmadc.vim v12,v20,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvv_m4:	
+
+bench_vmadcvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97094,10 +97094,10 @@ vmadc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvx_m4:	
+
+bench_vmadcvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97165,10 +97165,10 @@ vmadc.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvi_m4:	
+
+bench_vmadcvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97236,10 +97236,10 @@ vmadc.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsbcvvm_m4:	
+
+bench_vsbcvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97307,10 +97307,10 @@ vsbc.vvm v12,v20,v28,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vsbcvxm_m4:	
+
+bench_vsbcvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97378,10 +97378,10 @@ vsbc.vxm v12,v20,t4,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvvm_m4:	
+
+bench_vmsbcvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97449,10 +97449,10 @@ vmsbc.vvm v12,v20,v28,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmsbcvxm_m4:	
+
+bench_vmsbcvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97520,10 +97520,10 @@ vmsbc.vxm v12,v20,t4,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvv_m4:	
+
+bench_vmsbcvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97591,10 +97591,10 @@ vmsbc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvx_m4:	
+
+bench_vmsbcvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97662,11 +97662,11 @@ vmsbc.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmergevvm_m4:	
+
+bench_vmergevvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97734,10 +97734,10 @@ vmerge.vvm v12,v20,v28,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevxm_m4:	
+
+bench_vmergevxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97805,10 +97805,10 @@ vmerge.vxm v12,v20,t4,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevim_m4:	
+
+bench_vmergevim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97876,10 +97876,10 @@ vmerge.vim v12,v20,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvv_m4:	
+
+bench_vmvvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -97947,10 +97947,10 @@ vmv.v.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvx_m4:	
+
+bench_vmvvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98018,10 +98018,10 @@ vmv.v.x v12,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvi_m4:	
+
+bench_vmvvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98089,10 +98089,10 @@ vmv.v.i v12,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvv_m4:	
+
+bench_vmseqvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98160,10 +98160,10 @@ vmseq.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvvm_m4:	
+
+bench_vmseqvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98231,10 +98231,10 @@ vmseq.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvx_m4:	
+
+bench_vmseqvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98302,10 +98302,10 @@ vmseq.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvxm_m4:	
+
+bench_vmseqvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98373,10 +98373,10 @@ vmseq.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvi_m4:	
+
+bench_vmseqvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98444,10 +98444,10 @@ vmseq.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvim_m4:	
+
+bench_vmseqvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98515,10 +98515,10 @@ vmseq.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevv_m4:	
+
+bench_vmsnevv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98586,10 +98586,10 @@ vmsne.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevvm_m4:	
+
+bench_vmsnevvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98657,10 +98657,10 @@ vmsne.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevx_m4:	
+
+bench_vmsnevx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98728,10 +98728,10 @@ vmsne.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevxm_m4:	
+
+bench_vmsnevxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98799,10 +98799,10 @@ vmsne.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevi_m4:	
+
+bench_vmsnevi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98870,10 +98870,10 @@ vmsne.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevim_m4:	
+
+bench_vmsnevim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -98941,10 +98941,10 @@ vmsne.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvv_m4:	
+
+bench_vmsltuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99012,10 +99012,10 @@ vmsltu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvvm_m4:	
+
+bench_vmsltuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99083,10 +99083,10 @@ vmsltu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvx_m4:	
+
+bench_vmsltuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99154,10 +99154,10 @@ vmsltu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvxm_m4:	
+
+bench_vmsltuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99225,10 +99225,10 @@ vmsltu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvv_m4:	
+
+bench_vmsltvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99296,10 +99296,10 @@ vmslt.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvvm_m4:	
+
+bench_vmsltvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99367,10 +99367,10 @@ vmslt.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvx_m4:	
+
+bench_vmsltvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99438,10 +99438,10 @@ vmslt.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvxm_m4:	
+
+bench_vmsltvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99509,10 +99509,10 @@ vmslt.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvv_m4:	
+
+bench_vmsleuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99580,10 +99580,10 @@ vmsleu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvvm_m4:	
+
+bench_vmsleuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99651,10 +99651,10 @@ vmsleu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvx_m4:	
+
+bench_vmsleuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99722,10 +99722,10 @@ vmsleu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvxm_m4:	
+
+bench_vmsleuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99793,10 +99793,10 @@ vmsleu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvi_m4:	
+
+bench_vmsleuvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99864,10 +99864,10 @@ vmsleu.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvim_m4:	
+
+bench_vmsleuvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -99935,10 +99935,10 @@ vmsleu.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevv_m4:	
+
+bench_vmslevv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100006,10 +100006,10 @@ vmsle.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevvm_m4:	
+
+bench_vmslevvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100077,10 +100077,10 @@ vmsle.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevx_m4:	
+
+bench_vmslevx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100148,10 +100148,10 @@ vmsle.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevxm_m4:	
+
+bench_vmslevxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100219,10 +100219,10 @@ vmsle.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevi_m4:	
+
+bench_vmslevi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100290,10 +100290,10 @@ vmsle.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevim_m4:	
+
+bench_vmslevim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100361,10 +100361,10 @@ vmsle.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvx_m4:	
+
+bench_vmsgtuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100432,10 +100432,10 @@ vmsgtu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvxm_m4:	
+
+bench_vmsgtuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100503,10 +100503,10 @@ vmsgtu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvi_m4:	
+
+bench_vmsgtuvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100574,10 +100574,10 @@ vmsgtu.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvim_m4:	
+
+bench_vmsgtuvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100645,10 +100645,10 @@ vmsgtu.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvx_m4:	
+
+bench_vmsgtvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100716,10 +100716,10 @@ vmsgt.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvxm_m4:	
+
+bench_vmsgtvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100787,10 +100787,10 @@ vmsgt.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvi_m4:	
+
+bench_vmsgtvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100858,10 +100858,10 @@ vmsgt.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvim_m4:	
+
+bench_vmsgtvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -100929,11 +100929,11 @@ vmsgt.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcompressvm_m4:	
+
+bench_vcompressvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101001,11 +101001,11 @@ vcompress.vm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmandnmm_m4:	
+
+bench_vmandnmm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101073,10 +101073,10 @@ vmandn.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmandmm_m4:	
+
+bench_vmandmm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101144,10 +101144,10 @@ vmand.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmormm_m4:	
+
+bench_vmormm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101215,10 +101215,10 @@ vmor.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxormm_m4:	
+
+bench_vmxormm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101286,10 +101286,10 @@ vmxor.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmornmm_m4:	
+
+bench_vmornmm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101357,10 +101357,10 @@ vmorn.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnandmm_m4:	
+
+bench_vmnandmm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101428,10 +101428,10 @@ vmnand.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnormm_m4:	
+
+bench_vmnormm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101499,10 +101499,10 @@ vmnor.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxnormm_m4:	
+
+bench_vmxnormm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101570,11 +101570,11 @@ vmxnor.mm v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vsadduvv_m4:	
+
+bench_vsadduvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101642,10 +101642,10 @@ vsaddu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvvm_m4:	
+
+bench_vsadduvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101713,10 +101713,10 @@ vsaddu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvx_m4:	
+
+bench_vsadduvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101784,10 +101784,10 @@ vsaddu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvxm_m4:	
+
+bench_vsadduvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101855,10 +101855,10 @@ vsaddu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvi_m4:	
+
+bench_vsadduvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101926,10 +101926,10 @@ vsaddu.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvim_m4:	
+
+bench_vsadduvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -101997,10 +101997,10 @@ vsaddu.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvv_m4:	
+
+bench_vsaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102068,10 +102068,10 @@ vsadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvvm_m4:	
+
+bench_vsaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102139,10 +102139,10 @@ vsadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvx_m4:	
+
+bench_vsaddvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102210,10 +102210,10 @@ vsadd.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvxm_m4:	
+
+bench_vsaddvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102281,10 +102281,10 @@ vsadd.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvi_m4:	
+
+bench_vsaddvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102352,10 +102352,10 @@ vsadd.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvim_m4:	
+
+bench_vsaddvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102423,10 +102423,10 @@ vsadd.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvv_m4:	
+
+bench_vssubuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102494,10 +102494,10 @@ vssubu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvvm_m4:	
+
+bench_vssubuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102565,10 +102565,10 @@ vssubu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvx_m4:	
+
+bench_vssubuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102636,10 +102636,10 @@ vssubu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvxm_m4:	
+
+bench_vssubuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102707,10 +102707,10 @@ vssubu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvv_m4:	
+
+bench_vssubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102778,10 +102778,10 @@ vssub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvvm_m4:	
+
+bench_vssubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102849,10 +102849,10 @@ vssub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvx_m4:	
+
+bench_vssubvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102920,10 +102920,10 @@ vssub.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvxm_m4:	
+
+bench_vssubvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -102991,10 +102991,10 @@ vssub.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvv_m4:	
+
+bench_vsllvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103062,10 +103062,10 @@ vsll.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvvm_m4:	
+
+bench_vsllvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103133,10 +103133,10 @@ vsll.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvx_m4:	
+
+bench_vsllvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103204,10 +103204,10 @@ vsll.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvxm_m4:	
+
+bench_vsllvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103275,10 +103275,10 @@ vsll.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvi_m4:	
+
+bench_vsllvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103346,10 +103346,10 @@ vsll.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvim_m4:	
+
+bench_vsllvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103417,10 +103417,10 @@ vsll.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvv_m4:	
+
+bench_vsmulvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103488,10 +103488,10 @@ vsmul.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvvm_m4:	
+
+bench_vsmulvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103559,10 +103559,10 @@ vsmul.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvx_m4:	
+
+bench_vsmulvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103630,10 +103630,10 @@ vsmul.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvxm_m4:	
+
+bench_vsmulvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103701,10 +103701,10 @@ vsmul.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv1rv_m4:	
+
+bench_vmv1rv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103772,10 +103772,10 @@ vmv1r.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv2rv_m4:	
+
+bench_vmv2rv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103843,10 +103843,10 @@ vmv2r.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv4rv_m4:	
+
+bench_vmv4rv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -103914,23 +103914,23 @@ vmv4r.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv8rv_m4:	
+
+bench_vmv8rv_m4:
 	m_nop
 	li a0, WARMUP
 1:
 
 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 	addi a0, a0, -1
 	bnez a0, 1b
@@ -103955,14 +103955,14 @@ m_unimpl
 .rept UNROLL
 
 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
-m_unimpl 
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
+m_unimpl
 
 .endr
 	addi a0, a0, -1
@@ -103985,10 +103985,10 @@ m_unimpl
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvv_m4:	
+
+bench_vsrlvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104056,10 +104056,10 @@ vsrl.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvvm_m4:	
+
+bench_vsrlvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104127,10 +104127,10 @@ vsrl.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvx_m4:	
+
+bench_vsrlvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104198,10 +104198,10 @@ vsrl.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvxm_m4:	
+
+bench_vsrlvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104269,10 +104269,10 @@ vsrl.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvi_m4:	
+
+bench_vsrlvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104340,10 +104340,10 @@ vsrl.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvim_m4:	
+
+bench_vsrlvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104411,10 +104411,10 @@ vsrl.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravv_m4:	
+
+bench_vsravv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104482,10 +104482,10 @@ vsra.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravvm_m4:	
+
+bench_vsravvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104553,10 +104553,10 @@ vsra.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravx_m4:	
+
+bench_vsravx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104624,10 +104624,10 @@ vsra.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravxm_m4:	
+
+bench_vsravxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104695,10 +104695,10 @@ vsra.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravi_m4:	
+
+bench_vsravi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104766,10 +104766,10 @@ vsra.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravim_m4:	
+
+bench_vsravim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104837,10 +104837,10 @@ vsra.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvv_m4:	
+
+bench_vssrlvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104908,10 +104908,10 @@ vssrl.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvvm_m4:	
+
+bench_vssrlvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -104979,10 +104979,10 @@ vssrl.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvx_m4:	
+
+bench_vssrlvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105050,10 +105050,10 @@ vssrl.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvxm_m4:	
+
+bench_vssrlvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105121,10 +105121,10 @@ vssrl.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvi_m4:	
+
+bench_vssrlvi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105192,10 +105192,10 @@ vssrl.vi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvim_m4:	
+
+bench_vssrlvim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105263,11 +105263,11 @@ vssrl.vi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vdivuvv_m4:	
+
+bench_vdivuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105335,10 +105335,10 @@ vdivu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvvm_m4:	
+
+bench_vdivuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105406,10 +105406,10 @@ vdivu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvx_m4:	
+
+bench_vdivuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105477,10 +105477,10 @@ vdivu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvxm_m4:	
+
+bench_vdivuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105548,10 +105548,10 @@ vdivu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvv_m4:	
+
+bench_vdivvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105619,10 +105619,10 @@ vdiv.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvvm_m4:	
+
+bench_vdivvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105690,10 +105690,10 @@ vdiv.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvx_m4:	
+
+bench_vdivvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105761,10 +105761,10 @@ vdiv.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvxm_m4:	
+
+bench_vdivvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105832,10 +105832,10 @@ vdiv.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvv_m4:	
+
+bench_vremuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105903,10 +105903,10 @@ vremu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvvm_m4:	
+
+bench_vremuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -105974,10 +105974,10 @@ vremu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvx_m4:	
+
+bench_vremuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106045,10 +106045,10 @@ vremu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvxm_m4:	
+
+bench_vremuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106116,10 +106116,10 @@ vremu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvv_m4:	
+
+bench_vremvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106187,10 +106187,10 @@ vrem.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvvm_m4:	
+
+bench_vremvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106258,10 +106258,10 @@ vrem.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvx_m4:	
+
+bench_vremvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106329,10 +106329,10 @@ vrem.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvxm_m4:	
+
+bench_vremvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106400,10 +106400,10 @@ vrem.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvv_m4:	
+
+bench_vmulhuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106471,10 +106471,10 @@ vmulhu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvvm_m4:	
+
+bench_vmulhuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106542,10 +106542,10 @@ vmulhu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvx_m4:	
+
+bench_vmulhuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106613,10 +106613,10 @@ vmulhu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvxm_m4:	
+
+bench_vmulhuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106684,10 +106684,10 @@ vmulhu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvv_m4:	
+
+bench_vmulvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106755,10 +106755,10 @@ vmul.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvvm_m4:	
+
+bench_vmulvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106826,10 +106826,10 @@ vmul.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvx_m4:	
+
+bench_vmulvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106897,10 +106897,10 @@ vmul.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvxm_m4:	
+
+bench_vmulvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -106968,10 +106968,10 @@ vmul.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvv_m4:	
+
+bench_vmulhsuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107039,10 +107039,10 @@ vmulhsu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvvm_m4:	
+
+bench_vmulhsuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107110,10 +107110,10 @@ vmulhsu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvx_m4:	
+
+bench_vmulhsuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107181,10 +107181,10 @@ vmulhsu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvxm_m4:	
+
+bench_vmulhsuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107252,10 +107252,10 @@ vmulhsu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvv_m4:	
+
+bench_vmulhvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107323,10 +107323,10 @@ vmulh.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvvm_m4:	
+
+bench_vmulhvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107394,10 +107394,10 @@ vmulh.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvx_m4:	
+
+bench_vmulhvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107465,10 +107465,10 @@ vmulh.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvxm_m4:	
+
+bench_vmulhvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107536,10 +107536,10 @@ vmulh.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvv_m4:	
+
+bench_vmaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107607,10 +107607,10 @@ vmadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvvm_m4:	
+
+bench_vmaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107678,10 +107678,10 @@ vmadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvx_m4:	
+
+bench_vmaddvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107749,10 +107749,10 @@ vmadd.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvxm_m4:	
+
+bench_vmaddvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107820,10 +107820,10 @@ vmadd.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvv_m4:	
+
+bench_vmaccvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107891,10 +107891,10 @@ vmacc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvvm_m4:	
+
+bench_vmaccvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -107962,10 +107962,10 @@ vmacc.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvx_m4:	
+
+bench_vmaccvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108033,10 +108033,10 @@ vmacc.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvxm_m4:	
+
+bench_vmaccvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108104,11 +108104,11 @@ vmacc.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vnsrlwv_m4:	
+
+bench_vnsrlwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108176,10 +108176,10 @@ vnsrl.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwvm_m4:	
+
+bench_vnsrlwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108247,10 +108247,10 @@ vnsrl.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwx_m4:	
+
+bench_vnsrlwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108318,10 +108318,10 @@ vnsrl.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwxm_m4:	
+
+bench_vnsrlwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108389,10 +108389,10 @@ vnsrl.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwi_m4:	
+
+bench_vnsrlwi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108460,10 +108460,10 @@ vnsrl.wi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwim_m4:	
+
+bench_vnsrlwim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108531,10 +108531,10 @@ vnsrl.wi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawv_m4:	
+
+bench_vnsrawv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108602,10 +108602,10 @@ vnsra.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawvm_m4:	
+
+bench_vnsrawvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108673,10 +108673,10 @@ vnsra.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawx_m4:	
+
+bench_vnsrawx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108744,10 +108744,10 @@ vnsra.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawxm_m4:	
+
+bench_vnsrawxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108815,10 +108815,10 @@ vnsra.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawi_m4:	
+
+bench_vnsrawi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108886,10 +108886,10 @@ vnsra.wi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawim_m4:	
+
+bench_vnsrawim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -108957,10 +108957,10 @@ vnsra.wi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwv_m4:	
+
+bench_vnclipuwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109028,10 +109028,10 @@ vnclipu.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwvm_m4:	
+
+bench_vnclipuwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109099,10 +109099,10 @@ vnclipu.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwx_m4:	
+
+bench_vnclipuwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109170,10 +109170,10 @@ vnclipu.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwxm_m4:	
+
+bench_vnclipuwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109241,10 +109241,10 @@ vnclipu.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwi_m4:	
+
+bench_vnclipuwi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109312,10 +109312,10 @@ vnclipu.wi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwim_m4:	
+
+bench_vnclipuwim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109383,10 +109383,10 @@ vnclipu.wi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwv_m4:	
+
+bench_vnclipwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109454,10 +109454,10 @@ vnclip.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwvm_m4:	
+
+bench_vnclipwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109525,10 +109525,10 @@ vnclip.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwx_m4:	
+
+bench_vnclipwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109596,10 +109596,10 @@ vnclip.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwxm_m4:	
+
+bench_vnclipwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109667,10 +109667,10 @@ vnclip.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwi_m4:	
+
+bench_vnclipwi_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109738,10 +109738,10 @@ vnclip.wi v12,v20,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwim_m4:	
+
+bench_vnclipwim_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109809,10 +109809,10 @@ vnclip.wi v12,v20,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvv_m4:	
+
+bench_vnmsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109880,10 +109880,10 @@ vnmsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvvm_m4:	
+
+bench_vnmsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -109951,10 +109951,10 @@ vnmsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvx_m4:	
+
+bench_vnmsubvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110022,10 +110022,10 @@ vnmsub.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvxm_m4:	
+
+bench_vnmsubvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110093,10 +110093,10 @@ vnmsub.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvv_m4:	
+
+bench_vnmsacvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110164,10 +110164,10 @@ vnmsac.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvvm_m4:	
+
+bench_vnmsacvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110235,10 +110235,10 @@ vnmsac.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvx_m4:	
+
+bench_vnmsacvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110306,10 +110306,10 @@ vnmsac.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvxm_m4:	
+
+bench_vnmsacvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110377,11 +110377,11 @@ vnmsac.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwadduvv_m4:	
+
+bench_vwadduvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110449,10 +110449,10 @@ vwaddu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvvm_m4:	
+
+bench_vwadduvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110520,10 +110520,10 @@ vwaddu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvx_m4:	
+
+bench_vwadduvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110591,10 +110591,10 @@ vwaddu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvxm_m4:	
+
+bench_vwadduvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110662,10 +110662,10 @@ vwaddu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvv_m4:	
+
+bench_vwaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110733,10 +110733,10 @@ vwadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvvm_m4:	
+
+bench_vwaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110804,10 +110804,10 @@ vwadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvx_m4:	
+
+bench_vwaddvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110875,10 +110875,10 @@ vwadd.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvxm_m4:	
+
+bench_vwaddvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -110946,10 +110946,10 @@ vwadd.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvv_m4:	
+
+bench_vwsubuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111017,10 +111017,10 @@ vwsubu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvvm_m4:	
+
+bench_vwsubuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111088,10 +111088,10 @@ vwsubu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvx_m4:	
+
+bench_vwsubuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111159,10 +111159,10 @@ vwsubu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvxm_m4:	
+
+bench_vwsubuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111230,10 +111230,10 @@ vwsubu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvv_m4:	
+
+bench_vwsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111301,10 +111301,10 @@ vwsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvvm_m4:	
+
+bench_vwsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111372,10 +111372,10 @@ vwsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvx_m4:	
+
+bench_vwsubvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111443,10 +111443,10 @@ vwsub.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvxm_m4:	
+
+bench_vwsubvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111514,10 +111514,10 @@ vwsub.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwv_m4:	
+
+bench_vwadduwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111585,10 +111585,10 @@ vwaddu.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwvm_m4:	
+
+bench_vwadduwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111656,10 +111656,10 @@ vwaddu.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwx_m4:	
+
+bench_vwadduwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111727,10 +111727,10 @@ vwaddu.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwxm_m4:	
+
+bench_vwadduwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111798,10 +111798,10 @@ vwaddu.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwv_m4:	
+
+bench_vwaddwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111869,10 +111869,10 @@ vwadd.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwvm_m4:	
+
+bench_vwaddwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -111940,10 +111940,10 @@ vwadd.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwx_m4:	
+
+bench_vwaddwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112011,10 +112011,10 @@ vwadd.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwxm_m4:	
+
+bench_vwaddwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112082,10 +112082,10 @@ vwadd.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwv_m4:	
+
+bench_vwsubuwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112153,10 +112153,10 @@ vwsubu.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwvm_m4:	
+
+bench_vwsubuwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112224,10 +112224,10 @@ vwsubu.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwx_m4:	
+
+bench_vwsubuwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112295,10 +112295,10 @@ vwsubu.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwxm_m4:	
+
+bench_vwsubuwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112366,10 +112366,10 @@ vwsubu.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwv_m4:	
+
+bench_vwsubwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112437,10 +112437,10 @@ vwsub.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwvm_m4:	
+
+bench_vwsubwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112508,10 +112508,10 @@ vwsub.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwx_m4:	
+
+bench_vwsubwx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112579,10 +112579,10 @@ vwsub.wx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwxm_m4:	
+
+bench_vwsubwxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112650,10 +112650,10 @@ vwsub.wx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvv_m4:	
+
+bench_vwmuluvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112721,10 +112721,10 @@ vwmulu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvvm_m4:	
+
+bench_vwmuluvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112792,10 +112792,10 @@ vwmulu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvx_m4:	
+
+bench_vwmuluvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112863,10 +112863,10 @@ vwmulu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvxm_m4:	
+
+bench_vwmuluvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -112934,10 +112934,10 @@ vwmulu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvv_m4:	
+
+bench_vwmulsuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113005,10 +113005,10 @@ vwmulsu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvvm_m4:	
+
+bench_vwmulsuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113076,10 +113076,10 @@ vwmulsu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvx_m4:	
+
+bench_vwmulsuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113147,10 +113147,10 @@ vwmulsu.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvxm_m4:	
+
+bench_vwmulsuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113218,10 +113218,10 @@ vwmulsu.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvv_m4:	
+
+bench_vwmulvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113289,10 +113289,10 @@ vwmul.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvvm_m4:	
+
+bench_vwmulvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113360,10 +113360,10 @@ vwmul.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvx_m4:	
+
+bench_vwmulvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113431,10 +113431,10 @@ vwmul.vx v12,v20,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvxm_m4:	
+
+bench_vwmulvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113502,10 +113502,10 @@ vwmul.vx v12,v20,t4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvv_m4:	
+
+bench_vwmaccuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113573,10 +113573,10 @@ vwmaccu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvvm_m4:	
+
+bench_vwmaccuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113644,10 +113644,10 @@ vwmaccu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvx_m4:	
+
+bench_vwmaccuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113715,10 +113715,10 @@ vwmaccu.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvxm_m4:	
+
+bench_vwmaccuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113786,10 +113786,10 @@ vwmaccu.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvv_m4:	
+
+bench_vwmaccvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113857,10 +113857,10 @@ vwmacc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvvm_m4:	
+
+bench_vwmaccvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113928,10 +113928,10 @@ vwmacc.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvx_m4:	
+
+bench_vwmaccvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -113999,10 +113999,10 @@ vwmacc.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvxm_m4:	
+
+bench_vwmaccvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114070,10 +114070,10 @@ vwmacc.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvv_m4:	
+
+bench_vwmaccsuvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114141,10 +114141,10 @@ vwmaccsu.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvvm_m4:	
+
+bench_vwmaccsuvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114212,10 +114212,10 @@ vwmaccsu.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvx_m4:	
+
+bench_vwmaccsuvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114283,10 +114283,10 @@ vwmaccsu.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvxm_m4:	
+
+bench_vwmaccsuvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114354,10 +114354,10 @@ vwmaccsu.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvx_m4:	
+
+bench_vwmaccusvx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114425,10 +114425,10 @@ vwmaccus.vx v12,t4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvxm_m4:	
+
+bench_vwmaccusvxm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114496,11 +114496,11 @@ vwmaccus.vx v12,t4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfaddvv_m4:	
+
+bench_vfaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114568,10 +114568,10 @@ vfadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvvm_m4:	
+
+bench_vfaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114639,10 +114639,10 @@ vfadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvf_m4:	
+
+bench_vfaddvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114710,10 +114710,10 @@ vfadd.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvfm_m4:	
+
+bench_vfaddvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114781,10 +114781,10 @@ vfadd.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvv_m4:	
+
+bench_vfsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114852,10 +114852,10 @@ vfsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvvm_m4:	
+
+bench_vfsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114923,10 +114923,10 @@ vfsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvf_m4:	
+
+bench_vfsubvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -114994,10 +114994,10 @@ vfsub.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvfm_m4:	
+
+bench_vfsubvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115065,10 +115065,10 @@ vfsub.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvv_m4:	
+
+bench_vfminvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115136,10 +115136,10 @@ vfmin.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvvm_m4:	
+
+bench_vfminvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115207,10 +115207,10 @@ vfmin.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvf_m4:	
+
+bench_vfminvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115278,10 +115278,10 @@ vfmin.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvfm_m4:	
+
+bench_vfminvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115349,10 +115349,10 @@ vfmin.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvv_m4:	
+
+bench_vfmaxvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115420,10 +115420,10 @@ vfmax.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvvm_m4:	
+
+bench_vfmaxvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115491,10 +115491,10 @@ vfmax.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvf_m4:	
+
+bench_vfmaxvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115562,10 +115562,10 @@ vfmax.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvfm_m4:	
+
+bench_vfmaxvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115633,10 +115633,10 @@ vfmax.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvv_m4:	
+
+bench_vfsgnjvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115704,10 +115704,10 @@ vfsgnj.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvvm_m4:	
+
+bench_vfsgnjvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115775,10 +115775,10 @@ vfsgnj.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvf_m4:	
+
+bench_vfsgnjvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115846,10 +115846,10 @@ vfsgnj.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvfm_m4:	
+
+bench_vfsgnjvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115917,10 +115917,10 @@ vfsgnj.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvv_m4:	
+
+bench_vfsgnjnvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -115988,10 +115988,10 @@ vfsgnjn.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvvm_m4:	
+
+bench_vfsgnjnvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116059,10 +116059,10 @@ vfsgnjn.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvf_m4:	
+
+bench_vfsgnjnvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116130,10 +116130,10 @@ vfsgnjn.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvfm_m4:	
+
+bench_vfsgnjnvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116201,10 +116201,10 @@ vfsgnjn.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvv_m4:	
+
+bench_vfsgnjxvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116272,10 +116272,10 @@ vfsgnjx.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvvm_m4:	
+
+bench_vfsgnjxvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116343,10 +116343,10 @@ vfsgnjx.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvf_m4:	
+
+bench_vfsgnjxvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116414,10 +116414,10 @@ vfsgnjx.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvfm_m4:	
+
+bench_vfsgnjxvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116485,10 +116485,10 @@ vfsgnjx.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvf_m4:	
+
+bench_vfslide1upvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116556,10 +116556,10 @@ vfslide1up.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvfm_m4:	
+
+bench_vfslide1upvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116627,10 +116627,10 @@ vfslide1up.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvf_m4:	
+
+bench_vfslide1downvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116698,10 +116698,10 @@ vfslide1down.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvfm_m4:	
+
+bench_vfslide1downvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116769,11 +116769,11 @@ vfslide1down.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfredusumvs_m4:	
+
+bench_vfredusumvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116841,10 +116841,10 @@ vfredusum.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredusumvsm_m4:	
+
+bench_vfredusumvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116912,10 +116912,10 @@ vfredusum.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvs_m4:	
+
+bench_vfredosumvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -116983,10 +116983,10 @@ vfredosum.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvsm_m4:	
+
+bench_vfredosumvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117054,10 +117054,10 @@ vfredosum.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvs_m4:	
+
+bench_vfredminvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117125,10 +117125,10 @@ vfredmin.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvsm_m4:	
+
+bench_vfredminvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117196,10 +117196,10 @@ vfredmin.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvs_m4:	
+
+bench_vfredmaxvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117267,10 +117267,10 @@ vfredmax.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvsm_m4:	
+
+bench_vfredmaxvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117338,11 +117338,11 @@ vfredmax.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmergevfm_m4:	
+
+bench_vfmergevfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117410,10 +117410,10 @@ vfmerge.vfm v12,v20,ft4,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvvf_m4:	
+
+bench_vfmvvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117481,11 +117481,11 @@ vfmv.v.f v12,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmfeqvv_m4:	
+
+bench_vmfeqvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117553,10 +117553,10 @@ vmfeq.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvvm_m4:	
+
+bench_vmfeqvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117624,10 +117624,10 @@ vmfeq.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvf_m4:	
+
+bench_vmfeqvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117695,10 +117695,10 @@ vmfeq.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvfm_m4:	
+
+bench_vmfeqvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117766,10 +117766,10 @@ vmfeq.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevv_m4:	
+
+bench_vmflevv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117837,10 +117837,10 @@ vmfle.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevvm_m4:	
+
+bench_vmflevvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117908,10 +117908,10 @@ vmfle.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevf_m4:	
+
+bench_vmflevf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -117979,10 +117979,10 @@ vmfle.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevfm_m4:	
+
+bench_vmflevfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118050,10 +118050,10 @@ vmfle.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvv_m4:	
+
+bench_vmfltvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118121,10 +118121,10 @@ vmflt.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvvm_m4:	
+
+bench_vmfltvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118192,10 +118192,10 @@ vmflt.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvf_m4:	
+
+bench_vmfltvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118263,10 +118263,10 @@ vmflt.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvfm_m4:	
+
+bench_vmfltvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118334,10 +118334,10 @@ vmflt.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevv_m4:	
+
+bench_vmfnevv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118405,10 +118405,10 @@ vmfne.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevvm_m4:	
+
+bench_vmfnevvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118476,10 +118476,10 @@ vmfne.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevf_m4:	
+
+bench_vmfnevf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118547,10 +118547,10 @@ vmfne.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevfm_m4:	
+
+bench_vmfnevfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118618,10 +118618,10 @@ vmfne.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvv_m4:	
+
+bench_vmfgtvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118689,10 +118689,10 @@ vmfgt.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvvm_m4:	
+
+bench_vmfgtvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118760,10 +118760,10 @@ vmfgt.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvf_m4:	
+
+bench_vmfgtvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118831,10 +118831,10 @@ vmfgt.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvfm_m4:	
+
+bench_vmfgtvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118902,10 +118902,10 @@ vmfgt.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevv_m4:	
+
+bench_vmfgevv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -118973,10 +118973,10 @@ vmfge.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevvm_m4:	
+
+bench_vmfgevvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119044,10 +119044,10 @@ vmfge.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevf_m4:	
+
+bench_vmfgevf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119115,10 +119115,10 @@ vmfge.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevfm_m4:	
+
+bench_vmfgevfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119186,11 +119186,11 @@ vmfge.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfdivvv_m4:	
+
+bench_vfdivvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119258,10 +119258,10 @@ vfdiv.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvvm_m4:	
+
+bench_vfdivvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119329,10 +119329,10 @@ vfdiv.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvf_m4:	
+
+bench_vfdivvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119400,10 +119400,10 @@ vfdiv.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvfm_m4:	
+
+bench_vfdivvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119471,10 +119471,10 @@ vfdiv.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvf_m4:	
+
+bench_vfrdivvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119542,10 +119542,10 @@ vfrdiv.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvfm_m4:	
+
+bench_vfrdivvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119613,10 +119613,10 @@ vfrdiv.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvv_m4:	
+
+bench_vfmulvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119684,10 +119684,10 @@ vfmul.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvvm_m4:	
+
+bench_vfmulvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119755,10 +119755,10 @@ vfmul.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvf_m4:	
+
+bench_vfmulvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119826,10 +119826,10 @@ vfmul.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvfm_m4:	
+
+bench_vfmulvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119897,10 +119897,10 @@ vfmul.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvf_m4:	
+
+bench_vfrsubvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -119968,10 +119968,10 @@ vfrsub.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvfm_m4:	
+
+bench_vfrsubvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120039,10 +120039,10 @@ vfrsub.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvv_m4:	
+
+bench_vfmaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120110,10 +120110,10 @@ vfmadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvvm_m4:	
+
+bench_vfmaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120181,10 +120181,10 @@ vfmadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvf_m4:	
+
+bench_vfmaddvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120252,10 +120252,10 @@ vfmadd.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvfm_m4:	
+
+bench_vfmaddvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120323,10 +120323,10 @@ vfmadd.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvv_m4:	
+
+bench_vfmsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120394,10 +120394,10 @@ vfmsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvvm_m4:	
+
+bench_vfmsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120465,10 +120465,10 @@ vfmsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvf_m4:	
+
+bench_vfmsubvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120536,10 +120536,10 @@ vfmsub.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvfm_m4:	
+
+bench_vfmsubvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120607,10 +120607,10 @@ vfmsub.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvv_m4:	
+
+bench_vfmaccvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120678,10 +120678,10 @@ vfmacc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvvm_m4:	
+
+bench_vfmaccvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120749,10 +120749,10 @@ vfmacc.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvf_m4:	
+
+bench_vfmaccvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120820,10 +120820,10 @@ vfmacc.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvfm_m4:	
+
+bench_vfmaccvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120891,10 +120891,10 @@ vfmacc.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvv_m4:	
+
+bench_vfmsacvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -120962,10 +120962,10 @@ vfmsac.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvvm_m4:	
+
+bench_vfmsacvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121033,10 +121033,10 @@ vfmsac.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvf_m4:	
+
+bench_vfmsacvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121104,10 +121104,10 @@ vfmsac.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvfm_m4:	
+
+bench_vfmsacvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121175,11 +121175,11 @@ vfmsac.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfnmsacvv_m4:	
+
+bench_vfnmsacvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121247,10 +121247,10 @@ vfnmsac.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvvm_m4:	
+
+bench_vfnmsacvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121318,10 +121318,10 @@ vfnmsac.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvf_m4:	
+
+bench_vfnmsacvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121389,10 +121389,10 @@ vfnmsac.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvfm_m4:	
+
+bench_vfnmsacvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121460,10 +121460,10 @@ vfnmsac.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvv_m4:	
+
+bench_vfnmaccvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121531,10 +121531,10 @@ vfnmacc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvvm_m4:	
+
+bench_vfnmaccvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121602,10 +121602,10 @@ vfnmacc.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvf_m4:	
+
+bench_vfnmaccvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121673,10 +121673,10 @@ vfnmacc.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvfm_m4:	
+
+bench_vfnmaccvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121744,10 +121744,10 @@ vfnmacc.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvv_m4:	
+
+bench_vfnmsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121815,10 +121815,10 @@ vfnmsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvvm_m4:	
+
+bench_vfnmsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121886,10 +121886,10 @@ vfnmsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvf_m4:	
+
+bench_vfnmsubvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -121957,10 +121957,10 @@ vfnmsub.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvfm_m4:	
+
+bench_vfnmsubvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122028,10 +122028,10 @@ vfnmsub.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvv_m4:	
+
+bench_vfnmaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122099,10 +122099,10 @@ vfnmadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvvm_m4:	
+
+bench_vfnmaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122170,10 +122170,10 @@ vfnmadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvf_m4:	
+
+bench_vfnmaddvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122241,10 +122241,10 @@ vfnmadd.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvfm_m4:	
+
+bench_vfnmaddvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122312,11 +122312,11 @@ vfnmadd.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwredsumuvs_m4:	
+
+bench_vwredsumuvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122384,10 +122384,10 @@ vwredsumu.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumuvsm_m4:	
+
+bench_vwredsumuvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122455,10 +122455,10 @@ vwredsumu.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvs_m4:	
+
+bench_vwredsumvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122526,10 +122526,10 @@ vwredsum.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvsm_m4:	
+
+bench_vwredsumvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122597,11 +122597,11 @@ vwredsum.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwaddvv_m4:	
+
+bench_vfwaddvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122669,10 +122669,10 @@ vfwadd.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvvm_m4:	
+
+bench_vfwaddvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122740,10 +122740,10 @@ vfwadd.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvf_m4:	
+
+bench_vfwaddvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122811,10 +122811,10 @@ vfwadd.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvfm_m4:	
+
+bench_vfwaddvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122882,10 +122882,10 @@ vfwadd.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvv_m4:	
+
+bench_vfwsubvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -122953,10 +122953,10 @@ vfwsub.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvvm_m4:	
+
+bench_vfwsubvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123024,10 +123024,10 @@ vfwsub.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvf_m4:	
+
+bench_vfwsubvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123095,10 +123095,10 @@ vfwsub.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvfm_m4:	
+
+bench_vfwsubvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123166,10 +123166,10 @@ vfwsub.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwv_m4:	
+
+bench_vfwaddwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123237,10 +123237,10 @@ vfwadd.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwvm_m4:	
+
+bench_vfwaddwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123308,10 +123308,10 @@ vfwadd.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwf_m4:	
+
+bench_vfwaddwf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123379,10 +123379,10 @@ vfwadd.wf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwfm_m4:	
+
+bench_vfwaddwfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123450,10 +123450,10 @@ vfwadd.wf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwv_m4:	
+
+bench_vfwsubwv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123521,10 +123521,10 @@ vfwsub.wv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwvm_m4:	
+
+bench_vfwsubwvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123592,10 +123592,10 @@ vfwsub.wv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwf_m4:	
+
+bench_vfwsubwf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123663,10 +123663,10 @@ vfwsub.wf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwfm_m4:	
+
+bench_vfwsubwfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123734,10 +123734,10 @@ vfwsub.wf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvv_m4:	
+
+bench_vfwmulvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123805,10 +123805,10 @@ vfwmul.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvvm_m4:	
+
+bench_vfwmulvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123876,10 +123876,10 @@ vfwmul.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvf_m4:	
+
+bench_vfwmulvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -123947,10 +123947,10 @@ vfwmul.vf v12,v20,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvfm_m4:	
+
+bench_vfwmulvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124018,10 +124018,10 @@ vfwmul.vf v12,v20,ft4,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvv_m4:	
+
+bench_vfwmaccvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124089,10 +124089,10 @@ vfwmacc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvvm_m4:	
+
+bench_vfwmaccvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124160,10 +124160,10 @@ vfwmacc.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvf_m4:	
+
+bench_vfwmaccvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124231,10 +124231,10 @@ vfwmacc.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvfm_m4:	
+
+bench_vfwmaccvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124302,10 +124302,10 @@ vfwmacc.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvv_m4:	
+
+bench_vfwnmaccvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124373,10 +124373,10 @@ vfwnmacc.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvvm_m4:	
+
+bench_vfwnmaccvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124444,10 +124444,10 @@ vfwnmacc.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvf_m4:	
+
+bench_vfwnmaccvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124515,10 +124515,10 @@ vfwnmacc.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvfm_m4:	
+
+bench_vfwnmaccvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124586,10 +124586,10 @@ vfwnmacc.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvv_m4:	
+
+bench_vfwmsacvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124657,10 +124657,10 @@ vfwmsac.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvvm_m4:	
+
+bench_vfwmsacvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124728,10 +124728,10 @@ vfwmsac.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvf_m4:	
+
+bench_vfwmsacvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124799,10 +124799,10 @@ vfwmsac.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvfm_m4:	
+
+bench_vfwmsacvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124870,10 +124870,10 @@ vfwmsac.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvv_m4:	
+
+bench_vfwnmsacvv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -124941,10 +124941,10 @@ vfwnmsac.vv v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvvm_m4:	
+
+bench_vfwnmsacvvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125012,10 +125012,10 @@ vfwnmsac.vv v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvf_m4:	
+
+bench_vfwnmsacvf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125083,10 +125083,10 @@ vfwnmsac.vf v12,ft4,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvfm_m4:	
+
+bench_vfwnmsacvfm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125154,11 +125154,11 @@ vfwnmsac.vf v12,ft4,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwredosumvs_m4:	
+
+bench_vfwredosumvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125226,10 +125226,10 @@ vfwredosum.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredosumvsm_m4:	
+
+bench_vfwredosumvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125297,10 +125297,10 @@ vfwredosum.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvs_m4:	
+
+bench_vfwredusumvs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125368,10 +125368,10 @@ vfwredusum.vs v12,v20,v28
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvsm_m4:	
+
+bench_vfwredusumvsm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125439,11 +125439,11 @@ vfwredusum.vs v12,v20,v28,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmvsx_m4:	
+
+bench_vmvsx_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125511,10 +125511,10 @@ vmv.s.x v12,t4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvxs_m4:	
+
+bench_vmvxs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125582,11 +125582,11 @@ vmv.x.s t4,v12
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcpopm_m4:	
+
+bench_vcpopm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125654,10 +125654,10 @@ vcpop.m t4,v12
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vcpopmm_m4:	
+
+bench_vcpopmm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -125725,10 +125725,10 @@ vcpop.m t4,v12,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstm_m4:	
+
+bench_vfirstm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -125796,10 +125796,10 @@ vfirst.m t4,v12
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstmm_m4:	
+
+bench_vfirstmm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -125867,10 +125867,10 @@ vfirst.m t4,v12,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2_m4:	
+
+bench_vzextvf2_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -125938,10 +125938,10 @@ vzext.vf2 v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2m_m4:	
+
+bench_vzextvf2m_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126009,10 +126009,10 @@ vzext.vf2 v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2_m4:	
+
+bench_vsextvf2_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126080,10 +126080,10 @@ vsext.vf2 v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2m_m4:	
+
+bench_vsextvf2m_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126151,10 +126151,10 @@ vsext.vf2 v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4_m4:	
+
+bench_vzextvf4_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126222,10 +126222,10 @@ vzext.vf4 v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4m_m4:	
+
+bench_vzextvf4m_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126293,10 +126293,10 @@ vzext.vf4 v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4_m4:	
+
+bench_vsextvf4_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126364,10 +126364,10 @@ vsext.vf4 v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4m_m4:	
+
+bench_vsextvf4m_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126435,10 +126435,10 @@ vsext.vf4 v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8_m4:	
+
+bench_vzextvf8_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126506,10 +126506,10 @@ vzext.vf8 v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8m_m4:	
+
+bench_vzextvf8m_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126577,10 +126577,10 @@ vzext.vf8 v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8_m4:	
+
+bench_vsextvf8_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126648,10 +126648,10 @@ vsext.vf8 v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8m_m4:	
+
+bench_vsextvf8m_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -126719,11 +126719,11 @@ vsext.vf8 v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmvfs_m4:	
+
+bench_vfmvfs_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -126791,10 +126791,10 @@ vfmv.f.s ft4,v12
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvsf_m4:	
+
+bench_vfmvsf_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -126862,11 +126862,11 @@ vfmv.s.f v12,ft4
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfcvtxufv_m4:	
+
+bench_vfcvtxufv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -126934,10 +126934,10 @@ vfcvt.xu.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxufvm_m4:	
+
+bench_vfcvtxufvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127005,10 +127005,10 @@ vfcvt.xu.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxfv_m4:	
+
+bench_vfcvtxfv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127076,10 +127076,10 @@ vfcvt.x.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxfvm_m4:	
+
+bench_vfcvtxfvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127147,10 +127147,10 @@ vfcvt.x.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxuv_m4:	
+
+bench_vfcvtfxuv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127218,10 +127218,10 @@ vfcvt.f.xu.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxuvm_m4:	
+
+bench_vfcvtfxuvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127289,10 +127289,10 @@ vfcvt.f.xu.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxv_m4:	
+
+bench_vfcvtfxv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127360,10 +127360,10 @@ vfcvt.f.x.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxvm_m4:	
+
+bench_vfcvtfxvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127431,10 +127431,10 @@ vfcvt.f.x.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxfv_m4:	
+
+bench_vfcvtrtzxfv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127502,10 +127502,10 @@ vfcvt.rtz.x.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxfvm_m4:	
+
+bench_vfcvtrtzxfvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127573,10 +127573,10 @@ vfcvt.rtz.x.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxufv_m4:	
+
+bench_vfcvtrtzxufv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127644,10 +127644,10 @@ vfcvt.rtz.xu.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxufvm_m4:	
+
+bench_vfcvtrtzxufvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127715,11 +127715,11 @@ vfcvt.rtz.xu.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwcvtxufv_m4:	
+
+bench_vfwcvtxufv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127787,10 +127787,10 @@ vfwcvt.xu.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxufvm_m4:	
+
+bench_vfwcvtxufvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127858,10 +127858,10 @@ vfwcvt.xu.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxfv_m4:	
+
+bench_vfwcvtxfv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -127929,10 +127929,10 @@ vfwcvt.x.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxfvm_m4:	
+
+bench_vfwcvtxfvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128000,10 +128000,10 @@ vfwcvt.x.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxuv_m4:	
+
+bench_vfwcvtfxuv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128071,10 +128071,10 @@ vfwcvt.f.xu.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxuvm_m4:	
+
+bench_vfwcvtfxuvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128142,10 +128142,10 @@ vfwcvt.f.xu.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxv_m4:	
+
+bench_vfwcvtfxv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128213,10 +128213,10 @@ vfwcvt.f.x.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxvm_m4:	
+
+bench_vfwcvtfxvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128284,10 +128284,10 @@ vfwcvt.f.x.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtffv_m4:	
+
+bench_vfwcvtffv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128355,10 +128355,10 @@ vfwcvt.f.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtffvm_m4:	
+
+bench_vfwcvtffvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128426,10 +128426,10 @@ vfwcvt.f.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxufv_m4:	
+
+bench_vfwcvtrtzxufv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128497,10 +128497,10 @@ vfwcvt.rtz.xu.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxufvm_m4:	
+
+bench_vfwcvtrtzxufvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128568,10 +128568,10 @@ vfwcvt.rtz.xu.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxfv_m4:	
+
+bench_vfwcvtrtzxfv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128639,10 +128639,10 @@ vfwcvt.rtz.x.f.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxfvm_m4:	
+
+bench_vfwcvtrtzxfvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128710,11 +128710,11 @@ vfwcvt.rtz.x.f.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfncvtxufw_m4:	
+
+bench_vfncvtxufw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128782,10 +128782,10 @@ vfncvt.xu.f.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxufwm_m4:	
+
+bench_vfncvtxufwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128853,10 +128853,10 @@ vfncvt.xu.f.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxfw_m4:	
+
+bench_vfncvtxfw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128924,10 +128924,10 @@ vfncvt.x.f.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxfwm_m4:	
+
+bench_vfncvtxfwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -128995,10 +128995,10 @@ vfncvt.x.f.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxuw_m4:	
+
+bench_vfncvtfxuw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129066,10 +129066,10 @@ vfncvt.f.xu.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxuwm_m4:	
+
+bench_vfncvtfxuwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129137,10 +129137,10 @@ vfncvt.f.xu.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxw_m4:	
+
+bench_vfncvtfxw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129208,10 +129208,10 @@ vfncvt.f.x.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxwm_m4:	
+
+bench_vfncvtfxwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129279,10 +129279,10 @@ vfncvt.f.x.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtffw_m4:	
+
+bench_vfncvtffw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129350,10 +129350,10 @@ vfncvt.f.f.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtffwm_m4:	
+
+bench_vfncvtffwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129421,10 +129421,10 @@ vfncvt.f.f.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxfw_m4:	
+
+bench_vfncvtrtzxfw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129492,10 +129492,10 @@ vfncvt.rtz.x.f.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxfwm_m4:	
+
+bench_vfncvtrtzxfwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129563,10 +129563,10 @@ vfncvt.rtz.x.f.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxufw_m4:	
+
+bench_vfncvtrtzxufw_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129634,10 +129634,10 @@ vfncvt.rtz.xu.f.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxufwm_m4:	
+
+bench_vfncvtrtzxufwm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129705,10 +129705,10 @@ vfncvt.rtz.xu.f.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvt.rod.f.f.w_m4:	
+
+bench_vfncvt.rod.f.f.w_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129776,10 +129776,10 @@ vfncvt.rod.f.f.w v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvt.rod.f.f.wm_m4:	
+
+bench_vfncvt.rod.f.f.wm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129847,11 +129847,11 @@ vfncvt.rod.f.f.w v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfsqrtv_m4:	
+
+bench_vfsqrtv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129919,10 +129919,10 @@ vfsqrt.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsqrtvm_m4:	
+
+bench_vfsqrtvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -129990,10 +129990,10 @@ vfsqrt.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsqrt7v_m4:	
+
+bench_vfrsqrt7v_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130061,10 +130061,10 @@ vfrsqrt7.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsqrt7vm_m4:	
+
+bench_vfrsqrt7vm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130132,10 +130132,10 @@ vfrsqrt7.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrec7v_m4:	
+
+bench_vfrec7v_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130203,10 +130203,10 @@ vfrec7.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrec7vm_m4:	
+
+bench_vfrec7vm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130274,10 +130274,10 @@ vfrec7.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfclassv_m4:	
+
+bench_vfclassv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130345,10 +130345,10 @@ vfclass.v v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfclassvm_m4:	
+
+bench_vfclassvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130416,11 +130416,11 @@ vfclass.v v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmsbfm_m4:	
+
+bench_vmsbfm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -130488,10 +130488,10 @@ vmsbf.m v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbfmm_m4:	
+
+bench_vmsbfmm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -130559,10 +130559,10 @@ vmsbf.m v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofm_m4:	
+
+bench_vmsofm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -130630,10 +130630,10 @@ vmsof.m v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofmm_m4:	
+
+bench_vmsofmm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -130701,10 +130701,10 @@ vmsof.m v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifm_m4:	
+
+bench_vmsifm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -130772,10 +130772,10 @@ vmsif.m v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifmm_m4:	
+
+bench_vmsifmm_m4:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -130843,10 +130843,10 @@ vmsif.m v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotam_m4:	
+
+bench_viotam_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130914,10 +130914,10 @@ viota.m v12,v20
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotamm_m4:	
+
+bench_viotamm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -130985,10 +130985,10 @@ viota.m v12,v20,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidv_m4:	
+
+bench_vidv_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131056,10 +131056,10 @@ vid.v v12
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidvm_m4:	
+
+bench_vidvm_m4:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131127,14 +131127,14 @@ vid.v v12,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
 
 
 
-	
-bench_add_m8:	
+
+bench_add_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131202,10 +131202,10 @@ add t0,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_mul_m8:	
+
+bench_mul_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131273,10 +131273,10 @@ mul t0,t1,t2
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvv_m8:	
+
+bench_vaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131344,10 +131344,10 @@ vadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvvm_m8:	
+
+bench_vaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131415,10 +131415,10 @@ vadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvx_m8:	
+
+bench_vaddvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131486,10 +131486,10 @@ vadd.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvxm_m8:	
+
+bench_vaddvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131557,10 +131557,10 @@ vadd.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvi_m8:	
+
+bench_vaddvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131628,10 +131628,10 @@ vadd.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaddvim_m8:	
+
+bench_vaddvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131699,10 +131699,10 @@ vadd.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvv_m8:	
+
+bench_vsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131770,10 +131770,10 @@ vsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvvm_m8:	
+
+bench_vsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131841,10 +131841,10 @@ vsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvx_m8:	
+
+bench_vsubvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131912,10 +131912,10 @@ vsub.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsubvxm_m8:	
+
+bench_vsubvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -131983,10 +131983,10 @@ vsub.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvx_m8:	
+
+bench_vrsubvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132054,10 +132054,10 @@ vrsub.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvxm_m8:	
+
+bench_vrsubvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132125,10 +132125,10 @@ vrsub.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvi_m8:	
+
+bench_vrsubvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132196,10 +132196,10 @@ vrsub.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrsubvim_m8:	
+
+bench_vrsubvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132267,10 +132267,10 @@ vrsub.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvv_m8:	
+
+bench_vminuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132338,10 +132338,10 @@ vminu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvvm_m8:	
+
+bench_vminuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132409,10 +132409,10 @@ vminu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvx_m8:	
+
+bench_vminuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132480,10 +132480,10 @@ vminu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminuvxm_m8:	
+
+bench_vminuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132551,10 +132551,10 @@ vminu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvv_m8:	
+
+bench_vminvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132622,10 +132622,10 @@ vmin.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvvm_m8:	
+
+bench_vminvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132693,10 +132693,10 @@ vmin.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvx_m8:	
+
+bench_vminvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132764,10 +132764,10 @@ vmin.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vminvxm_m8:	
+
+bench_vminvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132835,10 +132835,10 @@ vmin.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvv_m8:	
+
+bench_vmaxuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132906,10 +132906,10 @@ vmaxu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvvm_m8:	
+
+bench_vmaxuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -132977,10 +132977,10 @@ vmaxu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvx_m8:	
+
+bench_vmaxuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133048,10 +133048,10 @@ vmaxu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxuvxm_m8:	
+
+bench_vmaxuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133119,10 +133119,10 @@ vmaxu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvv_m8:	
+
+bench_vmaxvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133190,10 +133190,10 @@ vmax.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvvm_m8:	
+
+bench_vmaxvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133261,10 +133261,10 @@ vmax.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvx_m8:	
+
+bench_vmaxvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133332,10 +133332,10 @@ vmax.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaxvxm_m8:	
+
+bench_vmaxvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133403,10 +133403,10 @@ vmax.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvv_m8:	
+
+bench_vandvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133474,10 +133474,10 @@ vand.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvvm_m8:	
+
+bench_vandvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133545,10 +133545,10 @@ vand.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvx_m8:	
+
+bench_vandvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133616,10 +133616,10 @@ vand.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvxm_m8:	
+
+bench_vandvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133687,10 +133687,10 @@ vand.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvi_m8:	
+
+bench_vandvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133758,10 +133758,10 @@ vand.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vandvim_m8:	
+
+bench_vandvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133829,10 +133829,10 @@ vand.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvv_m8:	
+
+bench_vorvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133900,10 +133900,10 @@ vor.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvvm_m8:	
+
+bench_vorvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -133971,10 +133971,10 @@ vor.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvx_m8:	
+
+bench_vorvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134042,10 +134042,10 @@ vor.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvxm_m8:	
+
+bench_vorvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134113,10 +134113,10 @@ vor.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvi_m8:	
+
+bench_vorvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134184,10 +134184,10 @@ vor.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vorvim_m8:	
+
+bench_vorvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134255,10 +134255,10 @@ vor.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvv_m8:	
+
+bench_vxorvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134326,10 +134326,10 @@ vxor.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvvm_m8:	
+
+bench_vxorvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134397,10 +134397,10 @@ vxor.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvx_m8:	
+
+bench_vxorvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134468,10 +134468,10 @@ vxor.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvxm_m8:	
+
+bench_vxorvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134539,10 +134539,10 @@ vxor.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvi_m8:	
+
+bench_vxorvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134610,10 +134610,10 @@ vxor.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vxorvim_m8:	
+
+bench_vxorvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -134681,11 +134681,11 @@ vxor.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vrgathervv_m8:	
+
+bench_vrgathervv_m8:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -134753,10 +134753,10 @@ vrgather.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervvm_m8:	
+
+bench_vrgathervvm_m8:
 	m_mod_v24_e8_vl
 	li a0, WARMUP
 1:
@@ -134824,10 +134824,10 @@ vrgather.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervx_m8:	
+
+bench_vrgathervx_m8:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -134895,10 +134895,10 @@ vrgather.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervxm_m8:	
+
+bench_vrgathervxm_m8:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -134966,10 +134966,10 @@ vrgather.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervi_m8:	
+
+bench_vrgathervi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135037,10 +135037,10 @@ vrgather.vi v8,v16,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgathervim_m8:	
+
+bench_vrgathervim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135108,10 +135108,10 @@ vrgather.vi v8,v16,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvx_m8:	
+
+bench_vslideupvx_m8:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -135179,10 +135179,10 @@ vslideup.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvxm_m8:	
+
+bench_vslideupvxm_m8:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -135250,10 +135250,10 @@ vslideup.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvi_m8:	
+
+bench_vslideupvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135321,10 +135321,10 @@ vslideup.vi v8,v16,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslideupvim_m8:	
+
+bench_vslideupvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135392,10 +135392,10 @@ vslideup.vi v8,v16,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vv_m8:	
+
+bench_vrgatherei16vv_m8:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -135463,10 +135463,10 @@ vrgatherei16.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vrgatherei16vvm_m8:	
+
+bench_vrgatherei16vvm_m8:
 	m_mod_v24_e16_vl
 	li a0, WARMUP
 1:
@@ -135534,11 +135534,11 @@ vrgatherei16.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslidedownvx_m8:	
+
+bench_vslidedownvx_m8:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -135606,10 +135606,10 @@ vslidedown.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvxm_m8:	
+
+bench_vslidedownvxm_m8:
 	m_mod_t0_vl
 	li a0, WARMUP
 1:
@@ -135677,10 +135677,10 @@ vslidedown.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvi_m8:	
+
+bench_vslidedownvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135748,10 +135748,10 @@ vslidedown.vi v8,v16,3
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslidedownvim_m8:	
+
+bench_vslidedownvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135819,11 +135819,11 @@ vslidedown.vi v8,v16,3,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vredsumvs_m8:	
+
+bench_vredsumvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135891,10 +135891,10 @@ vredsum.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredsumvsm_m8:	
+
+bench_vredsumvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -135962,10 +135962,10 @@ vredsum.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvs_m8:	
+
+bench_vredandvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136033,10 +136033,10 @@ vredand.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredandvsm_m8:	
+
+bench_vredandvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136104,10 +136104,10 @@ vredand.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvs_m8:	
+
+bench_vredorvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136175,10 +136175,10 @@ vredor.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredorvsm_m8:	
+
+bench_vredorvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136246,10 +136246,10 @@ vredor.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvs_m8:	
+
+bench_vredxorvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136317,10 +136317,10 @@ vredxor.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredxorvsm_m8:	
+
+bench_vredxorvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136388,10 +136388,10 @@ vredxor.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvs_m8:	
+
+bench_vredminuvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136459,10 +136459,10 @@ vredminu.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminuvsm_m8:	
+
+bench_vredminuvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136530,10 +136530,10 @@ vredminu.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvs_m8:	
+
+bench_vredminvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136601,10 +136601,10 @@ vredmin.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredminvsm_m8:	
+
+bench_vredminvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136672,10 +136672,10 @@ vredmin.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvs_m8:	
+
+bench_vredmaxuvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136743,10 +136743,10 @@ vredmaxu.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxuvsm_m8:	
+
+bench_vredmaxuvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136814,10 +136814,10 @@ vredmaxu.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvs_m8:	
+
+bench_vredmaxvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136885,10 +136885,10 @@ vredmax.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vredmaxvsm_m8:	
+
+bench_vredmaxvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -136956,11 +136956,11 @@ vredmax.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vaadduvv_m8:	
+
+bench_vaadduvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137028,10 +137028,10 @@ vaaddu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvvm_m8:	
+
+bench_vaadduvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137099,10 +137099,10 @@ vaaddu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvx_m8:	
+
+bench_vaadduvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137170,10 +137170,10 @@ vaaddu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaadduvxm_m8:	
+
+bench_vaadduvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137241,10 +137241,10 @@ vaaddu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvv_m8:	
+
+bench_vaaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137312,10 +137312,10 @@ vaadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvvm_m8:	
+
+bench_vaaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137383,10 +137383,10 @@ vaadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvx_m8:	
+
+bench_vaaddvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137454,10 +137454,10 @@ vaadd.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vaaddvxm_m8:	
+
+bench_vaaddvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137525,10 +137525,10 @@ vaadd.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvv_m8:	
+
+bench_vasubuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137596,10 +137596,10 @@ vasubu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvvm_m8:	
+
+bench_vasubuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137667,10 +137667,10 @@ vasubu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvx_m8:	
+
+bench_vasubuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137738,10 +137738,10 @@ vasubu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubuvxm_m8:	
+
+bench_vasubuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137809,10 +137809,10 @@ vasubu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvv_m8:	
+
+bench_vasubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137880,10 +137880,10 @@ vasub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvvm_m8:	
+
+bench_vasubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -137951,10 +137951,10 @@ vasub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvx_m8:	
+
+bench_vasubvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138022,10 +138022,10 @@ vasub.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vasubvxm_m8:	
+
+bench_vasubvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138093,11 +138093,11 @@ vasub.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vslide1upvx_m8:	
+
+bench_vslide1upvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138165,10 +138165,10 @@ vslide1up.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1upvxm_m8:	
+
+bench_vslide1upvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138236,10 +138236,10 @@ vslide1up.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvx_m8:	
+
+bench_vslide1downvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138307,10 +138307,10 @@ vslide1down.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vslide1downvxm_m8:	
+
+bench_vslide1downvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138378,11 +138378,11 @@ vslide1down.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vadcvvm_m8:	
+
+bench_vadcvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138450,10 +138450,10 @@ vadc.vvm v8,v16,v24,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvxm_m8:	
+
+bench_vadcvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138521,10 +138521,10 @@ vadc.vxm v8,v16,t0,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vadcvim_m8:	
+
+bench_vadcvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138592,10 +138592,10 @@ vadc.vim v8,v16,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvvm_m8:	
+
+bench_vmadcvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138663,10 +138663,10 @@ vmadc.vvm v8,v16,v24,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvxm_m8:	
+
+bench_vmadcvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138734,10 +138734,10 @@ vmadc.vxm v8,v16,t0,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmadcvim_m8:	
+
+bench_vmadcvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138805,10 +138805,10 @@ vmadc.vim v8,v16,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvv_m8:	
+
+bench_vmadcvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138876,10 +138876,10 @@ vmadc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvx_m8:	
+
+bench_vmadcvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -138947,10 +138947,10 @@ vmadc.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmadcvi_m8:	
+
+bench_vmadcvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139018,10 +139018,10 @@ vmadc.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsbcvvm_m8:	
+
+bench_vsbcvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139089,10 +139089,10 @@ vsbc.vvm v8,v16,v24,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vsbcvxm_m8:	
+
+bench_vsbcvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139160,10 +139160,10 @@ vsbc.vxm v8,v16,t0,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvvm_m8:	
+
+bench_vmsbcvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139231,10 +139231,10 @@ vmsbc.vvm v8,v16,v24,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmsbcvxm_m8:	
+
+bench_vmsbcvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139302,10 +139302,10 @@ vmsbc.vxm v8,v16,t0,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvv_m8:	
+
+bench_vmsbcvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139373,10 +139373,10 @@ vmsbc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbcvx_m8:	
+
+bench_vmsbcvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139444,11 +139444,11 @@ vmsbc.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmergevvm_m8:	
+
+bench_vmergevvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139516,10 +139516,10 @@ vmerge.vvm v8,v16,v24,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevxm_m8:	
+
+bench_vmergevxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139587,10 +139587,10 @@ vmerge.vxm v8,v16,t0,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	 
-bench_vmergevim_m8:	
+
+bench_vmergevim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139658,10 +139658,10 @@ vmerge.vim v8,v16,13,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvv_m8:	
+
+bench_vmvvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139729,10 +139729,10 @@ vmv.v.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvx_m8:	
+
+bench_vmvvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139800,10 +139800,10 @@ vmv.v.x v8,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvvi_m8:	
+
+bench_vmvvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139871,10 +139871,10 @@ vmv.v.i v8,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvv_m8:	
+
+bench_vmseqvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -139942,10 +139942,10 @@ vmseq.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvvm_m8:	
+
+bench_vmseqvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140013,10 +140013,10 @@ vmseq.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvx_m8:	
+
+bench_vmseqvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140084,10 +140084,10 @@ vmseq.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvxm_m8:	
+
+bench_vmseqvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140155,10 +140155,10 @@ vmseq.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvi_m8:	
+
+bench_vmseqvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140226,10 +140226,10 @@ vmseq.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmseqvim_m8:	
+
+bench_vmseqvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140297,10 +140297,10 @@ vmseq.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevv_m8:	
+
+bench_vmsnevv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140368,10 +140368,10 @@ vmsne.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevvm_m8:	
+
+bench_vmsnevvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140439,10 +140439,10 @@ vmsne.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevx_m8:	
+
+bench_vmsnevx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140510,10 +140510,10 @@ vmsne.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevxm_m8:	
+
+bench_vmsnevxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140581,10 +140581,10 @@ vmsne.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevi_m8:	
+
+bench_vmsnevi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140652,10 +140652,10 @@ vmsne.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsnevim_m8:	
+
+bench_vmsnevim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140723,10 +140723,10 @@ vmsne.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvv_m8:	
+
+bench_vmsltuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140794,10 +140794,10 @@ vmsltu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvvm_m8:	
+
+bench_vmsltuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140865,10 +140865,10 @@ vmsltu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvx_m8:	
+
+bench_vmsltuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -140936,10 +140936,10 @@ vmsltu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltuvxm_m8:	
+
+bench_vmsltuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141007,10 +141007,10 @@ vmsltu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvv_m8:	
+
+bench_vmsltvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141078,10 +141078,10 @@ vmslt.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvvm_m8:	
+
+bench_vmsltvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141149,10 +141149,10 @@ vmslt.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvx_m8:	
+
+bench_vmsltvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141220,10 +141220,10 @@ vmslt.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsltvxm_m8:	
+
+bench_vmsltvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141291,10 +141291,10 @@ vmslt.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvv_m8:	
+
+bench_vmsleuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141362,10 +141362,10 @@ vmsleu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvvm_m8:	
+
+bench_vmsleuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141433,10 +141433,10 @@ vmsleu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvx_m8:	
+
+bench_vmsleuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141504,10 +141504,10 @@ vmsleu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvxm_m8:	
+
+bench_vmsleuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141575,10 +141575,10 @@ vmsleu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvi_m8:	
+
+bench_vmsleuvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141646,10 +141646,10 @@ vmsleu.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsleuvim_m8:	
+
+bench_vmsleuvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141717,10 +141717,10 @@ vmsleu.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevv_m8:	
+
+bench_vmslevv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141788,10 +141788,10 @@ vmsle.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevvm_m8:	
+
+bench_vmslevvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141859,10 +141859,10 @@ vmsle.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevx_m8:	
+
+bench_vmslevx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -141930,10 +141930,10 @@ vmsle.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevxm_m8:	
+
+bench_vmslevxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142001,10 +142001,10 @@ vmsle.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevi_m8:	
+
+bench_vmslevi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142072,10 +142072,10 @@ vmsle.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmslevim_m8:	
+
+bench_vmslevim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142143,10 +142143,10 @@ vmsle.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvx_m8:	
+
+bench_vmsgtuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142214,10 +142214,10 @@ vmsgtu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvxm_m8:	
+
+bench_vmsgtuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142285,10 +142285,10 @@ vmsgtu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvi_m8:	
+
+bench_vmsgtuvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142356,10 +142356,10 @@ vmsgtu.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtuvim_m8:	
+
+bench_vmsgtuvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142427,10 +142427,10 @@ vmsgtu.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvx_m8:	
+
+bench_vmsgtvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142498,10 +142498,10 @@ vmsgt.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvxm_m8:	
+
+bench_vmsgtvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142569,10 +142569,10 @@ vmsgt.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvi_m8:	
+
+bench_vmsgtvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142640,10 +142640,10 @@ vmsgt.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsgtvim_m8:	
+
+bench_vmsgtvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142711,11 +142711,11 @@ vmsgt.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcompressvm_m8:	
+
+bench_vcompressvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142783,11 +142783,11 @@ vcompress.vm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmandnmm_m8:	
+
+bench_vmandnmm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142855,10 +142855,10 @@ vmandn.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmandmm_m8:	
+
+bench_vmandmm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142926,10 +142926,10 @@ vmand.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmormm_m8:	
+
+bench_vmormm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -142997,10 +142997,10 @@ vmor.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxormm_m8:	
+
+bench_vmxormm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143068,10 +143068,10 @@ vmxor.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmornmm_m8:	
+
+bench_vmornmm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143139,10 +143139,10 @@ vmorn.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnandmm_m8:	
+
+bench_vmnandmm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143210,10 +143210,10 @@ vmnand.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmnormm_m8:	
+
+bench_vmnormm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143281,10 +143281,10 @@ vmnor.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmxnormm_m8:	
+
+bench_vmxnormm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143352,11 +143352,11 @@ vmxnor.mm v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vsadduvv_m8:	
+
+bench_vsadduvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143424,10 +143424,10 @@ vsaddu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvvm_m8:	
+
+bench_vsadduvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143495,10 +143495,10 @@ vsaddu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvx_m8:	
+
+bench_vsadduvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143566,10 +143566,10 @@ vsaddu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvxm_m8:	
+
+bench_vsadduvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143637,10 +143637,10 @@ vsaddu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvi_m8:	
+
+bench_vsadduvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143708,10 +143708,10 @@ vsaddu.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsadduvim_m8:	
+
+bench_vsadduvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143779,10 +143779,10 @@ vsaddu.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvv_m8:	
+
+bench_vsaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143850,10 +143850,10 @@ vsadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvvm_m8:	
+
+bench_vsaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143921,10 +143921,10 @@ vsadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvx_m8:	
+
+bench_vsaddvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -143992,10 +143992,10 @@ vsadd.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvxm_m8:	
+
+bench_vsaddvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144063,10 +144063,10 @@ vsadd.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvi_m8:	
+
+bench_vsaddvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144134,10 +144134,10 @@ vsadd.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsaddvim_m8:	
+
+bench_vsaddvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144205,10 +144205,10 @@ vsadd.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvv_m8:	
+
+bench_vssubuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144276,10 +144276,10 @@ vssubu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvvm_m8:	
+
+bench_vssubuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144347,10 +144347,10 @@ vssubu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvx_m8:	
+
+bench_vssubuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144418,10 +144418,10 @@ vssubu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubuvxm_m8:	
+
+bench_vssubuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144489,10 +144489,10 @@ vssubu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvv_m8:	
+
+bench_vssubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144560,10 +144560,10 @@ vssub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvvm_m8:	
+
+bench_vssubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144631,10 +144631,10 @@ vssub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvx_m8:	
+
+bench_vssubvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144702,10 +144702,10 @@ vssub.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssubvxm_m8:	
+
+bench_vssubvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144773,10 +144773,10 @@ vssub.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvv_m8:	
+
+bench_vsllvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144844,10 +144844,10 @@ vsll.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvvm_m8:	
+
+bench_vsllvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144915,10 +144915,10 @@ vsll.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvx_m8:	
+
+bench_vsllvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -144986,10 +144986,10 @@ vsll.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvxm_m8:	
+
+bench_vsllvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145057,10 +145057,10 @@ vsll.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvi_m8:	
+
+bench_vsllvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145128,10 +145128,10 @@ vsll.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsllvim_m8:	
+
+bench_vsllvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145199,10 +145199,10 @@ vsll.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvv_m8:	
+
+bench_vsmulvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145270,10 +145270,10 @@ vsmul.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvvm_m8:	
+
+bench_vsmulvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145341,10 +145341,10 @@ vsmul.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvx_m8:	
+
+bench_vsmulvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145412,10 +145412,10 @@ vsmul.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsmulvxm_m8:	
+
+bench_vsmulvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145483,10 +145483,10 @@ vsmul.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv1rv_m8:	
+
+bench_vmv1rv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145554,10 +145554,10 @@ vmv1r.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv2rv_m8:	
+
+bench_vmv2rv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145625,10 +145625,10 @@ vmv2r.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv4rv_m8:	
+
+bench_vmv4rv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145696,10 +145696,10 @@ vmv4r.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmv8rv_m8:	
+
+bench_vmv8rv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145767,10 +145767,10 @@ vmv8r.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvv_m8:	
+
+bench_vsrlvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145838,10 +145838,10 @@ vsrl.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvvm_m8:	
+
+bench_vsrlvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145909,10 +145909,10 @@ vsrl.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvx_m8:	
+
+bench_vsrlvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -145980,10 +145980,10 @@ vsrl.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvxm_m8:	
+
+bench_vsrlvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146051,10 +146051,10 @@ vsrl.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvi_m8:	
+
+bench_vsrlvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146122,10 +146122,10 @@ vsrl.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsrlvim_m8:	
+
+bench_vsrlvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146193,10 +146193,10 @@ vsrl.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravv_m8:	
+
+bench_vsravv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146264,10 +146264,10 @@ vsra.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravvm_m8:	
+
+bench_vsravvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146335,10 +146335,10 @@ vsra.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravx_m8:	
+
+bench_vsravx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146406,10 +146406,10 @@ vsra.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravxm_m8:	
+
+bench_vsravxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146477,10 +146477,10 @@ vsra.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravi_m8:	
+
+bench_vsravi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146548,10 +146548,10 @@ vsra.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsravim_m8:	
+
+bench_vsravim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146619,10 +146619,10 @@ vsra.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvv_m8:	
+
+bench_vssrlvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146690,10 +146690,10 @@ vssrl.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvvm_m8:	
+
+bench_vssrlvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146761,10 +146761,10 @@ vssrl.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvx_m8:	
+
+bench_vssrlvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146832,10 +146832,10 @@ vssrl.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvxm_m8:	
+
+bench_vssrlvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146903,10 +146903,10 @@ vssrl.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvi_m8:	
+
+bench_vssrlvi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -146974,10 +146974,10 @@ vssrl.vi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vssrlvim_m8:	
+
+bench_vssrlvim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147045,11 +147045,11 @@ vssrl.vi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vdivuvv_m8:	
+
+bench_vdivuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147117,10 +147117,10 @@ vdivu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvvm_m8:	
+
+bench_vdivuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147188,10 +147188,10 @@ vdivu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvx_m8:	
+
+bench_vdivuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147259,10 +147259,10 @@ vdivu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivuvxm_m8:	
+
+bench_vdivuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147330,10 +147330,10 @@ vdivu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvv_m8:	
+
+bench_vdivvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147401,10 +147401,10 @@ vdiv.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvvm_m8:	
+
+bench_vdivvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147472,10 +147472,10 @@ vdiv.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvx_m8:	
+
+bench_vdivvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147543,10 +147543,10 @@ vdiv.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vdivvxm_m8:	
+
+bench_vdivvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147614,10 +147614,10 @@ vdiv.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvv_m8:	
+
+bench_vremuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147685,10 +147685,10 @@ vremu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvvm_m8:	
+
+bench_vremuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147756,10 +147756,10 @@ vremu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvx_m8:	
+
+bench_vremuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147827,10 +147827,10 @@ vremu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremuvxm_m8:	
+
+bench_vremuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147898,10 +147898,10 @@ vremu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvv_m8:	
+
+bench_vremvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -147969,10 +147969,10 @@ vrem.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvvm_m8:	
+
+bench_vremvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148040,10 +148040,10 @@ vrem.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvx_m8:	
+
+bench_vremvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148111,10 +148111,10 @@ vrem.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vremvxm_m8:	
+
+bench_vremvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148182,10 +148182,10 @@ vrem.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvv_m8:	
+
+bench_vmulhuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148253,10 +148253,10 @@ vmulhu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvvm_m8:	
+
+bench_vmulhuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148324,10 +148324,10 @@ vmulhu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvx_m8:	
+
+bench_vmulhuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148395,10 +148395,10 @@ vmulhu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhuvxm_m8:	
+
+bench_vmulhuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148466,10 +148466,10 @@ vmulhu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvv_m8:	
+
+bench_vmulvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148537,10 +148537,10 @@ vmul.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvvm_m8:	
+
+bench_vmulvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148608,10 +148608,10 @@ vmul.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvx_m8:	
+
+bench_vmulvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148679,10 +148679,10 @@ vmul.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulvxm_m8:	
+
+bench_vmulvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148750,10 +148750,10 @@ vmul.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvv_m8:	
+
+bench_vmulhsuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148821,10 +148821,10 @@ vmulhsu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvvm_m8:	
+
+bench_vmulhsuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148892,10 +148892,10 @@ vmulhsu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvx_m8:	
+
+bench_vmulhsuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -148963,10 +148963,10 @@ vmulhsu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhsuvxm_m8:	
+
+bench_vmulhsuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149034,10 +149034,10 @@ vmulhsu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvv_m8:	
+
+bench_vmulhvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149105,10 +149105,10 @@ vmulh.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvvm_m8:	
+
+bench_vmulhvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149176,10 +149176,10 @@ vmulh.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvx_m8:	
+
+bench_vmulhvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149247,10 +149247,10 @@ vmulh.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmulhvxm_m8:	
+
+bench_vmulhvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149318,10 +149318,10 @@ vmulh.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvv_m8:	
+
+bench_vmaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149389,10 +149389,10 @@ vmadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvvm_m8:	
+
+bench_vmaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149460,10 +149460,10 @@ vmadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvx_m8:	
+
+bench_vmaddvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149531,10 +149531,10 @@ vmadd.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaddvxm_m8:	
+
+bench_vmaddvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149602,10 +149602,10 @@ vmadd.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvv_m8:	
+
+bench_vmaccvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149673,10 +149673,10 @@ vmacc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvvm_m8:	
+
+bench_vmaccvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149744,10 +149744,10 @@ vmacc.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvx_m8:	
+
+bench_vmaccvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149815,10 +149815,10 @@ vmacc.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmaccvxm_m8:	
+
+bench_vmaccvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149886,11 +149886,11 @@ vmacc.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vnsrlwv_m8:	
+
+bench_vnsrlwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -149958,10 +149958,10 @@ vnsrl.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwvm_m8:	
+
+bench_vnsrlwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150029,10 +150029,10 @@ vnsrl.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwx_m8:	
+
+bench_vnsrlwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150100,10 +150100,10 @@ vnsrl.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwxm_m8:	
+
+bench_vnsrlwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150171,10 +150171,10 @@ vnsrl.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwi_m8:	
+
+bench_vnsrlwi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150242,10 +150242,10 @@ vnsrl.wi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrlwim_m8:	
+
+bench_vnsrlwim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150313,10 +150313,10 @@ vnsrl.wi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawv_m8:	
+
+bench_vnsrawv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150384,10 +150384,10 @@ vnsra.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawvm_m8:	
+
+bench_vnsrawvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150455,10 +150455,10 @@ vnsra.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawx_m8:	
+
+bench_vnsrawx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150526,10 +150526,10 @@ vnsra.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawxm_m8:	
+
+bench_vnsrawxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150597,10 +150597,10 @@ vnsra.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawi_m8:	
+
+bench_vnsrawi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150668,10 +150668,10 @@ vnsra.wi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnsrawim_m8:	
+
+bench_vnsrawim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150739,10 +150739,10 @@ vnsra.wi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwv_m8:	
+
+bench_vnclipuwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150810,10 +150810,10 @@ vnclipu.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwvm_m8:	
+
+bench_vnclipuwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150881,10 +150881,10 @@ vnclipu.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwx_m8:	
+
+bench_vnclipuwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -150952,10 +150952,10 @@ vnclipu.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwxm_m8:	
+
+bench_vnclipuwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151023,10 +151023,10 @@ vnclipu.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwi_m8:	
+
+bench_vnclipuwi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151094,10 +151094,10 @@ vnclipu.wi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipuwim_m8:	
+
+bench_vnclipuwim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151165,10 +151165,10 @@ vnclipu.wi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwv_m8:	
+
+bench_vnclipwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151236,10 +151236,10 @@ vnclip.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwvm_m8:	
+
+bench_vnclipwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151307,10 +151307,10 @@ vnclip.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwx_m8:	
+
+bench_vnclipwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151378,10 +151378,10 @@ vnclip.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwxm_m8:	
+
+bench_vnclipwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151449,10 +151449,10 @@ vnclip.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwi_m8:	
+
+bench_vnclipwi_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151520,10 +151520,10 @@ vnclip.wi v8,v16,13
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnclipwim_m8:	
+
+bench_vnclipwim_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151591,10 +151591,10 @@ vnclip.wi v8,v16,13,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvv_m8:	
+
+bench_vnmsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151662,10 +151662,10 @@ vnmsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvvm_m8:	
+
+bench_vnmsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151733,10 +151733,10 @@ vnmsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvx_m8:	
+
+bench_vnmsubvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151804,10 +151804,10 @@ vnmsub.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsubvxm_m8:	
+
+bench_vnmsubvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151875,10 +151875,10 @@ vnmsub.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvv_m8:	
+
+bench_vnmsacvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -151946,10 +151946,10 @@ vnmsac.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvvm_m8:	
+
+bench_vnmsacvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152017,10 +152017,10 @@ vnmsac.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvx_m8:	
+
+bench_vnmsacvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152088,10 +152088,10 @@ vnmsac.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vnmsacvxm_m8:	
+
+bench_vnmsacvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152159,11 +152159,11 @@ vnmsac.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwadduvv_m8:	
+
+bench_vwadduvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152231,10 +152231,10 @@ vwaddu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvvm_m8:	
+
+bench_vwadduvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152302,10 +152302,10 @@ vwaddu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvx_m8:	
+
+bench_vwadduvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152373,10 +152373,10 @@ vwaddu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduvxm_m8:	
+
+bench_vwadduvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152444,10 +152444,10 @@ vwaddu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvv_m8:	
+
+bench_vwaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152515,10 +152515,10 @@ vwadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvvm_m8:	
+
+bench_vwaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152586,10 +152586,10 @@ vwadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvx_m8:	
+
+bench_vwaddvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152657,10 +152657,10 @@ vwadd.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddvxm_m8:	
+
+bench_vwaddvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152728,10 +152728,10 @@ vwadd.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvv_m8:	
+
+bench_vwsubuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152799,10 +152799,10 @@ vwsubu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvvm_m8:	
+
+bench_vwsubuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152870,10 +152870,10 @@ vwsubu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvx_m8:	
+
+bench_vwsubuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -152941,10 +152941,10 @@ vwsubu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuvxm_m8:	
+
+bench_vwsubuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153012,10 +153012,10 @@ vwsubu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvv_m8:	
+
+bench_vwsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153083,10 +153083,10 @@ vwsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvvm_m8:	
+
+bench_vwsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153154,10 +153154,10 @@ vwsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvx_m8:	
+
+bench_vwsubvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153225,10 +153225,10 @@ vwsub.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubvxm_m8:	
+
+bench_vwsubvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153296,10 +153296,10 @@ vwsub.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwv_m8:	
+
+bench_vwadduwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153367,10 +153367,10 @@ vwaddu.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwvm_m8:	
+
+bench_vwadduwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153438,10 +153438,10 @@ vwaddu.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwx_m8:	
+
+bench_vwadduwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153509,10 +153509,10 @@ vwaddu.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwadduwxm_m8:	
+
+bench_vwadduwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153580,10 +153580,10 @@ vwaddu.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwv_m8:	
+
+bench_vwaddwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153651,10 +153651,10 @@ vwadd.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwvm_m8:	
+
+bench_vwaddwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153722,10 +153722,10 @@ vwadd.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwx_m8:	
+
+bench_vwaddwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153793,10 +153793,10 @@ vwadd.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwaddwxm_m8:	
+
+bench_vwaddwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153864,10 +153864,10 @@ vwadd.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwv_m8:	
+
+bench_vwsubuwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -153935,10 +153935,10 @@ vwsubu.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwvm_m8:	
+
+bench_vwsubuwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154006,10 +154006,10 @@ vwsubu.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwx_m8:	
+
+bench_vwsubuwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154077,10 +154077,10 @@ vwsubu.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubuwxm_m8:	
+
+bench_vwsubuwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154148,10 +154148,10 @@ vwsubu.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwv_m8:	
+
+bench_vwsubwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154219,10 +154219,10 @@ vwsub.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwvm_m8:	
+
+bench_vwsubwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154290,10 +154290,10 @@ vwsub.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwx_m8:	
+
+bench_vwsubwx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154361,10 +154361,10 @@ vwsub.wx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwsubwxm_m8:	
+
+bench_vwsubwxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154432,10 +154432,10 @@ vwsub.wx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvv_m8:	
+
+bench_vwmuluvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154503,10 +154503,10 @@ vwmulu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvvm_m8:	
+
+bench_vwmuluvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154574,10 +154574,10 @@ vwmulu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvx_m8:	
+
+bench_vwmuluvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154645,10 +154645,10 @@ vwmulu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmuluvxm_m8:	
+
+bench_vwmuluvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154716,10 +154716,10 @@ vwmulu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvv_m8:	
+
+bench_vwmulsuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154787,10 +154787,10 @@ vwmulsu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvvm_m8:	
+
+bench_vwmulsuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154858,10 +154858,10 @@ vwmulsu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvx_m8:	
+
+bench_vwmulsuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -154929,10 +154929,10 @@ vwmulsu.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulsuvxm_m8:	
+
+bench_vwmulsuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155000,10 +155000,10 @@ vwmulsu.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvv_m8:	
+
+bench_vwmulvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155071,10 +155071,10 @@ vwmul.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvvm_m8:	
+
+bench_vwmulvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155142,10 +155142,10 @@ vwmul.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvx_m8:	
+
+bench_vwmulvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155213,10 +155213,10 @@ vwmul.vx v8,v16,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmulvxm_m8:	
+
+bench_vwmulvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155284,10 +155284,10 @@ vwmul.vx v8,v16,t0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvv_m8:	
+
+bench_vwmaccuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155355,10 +155355,10 @@ vwmaccu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvvm_m8:	
+
+bench_vwmaccuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155426,10 +155426,10 @@ vwmaccu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvx_m8:	
+
+bench_vwmaccuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155497,10 +155497,10 @@ vwmaccu.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccuvxm_m8:	
+
+bench_vwmaccuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155568,10 +155568,10 @@ vwmaccu.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvv_m8:	
+
+bench_vwmaccvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155639,10 +155639,10 @@ vwmacc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvvm_m8:	
+
+bench_vwmaccvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155710,10 +155710,10 @@ vwmacc.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvx_m8:	
+
+bench_vwmaccvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155781,10 +155781,10 @@ vwmacc.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccvxm_m8:	
+
+bench_vwmaccvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155852,10 +155852,10 @@ vwmacc.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvv_m8:	
+
+bench_vwmaccsuvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155923,10 +155923,10 @@ vwmaccsu.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvvm_m8:	
+
+bench_vwmaccsuvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -155994,10 +155994,10 @@ vwmaccsu.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvx_m8:	
+
+bench_vwmaccsuvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156065,10 +156065,10 @@ vwmaccsu.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccsuvxm_m8:	
+
+bench_vwmaccsuvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156136,10 +156136,10 @@ vwmaccsu.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvx_m8:	
+
+bench_vwmaccusvx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156207,10 +156207,10 @@ vwmaccus.vx v8,t0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwmaccusvxm_m8:	
+
+bench_vwmaccusvxm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156278,11 +156278,11 @@ vwmaccus.vx v8,t0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfaddvv_m8:	
+
+bench_vfaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156350,10 +156350,10 @@ vfadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvvm_m8:	
+
+bench_vfaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156421,10 +156421,10 @@ vfadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvf_m8:	
+
+bench_vfaddvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156492,10 +156492,10 @@ vfadd.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfaddvfm_m8:	
+
+bench_vfaddvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156563,10 +156563,10 @@ vfadd.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvv_m8:	
+
+bench_vfsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156634,10 +156634,10 @@ vfsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvvm_m8:	
+
+bench_vfsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156705,10 +156705,10 @@ vfsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvf_m8:	
+
+bench_vfsubvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156776,10 +156776,10 @@ vfsub.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsubvfm_m8:	
+
+bench_vfsubvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156847,10 +156847,10 @@ vfsub.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvv_m8:	
+
+bench_vfminvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156918,10 +156918,10 @@ vfmin.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvvm_m8:	
+
+bench_vfminvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -156989,10 +156989,10 @@ vfmin.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvf_m8:	
+
+bench_vfminvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157060,10 +157060,10 @@ vfmin.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfminvfm_m8:	
+
+bench_vfminvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157131,10 +157131,10 @@ vfmin.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvv_m8:	
+
+bench_vfmaxvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157202,10 +157202,10 @@ vfmax.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvvm_m8:	
+
+bench_vfmaxvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157273,10 +157273,10 @@ vfmax.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvf_m8:	
+
+bench_vfmaxvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157344,10 +157344,10 @@ vfmax.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaxvfm_m8:	
+
+bench_vfmaxvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157415,10 +157415,10 @@ vfmax.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvv_m8:	
+
+bench_vfsgnjvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157486,10 +157486,10 @@ vfsgnj.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvvm_m8:	
+
+bench_vfsgnjvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157557,10 +157557,10 @@ vfsgnj.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvf_m8:	
+
+bench_vfsgnjvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157628,10 +157628,10 @@ vfsgnj.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjvfm_m8:	
+
+bench_vfsgnjvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157699,10 +157699,10 @@ vfsgnj.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvv_m8:	
+
+bench_vfsgnjnvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157770,10 +157770,10 @@ vfsgnjn.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvvm_m8:	
+
+bench_vfsgnjnvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157841,10 +157841,10 @@ vfsgnjn.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvf_m8:	
+
+bench_vfsgnjnvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157912,10 +157912,10 @@ vfsgnjn.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjnvfm_m8:	
+
+bench_vfsgnjnvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -157983,10 +157983,10 @@ vfsgnjn.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvv_m8:	
+
+bench_vfsgnjxvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158054,10 +158054,10 @@ vfsgnjx.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvvm_m8:	
+
+bench_vfsgnjxvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158125,10 +158125,10 @@ vfsgnjx.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvf_m8:	
+
+bench_vfsgnjxvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158196,10 +158196,10 @@ vfsgnjx.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsgnjxvfm_m8:	
+
+bench_vfsgnjxvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158267,10 +158267,10 @@ vfsgnjx.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvf_m8:	
+
+bench_vfslide1upvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158338,10 +158338,10 @@ vfslide1up.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1upvfm_m8:	
+
+bench_vfslide1upvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158409,10 +158409,10 @@ vfslide1up.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvf_m8:	
+
+bench_vfslide1downvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158480,10 +158480,10 @@ vfslide1down.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfslide1downvfm_m8:	
+
+bench_vfslide1downvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158551,11 +158551,11 @@ vfslide1down.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfredusumvs_m8:	
+
+bench_vfredusumvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158623,10 +158623,10 @@ vfredusum.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredusumvsm_m8:	
+
+bench_vfredusumvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158694,10 +158694,10 @@ vfredusum.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvs_m8:	
+
+bench_vfredosumvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158765,10 +158765,10 @@ vfredosum.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredosumvsm_m8:	
+
+bench_vfredosumvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158836,10 +158836,10 @@ vfredosum.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvs_m8:	
+
+bench_vfredminvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158907,10 +158907,10 @@ vfredmin.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredminvsm_m8:	
+
+bench_vfredminvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -158978,10 +158978,10 @@ vfredmin.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvs_m8:	
+
+bench_vfredmaxvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159049,10 +159049,10 @@ vfredmax.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfredmaxvsm_m8:	
+
+bench_vfredmaxvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159120,11 +159120,11 @@ vfredmax.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmergevfm_m8:	
+
+bench_vfmergevfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159192,10 +159192,10 @@ vfmerge.vfm v8,v16,ft0,v0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvvf_m8:	
+
+bench_vfmvvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159263,11 +159263,11 @@ vfmv.v.f v8,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmfeqvv_m8:	
+
+bench_vmfeqvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159335,10 +159335,10 @@ vmfeq.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvvm_m8:	
+
+bench_vmfeqvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159406,10 +159406,10 @@ vmfeq.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvf_m8:	
+
+bench_vmfeqvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159477,10 +159477,10 @@ vmfeq.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfeqvfm_m8:	
+
+bench_vmfeqvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159548,10 +159548,10 @@ vmfeq.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevv_m8:	
+
+bench_vmflevv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159619,10 +159619,10 @@ vmfle.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevvm_m8:	
+
+bench_vmflevvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159690,10 +159690,10 @@ vmfle.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevf_m8:	
+
+bench_vmflevf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159761,10 +159761,10 @@ vmfle.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmflevfm_m8:	
+
+bench_vmflevfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159832,10 +159832,10 @@ vmfle.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvv_m8:	
+
+bench_vmfltvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159903,10 +159903,10 @@ vmflt.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvvm_m8:	
+
+bench_vmfltvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -159974,10 +159974,10 @@ vmflt.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvf_m8:	
+
+bench_vmfltvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160045,10 +160045,10 @@ vmflt.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfltvfm_m8:	
+
+bench_vmfltvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160116,10 +160116,10 @@ vmflt.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevv_m8:	
+
+bench_vmfnevv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160187,10 +160187,10 @@ vmfne.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevvm_m8:	
+
+bench_vmfnevvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160258,10 +160258,10 @@ vmfne.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevf_m8:	
+
+bench_vmfnevf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160329,10 +160329,10 @@ vmfne.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfnevfm_m8:	
+
+bench_vmfnevfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160400,10 +160400,10 @@ vmfne.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvv_m8:	
+
+bench_vmfgtvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160471,10 +160471,10 @@ vmfgt.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvvm_m8:	
+
+bench_vmfgtvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160542,10 +160542,10 @@ vmfgt.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvf_m8:	
+
+bench_vmfgtvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160613,10 +160613,10 @@ vmfgt.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgtvfm_m8:	
+
+bench_vmfgtvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160684,10 +160684,10 @@ vmfgt.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevv_m8:	
+
+bench_vmfgevv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160755,10 +160755,10 @@ vmfge.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevvm_m8:	
+
+bench_vmfgevvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160826,10 +160826,10 @@ vmfge.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevf_m8:	
+
+bench_vmfgevf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160897,10 +160897,10 @@ vmfge.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmfgevfm_m8:	
+
+bench_vmfgevfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -160968,11 +160968,11 @@ vmfge.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfdivvv_m8:	
+
+bench_vfdivvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161040,10 +161040,10 @@ vfdiv.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvvm_m8:	
+
+bench_vfdivvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161111,10 +161111,10 @@ vfdiv.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvf_m8:	
+
+bench_vfdivvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161182,10 +161182,10 @@ vfdiv.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfdivvfm_m8:	
+
+bench_vfdivvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161253,10 +161253,10 @@ vfdiv.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvf_m8:	
+
+bench_vfrdivvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161324,10 +161324,10 @@ vfrdiv.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrdivvfm_m8:	
+
+bench_vfrdivvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161395,10 +161395,10 @@ vfrdiv.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvv_m8:	
+
+bench_vfmulvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161466,10 +161466,10 @@ vfmul.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvvm_m8:	
+
+bench_vfmulvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161537,10 +161537,10 @@ vfmul.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvf_m8:	
+
+bench_vfmulvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161608,10 +161608,10 @@ vfmul.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmulvfm_m8:	
+
+bench_vfmulvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161679,10 +161679,10 @@ vfmul.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvf_m8:	
+
+bench_vfrsubvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161750,10 +161750,10 @@ vfrsub.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsubvfm_m8:	
+
+bench_vfrsubvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161821,10 +161821,10 @@ vfrsub.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvv_m8:	
+
+bench_vfmaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161892,10 +161892,10 @@ vfmadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvvm_m8:	
+
+bench_vfmaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -161963,10 +161963,10 @@ vfmadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvf_m8:	
+
+bench_vfmaddvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162034,10 +162034,10 @@ vfmadd.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaddvfm_m8:	
+
+bench_vfmaddvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162105,10 +162105,10 @@ vfmadd.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvv_m8:	
+
+bench_vfmsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162176,10 +162176,10 @@ vfmsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvvm_m8:	
+
+bench_vfmsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162247,10 +162247,10 @@ vfmsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvf_m8:	
+
+bench_vfmsubvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162318,10 +162318,10 @@ vfmsub.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsubvfm_m8:	
+
+bench_vfmsubvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162389,10 +162389,10 @@ vfmsub.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvv_m8:	
+
+bench_vfmaccvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162460,10 +162460,10 @@ vfmacc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvvm_m8:	
+
+bench_vfmaccvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162531,10 +162531,10 @@ vfmacc.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvf_m8:	
+
+bench_vfmaccvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162602,10 +162602,10 @@ vfmacc.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmaccvfm_m8:	
+
+bench_vfmaccvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162673,10 +162673,10 @@ vfmacc.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvv_m8:	
+
+bench_vfmsacvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162744,10 +162744,10 @@ vfmsac.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvvm_m8:	
+
+bench_vfmsacvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162815,10 +162815,10 @@ vfmsac.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvf_m8:	
+
+bench_vfmsacvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162886,10 +162886,10 @@ vfmsac.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmsacvfm_m8:	
+
+bench_vfmsacvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -162957,11 +162957,11 @@ vfmsac.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfnmsacvv_m8:	
+
+bench_vfnmsacvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163029,10 +163029,10 @@ vfnmsac.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvvm_m8:	
+
+bench_vfnmsacvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163100,10 +163100,10 @@ vfnmsac.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvf_m8:	
+
+bench_vfnmsacvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163171,10 +163171,10 @@ vfnmsac.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsacvfm_m8:	
+
+bench_vfnmsacvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163242,10 +163242,10 @@ vfnmsac.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvv_m8:	
+
+bench_vfnmaccvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163313,10 +163313,10 @@ vfnmacc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvvm_m8:	
+
+bench_vfnmaccvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163384,10 +163384,10 @@ vfnmacc.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvf_m8:	
+
+bench_vfnmaccvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163455,10 +163455,10 @@ vfnmacc.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaccvfm_m8:	
+
+bench_vfnmaccvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163526,10 +163526,10 @@ vfnmacc.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvv_m8:	
+
+bench_vfnmsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163597,10 +163597,10 @@ vfnmsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvvm_m8:	
+
+bench_vfnmsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163668,10 +163668,10 @@ vfnmsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvf_m8:	
+
+bench_vfnmsubvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163739,10 +163739,10 @@ vfnmsub.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmsubvfm_m8:	
+
+bench_vfnmsubvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163810,10 +163810,10 @@ vfnmsub.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvv_m8:	
+
+bench_vfnmaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163881,10 +163881,10 @@ vfnmadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvvm_m8:	
+
+bench_vfnmaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -163952,10 +163952,10 @@ vfnmadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvf_m8:	
+
+bench_vfnmaddvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164023,10 +164023,10 @@ vfnmadd.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfnmaddvfm_m8:	
+
+bench_vfnmaddvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164094,11 +164094,11 @@ vfnmadd.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vwredsumuvs_m8:	
+
+bench_vwredsumuvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164166,10 +164166,10 @@ vwredsumu.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumuvsm_m8:	
+
+bench_vwredsumuvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164237,10 +164237,10 @@ vwredsumu.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvs_m8:	
+
+bench_vwredsumvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164308,10 +164308,10 @@ vwredsum.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vwredsumvsm_m8:	
+
+bench_vwredsumvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164379,11 +164379,11 @@ vwredsum.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwaddvv_m8:	
+
+bench_vfwaddvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164451,10 +164451,10 @@ vfwadd.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvvm_m8:	
+
+bench_vfwaddvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164522,10 +164522,10 @@ vfwadd.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvf_m8:	
+
+bench_vfwaddvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164593,10 +164593,10 @@ vfwadd.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddvfm_m8:	
+
+bench_vfwaddvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164664,10 +164664,10 @@ vfwadd.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvv_m8:	
+
+bench_vfwsubvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164735,10 +164735,10 @@ vfwsub.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvvm_m8:	
+
+bench_vfwsubvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164806,10 +164806,10 @@ vfwsub.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvf_m8:	
+
+bench_vfwsubvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164877,10 +164877,10 @@ vfwsub.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubvfm_m8:	
+
+bench_vfwsubvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -164948,10 +164948,10 @@ vfwsub.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwv_m8:	
+
+bench_vfwaddwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165019,10 +165019,10 @@ vfwadd.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwvm_m8:	
+
+bench_vfwaddwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165090,10 +165090,10 @@ vfwadd.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwf_m8:	
+
+bench_vfwaddwf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165161,10 +165161,10 @@ vfwadd.wf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwaddwfm_m8:	
+
+bench_vfwaddwfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165232,10 +165232,10 @@ vfwadd.wf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwv_m8:	
+
+bench_vfwsubwv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165303,10 +165303,10 @@ vfwsub.wv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwvm_m8:	
+
+bench_vfwsubwvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165374,10 +165374,10 @@ vfwsub.wv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwf_m8:	
+
+bench_vfwsubwf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165445,10 +165445,10 @@ vfwsub.wf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwsubwfm_m8:	
+
+bench_vfwsubwfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165516,10 +165516,10 @@ vfwsub.wf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvv_m8:	
+
+bench_vfwmulvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165587,10 +165587,10 @@ vfwmul.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvvm_m8:	
+
+bench_vfwmulvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165658,10 +165658,10 @@ vfwmul.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvf_m8:	
+
+bench_vfwmulvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165729,10 +165729,10 @@ vfwmul.vf v8,v16,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmulvfm_m8:	
+
+bench_vfwmulvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165800,10 +165800,10 @@ vfwmul.vf v8,v16,ft0,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvv_m8:	
+
+bench_vfwmaccvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165871,10 +165871,10 @@ vfwmacc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvvm_m8:	
+
+bench_vfwmaccvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -165942,10 +165942,10 @@ vfwmacc.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvf_m8:	
+
+bench_vfwmaccvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166013,10 +166013,10 @@ vfwmacc.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmaccvfm_m8:	
+
+bench_vfwmaccvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166084,10 +166084,10 @@ vfwmacc.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvv_m8:	
+
+bench_vfwnmaccvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166155,10 +166155,10 @@ vfwnmacc.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvvm_m8:	
+
+bench_vfwnmaccvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166226,10 +166226,10 @@ vfwnmacc.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvf_m8:	
+
+bench_vfwnmaccvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166297,10 +166297,10 @@ vfwnmacc.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmaccvfm_m8:	
+
+bench_vfwnmaccvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166368,10 +166368,10 @@ vfwnmacc.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvv_m8:	
+
+bench_vfwmsacvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166439,10 +166439,10 @@ vfwmsac.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvvm_m8:	
+
+bench_vfwmsacvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166510,10 +166510,10 @@ vfwmsac.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvf_m8:	
+
+bench_vfwmsacvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166581,10 +166581,10 @@ vfwmsac.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwmsacvfm_m8:	
+
+bench_vfwmsacvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166652,10 +166652,10 @@ vfwmsac.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvv_m8:	
+
+bench_vfwnmsacvv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166723,10 +166723,10 @@ vfwnmsac.vv v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvvm_m8:	
+
+bench_vfwnmsacvvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166794,10 +166794,10 @@ vfwnmsac.vv v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvf_m8:	
+
+bench_vfwnmsacvf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166865,10 +166865,10 @@ vfwnmsac.vf v8,ft0,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwnmsacvfm_m8:	
+
+bench_vfwnmsacvfm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -166936,11 +166936,11 @@ vfwnmsac.vf v8,ft0,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwredosumvs_m8:	
+
+bench_vfwredosumvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167008,10 +167008,10 @@ vfwredosum.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredosumvsm_m8:	
+
+bench_vfwredosumvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167079,10 +167079,10 @@ vfwredosum.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvs_m8:	
+
+bench_vfwredusumvs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167150,10 +167150,10 @@ vfwredusum.vs v8,v16,v24
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwredusumvsm_m8:	
+
+bench_vfwredusumvsm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167221,11 +167221,11 @@ vfwredusum.vs v8,v16,v24,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmvsx_m8:	
+
+bench_vmvsx_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167293,10 +167293,10 @@ vmv.s.x v8,t0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmvxs_m8:	
+
+bench_vmvxs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167364,11 +167364,11 @@ vmv.x.s t0,v8
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vcpopm_m8:	
+
+bench_vcpopm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167436,10 +167436,10 @@ vcpop.m t0,v8
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vcpopmm_m8:	
+
+bench_vcpopmm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -167507,10 +167507,10 @@ vcpop.m t0,v8,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstm_m8:	
+
+bench_vfirstm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -167578,10 +167578,10 @@ vfirst.m t0,v8
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfirstmm_m8:	
+
+bench_vfirstmm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -167649,10 +167649,10 @@ vfirst.m t0,v8,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2_m8:	
+
+bench_vzextvf2_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -167720,10 +167720,10 @@ vzext.vf2 v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf2m_m8:	
+
+bench_vzextvf2m_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -167791,10 +167791,10 @@ vzext.vf2 v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2_m8:	
+
+bench_vsextvf2_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -167862,10 +167862,10 @@ vsext.vf2 v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf2m_m8:	
+
+bench_vsextvf2m_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -167933,10 +167933,10 @@ vsext.vf2 v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4_m8:	
+
+bench_vzextvf4_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168004,10 +168004,10 @@ vzext.vf4 v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf4m_m8:	
+
+bench_vzextvf4m_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168075,10 +168075,10 @@ vzext.vf4 v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4_m8:	
+
+bench_vsextvf4_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168146,10 +168146,10 @@ vsext.vf4 v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf4m_m8:	
+
+bench_vsextvf4m_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168217,10 +168217,10 @@ vsext.vf4 v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8_m8:	
+
+bench_vzextvf8_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168288,10 +168288,10 @@ vzext.vf8 v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vzextvf8m_m8:	
+
+bench_vzextvf8m_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168359,10 +168359,10 @@ vzext.vf8 v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8_m8:	
+
+bench_vsextvf8_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168430,10 +168430,10 @@ vsext.vf8 v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vsextvf8m_m8:	
+
+bench_vsextvf8m_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -168501,11 +168501,11 @@ vsext.vf8 v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfmvfs_m8:	
+
+bench_vfmvfs_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -168573,10 +168573,10 @@ vfmv.f.s ft0,v8
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfmvsf_m8:	
+
+bench_vfmvsf_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -168644,11 +168644,11 @@ vfmv.s.f v8,ft0
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfcvtxufv_m8:	
+
+bench_vfcvtxufv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -168716,10 +168716,10 @@ vfcvt.xu.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxufvm_m8:	
+
+bench_vfcvtxufvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -168787,10 +168787,10 @@ vfcvt.xu.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxfv_m8:	
+
+bench_vfcvtxfv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -168858,10 +168858,10 @@ vfcvt.x.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtxfvm_m8:	
+
+bench_vfcvtxfvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -168929,10 +168929,10 @@ vfcvt.x.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxuv_m8:	
+
+bench_vfcvtfxuv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169000,10 +169000,10 @@ vfcvt.f.xu.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxuvm_m8:	
+
+bench_vfcvtfxuvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169071,10 +169071,10 @@ vfcvt.f.xu.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxv_m8:	
+
+bench_vfcvtfxv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169142,10 +169142,10 @@ vfcvt.f.x.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtfxvm_m8:	
+
+bench_vfcvtfxvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169213,10 +169213,10 @@ vfcvt.f.x.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxfv_m8:	
+
+bench_vfcvtrtzxfv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169284,10 +169284,10 @@ vfcvt.rtz.x.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxfvm_m8:	
+
+bench_vfcvtrtzxfvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169355,10 +169355,10 @@ vfcvt.rtz.x.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxufv_m8:	
+
+bench_vfcvtrtzxufv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169426,10 +169426,10 @@ vfcvt.rtz.xu.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfcvtrtzxufvm_m8:	
+
+bench_vfcvtrtzxufvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169497,11 +169497,11 @@ vfcvt.rtz.xu.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfwcvtxufv_m8:	
+
+bench_vfwcvtxufv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169569,10 +169569,10 @@ vfwcvt.xu.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxufvm_m8:	
+
+bench_vfwcvtxufvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169640,10 +169640,10 @@ vfwcvt.xu.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxfv_m8:	
+
+bench_vfwcvtxfv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169711,10 +169711,10 @@ vfwcvt.x.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtxfvm_m8:	
+
+bench_vfwcvtxfvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169782,10 +169782,10 @@ vfwcvt.x.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxuv_m8:	
+
+bench_vfwcvtfxuv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169853,10 +169853,10 @@ vfwcvt.f.xu.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxuvm_m8:	
+
+bench_vfwcvtfxuvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169924,10 +169924,10 @@ vfwcvt.f.xu.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxv_m8:	
+
+bench_vfwcvtfxv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -169995,10 +169995,10 @@ vfwcvt.f.x.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtfxvm_m8:	
+
+bench_vfwcvtfxvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170066,10 +170066,10 @@ vfwcvt.f.x.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtffv_m8:	
+
+bench_vfwcvtffv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170137,10 +170137,10 @@ vfwcvt.f.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtffvm_m8:	
+
+bench_vfwcvtffvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170208,10 +170208,10 @@ vfwcvt.f.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxufv_m8:	
+
+bench_vfwcvtrtzxufv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170279,10 +170279,10 @@ vfwcvt.rtz.xu.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxufvm_m8:	
+
+bench_vfwcvtrtzxufvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170350,10 +170350,10 @@ vfwcvt.rtz.xu.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxfv_m8:	
+
+bench_vfwcvtrtzxfv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170421,10 +170421,10 @@ vfwcvt.rtz.x.f.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfwcvtrtzxfvm_m8:	
+
+bench_vfwcvtrtzxfvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170492,11 +170492,11 @@ vfwcvt.rtz.x.f.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfncvtxufw_m8:	
+
+bench_vfncvtxufw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170564,10 +170564,10 @@ vfncvt.xu.f.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxufwm_m8:	
+
+bench_vfncvtxufwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170635,10 +170635,10 @@ vfncvt.xu.f.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxfw_m8:	
+
+bench_vfncvtxfw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170706,10 +170706,10 @@ vfncvt.x.f.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtxfwm_m8:	
+
+bench_vfncvtxfwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170777,10 +170777,10 @@ vfncvt.x.f.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxuw_m8:	
+
+bench_vfncvtfxuw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170848,10 +170848,10 @@ vfncvt.f.xu.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxuwm_m8:	
+
+bench_vfncvtfxuwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170919,10 +170919,10 @@ vfncvt.f.xu.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxw_m8:	
+
+bench_vfncvtfxw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -170990,10 +170990,10 @@ vfncvt.f.x.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtfxwm_m8:	
+
+bench_vfncvtfxwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171061,10 +171061,10 @@ vfncvt.f.x.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtffw_m8:	
+
+bench_vfncvtffw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171132,10 +171132,10 @@ vfncvt.f.f.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtffwm_m8:	
+
+bench_vfncvtffwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171203,10 +171203,10 @@ vfncvt.f.f.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxfw_m8:	
+
+bench_vfncvtrtzxfw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171274,10 +171274,10 @@ vfncvt.rtz.x.f.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxfwm_m8:	
+
+bench_vfncvtrtzxfwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171345,10 +171345,10 @@ vfncvt.rtz.x.f.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxufw_m8:	
+
+bench_vfncvtrtzxufw_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171416,10 +171416,10 @@ vfncvt.rtz.xu.f.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvtrtzxufwm_m8:	
+
+bench_vfncvtrtzxufwm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171487,10 +171487,10 @@ vfncvt.rtz.xu.f.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvt.rod.f.f.w_m8:	
+
+bench_vfncvt.rod.f.f.w_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171558,10 +171558,10 @@ vfncvt.rod.f.f.w v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfncvt.rod.f.f.wm_m8:	
+
+bench_vfncvt.rod.f.f.wm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171629,11 +171629,11 @@ vfncvt.rod.f.f.w v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vfsqrtv_m8:	
+
+bench_vfsqrtv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171701,10 +171701,10 @@ vfsqrt.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfsqrtvm_m8:	
+
+bench_vfsqrtvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171772,10 +171772,10 @@ vfsqrt.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsqrt7v_m8:	
+
+bench_vfrsqrt7v_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171843,10 +171843,10 @@ vfrsqrt7.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrsqrt7vm_m8:	
+
+bench_vfrsqrt7vm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171914,10 +171914,10 @@ vfrsqrt7.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrec7v_m8:	
+
+bench_vfrec7v_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -171985,10 +171985,10 @@ vfrec7.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfrec7vm_m8:	
+
+bench_vfrec7vm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172056,10 +172056,10 @@ vfrec7.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfclassv_m8:	
+
+bench_vfclassv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172127,10 +172127,10 @@ vfclass.v v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vfclassvm_m8:	
+
+bench_vfclassvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172198,11 +172198,11 @@ vfclass.v v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
-	
-bench_vmsbfm_m8:	
+
+bench_vmsbfm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -172270,10 +172270,10 @@ vmsbf.m v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsbfmm_m8:	
+
+bench_vmsbfmm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -172341,10 +172341,10 @@ vmsbf.m v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofm_m8:	
+
+bench_vmsofm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -172412,10 +172412,10 @@ vmsof.m v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsofmm_m8:	
+
+bench_vmsofmm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -172483,10 +172483,10 @@ vmsof.m v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifm_m8:	
+
+bench_vmsifm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -172554,10 +172554,10 @@ vmsif.m v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vmsifmm_m8:	
+
+bench_vmsifmm_m8:
 	m_1bit
 	li a0, WARMUP
 1:
@@ -172625,10 +172625,10 @@ vmsif.m v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotam_m8:	
+
+bench_viotam_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172696,10 +172696,10 @@ viota.m v8,v16
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_viotamm_m8:	
+
+bench_viotamm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172767,10 +172767,10 @@ viota.m v8,v16,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidv_m8:	
+
+bench_vidv_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172838,10 +172838,10 @@ vid.v v8
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
-	
-bench_vidvm_m8:	
+
+bench_vidvm_m8:
 	m_nop
 	li a0, WARMUP
 1:
@@ -172909,7 +172909,7 @@ vid.v v8,v0.t
 	csrr a0, cycle
 #endif
 	sub a0, a0, a3
-ret	
+ret
 
 
 
@@ -172975,7 +172975,7 @@ randomize:
 		mulhu a7, a0, a5
 		xor \x, a6, a7
 		and a5, \x, a4 # zero upper f16/f32/f64 exponent bit
-		fmv.w.x f\()\x, a5
+		// fmv.w.x f\()\x, a5
 		.ifnb
 			randomize_reg \xs
 		.endif

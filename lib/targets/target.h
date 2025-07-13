@@ -24,6 +24,8 @@ __attribute__((weak)) void target_deinit() {}
 #if defined(MLONMCU_TARGET_ARA)
 #include "printf.h"
 #define target_printf printf
+#elif defined(MLONMCU_TARGET_CV32E40P)
+#define PRINTF_FIX  // TODO: rename to PRINTF_FLOAT_FIX, for rvv_bench?
 #elif defined(MLONMCU_TARGET_VICUNA) || defined(MLONMCU_TARGET_VICUNA2)
 #include "uart.h"
 #define target_printf uart_printf
