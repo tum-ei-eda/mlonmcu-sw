@@ -10,6 +10,7 @@ extern char const benchmark_names;
 extern ux (*benchmarks)(void);
 extern ux run_bench(ux (*bench)(void), void *ptr, ux seed);
 
+#define PRINTF_FIX  // TODO: expose
 
 static int
 compare_ux(void const *a, void const *b)
@@ -21,7 +22,8 @@ void
 run(char const *name, ux (*bench)(void)) {
 	ux arr[RUNS];
 
-	print("<tr><td>")(s,name)("</td>");
+	// print("<tr><td>")(s,name)("</td>");
+	mlonmcu_printf("<tr><td>%s</td>", name);
 	for (ux i = 0; i < RUNS; ++i) {
 		arr[i] = run_bench(bench, mem, seed);
 		seed = seed*7 + 13;
@@ -38,8 +40,13 @@ run(char const *name, ux (*bench)(void)) {
 		sum += arr[i];
 #endif
 
-	print("<td>")(fn,2,sum * 1.0f/(UNROLL*LOOP*count))("</td>");
-	print("</tr>\n")(flush,);
+#ifdef PRINTF_FIX
+	double val = (double)(sum * 1.0f/(UNROLL*LOOP*count));
+	mlonmcu_printf("<td>%d.%02d</td>", ((int)(val * 100) / 100), ((int)(val * 100) % 100));
+#else
+	mlonmcu_printf("<td>%.2f</td>", (double)(sum * 1.0f/(UNROLL*LOOP*count)));
+#endif
+	mlonmcu_printf("</tr>\n");
 }
 
 

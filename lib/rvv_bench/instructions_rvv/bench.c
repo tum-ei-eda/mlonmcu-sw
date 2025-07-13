@@ -14,6 +14,8 @@ static BenchFunc *benches[] = { &bench_mf8, &bench_mf4, &bench_mf2, &bench_m1, &
 
 extern ux run_bench(ux (*bench)(void), ux type, ux vl, ux seed);
 
+#define PRINTF_FIX  // TODO: expose
+
 
 static int
 compare_ux(void const *a, void const *b)
@@ -28,7 +30,7 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 	ux arr[RUNS];
 
 
-	print("<tr><td>")(s,name)("</td>");
+	mlonmcu_printf("<tr><td>%s</td>", name);
 	ux mask = bIdx[&bench_types];
 
 	ux lmuls[] = { 5, 6, 7, 0, 1, 2, 3 };
@@ -39,7 +41,7 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 		ux vtype = lmul | (sew<<3) | (!!ta << 6) | (!!ma << 7);
 
 		if (!(mask >> (lmul_idx*4 + sew) & 1)) {
-			print("<td></td>");
+			mlonmcu_printf("<td></td>");
 			continue;
 		}
 
@@ -49,7 +51,7 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 		// > implementations must support SEW settings between SEWMIN
 		// > and LMUL * ELEN, inclusive.
 		if (sew_val * 8 > lmul_val * __riscv_v_elen) {
-			print("<td></td>");
+			mlonmcu_printf("<td></td>");
 			continue;
 		}
 
@@ -77,12 +79,17 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 		for (ux i = 0; i < RUNS; ++i)
 			sum += arr[i];
 #endif
-		print("<td>")(fn,2,sum * 1.0f/(UNROLL*LOOP*count*8))("</td>");
+#ifdef PRINTF_FIX
+		double val = (double)(sum * 1.0f/(UNROLL*LOOP*count*8));
+		mlonmcu_printf("<td>%d.%02d</td>", ((int)(val * 100) / 100), ((int)(val * 100) % 100));
+#else
+		mlonmcu_printf("<td>%.2f</td>", (double)(sum * 1.0f/(UNROLL*LOOP*count*8)));
+#endif
 		continue;
 skip:
-		print("<td></td>");
+		mlonmcu_printf("<td></td>");
 	}
-	print("</tr>\n")(flush,);
+	mlonmcu_printf("</tr>\n");
 }
 
 
@@ -100,12 +107,14 @@ int mlonmcu_run() {
 	ux vlarr[] = { 0, 1 };
 	for (ux i = 0; i < 2; ++i) {
 		for (ux j = 4; j--; ) {
-			print("\n");
+      // mlonmcu_printf("j=%u.\n", j);
+			mlonmcu_printf("\n");
 			if (vlarr[i] != 0)
-				print("vl=")(u,vlarr[i]);
+				mlonmcu_printf("vl=%u", vlarr[i]);
 			else
-				print("vl=VLMAX");
-			print(s,j & 2 ? " ta" : " tu")(s,j & 1 ? " ma" : " mu")("\n\n");
+				mlonmcu_printf("vl=VLMAX");
+			mlonmcu_printf("%s%s", j & 2 ? " ta" : " tu", j & 1 ? " ma" : " mu");
+      mlonmcu_printf("\n\n");
 			char const *name = &bench_names;
 			for (ux bIdx = 0; bIdx < bench_count; ++bIdx) {
 				run_all_types(name, bIdx, vlarr[i], j >> 1, j & 1);
