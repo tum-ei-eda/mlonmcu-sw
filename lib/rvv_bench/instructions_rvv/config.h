@@ -1,6 +1,12 @@
 #define WARMUP 1000
+// #define WARMUP 1
 #define UNROLL 8 // automatically *8
-#define LOOP 512
+// #define UNROLL 1 // automatically *8
+// #define LOOP 512
+// #define LOOP 64
+// #define LOOP 4
+#define LOOP 1  // inaccurate?
+// #define LOOP 1
 // #define RUNS 32
 #define RUNS 1 // TODO: expose
 
