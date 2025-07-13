@@ -27,10 +27,26 @@ __attribute__((weak)) void target_deinit() {}
 #elif defined(MLONMCU_TARGET_CV32E40P)
 #define PRINTF_FIX  // TODO: rename to PRINTF_FLOAT_FIX, for rvv_bench?
 #elif defined(MLONMCU_TARGET_VICUNA) || defined(MLONMCU_TARGET_VICUNA2)
+#define FENCE_FIX  // fix rvv bench
 #include "uart.h"
 #define target_printf uart_printf
 #else
 #define target_printf printf
+#endif
+
+#ifdef RISCV_VEXT
+// TODO: handle embedded
+// TODO: move to rvv-bench?
+#if defined(MLONMCU_TARGET_VICUNA) || defined(MLONMCU_TARGET_VICUNA2)
+#define HAS_ZVE32X
+#else
+#define HAS_ZVE32X
+#define HAS_ZVE32F
+#define HAS_ZVE64X
+#define HAS_ZVE64F
+#define HAS_ZVE64D
+#define HAS_RVV
+#endif
 #endif
 // __attribute__((weak)) void target_printf(const char* format, ...) {
 //     va_list argptr;
