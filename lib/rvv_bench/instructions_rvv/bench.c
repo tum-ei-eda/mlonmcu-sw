@@ -29,7 +29,7 @@ compare_ux(void const *a, void const *b)
 }
 
 
-static void
+static int
 run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 {
 	ux arr[RUNS];
@@ -67,7 +67,10 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 			emul = emul < 7 ? emul+1 : 7;
 		if (mask == T_m1)
 			emul = 4; // m2
-		BenchFunc bench = benches[emul][bIdx];
+		BenchFunc *bench_ptr = benches[emul] + bIdx;
+		if (bench_ptr == 0)  // NULL reached!
+				return -1;
+		BenchFunc bench = *bench_ptr;
 
 		for (ux i = 0; i < RUNS; ++i) {
 			arr[i] = run_bench(bench, vtype, vl, seed);
@@ -95,6 +98,7 @@ skip:
 		mlonmcu_printf("<td></td>");
 	}
 	mlonmcu_printf("</tr>\n");
+	return 0;
 }
 
 
@@ -121,9 +125,15 @@ int mlonmcu_run() {
 			mlonmcu_printf("%s%s", j & 2 ? " ta" : " tu", j & 1 ? " ma" : " mu");
       mlonmcu_printf("\n\n");
 			char const *name = &bench_names;
-			for (ux bIdx = 0; bIdx < bench_count; ++bIdx) {
-				run_all_types(name, bIdx, vlarr[i], j >> 1, j & 1);
-				while (*name++);
+			ux bIdx = 0;
+			while(1) {
+				int rc = run_all_types(name, bIdx, vlarr[i], j >> 1, j & 1);
+        if (rc < 0) {
+            break;
+        }
+				while (*name++)
+						;
+				bIdx++;
 			}
 		}
 	}
