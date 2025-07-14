@@ -1,14 +1,27 @@
+#ifndef RVV_BENCH_INSTRUCTIONS_RVV_CONFIG_H
+#define RVV_BENCH_INSTRUCTIONS_RVV_CONFIG_H
+
+#ifndef WARMUP
 #define WARMUP 1000
 // #define WARMUP 1
+#endif
+
+#ifndef UNROLL
 #define UNROLL 8 // automatically *8
 // #define UNROLL 1 // automatically *8
+#endif
+
+#ifndef LOOP
 // #define LOOP 512
 // #define LOOP 64
 // #define LOOP 4
 #define LOOP 1  // inaccurate?
-// #define LOOP 1
+#endif
+
+#ifndef RUNS
 // #define RUNS 32
 #define RUNS 1 // TODO: expose
+#endif
 
 // processor specific configs
 //               m8  m4  m2  m1  mf2 mf4 mf8
@@ -30,3 +43,19 @@
 
 // special:
 #define T_m1 ((1 << 28) | T_A) // emul<=1
+
+// MLonMCU specific
+#if defined(MLONMCU_TARGET_CV32E40P)
+#define PRINTF_FLOAT_FIX
+#endif
+
+#if defined(MLONMCU_TARGET_VICUNA)
+#define SKIP_FENCEI
+#define SKIP_DIV_REM
+#endif
+
+#if defined(MLONMCU_TARGET_VICUNA2)
+#define SKIP_FENCEI
+#endif
+
+#endif  // RVV_BENCH_INSTRUCTIONS_RVV_CONFIG_H

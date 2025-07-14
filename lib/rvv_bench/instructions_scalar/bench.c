@@ -10,8 +10,6 @@ extern char const benchmark_names;
 extern ux (*benchmarks)(void);
 extern ux run_bench(ux (*bench)(void), void *ptr, ux seed);
 
-#define PRINTF_FIX  // TODO: expose
-
 static int
 compare_ux(void const *a, void const *b)
 {
@@ -40,7 +38,7 @@ run(char const *name, ux (*bench)(void)) {
 		sum += arr[i];
 #endif
 
-#ifdef PRINTF_FIX
+#ifdef PRINTF_FLOAT_FIX
 	double val = (double)(sum * 1.0f/(UNROLL*LOOP*count));
 	mlonmcu_printf("<td>%d.%02d</td>", ((int)(val * 100) / 100), ((int)(val * 100) % 100));
 #else

@@ -14,8 +14,13 @@ static BenchFunc *benches[] = { &bench_mf8, &bench_mf4, &bench_mf2, &bench_m1, &
 
 extern ux run_bench(ux (*bench)(void), ux type, ux vl, ux seed);
 
-#define PRINTF_FIX  // TODO: expose
-
+#if defined(__riscv_zve64x)
+#define MAX_SEW_RAW 0b011
+#elif defined(__riscv_zve32x)
+#define MAX_SEW_RAW 0b010
+#else
+#error "Unable to detect ELEM"
+#endif
 
 static int
 compare_ux(void const *a, void const *b)
@@ -35,7 +40,7 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 
 	ux lmuls[] = { 5, 6, 7, 0, 1, 2, 3 };
 
-	for (ux sew = 0; sew < 4; ++sew)
+	for (ux sew = 0; sew < (MAX_SEW_RAW + 1); ++sew)
 	for (ux lmul_idx = 0; lmul_idx < 7; ++lmul_idx) {
 		ux lmul = lmuls[lmul_idx];
 		ux vtype = lmul | (sew<<3) | (!!ta << 6) | (!!ma << 7);
@@ -79,7 +84,7 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 		for (ux i = 0; i < RUNS; ++i)
 			sum += arr[i];
 #endif
-#ifdef PRINTF_FIX
+#ifdef PRINTF_FLOAT_FIX
 		double val = (double)(sum * 1.0f/(UNROLL*LOOP*count*8));
 		mlonmcu_printf("<td>%d.%02d</td>", ((int)(val * 100) / 100), ((int)(val * 100) % 100));
 #else
