@@ -69,7 +69,7 @@ run_all_types(char const *name, ux bIdx, ux vl, int ta, int ma)
 			emul = 4; // m2
 		BenchFunc *bench_ptr = benches[emul] + bIdx;
 		if (bench_ptr == 0)  // NULL reached!
-				return -1;
+			return -1;
 		BenchFunc bench = *bench_ptr;
 
 		for (ux i = 0; i < RUNS; ++i) {
