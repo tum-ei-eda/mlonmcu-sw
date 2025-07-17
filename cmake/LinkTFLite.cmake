@@ -2,6 +2,14 @@ SET(TF_DIR
     "/data/work/code/tensorflow"
     CACHE PATH "TensorFlow source directory"
 )
+SET(CFU_ACCELERATE
+    OFF
+    CACHE PATH "TODO"
+)
+SET(CFU_CONV2D_IDX_INIT
+    ""
+    CACHE STRING "TODO"
+)
 
 SET(TFL_SRC ${TF_DIR}/tensorflow/lite)
 SET(TFLM_SRC ${TFL_SRC}/micro)
@@ -237,6 +245,13 @@ TARGET_COMPILE_DEFINITIONS(tflm PUBLIC
     "$<$<CONFIG:RELEASE>:TF_LITE_STRIP_ERROR_STRINGS>"
     ${TFLM_OPTIMIZED_KERNEL_UPPER}
 )
+IF(CFU_ACCELERATE)
+    # TARGET_COMPILE_DEFINITIONS(tflm PUBLIC CFU_ACCELERATE)
+    TARGET_COMPILE_DEFINITIONS(tflm PUBLIC CONV_ACCELERATE)
+    IF(NOT CFU_CONV2D_IDX_INIT STREQUAL "")
+        TARGET_COMPILE_DEFINITIONS(tflm PUBLIC CFU_CONV2D_IDX_INIT=${CFU_CONV2D_IDX_INIT})
+    ENDIF()
+ENDIF()
 
 # Workaround for the following issue which does not envolve patching the tflite-micro codebase:
 
