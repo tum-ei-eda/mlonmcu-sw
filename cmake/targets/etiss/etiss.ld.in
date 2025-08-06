@@ -20,7 +20,6 @@ MEMORY
 {
   ROM  (rx)  : ORIGIN = @MEM_ROM_ORIGIN@, LENGTH = @MEM_ROM_LENGTH@
   RAM  (rw) : ORIGIN = @MEM_RAM_ORIGIN@, LENGTH = @MEM_RAM_LENGTH@
-  FLASH  (rw) : ORIGIN = @MEM_FLASH_ORIGIN@, LENGTH = @MEM_FLASH_LENGTH@
 }
 
 
@@ -37,6 +36,10 @@ _heap_end        = _stack_start;
 SECTIONS
 {
   /* ================ ROM ================ */
+
+  .text : {
+    *(.text .text.* )
+  }  > ROM
 
   .rodata : {
     *(.rodata .rodata.*)
@@ -97,10 +100,4 @@ SECTIONS
   .stack : {
     ASSERT ((__stack > (_end + __heap_size + __stack_size)), "Error: RAM too small for heap and stack");
   }
-
-  /* =============== FLASH =============== */
-  .text : {
-    *(.text .text.* )
-  }  > FLASH
-
 }
