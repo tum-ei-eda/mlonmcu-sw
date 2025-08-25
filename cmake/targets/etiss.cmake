@@ -57,7 +57,13 @@ MACRO(COMMON_ADD_LIBRARY TARGET_NAME)
     ENDIF()
 ENDMACRO()
 
-CONFIGURE_FILE(${CMAKE_CURRENT_LIST_DIR}/etiss/etiss.ld.in etiss.ld @ONLY)
+IF(DEFINED MEM_FLASH_ORIGIN AND NOT "${MEM_FLASH_ORIGIN}" STREQUAL "None" AND NOT "${MEM_FLASH_ORIGIN}" STREQUAL "")
+    set(LINKER_SCRIPT_TEMPLATE ${CMAKE_CURRENT_LIST_DIR}/etiss/etiss_wFlash.ld.in)
+ELSE()
+    set(LINKER_SCRIPT_TEMPLATE ${CMAKE_CURRENT_LIST_DIR}/etiss/etiss.ld.in)
+ENDIF()
+
+CONFIGURE_FILE(${LINKER_SCRIPT_TEMPLATE} etiss.ld @ONLY)
 
 # The linker argument setting will break the cmake test program on 64-bit,
 # so disable test program linking for now.
