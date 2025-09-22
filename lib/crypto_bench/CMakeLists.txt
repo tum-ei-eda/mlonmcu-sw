@@ -6,6 +6,11 @@ SET(CRYPTO_BENCH_BENCHMARK
 )
 # SET_PROPERTY(CACHE TACLEBENCH_BENCHMARK PROPERTY STRINGS TODO)
 
+SET(CRYPTO_BENCH_VERBOSE
+    OFF
+    CACHE BOOL "Enable verbose printf statements (HQC only)."
+)
+
 IF(NOT CRYPTO_BENCH_BENCHMARK)
     MESSAGE(FATAL_ERROR "Undefined: CRYPTO_BENCH_BENCHMARK")
 ENDIF()
@@ -67,13 +72,42 @@ ELSEIF(${CRYPTO_BENCH_BENCHMARK} STREQUAL "mceliece348864_keypair")
 ELSEIF(${CRYPTO_BENCH_BENCHMARK} STREQUAL "mceliece348864_keypair_rvv")
     SET(BENCH_SOURCES mceliece_keypair.c ${KEYPAIR_SOURCES})
     LIST(APPEND BENCH_DEFS "-DRISCV")
+ELSEIF(${CRYPTO_BENCH_BENCHMARK} MATCHES "hqc-.*")
+    SET(HQC_BASE /work/git/colabs/tuw/parker/HQC-Round4/Additional_Implementation)  # TODO: expose
+    SET(HQC_DIR ${HQC_BASE}/${CRYPTO_BENCH_BENCHMARK})
+    SET(HQC_SOURCES
+        ${HQC_DIR}/lib/fips202/fips202.c
+        # ${HQC_DIR}/src/main_hqc.c
+        main_hqc.c
+        ${HQC_DIR}/src/vector.c
+        ${HQC_DIR}/src/reed_muller.c
+        ${HQC_DIR}/src/reed_solomon.c
+        ${HQC_DIR}/src/fft.c
+        ${HQC_DIR}/src/gf.c
+        ${HQC_DIR}/src/gf2x.c
+        ${HQC_DIR}/src/code.c
+        ${HQC_DIR}/src/parsing.c
+        ${HQC_DIR}/src/hqc.c
+        ${HQC_DIR}/src/kem.c
+        ${HQC_DIR}/src/shake_ds.c
+        ${HQC_DIR}/src/shake_prng.c
+    )
+    IF(${CRYPTO_BENCH_VERBOSE})
+        SET(BENCH_DEFS VERBOSE)
+    ENDIF()
+    SET(BENCH_SOURCES ${HQC_SOURCES})
+    SET(BENCH_INCLUDES
+        ${HQC_DIR}/lib/fips202/
+        ${HQC_DIR}/src/
+    )
+    LIST(APPEND BENCH_DEFS "-DRISCV")
 ELSE()
     MESSAGE(FATAL_ERROR "Unknown program: ${CRYPTO_BENCH_BENCHMARK}")
 ENDIF()
 
 # TODO: subdirs!
 COMMON_ADD_LIBRARY(${PROJECT_NAME} STATIC ${COMMON_BENCH_SOURCES} ${BENCH_SOURCES})
-TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC . ${MCELIECE_DIR} ${MCELIECE_DIR}/subroutines)
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC . ${MCELIECE_DIR} ${MCELIECE_DIR}/subroutines ${BENCH_INCLUDES})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} PRIVATE support)
 TARGET_COMPILE_DEFINITIONS(${PROJECT_NAME} PRIVATE ${BENCH_DEFS})
 TARGET_COMPILE_OPTIONS(${PROJECT_NAME} PRIVATE ${FORCE_BENCH_DEFS})
