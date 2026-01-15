@@ -190,23 +190,29 @@ static char *const printEnd = printBuffer + sizeof printBuffer;
 
 #define print_lit(s) print_raw(s, (sizeof s) - 1)
 
+#include "printing.h"
 static void
 print_flush(void)
 {
-	memwrite(printBuffer, printIt - printBuffer);
+	// mlonmcu_printf("$print_flush$\n");
+	// memwrite(printBuffer, printIt - printBuffer);
+	mlonmcu_printf(printBuffer);
 	printIt = printBuffer;
 }
 
 static void
 print_raw(const char *s, size_t len)
 {
-	if ((uintptr_t)(printEnd - printIt) > len) {
+	// mlonmcu_printf("$print_raw %u$\n", len);
+	// if ((uintptr_t)(printEnd - printIt) > len) {
+	// if (0) {
 		memcpy(printIt, s, len);
 		printIt += len;
-	} else {
+	// } else {
 		print_flush();
-		memwrite(s, len);
-	}
+		// memwrite(s, len);
+	  // mlonmcu_printf(s);
+	// }
 }
 
 static void print_s(const char *s) { print_raw(s, strlen(s)); }

@@ -363,7 +363,7 @@ u64_cycle:
 	.endr
 		addi a0, a0, -1
 		bnez a0, 1b
-		fence.i
+		// fence.i
 #if defined(USE_PERF_EVENT_SLOW)
 		ld a0, nolibc_perf_event_fd
 		la a1, u64_cycle
@@ -400,7 +400,7 @@ randomize:
 		mulhu a7, a0, a5
 		xor \x, a6, a7
 		and a5, \x, a4 # zero upper f16/f32/f64 exponent bit
-		fmv.w.x f\()\x, a5
+		# fmv.w.x f\()\x, a5
 		.ifnb
 			randomize_reg \xs
 		.endif

@@ -21,15 +21,17 @@ uint64_t target_time();
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}
+
 #if defined(MLONMCU_TARGET_ARA)
 #include "printf.h"
 #define target_printf printf
-#elif defined(MLONMCU_TARGET_VICUNA)
+#elif defined(MLONMCU_TARGET_VICUNA) || defined(MLONMCU_TARGET_VICUNA2)
 #include "uart.h"
 #define target_printf uart_printf
 #else
 #define target_printf printf
 #endif
+
 // __attribute__((weak)) void target_printf(const char* format, ...) {
 //     va_list argptr;
 //     va_start(argptr, format);
