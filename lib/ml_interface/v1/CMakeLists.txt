@@ -69,3 +69,8 @@ SET(GLOBAL_ISEL_ABORT 2)
 target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel-abort=${GLOBAL_ISEL_ABORT}>")
 target_compile_options(${PROJECT_NAME} PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel-abort=${GLOBAL_ISEL_ABORT}>")
 ENDIF()
+
+# TODO: check if required for executorch?
+# target_compile_definitions(
+#   ml_interface PRIVATE C10_USING_CUSTOM_GENERATED_MACROS
+# )
