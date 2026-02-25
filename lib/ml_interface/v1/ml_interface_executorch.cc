@@ -1,6 +1,6 @@
 #include "ml_interface.h"
 
-#include "model.cc.h"
+#include "executorch_wrapper.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -13,7 +13,7 @@ int mlonmcu_init() {
 extern "C"
 #endif
 int mlonmcu_deinit() {
-  return 0;
+  return model_deinit();
 }
 
 #ifdef __cplusplus

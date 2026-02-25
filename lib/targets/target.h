@@ -15,9 +15,17 @@
 // #define HAS_TIME 1
 #endif  // MLONMCU_TARGET_HOST_X86
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 uint64_t target_cycles();
 uint64_t target_instructions();
 uint64_t target_time();
+
+#ifdef __cplusplus
+}
+#endif
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}
