@@ -52,6 +52,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/depthwise_conv.cc
     ${TFLM_SRC}/kernels/logical.cc
     ${TFLM_SRC}/kernels/logistic.cc
+    ${TFLM_SRC}/kernels/logistic_common.cc
     ${TFLM_SRC}/kernels/svdf.cc
     ${TFLM_SRC}/kernels/unidirectional_sequence_lstm.cc
     ${TFLM_SRC}/kernels/lstm_eval.cc
@@ -75,6 +76,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/fill.cc
     ${TFLM_SRC}/kernels/comparisons.cc
     ${TFLM_SRC}/kernels/round.cc
+    ${TFLM_SRC}/kernels/slice.cc
     ${TFLM_SRC}/kernels/strided_slice.cc
     ${TFLM_SRC}/kernels/pack.cc
     ${TFLM_SRC}/kernels/pad.cc
