@@ -1,0 +1,13 @@
+IF(NOT SRC_DIR)
+    MESSAGE(FATAL_ERROR "The variable SRC_DIR is not set")
+ENDIF()
+
+SET(EXTRA_SRC ml_interface_executorch.cc)
+
+# SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/${EXECUTORCH_WRAPPER_FILENAME} ${SRC_DIR}/riscv_memory_allocator.cpp)
+SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/${EXECUTORCH_WRAPPER_FILENAME})
+# TARGET_LINK_LIBRARIES(${EXECUTORCH_LIB} PUBLIC m)
+SET(EXTRA_INC ${SRC_DIR} ${ET_INCLUDE_PATH} ${ET_INCLUDE_PATH2} ${ET_DIR_PATH}/runtime/core/portable_type/c10)
+
+SET(EXTRA_LIBS ${mlonmcu_executor_runner_link})
+message(STATUS "EXTRA_LIBS=${EXTRA_LIBS}")
