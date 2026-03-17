@@ -64,6 +64,37 @@ static inline uint32_t rdtime(void) {
 }
 
 /**
+ * @brief Returns wall-clock real time that has passed from an arbitrary start time in the past in 64 bits.
+ */
+static inline uint64_t rdtime64()
+{
+#if defined(__riscv) || defined(__riscv__)
+#if __riscv_xlen == 32
+    uint32_t time;
+    uint32_t timeh1;
+    uint32_t timeh2;
+
+    /* Reads are not atomic. So ensure, that we are never reading inconsistent
+     * values from the 64bit hardware register. */
+    do
+    {
+        __asm__ volatile("rdtimeh %0" : "=r"(timeh1));
+        __asm__ volatile("rdtime %0" : "=r"(time));
+        __asm__ volatile("rdtimeh %0" : "=r"(timeh2));
+    } while (timeh1 != timeh2);
+
+    return (((uint64_t)timeh1) << 32) | time;
+#else
+    uint64_t time;
+    __asm__ volatile("rdtime %0" : "=r"(time));
+    return time;
+#endif
+#else
+    return 0;
+#endif
+}
+
+/**
  * @brief Returns the number of instructions retired by the processor.
  */
 static inline uint32_t rdinstret(void) {
