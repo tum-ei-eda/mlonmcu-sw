@@ -6,4 +6,4 @@ __attribute__((weak)) void deinit_target() {}
 // __attribute__((weak)) void stop_timer() {}
 __attribute__((weak)) uint64_t target_cycles() { return 0; }
 __attribute__((weak)) uint64_t target_instructions() { return 0; }
-__attribute__((weak)) float target_time() { return 0; }
+__attribute__((weak)) uint64_t target_time() { return 0; }
