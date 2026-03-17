@@ -76,15 +76,19 @@ ELSEIF(${CRYPTO_BENCH_BENCHMARK} MATCHES "hqc-.*")
     SET(HQC_BASE /work/git/colabs/tuw/parker/HQC-Round4/Additional_Implementation)  # TODO: expose
     SET(HQC_DIR ${HQC_BASE}/${CRYPTO_BENCH_BENCHMARK})
     SET(HQC_SOURCES
-        ${HQC_DIR}/lib/fips202/fips202.c
+        # ${HQC_DIR}/lib/fips202/fips202.c
+        # ${HQC_DIR}/lib/fips202/fips202_custom.c
+        ${HQC_DIR}/lib/fips202/fips202_custom_new.c
         # ${HQC_DIR}/src/main_hqc.c
         main_hqc.c
         ${HQC_DIR}/src/vector.c
         ${HQC_DIR}/src/reed_muller.c
         ${HQC_DIR}/src/reed_solomon.c
         ${HQC_DIR}/src/fft.c
-        ${HQC_DIR}/src/gf.c
-        ${HQC_DIR}/src/gf2x.c
+        # ${HQC_DIR}/src/gf.c
+        ${HQC_DIR}/src/gf_custom.c
+        # ${HQC_DIR}/src/gf2x.c
+        ${HQC_DIR}/src/gf2x_custom.c
         ${HQC_DIR}/src/code.c
         ${HQC_DIR}/src/parsing.c
         ${HQC_DIR}/src/hqc.c
