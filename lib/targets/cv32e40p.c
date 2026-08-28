@@ -10,7 +10,6 @@ static uint64_t start_cycles = 0;
 
 uint64_t target_cycles() { return rdcycle64(); }
 uint64_t target_instructions() { return rdinstret64(); }
-// float target_time() { return target_cycles() / (float)RDCYCLE_PER_SECOND; }
 
 #define csr_write(csr, val)         \
 ({                \

@@ -128,6 +128,7 @@ ENDIF()
 
 SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/softmax.cc
+    ${TFLM_SRC}/kernels/transpose.cc
     ${TFLM_SRC}/kernels/fully_connected.cc
     ${TFLM_SRC}/kernels/pooling.cc
     ${TFLM_SRC}/kernels/mul.cc
@@ -144,6 +145,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/depthwise_conv.cc
     ${TFLM_SRC}/kernels/logical.cc
     ${TFLM_SRC}/kernels/logistic.cc
+    ${TFLM_SRC}/kernels/logistic_common.cc
     ${TFLM_SRC}/kernels/svdf.cc
     ${TFLM_SRC}/kernels/unidirectional_sequence_lstm.cc
     ${TFLM_SRC}/kernels/lstm_eval.cc
@@ -167,6 +169,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/fill.cc
     ${TFLM_SRC}/kernels/comparisons.cc
     ${TFLM_SRC}/kernels/round.cc
+    ${TFLM_SRC}/kernels/slice.cc
     ${TFLM_SRC}/kernels/strided_slice.cc
     ${TFLM_SRC}/kernels/pack.cc
     ${TFLM_SRC}/kernels/pad.cc
@@ -177,6 +180,7 @@ SET(TFLM_REFERENCE_KERNEL_SRCS
     ${TFLM_SRC}/kernels/activations_common.cc
     ${TFLM_SRC}/kernels/dequantize.cc
     ${TFLM_SRC}/kernels/reduce.cc
+    ${TFLM_SRC}/kernels/reduce_common.cc
     ${TFLM_SRC}/kernels/sub.cc
     ${TFLM_SRC}/kernels/resize_nearest_neighbor.cc
     ${TFLM_SRC}/kernels/l2norm.cc

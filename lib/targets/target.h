@@ -5,7 +5,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-#ifdef MLONMCU_TARGET_HOST_X86
+#if defined(MLONMCU_TARGET_MUSE_PI_PRO)
+#define HAS_CYCLES 0
+#define HAS_INSTRUCTIONS 0
+#define HAS_TIME 1
+#define RDTIME_PER_SECOND 24000000UL  // 24 MHz timebase freq
+#elif defined(MLONMCU_TARGET_HOST_X86)
 #define HAS_CYCLES 1
 #define HAS_INSTRUCTIONS 0
 #define HAS_TIME 1
@@ -13,11 +18,19 @@
 #define HAS_CYCLES 1
 #define HAS_INSTRUCTIONS 1
 // #define HAS_TIME 1
-#endif  // MLONMCU_TARGET_HOST_X86
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 uint64_t target_cycles();
 uint64_t target_instructions();
 uint64_t target_time();
+
+#ifdef __cplusplus
+}
+#endif
 
 __attribute__((weak)) void target_init() {}
 __attribute__((weak)) void target_deinit() {}

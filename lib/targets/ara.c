@@ -19,7 +19,6 @@ uint64_t target_cycles() { return rdcycle64(); }
 //   return cycle_count;
 // };
 uint64_t target_instructions() { return rdinstret64(); }
-// float target_time() { return target_cycles() / (float)RDCYCLE_PER_SECOND; }
 
 void target_init() {
   // enable_fext();
