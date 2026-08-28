@@ -35,8 +35,8 @@ FILE(GLOB IREE_OBJS ${SRC_DIR}/*.o)
 # ENDIF()
 
 # SET(EXTRA_SRC ${EXTRA_SRC} ${IREE_SRCS} ${SRC_DIR}/iree_wrapper.c ${SRC_DIR}/device_embedded_sync.c)
-SET(EXTRA_SRC ${EXTRA_SRC} ${IREE_SRCS} ${SRC_DIR}/iree_wrapper.c ${IREE_OBJS})
-SET(EXTRA_INC ${SRC_DIR} ${IREE_INCS} ${IREE_SRC_DIR}/runtime/src)
+SET(EXTRA_SRCS ${EXTRA_SRC} ${IREE_SRCS} ${SRC_DIR}/iree_wrapper.c ${IREE_OBJS})
+SET(EXTRA_INCS ${SRC_DIR} ${IREE_INCS} ${IREE_SRC_DIR}/runtime/src)
 #
 SET(IREE_LIBS iree_runtime_unified)
 # IF(IREE_EMITC)

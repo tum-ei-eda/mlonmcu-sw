@@ -17,8 +17,8 @@ target_compile_options(emx_extension PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mll
 target_compile_options(emx_extension PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel=1>")
 ENDIF()
 
-SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/${EMX_WRAPPER_FILENAME})
-SET(EXTRA_INC ${EMX_OUT_DIR} ${SRC_DIR})
+SET(EXTRA_SRCS ${EXTRA_SRC} ${SRC_DIR}/${EMX_WRAPPER_FILENAME})
+SET(EXTRA_INCS ${EMX_OUT_DIR} ${SRC_DIR})
 
 SET(EXTRA_LIBS emx_extension)
 
