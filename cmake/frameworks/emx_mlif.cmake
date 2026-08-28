@@ -1,0 +1,33 @@
+IF(NOT SRC_DIR)
+    MESSAGE(FATAL_ERROR "The variable SRC_DIR is not set")
+ENDIF()
+
+SET(EMX_OUT_DIR ${SRC_DIR}/)
+SET(EXTRA_SRC ml_interface_emx.c)
+
+FILE(GLOB EMX_SRCS ${EMX_OUT_DIR}/model.c)
+
+COMMON_ADD_LIBRARY(emx_extension STATIC ${EMX_SRCS})
+TARGET_INCLUDE_DIRECTORIES(emx_extension PUBLIC ${EMX_HEADERS} ${EMX_OUT_DIR} ${SRC_DIR})
+TARGET_LINK_LIBRARIES(emx_extension PUBLIC m)
+TARGET_COMPILE_OPTIONS(emx_extension PRIVATE -Wno-incompatible-pointer-types)
+
+IF(${GLOBAL_ISEL})
+target_compile_options(emx_extension PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:C>:-mllvm -global-isel=1>")
+target_compile_options(emx_extension PRIVATE "SHELL:$<$<COMPILE_LANGUAGE:CXX>:-mllvm -global-isel=1>")
+ENDIF()
+
+SET(EXTRA_SRC ${EXTRA_SRC} ${SRC_DIR}/${EMX_WRAPPER_FILENAME})
+SET(EXTRA_INC ${EMX_OUT_DIR} ${SRC_DIR})
+
+SET(EXTRA_LIBS emx_extension)
+
+FOREACH(ENTRY ${EMX_EXTRA_LIBS})
+    TARGET_LINK_LIBRARIES(emx_extension PUBLIC ${ENTRY})
+ENDFOREACH()
+FOREACH(ENTRY ${EMX_EXTRA_INCS})
+    TARGET_INCLUDE_DIRECTORIES(emx_extension PUBLIC ${ENTRY})
+ENDFOREACH()
+FOREACH(ENTRY ${EMX_EXTRA_DEPS})
+    ADD_DEPENDENCIES(emx_extension ${EMX_EXTRA_DEPS})
+ENDFOREACH()
