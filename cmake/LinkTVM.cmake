@@ -61,6 +61,7 @@ TARGET_COMPILE_DEFINITIONS(tvm_graph_rt PUBLIC
 # cmake-format: off
 COMMON_ADD_LIBRARY(tvm_aot_rt STATIC
     ${TVM_DIR}/src/runtime/crt/common/crt_backend_api.c
+    ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c
     ${TVM_DIR}/src/runtime/crt/memory/stack_allocator.c
 )
 # cmake-format: on
