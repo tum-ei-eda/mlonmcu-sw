@@ -2,6 +2,11 @@ SET(TVM_DIR
     "/data/work/code/tvm"
     CACHE PATH "TVM source directory"
 )
+SET(TVM_MINIMAL_RUNTIME
+    ON
+    CACHE BOOL "Use TVM minimal RT (AOT only, without crt_runtime_api.c)"
+)
+MESSAGE(STATUS "TVM_MINIMAL_RUNTIME=${TVM_MINIMAL_RUNTIME}")
 
 SET(TVM_ALIGNMENT_BYTES 4)
 
@@ -22,9 +27,11 @@ ENDIF()
 
 # cmake-format: off
 COMMON_ADD_LIBRARY(tvm_static_rt STATIC
-    ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c
     ${TVM_DIR}/src/runtime/crt/memory/stack_allocator.c
 )
+if (NOT TVM_MINIMAL_RUNTIME)
+    TARGET_SOURCES(tvm_static_rt PRIVATE ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c)
+endif()
 # cmake-format: on
 
 TARGET_INCLUDE_DIRECTORIES(tvm_static_rt PUBLIC ${TVM_HEADERS})
@@ -61,9 +68,11 @@ TARGET_COMPILE_DEFINITIONS(tvm_graph_rt PUBLIC
 # cmake-format: off
 COMMON_ADD_LIBRARY(tvm_aot_rt STATIC
     ${TVM_DIR}/src/runtime/crt/common/crt_backend_api.c
-    ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c
     ${TVM_DIR}/src/runtime/crt/memory/stack_allocator.c
 )
+if (NOT TVM_MINIMAL_RUNTIME)
+    TARGET_SOURCES(tvm_aot_rt PRIVATE ${TVM_DIR}/src/runtime/crt/common/crt_runtime_api.c)
+endif()
 # cmake-format: on
 
 TARGET_INCLUDE_DIRECTORIES(tvm_aot_rt PUBLIC ${TVM_HEADERS})
