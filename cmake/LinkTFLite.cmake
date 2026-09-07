@@ -292,6 +292,7 @@ IF(NOT TFLM_GENERATE_TREE)
         ${TFLM_SRC}/micro_context.cc
         ${TFL_SRC}/schema/schema_utils.cc
         ${TF_DIR}/tensorflow/compiler/mlir/lite/schema/schema_utils.cc
+        ${TF_DIR}/tensorflow/compiler/mlir/lite/core/api/error_reporter.cc
         ${OPT_SRC}
     )
 ELSE()
